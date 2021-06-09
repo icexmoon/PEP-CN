@@ -4,8 +4,9 @@ PEP 405 -- Python虚拟环境
 
 > 原文地址：<https://www.python.org/dev/peps/pep-0405/>
 
-| PEP:            | 405                                                          |
+|                 |                                                              |
 | :-------------- | ------------------------------------------------------------ |
+| PEP:            | 405                                                          |
 | Title:          | Python Virtual Environments                                  |
 | Author:         | Carl Meyer <carl at oddbird.net>                             |
 | BDFL-Delegate:  | Nick Coghlan                                                 |

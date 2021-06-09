@@ -2,6 +2,12 @@
 
 # PEP中文翻译项目
 
+## 项目地址
+
+Github：<https://github.com/icexmoon/PEP-CN>
+
+个人博客：<https://blog.icexmoon.xyz/archives/171.html>
+
 ## 目的
 
 最近学习Python，翻译了几篇PEP，遂突发奇想有没有PEP的系统中文翻译项目，翻了一下Github，有一个现成的项目[**PEP中文翻译计划**](https://github.com/chinesehuazhou/peps-cn)，但一来这个项目已经长时间没更新了，二来这个项目有以下缺陷：
@@ -14,12 +20,6 @@
 当然，我个人的力量远远不够，这里还是希望Python爱好者能广泛加入这个项目。
 
 想加入项目或者有任何建议，可以直接在本项目的[**issue页面**](https://github.com/chinesehuazhou/peps-cn/issues)发帖。
-
-## 项目地址
-
-Github：<https://github.com/icexmoon/PEP-CN>
-
-个人博客：<https://blog.icexmoon.xyz/archives/171.html>
 
 ## 规范
 

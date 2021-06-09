@@ -21,19 +21,19 @@ PEP 405 -- Python虚拟环境
 
 Contents
 
-- [Abstract](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20405%20--%20Python%20Virtual%20Environments.md#abstract)
-- [Motivation](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20405%20--%20Python%20Virtual%20Environments.md#motivation)
-- Specification
-  - [Isolation from system site-packages](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20405%20--%20Python%20Virtual%20Environments.md#isolation-from-system-site-packages)
-  - [Creating virtual environments](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20405%20--%20Python%20Virtual%20Environments.md#creating-virtual-environments)
-  - [Sysconfig install schemes and user-site](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20405%20--%20Python%20Virtual%20Environments.md#sysconfig-install-schemes-and-user-site)
-  - [Copies versus symlinks](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20405%20--%20Python%20Virtual%20Environments.md#copies-versus-symlinks)
-  - [Include files](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20405%20--%20Python%20Virtual%20Environments.md#include-files)
+- [Abstract](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20405%20--%20Python%20Virtual%20Environments.md#abstract)，概览
+- [Motivation](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20405%20--%20Python%20Virtual%20Environments.md#motivation)，起因
+- Specification，具体要求
+  - [Isolation from system site-packages](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20405%20--%20Python%20Virtual%20Environments.md#isolation-from-system-site-packages)，从系统站点包隔离
+  - [Creating virtual environments](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20405%20--%20Python%20Virtual%20Environments.md#creating-virtual-environments)，创建虚拟环境
+  - [Sysconfig install schemes and user-site](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20405%20--%20Python%20Virtual%20Environments.md#sysconfig-install-schemes-and-user-site)，sysconfig安装方案和用户站点
+  - [Copies versus symlinks](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20405%20--%20Python%20Virtual%20Environments.md#copies-versus-symlinks)，副本和符号链接
+  - [Include files](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20405%20--%20Python%20Virtual%20Environments.md#include-files)，include文件
   - [API](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20405%20--%20Python%20Virtual%20Environments.md#api)
-- Backwards Compatibility
-  - [Splitting the meanings of `sys.prefix`](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20405%20--%20Python%20Virtual%20Environments.md#splitting-the-meanings-of-sysprefix)
-  - [Impact on other Python implementations](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20405%20--%20Python%20Virtual%20Environments.md#impact-on-other-python-implementations)
-- [Reference Implementation](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20405%20--%20Python%20Virtual%20Environments.md#reference-implementation)
+- Backwards Compatibility，向后兼容
+  - [Splitting the meanings of `sys.prefix`](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20405%20--%20Python%20Virtual%20Environments.md#splitting-the-meanings-of-sysprefix)，拆分`sys.prefix`的意义
+  - [Impact on other Python implementations](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20405%20--%20Python%20Virtual%20Environments.md#impact-on-other-python-implementations)，对其他Python实现的影响
+- [Reference Implementation](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20405%20--%20Python%20Virtual%20Environments.md#reference-implementation)，参考实现
 - [References](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20405%20--%20Python%20Virtual%20Environments.md#references)
 - [Copyright](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20405%20--%20Python%20Virtual%20Environments.md#copyright)
 

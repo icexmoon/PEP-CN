@@ -53,12 +53,9 @@
 
 ## 目录
 
-所有已翻译文章列表会展示在这里。
+所有已翻译文章列表会展示在这里：
 
-| 编号 | 标题 | 译者 |
-| ---- | ---- | ---- |
-|      |      |      |
-|      |      |      |
-|      |      |      |
-|      |      |      |
-
+- [**PEP 8 -- Style Guide for Python Code**](https://github.com/icexmoon/PEP-CN/blob/main/PEP%208%20--%20Style%20Guide%20for%20Python%20Code.md)，Python编码规范
+- [**PEP 20 -- The Zen of Python**](https://github.com/icexmoon/PEP-CN/blob/main/PEP%2020%20--%20The%20Zen%20of%20Python.md)，Python之禅
+- [**PEP 257 -- Docstring Conventions**](https://github.com/icexmoon/PEP-CN/blob/main/PEP%20257%20--%20Docstring%20Conventions.md)，文档字符串约定
+- [**PEP 492 -- Coroutines with async and await syntax**](https://github.com/icexmoon/PEP-CN/blob/main/PEP%20492%20--%20Coroutines%20with%20async%20and%20await%20syntax.md)，通过async与await语句实现协程

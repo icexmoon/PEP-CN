@@ -15,6 +15,12 @@
 
 想加入项目或者有任何建议，可以直接在本项目的[**issue页面**](https://github.com/chinesehuazhou/peps-cn/issues)发帖。
 
+## 项目地址
+
+Github：<https://github.com/icexmoon/PEP-CN>
+
+个人博客：<https://blog.icexmoon.xyz/archives/171.html>
+
 ## 规范
 
 为了避免项目[**PEP中文翻译计划**](https://github.com/chinesehuazhou/peps-cn)中的不足，这里暂时规定一下规范：
@@ -59,3 +65,5 @@
 - [**PEP 20 -- The Zen of Python**](https://github.com/icexmoon/PEP-CN/blob/main/PEP%2020%20--%20The%20Zen%20of%20Python.md)，Python之禅
 - [**PEP 257 -- Docstring Conventions**](https://github.com/icexmoon/PEP-CN/blob/main/PEP%20257%20--%20Docstring%20Conventions.md)，文档字符串约定
 - [**PEP 492 -- Coroutines with async and await syntax**](https://github.com/icexmoon/PEP-CN/blob/main/PEP%20492%20--%20Coroutines%20with%20async%20and%20await%20syntax.md)，通过async与await语句实现协程
+
+版权声明：本文由 [**icexmoon**](https://github.com/icexmoon/) 原创，遵循CC 4.0 BY-SA版权协议。

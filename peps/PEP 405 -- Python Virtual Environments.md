@@ -21,21 +21,21 @@ PEP 405 -- Python虚拟环境
 
 Contents
 
-- [Abstract](https://github.com/icexmoon/PEP-CN/blob/main/PEP%20405%20--%20Python%20Virtual%20Environments.md#abstract)
-- [Motivation](https://github.com/icexmoon/PEP-CN/blob/main/PEP%20405%20--%20Python%20Virtual%20Environments.md#motivation)
+- [Abstract](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20405%20--%20Python%20Virtual%20Environments.md#abstract)
+- [Motivation](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20405%20--%20Python%20Virtual%20Environments.md#motivation)
 - Specification
-  - [Isolation from system site-packages](https://github.com/icexmoon/PEP-CN/blob/main/PEP%20405%20--%20Python%20Virtual%20Environments.md#isolation-from-system-site-packages)
-  - [Creating virtual environments](https://github.com/icexmoon/PEP-CN/blob/main/PEP%20405%20--%20Python%20Virtual%20Environments.md#creating-virtual-environments)
-  - [Sysconfig install schemes and user-site](https://github.com/icexmoon/PEP-CN/blob/main/PEP%20405%20--%20Python%20Virtual%20Environments.md#sysconfig-install-schemes-and-user-site)
-  - [Copies versus symlinks](https://github.com/icexmoon/PEP-CN/blob/main/PEP%20405%20--%20Python%20Virtual%20Environments.md#copies-versus-symlinks)
-  - [Include files](https://github.com/icexmoon/PEP-CN/blob/main/PEP%20405%20--%20Python%20Virtual%20Environments.md#include-files)
-  - [API](https://github.com/icexmoon/PEP-CN/blob/main/PEP%20405%20--%20Python%20Virtual%20Environments.md#api)
+  - [Isolation from system site-packages](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20405%20--%20Python%20Virtual%20Environments.md#isolation-from-system-site-packages)
+  - [Creating virtual environments](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20405%20--%20Python%20Virtual%20Environments.md#creating-virtual-environments)
+  - [Sysconfig install schemes and user-site](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20405%20--%20Python%20Virtual%20Environments.md#sysconfig-install-schemes-and-user-site)
+  - [Copies versus symlinks](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20405%20--%20Python%20Virtual%20Environments.md#copies-versus-symlinks)
+  - [Include files](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20405%20--%20Python%20Virtual%20Environments.md#include-files)
+  - [API](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20405%20--%20Python%20Virtual%20Environments.md#api)
 - Backwards Compatibility
-  - [Splitting the meanings of `sys.prefix`](https://github.com/icexmoon/PEP-CN/blob/main/PEP%20405%20--%20Python%20Virtual%20Environments.md#splitting-the-meanings-of-sysprefix)
-  - [Impact on other Python implementations](https://github.com/icexmoon/PEP-CN/blob/main/PEP%20405%20--%20Python%20Virtual%20Environments.md#impact-on-other-python-implementations)
-- [Reference Implementation](https://github.com/icexmoon/PEP-CN/blob/main/PEP%20405%20--%20Python%20Virtual%20Environments.md#reference-implementation)
-- [References](https://github.com/icexmoon/PEP-CN/blob/main/PEP%20405%20--%20Python%20Virtual%20Environments.md#references)
-- [Copyright](https://github.com/icexmoon/PEP-CN/blob/main/PEP%20405%20--%20Python%20Virtual%20Environments.md#copyright)
+  - [Splitting the meanings of `sys.prefix`](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20405%20--%20Python%20Virtual%20Environments.md#splitting-the-meanings-of-sysprefix)
+  - [Impact on other Python implementations](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20405%20--%20Python%20Virtual%20Environments.md#impact-on-other-python-implementations)
+- [Reference Implementation](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20405%20--%20Python%20Virtual%20Environments.md#reference-implementation)
+- [References](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20405%20--%20Python%20Virtual%20Environments.md#references)
+- [Copyright](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20405%20--%20Python%20Virtual%20Environments.md#copyright)
 
 # [Abstract](https://www.python.org/dev/peps/pep-0405/#id15)
 

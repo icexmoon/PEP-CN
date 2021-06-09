@@ -78,7 +78,7 @@ Github：<https://github.com/icexmoon/PEP-CN>
 - [**PEP 8 -- Style Guide for Python Code**](https://github.com/icexmoon/PEP-CN/blob/main/PEP%208%20--%20Style%20Guide%20for%20Python%20Code.md)，Python编码规范
 - [**PEP 20 -- The Zen of Python**](https://github.com/icexmoon/PEP-CN/blob/main/PEP%2020%20--%20The%20Zen%20of%20Python.md)，Python之禅
 - [**PEP 257 -- Docstring Conventions**](https://github.com/icexmoon/PEP-CN/blob/main/PEP%20257%20--%20Docstring%20Conventions.md)，文档字符串约定
-- [**PEP 405 -- Python Virtual Environments**](https://github.com/icexmoon/PEP-CN/blob/main/PEP%20405%20--%20Python%20Virtual%20Environments.md#copyright)，Python虚拟环境
+- [**PEP 405 -- Python Virtual Environments**](https://github.com/icexmoon/PEP-CN/blob/main/PEP%20405%20--%20Python%20Virtual%20Environments.md)，Python虚拟环境
 - [**PEP 492 -- Coroutines with async and await syntax**](https://github.com/icexmoon/PEP-CN/blob/main/PEP%20492%20--%20Coroutines%20with%20async%20and%20await%20syntax.md)，通过async与await语句实现协程
 
 版权声明：本文由 [**icexmoon**](https://github.com/icexmoon/) 原创，遵循CC 4.0 BY-SA版权协议。

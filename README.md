@@ -21,6 +21,8 @@ Github：<https://github.com/icexmoon/PEP-CN>
 
 想加入项目或者有任何建议，可以直接在本项目的[**issue页面**](https://github.com/chinesehuazhou/peps-cn/issues)发帖。
 
+> 如果你不了解什么是PEP，可以阅读[**学习Python，经常见到PEP，那么PEP是什么呢？**](https://blog.icexmoon.xyz/archives/164.html)
+
 ## 规范
 
 为了避免项目[**PEP中文翻译计划**](https://github.com/chinesehuazhou/peps-cn)中的不足，这里暂时规定一下规范：
@@ -52,10 +54,19 @@ Github：<https://github.com/icexmoon/PEP-CN>
 1. 建议在译文中保留原始英文段落，采用中英文对照方式，这样更便于纠错和改进。
 2. 建议进行全文翻译，如果时间精力有限，可以将未翻译部分以原文方式呈现，只翻译核心内容。
 
-### 可选
+### 可选事项
 
 1. [**Typora**](https://typora.io/)是个优秀的多平台开源免费markdown编辑器，唯一缺点是如果内容较多，反应会变慢（至少我的落伍小破笔记本如此）。
 2. [**DeepL**](https://www.deepl.com/translator)是最近出现的德国产优秀翻译器，据说使用了深度学习，实际使用也的确比Google优秀一些，至少在翻译计算机专业内容时候是这样。推荐下载桌面版进行使用，效率更高。
+
+### 未来计划
+
+如果有其他Python爱好者加入，打算组织实现以下计划：
+
+- 筛选并确定翻译的PEP列表。
+- 编写PEP中的常见专用词汇对照表。
+- 进行翻译条目的认领和分配。
+- 对已翻译条目进行修订。
 
 ## 目录
 

@@ -22,60 +22,60 @@ PEP 484 -- 类型提示
 
 Contents
 
-- [Abstract](https://www.python.org/dev/peps/pep-0484/#abstract)
-- Rationale and Goals
-  - [Non-goals](https://www.python.org/dev/peps/pep-0484/#non-goals)
-- [The meaning of annotations](https://www.python.org/dev/peps/pep-0484/#the-meaning-of-annotations)
-- Type Definition Syntax
-  - [Acceptable type hints](https://www.python.org/dev/peps/pep-0484/#acceptable-type-hints)
-  - [Using None](https://www.python.org/dev/peps/pep-0484/#using-none)
-  - [Type aliases](https://www.python.org/dev/peps/pep-0484/#type-aliases)
-  - [Callable](https://www.python.org/dev/peps/pep-0484/#callable)
-  - [Generics](https://www.python.org/dev/peps/pep-0484/#generics)
-  - [User-defined generic types](https://www.python.org/dev/peps/pep-0484/#user-defined-generic-types)
-  - [Scoping rules for type variables](https://www.python.org/dev/peps/pep-0484/#scoping-rules-for-type-variables)
-  - [Instantiating generic classes and type erasure](https://www.python.org/dev/peps/pep-0484/#instantiating-generic-classes-and-type-erasure)
-  - [Arbitrary generic types as base classes](https://www.python.org/dev/peps/pep-0484/#arbitrary-generic-types-as-base-classes)
-  - [Abstract generic types](https://www.python.org/dev/peps/pep-0484/#abstract-generic-types)
-  - [Type variables with an upper bound](https://www.python.org/dev/peps/pep-0484/#type-variables-with-an-upper-bound)
-  - [Covariance and contravariance](https://www.python.org/dev/peps/pep-0484/#covariance-and-contravariance)
-  - [The numeric tower](https://www.python.org/dev/peps/pep-0484/#the-numeric-tower)
-  - [Forward references](https://www.python.org/dev/peps/pep-0484/#forward-references)
-  - [Union types](https://www.python.org/dev/peps/pep-0484/#union-types)
-  - [Support for singleton types in unions](https://www.python.org/dev/peps/pep-0484/#support-for-singleton-types-in-unions)
-  - [The `Any` type](https://www.python.org/dev/peps/pep-0484/#the-any-type)
-  - [The `NoReturn` type](https://www.python.org/dev/peps/pep-0484/#the-noreturn-type)
-  - [The type of class objects](https://www.python.org/dev/peps/pep-0484/#the-type-of-class-objects)
-  - [Annotating instance and class methods](https://www.python.org/dev/peps/pep-0484/#annotating-instance-and-class-methods)
-  - [Version and platform checking](https://www.python.org/dev/peps/pep-0484/#version-and-platform-checking)
-  - [Runtime or type checking?](https://www.python.org/dev/peps/pep-0484/#runtime-or-type-checking)
-  - [Arbitrary argument lists and default argument values](https://www.python.org/dev/peps/pep-0484/#arbitrary-argument-lists-and-default-argument-values)
-  - [Positional-only arguments](https://www.python.org/dev/peps/pep-0484/#positional-only-arguments)
-  - [Annotating generator functions and coroutines](https://www.python.org/dev/peps/pep-0484/#annotating-generator-functions-and-coroutines)
-- [Compatibility with other uses of function annotations](https://www.python.org/dev/peps/pep-0484/#compatibility-with-other-uses-of-function-annotations)
-- [Type comments](https://www.python.org/dev/peps/pep-0484/#type-comments)
-- [Casts](https://www.python.org/dev/peps/pep-0484/#casts)
-- [NewType helper function](https://www.python.org/dev/peps/pep-0484/#newtype-helper-function)
-- Stub Files
-  - [Function/method overloading](https://www.python.org/dev/peps/pep-0484/#function-method-overloading)
-  - [Storing and distributing stub files](https://www.python.org/dev/peps/pep-0484/#storing-and-distributing-stub-files)
-  - [The Typeshed Repo](https://www.python.org/dev/peps/pep-0484/#the-typeshed-repo)
-- [Exceptions](https://www.python.org/dev/peps/pep-0484/#exceptions)
-- [The `typing` Module](https://www.python.org/dev/peps/pep-0484/#the-typing-module)
-- [Suggested syntax for Python 2.7 and straddling code](https://www.python.org/dev/peps/pep-0484/#suggested-syntax-for-python-2-7-and-straddling-code)
-- Rejected Alternatives
-  - [Which brackets for generic type parameters?](https://www.python.org/dev/peps/pep-0484/#which-brackets-for-generic-type-parameters)
-  - [What about existing uses of annotations?](https://www.python.org/dev/peps/pep-0484/#what-about-existing-uses-of-annotations)
-  - [The problem of forward declarations](https://www.python.org/dev/peps/pep-0484/#the-problem-of-forward-declarations)
-  - [The double colon](https://www.python.org/dev/peps/pep-0484/#the-double-colon)
-  - [Other forms of new syntax](https://www.python.org/dev/peps/pep-0484/#other-forms-of-new-syntax)
-  - [Other backwards compatible conventions](https://www.python.org/dev/peps/pep-0484/#other-backwards-compatible-conventions)
-- [PEP Development Process](https://www.python.org/dev/peps/pep-0484/#pep-development-process)
-- [Acknowledgements](https://www.python.org/dev/peps/pep-0484/#acknowledgements)
-- [References](https://www.python.org/dev/peps/pep-0484/#references)
-- [Copyright](https://www.python.org/dev/peps/pep-0484/#copyright)
+- [Abstract](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#abstract)，摘要
+- Rationale and Goals，理由和目标
+  - [Non-goals](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#non-goals)，非目标
+- [The meaning of annotations](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#the-meaning-of-annotations)，注释的意义
+- Type Definition Syntax，类型定义语法
+  - [Acceptable type hints](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#acceptable-type-hints)，可接受的类型提示
+  - [Using None](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#using-none)，使用None
+  - [Type aliases](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#type-aliases)，类型别名
+  - [Callable](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#callable)
+  - [Generics](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#generics)，泛型
+  - [User-defined generic types](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#user-defined-generic-types)，用户自定义泛型
+  - [Scoping rules for type variables](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#scoping-rules-for-type-variables)，类型变量的范围界定规则
+  - [Instantiating generic classes and type erasure](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#instantiating-generic-classes-and-type-erasure)，实例化泛型类和类型擦除
+  - [Arbitrary generic types as base classes](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#arbitrary-generic-types-as-base-classes)，任意泛型作为基类
+  - [Abstract generic types](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#abstract-generic-types)，抽象泛型
+  - [Type variables with an upper bound](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#type-variables-with-an-upper-bound)，有上限的类型变量
+  - [Covariance and contravariance](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#covariance-and-contravariance)，协变和反协变
+  - [The numeric tower](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#the-numeric-tower)，数字塔
+  - [Forward references](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#forward-references)，前向引用
+  - [Union types](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#union-types)，联合类型
+  - [Support for singleton types in unions](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#support-for-singleton-types-in-unions)，union对于单例类型的支持
+  - [The `Any` type](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#the-any-type)，`Any`类型
+  - [The `NoReturn` type](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#the-noreturn-type)，`NoReturn`类型
+  - [The type of class objects](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#the-type-of-class-objects)，类对象的类型
+  - [Annotating instance and class methods](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#annotating-instance-and-class-methods)，注释实例和类方法
+  - [Version and platform checking](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#version-and-platform-checking)，版本和平台检查
+  - [Runtime or type checking?](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#runtime-or-type-checking)，运行时或类型检查
+  - [Arbitrary argument lists and default argument values](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#arbitrary-argument-lists-and-default-argument-values)，任意参数列表和默认参数值
+  - [Positional-only arguments](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#positional-only-arguments)，位置限定参数
+  - [Annotating generator functions and coroutines](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#annotating-generator-functions-and-coroutines)，注释生成器函数和协程
+- [Compatibility with other uses of function annotations](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#compatibility-with-other-uses-of-function-annotations)，与函数注解的其他用途的兼容性
+- [Type comments](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#type-comments)，类型注释
+- [Casts](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#casts)，推断
+- [NewType helper function](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#newtype-helper-function)，NewType 辅助函数
+- Stub Files，存根文件
+  - [Function/method overloading](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#function-method-overloading)，函数、方法重载
+  - [Storing and distributing stub files](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#storing-and-distributing-stub-files)，存根文件的存储和发布
+  - [The Typeshed Repo](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#the-typeshed-repo)，Typeshed 资源库
+- [Exceptions](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#exceptions)，异常
+- [The `typing` Module](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#the-typing-module)，`typing`模块
+- [Suggested syntax for Python 2.7 and straddling code](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#suggested-syntax-for-python-2-7-and-straddling-code)，建议的Python 2.7和过渡代码的语法
+- Rejected Alternatives，被拒绝的替代方案
+  - [Which brackets for generic type parameters?](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#which-brackets-for-generic-type-parameters)，哪种括号用于泛型参数？
+  - [What about existing uses of annotations?](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#what-about-existing-uses-of-annotations)，注释的现有用途是什么？
+  - [The problem of forward declarations](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#the-problem-of-forward-declarations)，前向声明的问题
+  - [The double colon](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#the-double-colon)，双冒号
+  - [Other forms of new syntax](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#other-forms-of-new-syntax)，其它形式的新语法
+  - [Other backwards compatible conventions](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#other-backwards-compatible-conventions)，其他向后兼容的惯例
+- [PEP Development Process](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#pep-development-process)，PEP开发过程
+- [Acknowledgements](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#acknowledgements)，致谢
+- [References](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#references)，参考文献
+- [Copyright](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#copyright)，版权声明
 
-# [Abstract](https://www.python.org/dev/peps/pep-0484/#id10)
+# [Abstract](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#id10)
 
 摘要
 
@@ -106,7 +106,7 @@ While these annotations are available at runtime through the usual `__annotation
 
 > linter指语法检查工具，可以参考[**程序开发中的linter是什么意思？**](https://www.zhihu.com/question/28421865)中的回答，译者注。
 
-The proposal is strongly inspired by mypy [[mypy\]](https://www.python.org/dev/peps/pep-0484/#mypy). For example, the type "sequence of integers" can be written as `Sequence[int]`. The square brackets mean that no new syntax needs to be added to the language. The example here uses a custom type `Sequence`, imported from a pure-Python module `typing`. The `Sequence[int]` notation works at runtime by implementing `__getitem__()` in the metaclass (but its significance is primarily to an offline type checker).
+The proposal is strongly inspired by mypy [[mypy\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#mypy). For example, the type "sequence of integers" can be written as `Sequence[int]`. The square brackets mean that no new syntax needs to be added to the language. The example here uses a custom type `Sequence`, imported from a pure-Python module `typing`. The `Sequence[int]` notation works at runtime by implementing `__getitem__()` in the metaclass (but its significance is primarily to an offline type checker).
 
 这个提议受到mypy[mypy]的强烈启发。例如，"整数序列 "这个类型可以写成`Sequence[int]`。方括号意味着不需要在语言中添加新的语法。这里的例子使用了一个自定义的类型`Sequence`，从一个纯Python模块`typing`中导入。`Sequence[int]` 符号通过在元类中实现 `__getitem__()` 在运行时起作用（但它的意义主要是对离线类型检查器而言）。
 
@@ -118,11 +118,11 @@ Other approaches from which we have borrowed or to which ours can be compared an
 
 PEP482中描述了我们借鉴的其他方法，或者我们的方法可以与之进行比较和对照。
 
-# [Rationale and Goals](https://www.python.org/dev/peps/pep-0484/#id11)
+# [Rationale and Goals](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#id11)
 
 理由和目标
 
-[PEP 3107](https://www.python.org/dev/peps/pep-3107) added support for arbitrary annotations on parts of a function definition. Although no meaning was assigned to annotations then, there has always been an implicit goal to use them for type hinting [[gvr-artima\]](https://www.python.org/dev/peps/pep-0484/#gvr-artima), which is listed as the first possible use case in said PEP.
+[PEP 3107](https://www.python.org/dev/peps/pep-3107) added support for arbitrary annotations on parts of a function definition. Although no meaning was assigned to annotations then, there has always been an implicit goal to use them for type hinting [[gvr-artima\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#gvr-artima), which is listed as the first possible use case in said PEP.
 
 [PEP 3107](https://www.python.org/dev/peps/pep-3107) 增加了对函数定义部分的任意注释的支持。虽然当时没有给注解赋予任何意义，但一直以来都有一个隐含的目标，那就是将它们用于类型提示[gvr-artima]，这在上述PEP中被列为第一个可能的用例。
 
@@ -134,7 +134,7 @@ Of these goals, static analysis is the most important. This includes support for
 
 在这些目标中，静态分析是最重要的。这包括对离线类型检查器的支持，如mypy，以及提供一个标准的符号，可以被IDE用于代码完成和重构。
 
-## [Non-goals](https://www.python.org/dev/peps/pep-0484/#id12)
+## [Non-goals](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#id12)
 
 非目标
 
@@ -146,7 +146,7 @@ It should also be emphasized that **Python will remain a dynamically typed langu
 
 还应该强调的是，**Python 仍将是一种动态类型的语言，作者并不想让类型提示成为强制性的，即使是按照惯例。**
 
-# [The meaning of annotations](https://www.python.org/dev/peps/pep-0484/#id13)
+# [The meaning of annotations](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#id13)
 
 注释的意义
 
@@ -170,7 +170,7 @@ Type checkers are expected to attempt to infer as much information as necessary.
 
 类型检查器被期望尝试推断出尽可能多的必要信息。最低要求是处理内置的装饰器`@property`、`@staticmethod`和`@classmethod`。
 
-# [Type Definition Syntax](https://www.python.org/dev/peps/pep-0484/#id14)
+# [Type Definition Syntax](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#id14)
 
 类型定义语法
 
@@ -191,7 +191,7 @@ Expressions whose type is a subtype of a specific argument type are also accepte
 
 类型为特定参数类型的子类型的表达式也被接受用于该参数。
 
-## [Acceptable type hints](https://www.python.org/dev/peps/pep-0484/#id15)
+## [Acceptable type hints](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#id15)
 
 可接受的类型提示
 
@@ -221,7 +221,7 @@ All newly introduced names used to support features described in following secti
 
 所有新引入的用于支持以下章节中描述的功能的名称（如`Any`和`Union`）都可以在`typing`模块中使用。
 
-## [Using None](https://www.python.org/dev/peps/pep-0484/#id16)
+## [Using None](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#id16)
 
 使用None
 
@@ -229,7 +229,7 @@ When used in a type hint, the expression `None` is considered equivalent to `typ
 
 当在类型提示中使用时，表达式`None`被认为等同于`type(None)`。
 
-## [Type aliases](https://www.python.org/dev/peps/pep-0484/#id17)
+## [Type aliases](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#id17)
 
 类型别名
 
@@ -280,7 +280,7 @@ def dilate(v: Iterable[Tuple[T, T]], scale: T) -> Iterable[Tuple[T, T]]:
 vec = []  # type: Iterable[Tuple[float, float]]
 ```
 
-## [Callable](https://www.python.org/dev/peps/pep-0484/#id18)
+## [Callable](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#id18)
 
 Frameworks expecting callback functions of specific signatures might be type hinted using `Callable[[Arg1Type, Arg2Type], ReturnType]`. Examples:
 
@@ -318,7 +318,7 @@ Because `typing.Callable` does double-duty as a replacement for `collections.abc
 
 因为`typing.Callable`具有替代`collection.abc.Callable`的双重功能，所以`isinstance(x, typing.Callable)`是按照`isinstance(x, collections.abc.Callable)`来实现的。然而，`isinstance(x, typing.Callable[...])`并不被支持。
 
-## [Generics](https://www.python.org/dev/peps/pep-0484/#id19)
+## [Generics](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#id19)
 
 泛型
 
@@ -403,7 +403,7 @@ This is equivalent to omitting the generic notation and just saying `elements: L
 
 这相当于省略了通用符号，只说`elements:List`。
 
-## [User-defined generic types](https://www.python.org/dev/peps/pep-0484/#id20)
+## [User-defined generic types](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#id20)
 
 用户自定义泛型
 
@@ -538,7 +538,7 @@ Generic metaclasses are not supported.
 
 不支持泛型的元类。
 
-## [Scoping rules for type variables](https://www.python.org/dev/peps/pep-0484/#id21)
+## [Scoping rules for type variables](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#id21)
 
 类型变量的范围界定规则
 
@@ -656,7 +656,7 @@ Type variables follow normal name resolution rules. However, there are some spec
       attr = None  # type: Inner[T] # Also OK
   ```
 
-## [Instantiating generic classes and type erasure](https://www.python.org/dev/peps/pep-0484/#id22)
+## [Instantiating generic classes and type erasure](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#id22)
 
 实例化泛型类和类型擦除
 
@@ -756,7 +756,7 @@ It is not recommended to use the subscripted class (e.g. `Node[int]`) directly i
 
 不建议在表达式中直接使用下标类（例如：`Node[int]`）--最好使用类型别名（例如：`IntNode = Node[int]`）。首先，创建下标类，例如`Node[int]`，有一个运行时间成本。其次，使用类型别名更容易阅读）。)
 
-## [Arbitrary generic types as base classes](https://www.python.org/dev/peps/pep-0484/#id23)
+## [Arbitrary generic types as base classes](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#id23)
 
 任意泛型作为基类
 
@@ -822,7 +822,7 @@ In this case MyDict has a single parameter, T.
 
 在这种情况下，MyDict有一个单一的参数，即T。
 
-## [Abstract generic types](https://www.python.org/dev/peps/pep-0484/#id24)
+## [Abstract generic types](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#id24)
 
 抽象泛型
 
@@ -830,7 +830,7 @@ The metaclass used by `Generic` is a subclass of `abc.ABCMeta`. A generic class 
 
 `Generic`使用的元类是`abc.ABCMeta`的子类。一个泛型类可以通过包含抽象方法或属性来成为一个ABC，泛型类也可以将ABC作为基类，而不会发生元类冲突。
 
-## [Type variables with an upper bound](https://www.python.org/dev/peps/pep-0484/#id25)
+## [Type variables with an upper bound](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#id25)
 
 有上限的类型变量
 
@@ -858,7 +858,7 @@ An upper bound cannot be combined with type constraints (as in used `AnyStr`, se
 
 上限不能与类型约束相结合（如使用`AnyStr`，见前面的例子）；类型约束导致推断的类型是*刚好是*约束类型之一，而上限只要求实际类型是边界类型的一个子类型。
 
-## [Covariance and contravariance](https://www.python.org/dev/peps/pep-0484/#id26)
+## [Covariance and contravariance](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#id26)
 
 协变和反协变
 
@@ -866,7 +866,7 @@ Consider a class `Employee` with a subclass `Manager`. Now suppose we have a fun
 
 考虑一个带有子类`Manager`的`Employee`类。现在假设我们有一个函数，它的参数被注解为`List[Employee]`。我们是否应该允许用`List[Manager]`类型的变量作为参数来调用这个函数？很多人会回答 "是的，当然"，甚至不考虑其后果。但除非我们对该函数有更多的了解，否则类型检查器应该拒绝这样的调用：该函数可能会将一个`Employee`实例追加到列表中，这将违反调用者的变量类型。
 
-It turns out such an argument acts *contravariantly*, whereas the intuitive answer (which is correct in case the function doesn't mutate its argument!) requires the argument to act *covariantly*. A longer introduction to these concepts can be found on Wikipedia [[wiki-variance\]](https://www.python.org/dev/peps/pep-0484/#wiki-variance) and in [PEP 483](https://www.python.org/dev/peps/pep-0483); here we just show how to control a type checker's behavior.
+It turns out such an argument acts *contravariantly*, whereas the intuitive answer (which is correct in case the function doesn't mutate its argument!) requires the argument to act *covariantly*. A longer introduction to these concepts can be found on Wikipedia [[wiki-variance\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#wiki-variance) and in [PEP 483](https://www.python.org/dev/peps/pep-0483); here we just show how to control a type checker's behavior.
 
 事实证明，这样的参数是变异的，而直观的答案（在函数没有变异其参数的情况下是正确的！）要求参数是协变的。关于这些概念的详细介绍可以在维基百科[wiki-variance]和PEP 483中找到；这里我们只是展示如何控制类型检查器的行为。
 
@@ -937,7 +937,7 @@ def bad_func(x: B_co) -> B_co:  # Flagged as error by a type checker
     ...
 ```
 
-## [The numeric tower](https://www.python.org/dev/peps/pep-0484/#id27)
+## [The numeric tower](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#id27)
 
 数字塔
 
@@ -949,7 +949,7 @@ Rather than requiring that users write `import numbers` and then use `numbers.Fl
 
 与其要求用户编写`import numbers`，然后使用`numbers.Float`等，本PEP提出了一个几乎同样有效的直接捷径：当一个参数被注释为具有`float`类型时，可以接受`int`类型的参数；类似地，对于一个被注释为具有`complex`类型的参数，可以接受`float`或`int`类型的参数。这并没有处理实现相应ABC的类或`fractions.Fraction`类，但我们相信这些用例是极其罕见的。
 
-## [Forward references](https://www.python.org/dev/peps/pep-0484/#id28)
+## [Forward references](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#id28)
 
 前向引用
 
@@ -983,7 +983,7 @@ The string literal should contain a valid Python expression (i.e., `compile(lit,
 
 字符串应该包含一个有效的 Python 表达式 (即，`compile(lit, '', 'eval')` 应该是一个有效的代码对象)，而且一旦模块被完全加载，它的评估应该没有错误。评估它的局部和全局命名空间应该是评估同一函数的默认参数的相同命名空间。
 
-Moreover, the expression should be parseable as a valid type hint, i.e., it is constrained by the rules from the section [Acceptable type hints](https://www.python.org/dev/peps/pep-0484/#acceptable-type-hints) above.
+Moreover, the expression should be parseable as a valid type hint, i.e., it is constrained by the rules from the section [Acceptable type hints](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#acceptable-type-hints) above.
 
 此外，该表达式应该可以被解析为有效的类型提示，也就是说，它受到上面 "可接受的类型提示 "一节中规则的约束。
 
@@ -1038,7 +1038,7 @@ from models.a import A
 from models.b import B
 ```
 
-## [Union types](https://www.python.org/dev/peps/pep-0484/#id29)
+## [Union types](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#id29)
 
 联合类型
 
@@ -1097,7 +1097,7 @@ This is no longer the recommended behavior. Type checkers should move towards re
 
 这已经不再是推荐的行为了。类型检查器应该朝着要求可选类型被明确化的方向发展。
 
-## [Support for singleton types in unions](https://www.python.org/dev/peps/pep-0484/#id30)
+## [Support for singleton types in unions](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#id30)
 
 union对于单例类型的支持
 
@@ -1160,7 +1160,7 @@ def process(response: Union[str, Reason] = '') -> str:
         return 'PROCESSED: ' + response
 ```
 
-## [The `Any` type](https://www.python.org/dev/peps/pep-0484/#id31)
+## [The `Any` type](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#id31)
 
 `Any`类型
 
@@ -1202,7 +1202,7 @@ def apply_callbacks(cbs: List[Callable]) -> None:
     ...
 ```
 
-## [The `NoReturn` type](https://www.python.org/dev/peps/pep-0484/#id32)
+## [The `NoReturn` type](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#id32)
 
 `NoReturn`类型
 
@@ -1261,7 +1261,7 @@ def bad3() -> List[NoReturn]:
     ...
 ```
 
-## [The type of class objects](https://www.python.org/dev/peps/pep-0484/#id33)
+## [The type of class objects](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#id33)
 
 类对象的类型
 
@@ -1375,7 +1375,7 @@ def new_pro_user(pro_user_class: Type[ProUser]):
     ...
 ```
 
-## [Annotating instance and class methods](https://www.python.org/dev/peps/pep-0484/#id34)
+## [Annotating instance and class methods](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#id34)
 
 注释实例和类方法
 
@@ -1413,7 +1413,7 @@ Note that some type checkers may apply restrictions on this use, such as requiri
 
 请注意，一些类型检查器可能会对这种使用进行限制，例如要求对所使用的类型变量有一个适当的上界（见示例）。
 
-## [Version and platform checking](https://www.python.org/dev/peps/pep-0484/#id35)
+## [Version and platform checking](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#id35)
 
 版本和平台检查
 
@@ -1439,7 +1439,7 @@ Don't expect a checker to understand obfuscations like `"".join(reversed(sys.pla
 
 不要指望检查器能理解`"".join(reversed(sys.platform)) == "xunil "`这样的混淆。
 
-## [Runtime or type checking?](https://www.python.org/dev/peps/pep-0484/#id36)
+## [Runtime or type checking?](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#id36)
 
 运行时或类型检查
 
@@ -1466,7 +1466,7 @@ This approach may also be useful to handle import cycles.
 
 这种方法对于处理导入循环也很有用。
 
-## [Arbitrary argument lists and default argument values](https://www.python.org/dev/peps/pep-0484/#id37)
+## [Arbitrary argument lists and default argument values](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#id37)
 
 任意参数列表和默认参数值
 
@@ -1510,7 +1510,7 @@ In such cases the default value may be specified as a literal ellipsis, i.e. the
 
 > 这里的意思是其它类型都不合适作为任意默认值，所以就直接使用省略号`...`进行表示，译者注。
 
-## [Positional-only arguments](https://www.python.org/dev/peps/pep-0484/#id38)
+## [Positional-only arguments](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#id38)
 
 位置限定参数
 
@@ -1526,7 +1526,7 @@ quux(3, __y__=1)  # This call is fine.
 quux(__x=3)  # This call is an error.
 ```
 
-## [Annotating generator functions and coroutines](https://www.python.org/dev/peps/pep-0484/#id39)
+## [Annotating generator functions and coroutines](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#id39)
 
 注释生成器函数和协程
 
@@ -1579,7 +1579,7 @@ def op() -> typing.Awaitable[str]:
         return asyncio.Future(...)
 ```
 
-# [Compatibility with other uses of function annotations](https://www.python.org/dev/peps/pep-0484/#id40)
+# [Compatibility with other uses of function annotations](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#id40)
 
 与函数注解的其他用途的兼容性
 
@@ -1607,11 +1607,11 @@ For more details see later sections.
 
 更多细节见后面的章节。
 
-In order for maximal compatibility with offline type checking it may eventually be a good idea to change interfaces that rely on annotations to switch to a different mechanism, for example a decorator. In Python 3.5 there is no pressure to do this, however. See also the longer discussion under [Rejected alternatives](https://www.python.org/dev/peps/pep-0484/#rejected-alternatives) below.
+In order for maximal compatibility with offline type checking it may eventually be a good idea to change interfaces that rely on annotations to switch to a different mechanism, for example a decorator. In Python 3.5 there is no pressure to do this, however. See also the longer discussion under [Rejected alternatives](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#rejected-alternatives) below.
 
 为了最大限度地兼容离线类型检查，最终可能是一个好主意，将依赖注解的接口改成不同的机制，例如装饰器。不过在 Python 3.5 中，没有这样做的压力。也请看下面拒绝的替代方案下的较长讨论。
 
-# [Type comments](https://www.python.org/dev/peps/pep-0484/#id41)
+# [Type comments](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#id41)
 
 类型注释
 
@@ -1694,7 +1694,7 @@ If type hinting proves useful in general, a syntax for typing variables may be p
 
 如果类型提示被证明在一般情况下是有用的，那么在未来的 Python 版本中可能会提供一种类型化变量的语法。(**更新**：这种语法已经在Python 3.6中通过PEP 526添加。)
 
-# [Casts](https://www.python.org/dev/peps/pep-0484/#id42)
+# [Casts](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#id42)
 
 推断
 
@@ -1721,7 +1721,7 @@ Casts differ from type comments (see the previous section). When using a type co
 
 推断（casts）与类型注释不同（见上一节）。当使用类型注释时，类型检查器仍然应该验证推断的类型是否与声明的类型一致。当使用推断时，类型检查器应该盲目地相信程序员。另外，推断可以在表达式中使用，而类型注释只适用于赋值。
 
-# [NewType helper function](https://www.python.org/dev/peps/pep-0484/#id43)
+# [NewType helper function](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#id43)
 
 NewType 辅助函数
 
@@ -1787,7 +1787,7 @@ Both `isinstance` and `issubclass`, as well as subclassing will fail for `NewTyp
 
 `isinstance`和`issubclass`，以及subclassing对于`NewType('Derived', Base)`都会失败，因为函数对象不支持这些操作。
 
-# [Stub Files](https://www.python.org/dev/peps/pep-0484/#id44)
+# [Stub Files](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#id44)
 
 存根文件
 
@@ -1843,7 +1843,7 @@ Additional notes on stub files:
 
   然而，作为前一条的例外，所有使用 `from ... import *` 导入存根的对象都被认为是导出的。(这使得从一个给定的模块中重新导出所有对象变得更容易，这些对象可能因 Python 的版本而不同)。
 
-- Just like in normal Python files [[importdocs\]](https://www.python.org/dev/peps/pep-0484/#importdocs), submodules automatically become exported attributes of their parent module when imported. For example, if the `spam` package has the following directory structure:
+- Just like in normal Python files [[importdocs\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#importdocs), submodules automatically become exported attributes of their parent module when imported. For example, if the `spam` package has the following directory structure:
 
   就像普通的 Python 文件 [importdocs] 一样，子模块在导入时自动成为其父模块的导出属性。例如，如果`spam`包有以下目录结构：
 
@@ -1869,7 +1869,7 @@ Additional notes on stub files:
   
   因此，任何未在存根中定义的标识符被假定为`Any`类型。
 
-## [Function/method overloading](https://www.python.org/dev/peps/pep-0484/#id45)
+## [Function/method overloading](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#id45)
 
 函数、方法重载
 
@@ -1983,7 +1983,7 @@ Another important difference between type variables such as `AnyStr` and using `
 class IO(Generic[AnyStr]): ...
 ```
 
-## [Storing and distributing stub files](https://www.python.org/dev/peps/pep-0484/#id46)
+## [Storing and distributing stub files](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#id46)
 
 存根文件的存储和发布
 
@@ -2023,15 +2023,15 @@ data_files=[
 
 (*更新*：从2018年6月起，为第三方软件包分发类型提示的推荐方式已经改变--除了typeshed（见下一节），现在还有一个分发类型提示的标准，即PEP 561。它支持包含存根的可单独安装的包，存根文件与包的可执行代码包含在同一个分发中，以及内联类型提示，后两个选项通过在包中包含一个名为`py.typed`的文件来启用。)
 
-## [The Typeshed Repo](https://www.python.org/dev/peps/pep-0484/#id47)
+## [The Typeshed Repo](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#id47)
 
 Typeshed 资源库
 
-There is a shared repository where useful stubs are being collected [[typeshed\]](https://www.python.org/dev/peps/pep-0484/#typeshed). Policies regarding the stubs collected here will be decided separately and reported in the repo's documentation. Note that stubs for a given package will not be included here if the package owners have specifically requested that they be omitted.
+There is a shared repository where useful stubs are being collected [[typeshed\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#typeshed). Policies regarding the stubs collected here will be decided separately and reported in the repo's documentation. Note that stubs for a given package will not be included here if the package owners have specifically requested that they be omitted.
 
-有一个共享资源库，正在收集有用的存根[[typeshed]](https://www.python.org/dev/peps/pep-0484/#typeshed)。有关这里收集的存根的政策将被单独决定，并在该仓库的文档中报告。请注意，如果软件包的所有者特别要求省略某个软件包的存根，那么这些存根就不会被包括在这里。
+有一个共享资源库，正在收集有用的存根[[typeshed]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#typeshed)。有关这里收集的存根的政策将被单独决定，并在该仓库的文档中报告。请注意，如果软件包的所有者特别要求省略某个软件包的存根，那么这些存根就不会被包括在这里。
 
-# [Exceptions](https://www.python.org/dev/peps/pep-0484/#id48)
+# [Exceptions](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#id48)
 
 异常
 
@@ -2039,7 +2039,7 @@ No syntax for listing explicitly raised exceptions is proposed. Currently the on
 
 没有提出列出明确提出的异常的语法。目前，这个特性的唯一已知用例是文档化，在这种情况下，建议将这些信息放在文档串中。
 
-# [The `typing` Module](https://www.python.org/dev/peps/pep-0484/#id49)
+# [The `typing` Module](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#id49)
 
 `typing`模块
 
@@ -2267,7 +2267,7 @@ Types related to regular expressions and the `re` module:
 
   Match 和 Pattern，`re.match()`和`re.compile()`结果的类型（`AnyStr`的泛型）。
 
-# [Suggested syntax for Python 2.7 and straddling code](https://www.python.org/dev/peps/pep-0484/#id50)
+# [Suggested syntax for Python 2.7 and straddling code](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#id50)
 
 建议的Python 2.7和过渡代码的语法：
 
@@ -2373,7 +2373,7 @@ Notes:
 
 When checking Python 2.7 code, type checkers should treat the `int` and `long` types as equivalent. For parameters typed as `Text`, arguments of type `str` as well as `unicode` should be acceptable.
 
-# [Rejected Alternatives](https://www.python.org/dev/peps/pep-0484/#id51)
+# [Rejected Alternatives](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#id51)
 
 被拒绝的替代方案
 
@@ -2385,7 +2385,7 @@ Several main objections were raised.
 
 提出了几个主要的反对意见。
 
-## [Which brackets for generic type parameters?](https://www.python.org/dev/peps/pep-0484/#id52)
+## [Which brackets for generic type parameters?](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#id52)
 
 哪种括号用于泛型参数？
 
@@ -2434,7 +2434,7 @@ For all these reasons, square brackets (e.g. `List[int]`) are (and have long bee
 
 由于所有这些原因，方括号 (例如 `List[int]`) 是 (而且长期以来一直是) 泛型参数化的首选语法。它们可以通过在元类上定义`__getitem__()`方法来实现，而且根本不需要新的语法。这个选项在所有最近版本的Python中都有效 (从Python 2.2开始)。在这种语法选择上，Python并不孤单--Scala中的泛型类也使用方括号。
 
-## [What about existing uses of annotations?](https://www.python.org/dev/peps/pep-0484/#id53)
+## [What about existing uses of annotations?](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#id53)
 
 注释的现有用途是什么？
 
@@ -2466,7 +2466,7 @@ Despite all these options, proposals have been circulated to allow type hints an
 
 尽管有所有这些选项，有人提议允许类型提示和其他形式的注释在单个参数中共存。一个建议是，如果一个给定参数的注释是一个字典字面，每个键代表不同形式的注释，而键 "类型 "将被用于类型提示。这个想法及其变种的问题是，这个注释变得非常 "嘈杂"，难以阅读。而且，在大多数情况下，现有的库使用注释，几乎没有必要将它们与类型提示相结合。因此，选择性地禁用类型提示这种更简单的方法似乎就足够了。
 
-## [The problem of forward declarations](https://www.python.org/dev/peps/pep-0484/#id54)
+## [The problem of forward declarations](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#id54)
 
 前向声明的问题
 
@@ -2516,7 +2516,7 @@ Such a `__future__` import statement may be proposed in a separate PEP.
 
 (*更新*：该`__future__`导入语句和它的后果在PEP 563中讨论。)
 
-## [The double colon](https://www.python.org/dev/peps/pep-0484/#id55)
+## [The double colon](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#id55)
 
 双冒号
 
@@ -2524,9 +2524,9 @@ A few creative souls have tried to invent solutions for this problem. For exampl
 
 一些有创造力的人曾试图为这个问题发明解决方案。例如，有人提议使用双冒号（::）来表示类型提示，这样可以同时解决两个问题：消除类型提示和其他注释之间的歧义，并改变语义以排除运行时评估。然而，这个想法有几个问题。
 
-- It's ugly. The single colon in Python has many uses, and all of them look familiar because they resemble the use of the colon in English text. This is a general rule of thumb by which Python abides for most forms of punctuation; the exceptions are typically well known from other programming languages. But this use of `::` is unheard of in English, and in other languages (e.g. C++) it is used as a scoping operator, which is a very different beast. In contrast, the single colon for type hints reads naturally -- and no wonder, since it was carefully designed for this purpose (the idea long predates [PEP 3107](https://www.python.org/dev/peps/pep-3107) [[gvr-artima\]](https://www.python.org/dev/peps/pep-0484/#gvr-artima)). It is also used in the same fashion in other languages from Pascal to Swift.
+- It's ugly. The single colon in Python has many uses, and all of them look familiar because they resemble the use of the colon in English text. This is a general rule of thumb by which Python abides for most forms of punctuation; the exceptions are typically well known from other programming languages. But this use of `::` is unheard of in English, and in other languages (e.g. C++) it is used as a scoping operator, which is a very different beast. In contrast, the single colon for type hints reads naturally -- and no wonder, since it was carefully designed for this purpose (the idea long predates [PEP 3107](https://www.python.org/dev/peps/pep-3107) [[gvr-artima\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#gvr-artima)). It is also used in the same fashion in other languages from Pascal to Swift.
 
-  它很难看。Python 中的单冒号有很多用法，所有这些用法看起来都很熟悉，因为它们与英语文本中冒号的用法相似。这是一个一般的经验法则，Python 对大多数形式的标点符号都会遵守；例外情况通常是其他编程语言中众所周知的。但是这种`::`的使用在英语中是闻所未闻的，在其它语言中(如C++)它被用作范围操作符，这是一个非常不同的野兽。相比之下，用于类型提示的单冒号读起来很自然--也难怪，因为它是为这个目的精心设计的（这个想法早在[PEP 3107](https://www.python.org/dev/peps/pep-3107)[[gvr-artima]](https://www.python.org/dev/peps/pep-0484/#gvr-artima)之前就有了）。在从Pascal到Swift的其他语言中，它也以同样的方式被使用。
+  它很难看。Python 中的单冒号有很多用法，所有这些用法看起来都很熟悉，因为它们与英语文本中冒号的用法相似。这是一个一般的经验法则，Python 对大多数形式的标点符号都会遵守；例外情况通常是其他编程语言中众所周知的。但是这种`::`的使用在英语中是闻所未闻的，在其它语言中(如C++)它被用作范围操作符，这是一个非常不同的野兽。相比之下，用于类型提示的单冒号读起来很自然--也难怪，因为它是为这个目的精心设计的（这个想法早在[PEP 3107](https://www.python.org/dev/peps/pep-3107)[[gvr-artima]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#gvr-artima)之前就有了）。在从Pascal到Swift的其他语言中，它也以同样的方式被使用。
 
 - What would you do for return type annotations?
 
@@ -2552,15 +2552,15 @@ A few creative souls have tried to invent solutions for this problem. For exampl
 
   如果类型提示变得成功，我们很可能决定在未来添加新的语法来声明变量的类型，例如`var age: int = 42`。如果我们使用双冒号来进行参数类型提示，为了保持一致性，我们将不得不在未来的语法中使用相同的约定，从而延续这种丑陋。
 
-## [Other forms of new syntax](https://www.python.org/dev/peps/pep-0484/#id56)
+## [Other forms of new syntax](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#id56)
 
 其他形式的新语法
 
-A few other forms of alternative syntax have been proposed, e.g. the introduction of a `where` keyword [[roberge\]](https://www.python.org/dev/peps/pep-0484/#roberge), and Cobra-inspired `requires` clauses. But these all share a problem with the double colon: they won't work for earlier versions of Python 3. The same would apply to a new `__future__` import.
+A few other forms of alternative syntax have been proposed, e.g. the introduction of a `where` keyword [[roberge\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#roberge), and Cobra-inspired `requires` clauses. But these all share a problem with the double colon: they won't work for earlier versions of Python 3. The same would apply to a new `__future__` import.
 
-一些其他形式的替代语法已经被提出，例如引入`where`关键字[[roberge]](https://www.python.org/dev/peps/pep-0484/#roberge)，以及受Cobra启发的`requires`条款。但是这些都和双冒号有一个共同的问题：它们对Python 3的早期版本不起作用。这同样适用于新的 `__future__`导入。
+一些其他形式的替代语法已经被提出，例如引入`where`关键字[[roberge]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#roberge)，以及受Cobra启发的`requires`条款。但是这些都和双冒号有一个共同的问题：它们对Python 3的早期版本不起作用。这同样适用于新的 `__future__`导入。
 
-## [Other backwards compatible conventions](https://www.python.org/dev/peps/pep-0484/#id57)
+## [Other backwards compatible conventions](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#id57)
 
 其他向后兼容的惯例
 
@@ -2584,19 +2584,19 @@ It's also been proposed to simply wait another release. But what problem would t
 
 也有人提议，干脆再等一个版本。但这能解决什么问题呢？这只是拖延而已。
 
-# [PEP Development Process](https://www.python.org/dev/peps/pep-0484/#id58)
+# [PEP Development Process](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#id58)
 
 PEP开发过程
 
-A live draft for this PEP lives on GitHub [[github\]](https://www.python.org/dev/peps/pep-0484/#github). There is also an issue tracker [[issues\]](https://www.python.org/dev/peps/pep-0484/#issues), where much of the technical discussion takes place.
+A live draft for this PEP lives on GitHub [[github\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#github). There is also an issue tracker [[issues\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#issues), where much of the technical discussion takes place.
 
-本PEP的实时草案存在于GitHub上[[github]](https://www.python.org/dev/peps/pep-0484/#github)。还有一个问题追踪器[[issues]](https://www.python.org/dev/peps/pep-0484/#issues)，很多技术讨论都是在这里进行的。
+本PEP的实时草案存在于GitHub上[[github]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#github)。还有一个问题追踪器[[issues]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#issues)，很多技术讨论都是在这里进行的。
 
-The draft on GitHub is updated regularly in small increments. The official PEPS repo [[peps](https://www.python.org/dev/peps/pep-0484/#peps)] is (usually) only updated when a new draft is posted to python-dev.
+The draft on GitHub is updated regularly in small increments. The official PEPS repo [[peps](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#peps)] is (usually) only updated when a new draft is posted to python-dev.
 
-GitHub上的草案会定期进行小范围的更新。PEPS 的官方 repo [[eps](https://www.python.org/dev/peps/pep-0484/#peps)] （通常）只有在新的草案发布到 python-dev 时才会更新。
+GitHub上的草案会定期进行小范围的更新。PEPS 的官方 repo [[eps](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#peps)] （通常）只有在新的草案发布到 python-dev 时才会更新。
 
-# [Acknowledgements](https://www.python.org/dev/peps/pep-0484/#id59)
+# [Acknowledgements](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#id59)
 
 致谢
 
@@ -2608,36 +2608,36 @@ Influences include existing languages, libraries and frameworks mentioned in [PE
 
 影响因素包括[PEP 482](https://www.python.org/dev/peps/pep-0482)中提到的现有语言、库和框架。非常感谢他们的创造者，按字母顺序排列。Stefan Behnel, William Edwards, Greg Ewing, Larry Hastings, Anders Hejlsberg, Alok Menghrajani, Travis E. Oliphant, Joe Pamer, Raoul-Gabriel Urma, and Julien Verlaguet.
 
-# [References](https://www.python.org/dev/peps/pep-0484/#id60)
+# [References](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#id60)
 
 参考文献
 
 |                                                              |                                                              |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [[mypy\]](https://www.python.org/dev/peps/pep-0484/#id1)     | [http://mypy-lang.org](http://mypy-lang.org/)                |
+| [[mypy\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#id1)     | [http://mypy-lang.org](http://mypy-lang.org/)                |
 |                                                              |                                                              |
-| [gvr-artima]                                                 | *([1](https://www.python.org/dev/peps/pep-0484/#id2), [2](https://www.python.org/dev/peps/pep-0484/#id6))* http://www.artima.com/weblogs/viewpost.jsp?thread=85551 |
+| [gvr-artima]                                                 | *([1](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#id2), [2](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#id6))* http://www.artima.com/weblogs/viewpost.jsp?thread=85551 |
 |                                                              |                                                              |
-| [[wiki-variance\]](https://www.python.org/dev/peps/pep-0484/#id3) | [http://en.wikipedia.org/wiki/Covariance_and_contravariance_%28computer_science%29](http://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science)) |
+| [[wiki-variance\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#id3) | [http://en.wikipedia.org/wiki/Covariance_and_contravariance_%28computer_science%29](http://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science)) |
 |                                                              |                                                              |
-| [[typeshed\]](https://www.python.org/dev/peps/pep-0484/#id5) | https://github.com/python/typeshed/                          |
+| [[typeshed\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#id5) | https://github.com/python/typeshed/                          |
 |                                                              |                                                              |
 | [pyflakes]                                                   | https://github.com/pyflakes/pyflakes/                        |
 |                                                              |                                                              |
 | [pylint]                                                     | [http://www.pylint.org](http://www.pylint.org/)              |
 |                                                              |                                                              |
-| [[roberge\]](https://www.python.org/dev/peps/pep-0484/#id7)  | http://aroberge.blogspot.com/2015/01/type-hinting-in-python-focus-on.html |
+| [[roberge\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#id7)  | http://aroberge.blogspot.com/2015/01/type-hinting-in-python-focus-on.html |
 |                                                              |                                                              |
-| [[github\]](https://www.python.org/dev/peps/pep-0484/#id8)   | https://github.com/python/typing                             |
+| [[github\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#id8)   | https://github.com/python/typing                             |
 |                                                              |                                                              |
-| [[issues\]](https://www.python.org/dev/peps/pep-0484/#id9)   | https://github.com/python/typing/issues                      |
+| [[issues\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#id9)   | https://github.com/python/typing/issues                      |
 |                                                              |                                                              |
 | [peps]                                                       | https://hg.python.org/peps/file/tip/pep-0484.txt             |
 |                                                              |                                                              |
-| [[importdocs\]](https://www.python.org/dev/peps/pep-0484/#id4) | https://docs.python.org/3/reference/import.html#submodules   |
+| [[importdocs\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#id4) | https://docs.python.org/3/reference/import.html#submodules   |
 |                                                              |                                                              |
 
-# [Copyright](https://www.python.org/dev/peps/pep-0484/#id61)
+# [Copyright](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md#id61)
 
 This document has been placed in the public domain.
 

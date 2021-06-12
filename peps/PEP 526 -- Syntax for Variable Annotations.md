@@ -27,7 +27,7 @@ Contents
 - [Abstract](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20526%20--%20Syntax%20for%20Variable%20Annotations.md#abstract)，摘要
 - Rationale，缘由
   - [Non-goals](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20526%20--%20Syntax%20for%20Variable%20Annotations.md#non-goals)，非目标
-- Specification，定义
+- Specification，规范
   - [Global and local variable annotations](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20526%20--%20Syntax%20for%20Variable%20Annotations.md#global-and-local-variable-annotations)，全局和局部变量注解
   - [Class and instance variable annotations](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20526%20--%20Syntax%20for%20Variable%20Annotations.md#class-and-instance-variable-annotations)，类和实例变量的注解
   - [Annotating expressions](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20526%20--%20Syntax%20for%20Variable%20Annotations.md#annotating-expressions)，注解表达式

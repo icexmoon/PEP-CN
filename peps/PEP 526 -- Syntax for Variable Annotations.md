@@ -4,7 +4,7 @@
 
 # PEP 526 -- Syntax for Variable Annotations
 
-PEP 526 -- 变量注释语法
+PEP 526 -- 变量注解语法
 
 |                 |                                                              |
 | :-------------- | ------------------------------------------------------------ |
@@ -22,27 +22,27 @@ PEP 526 -- 变量注释语法
 
 Contents
 
-- [Status](https://www.python.org/dev/peps/pep-0526/#status)
-- [Notice for Reviewers](https://www.python.org/dev/peps/pep-0526/#notice-for-reviewers)
-- [Abstract](https://www.python.org/dev/peps/pep-0526/#abstract)
-- Rationale
-  - [Non-goals](https://www.python.org/dev/peps/pep-0526/#non-goals)
-- Specification
-  - [Global and local variable annotations](https://www.python.org/dev/peps/pep-0526/#global-and-local-variable-annotations)
-  - [Class and instance variable annotations](https://www.python.org/dev/peps/pep-0526/#class-and-instance-variable-annotations)
-  - [Annotating expressions](https://www.python.org/dev/peps/pep-0526/#annotating-expressions)
-  - [Where annotations aren't allowed](https://www.python.org/dev/peps/pep-0526/#where-annotations-aren-t-allowed)
-  - [Variable annotations in stub files](https://www.python.org/dev/peps/pep-0526/#variable-annotations-in-stub-files)
-  - [Preferred coding style for variable annotations](https://www.python.org/dev/peps/pep-0526/#preferred-coding-style-for-variable-annotations)
-- [Changes to Standard Library and Documentation](https://www.python.org/dev/peps/pep-0526/#changes-to-standard-library-and-documentation)
-- Runtime Effects of Type Annotations
-  - [Other uses of annotations](https://www.python.org/dev/peps/pep-0526/#other-uses-of-annotations)
-- [Rejected/Postponed Proposals](https://www.python.org/dev/peps/pep-0526/#rejected-postponed-proposals)
-- [Backwards Compatibility](https://www.python.org/dev/peps/pep-0526/#backwards-compatibility)
-- [Implementation](https://www.python.org/dev/peps/pep-0526/#implementation)
-- [Copyright](https://www.python.org/dev/peps/pep-0526/#copyright)
+- [Status](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20526%20--%20Syntax%20for%20Variable%20Annotations.md#status)，状态
+- [Notice for Reviewers](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20526%20--%20Syntax%20for%20Variable%20Annotations.md#notice-for-reviewers)，审阅人的注意事项
+- [Abstract](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20526%20--%20Syntax%20for%20Variable%20Annotations.md#abstract)，摘要
+- Rationale，缘由
+  - [Non-goals](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20526%20--%20Syntax%20for%20Variable%20Annotations.md#non-goals)，非目标
+- Specification，定义
+  - [Global and local variable annotations](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20526%20--%20Syntax%20for%20Variable%20Annotations.md#global-and-local-variable-annotations)，全局和局部变量注解
+  - [Class and instance variable annotations](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20526%20--%20Syntax%20for%20Variable%20Annotations.md#class-and-instance-variable-annotations)，类和实例变量的注解
+  - [Annotating expressions](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20526%20--%20Syntax%20for%20Variable%20Annotations.md#annotating-expressions)，注解表达式
+  - [Where annotations aren't allowed](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20526%20--%20Syntax%20for%20Variable%20Annotations.md#where-annotations-aren-t-allowed)，不能使用注解的地方
+  - [Variable annotations in stub files](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20526%20--%20Syntax%20for%20Variable%20Annotations.md#variable-annotations-in-stub-files)，存根文件中的变量注解
+  - [Preferred coding style for variable annotations](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20526%20--%20Syntax%20for%20Variable%20Annotations.md#preferred-coding-style-for-variable-annotations)，变量注解的推荐编码风格
+- [Changes to Standard Library and Documentation](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20526%20--%20Syntax%20for%20Variable%20Annotations.md#changes-to-standard-library-and-documentation)，对标准库和文档的修改
+- Runtime Effects of Type Annotations，变量注解的运行时影响
+  - [Other uses of annotations](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20526%20--%20Syntax%20for%20Variable%20Annotations.md#other-uses-of-annotations)，变量注解的其它用途
+- [Rejected/Postponed Proposals](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20526%20--%20Syntax%20for%20Variable%20Annotations.md#rejected-postponed-proposals)，被拒绝/推迟的提案
+- [Backwards Compatibility](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20526%20--%20Syntax%20for%20Variable%20Annotations.md#backwards-compatibility)，向后兼容
+- [Implementation](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20526%20--%20Syntax%20for%20Variable%20Annotations.md#implementation)，实现
+- [Copyright](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20526%20--%20Syntax%20for%20Variable%20Annotations.md#copyright)，版权声明
 
-# [Status](https://www.python.org/dev/peps/pep-0526/#id2)
+# [Status](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20526%20--%20Syntax%20for%20Variable%20Annotations.md#id2)
 
 状态
 
@@ -50,7 +50,7 @@ This PEP has been provisionally accepted by the BDFL. See the acceptance message
 
 本PEP已被BDFL暂时接受。更多颜色请见接受信息：https://mail.python.org/pipermail/python-dev/2016-September/146282.html
 
-# [Notice for Reviewers](https://www.python.org/dev/peps/pep-0526/#id3)
+# [Notice for Reviewers](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20526%20--%20Syntax%20for%20Variable%20Annotations.md#id3)
 
 审稿人须知
 
@@ -62,11 +62,11 @@ There was preliminary discussion on python-ideas and at https://github.com/pytho
 
 在 python-ideas 和 https://github.com/python/typing/issues/258 上进行了初步讨论。
 
-Before you bring up an objection in a public forum please at least read the summary of [rejected](https://www.python.org/dev/peps/pep-0526/#rejected) ideas listed at the end of this PEP.
+Before you bring up an objection in a public forum please at least read the summary of [rejected](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20526%20--%20Syntax%20for%20Variable%20Annotations.md#rejected) ideas listed at the end of this PEP.
 
 在你在公共论坛上提出反对意见之前，请至少阅读列在本PEP末尾的被拒绝的观点摘要。
 
-# [Abstract](https://www.python.org/dev/peps/pep-0526/#id4)
+# [Abstract](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20526%20--%20Syntax%20for%20Variable%20Annotations.md#id4)
 
 摘要
 
@@ -103,7 +103,7 @@ class Starship:
 
 PEP 484明确指出，类型注释的目的是帮助在复杂情况下进行类型推断，本PEP并没有改变这一意图。然而，由于在实践中类型注释也被用于类变量和实例变量，本PEP也讨论了对这些变量使用类型注解的问题。
 
-# [Rationale](https://www.python.org/dev/peps/pep-0526/#id5)
+# [Rationale](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20526%20--%20Syntax%20for%20Variable%20Annotations.md#id5)
 
 理论依据
 
@@ -156,7 +156,7 @@ The majority of these issues can be alleviated by making the syntax a core part 
 
 这些问题中的大部分可以通过使语法成为语言的核心部分而得到缓解。此外，为类和实例变量提供专门的注解语法（除了方法注解之外）将为静态鸭子类型化铺平道路，作为[PEP 484](https://www.python.org/dev/peps/pep-0484)定义的名义类型化的补充。
 
-## [Non-goals](https://www.python.org/dev/peps/pep-0526/#id6)
+## [Non-goals](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20526%20--%20Syntax%20for%20Variable%20Annotations.md#id6)
 
 非目标
 
@@ -172,7 +172,7 @@ This PEP does not require type checkers to change their type checking rules. It 
 
 这个PEP并不要求类型检查器改变他们的类型检查规则。它只是提供了一种更可读的语法来替代类型注释。
 
-# [Specification](https://www.python.org/dev/peps/pep-0526/#id7)
+# [Specification](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20526%20--%20Syntax%20for%20Variable%20Annotations.md#id7)
 
 规范
 
@@ -205,7 +205,7 @@ We also suggest how type checkers might interpret annotations, but compliance to
 
 我们还建议类型检查器如何解释注解，但对这些建议的遵守不是强制性的。（这与PEP 484中对遵守的态度是一致的）。
 
-## [Global and local variable annotations](https://www.python.org/dev/peps/pep-0526/#id8)
+## [Global and local variable annotations](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20526%20--%20Syntax%20for%20Variable%20Annotations.md#id8)
 
 全局变量和局部变量注解
 
@@ -286,7 +286,7 @@ a: int
 a: str  # Static type checker may or may not warn about this.
 ```
 
-## [Class and instance variable annotations](https://www.python.org/dev/peps/pep-0526/#id9)
+## [Class and instance variable annotations](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20526%20--%20Syntax%20for%20Variable%20Annotations.md#id9)
 
 类和实例变量注解
 
@@ -371,7 +371,7 @@ class Box(Generic[T]):
         self.content: T = content
 ```
 
-## [Annotating expressions](https://www.python.org/dev/peps/pep-0526/#id10)
+## [Annotating expressions](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20526%20--%20Syntax%20for%20Variable%20Annotations.md#id10)
 
 注解表达式
 
@@ -401,7 +401,7 @@ Note that even a parenthesized name is considered an expression, not a simple na
 (y): int = 0  # Same situation here.
 ```
 
-## [Where annotations aren't allowed](https://www.python.org/dev/peps/pep-0526/#id11)
+## [Where annotations aren't allowed](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20526%20--%20Syntax%20for%20Variable%20Annotations.md#id11)
 
 哪些地方的注解是不被允许的
 
@@ -436,7 +436,7 @@ with myfunc() as f:
     ...
 ```
 
-## [Variable annotations in stub files](https://www.python.org/dev/peps/pep-0526/#id12)
+## [Variable annotations in stub files](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20526%20--%20Syntax%20for%20Variable%20Annotations.md#id12)
 
 存根文件中的变量注解
 
@@ -453,7 +453,7 @@ class Error:
     cause: Union[str, unicode]
 ```
 
-## [Preferred coding style for variable annotations](https://www.python.org/dev/peps/pep-0526/#id13)
+## [Preferred coding style for variable annotations](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20526%20--%20Syntax%20for%20Variable%20Annotations.md#id13)
 
 变量注解的首选编码风格
 
@@ -481,13 +481,13 @@ Annotations for module level variables, class and instance variables, and local 
       result: int=0  # No spaces around equality sign
   ```
 
-# [Changes to Standard Library and Documentation](https://www.python.org/dev/peps/pep-0526/#id14)
+# [Changes to Standard Library and Documentation](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20526%20--%20Syntax%20for%20Variable%20Annotations.md#id14)
 
 对标准库和文档的修改
 
-- A new covariant type `ClassVar[T_co]` is added to the `typing` module. It accepts only a single argument that should be a valid type, and is used to annotate class variables that should not be set on class instances. This restriction is ensured by static checkers, but not at runtime. See the [classvar](https://www.python.org/dev/peps/pep-0526/#classvar) section for examples and explanations for the usage of `ClassVar`, and see the [rejected](https://www.python.org/dev/peps/pep-0526/#rejected) section for more information on the reasoning behind `ClassVar`.
+- A new covariant type `ClassVar[T_co]` is added to the `typing` module. It accepts only a single argument that should be a valid type, and is used to annotate class variables that should not be set on class instances. This restriction is ensured by static checkers, but not at runtime. See the [classvar](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20526%20--%20Syntax%20for%20Variable%20Annotations.md#classvar) section for examples and explanations for the usage of `ClassVar`, and see the [rejected](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20526%20--%20Syntax%20for%20Variable%20Annotations.md#rejected) section for more information on the reasoning behind `ClassVar`.
 
-  一个新的协变类型`ClassVar[T_co]`被添加到`typing`模块。它只接受一个参数，该参数应该是一个有效的类型，并用于注解不应该在类实例上设置的类变量。这个限制是由静态检查器保证的，但在运行时不会。参见[classvar](https://www.python.org/dev/peps/pep-0526/#classvar)部分，了解`ClassVar`的使用实例和解释，参见[rejected](https://www.python.org/dev/peps/pep-0526/#rejected)部分，了解更多关于`ClassVar`背后的原因。
+  一个新的协变类型`ClassVar[T_co]`被添加到`typing`模块。它只接受一个参数，该参数应该是一个有效的类型，并用于注解不应该在类实例上设置的类变量。这个限制是由静态检查器保证的，但在运行时不会。参见[classvar](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20526%20--%20Syntax%20for%20Variable%20Annotations.md#classvar)部分，了解`ClassVar`的使用实例和解释，参见[rejected](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20526%20--%20Syntax%20for%20Variable%20Annotations.md#rejected)部分，了解更多关于`ClassVar`背后的原因。
 
 - Function `get_type_hints` in the `typing` module will be extended, so that one can retrieve type annotations at runtime from modules and classes as well as functions. Annotations are returned as a dictionary mapping from variable or arguments to their type hints with forward references evaluated. For classes it returns a mapping (perhaps `collections.ChainMap`) constructed from annotations in method resolution order.
 
@@ -497,7 +497,7 @@ Annotations for module level variables, class and instance variables, and local 
 
   使用注解的推荐指南将被添加到文档中，其中包含本PEP和[PEP 484](https://www.python.org/dev/peps/pep-0484)中描述的规范的教学复述。此外，一个用于将类型注释翻译成类型注解的辅助脚本将从标准库中单独发布。
 
-# [Runtime Effects of Type Annotations](https://www.python.org/dev/peps/pep-0526/#id15)
+# [Runtime Effects of Type Annotations](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20526%20--%20Syntax%20for%20Variable%20Annotations.md#id15)
 
 类型注解的运行时影响
 
@@ -589,7 +589,7 @@ Note that if annotations are not found statically, then the `__annotations__` di
 
 注意，如果注解没有被静态地找到，那么`__annotations__`字典根本就不会被创建。另外，在本地拥有注解的价值并不能抵消在每个函数调用中创建和填充注解字典的成本。因此，函数级的注解不被评估，也不被存储。
 
-## [Other uses of annotations](https://www.python.org/dev/peps/pep-0526/#id16)
+## [Other uses of annotations](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20526%20--%20Syntax%20for%20Variable%20Annotations.md#id16)
 
 注解的其它用途
 
@@ -614,7 +614,7 @@ These stored annotations might be used for other purposes, but with this PEP we 
 
 这些存储的注释可能会被用于其他目的，但在这个 PEP 中，我们明确地推荐类型提示作为注释的首选用途。
 
-# [Rejected/Postponed Proposals](https://www.python.org/dev/peps/pep-0526/#id17)
+# [Rejected/Postponed Proposals](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20526%20--%20Syntax%20for%20Variable%20Annotations.md#id17)
 
 被拒绝/推迟的提案
 
@@ -735,7 +735,7 @@ These stored annotations might be used for other purposes, but with this PEP we 
 
   `slef`这个名字应该被评估，这样如果它没有被定义（在这个例子中很可能是这样：-），错误将在运行时被捕获。这与有初始值时发生的情况更加一致，因此预计会导致更少的意外。(还要注意的是，如果目标是`self.name`（这次拼写正确 :-)，优化编译器没有义务去评估`self`，只要它能证明它肯定会被定义。)
 
-# [Backwards Compatibility](https://www.python.org/dev/peps/pep-0526/#id18)
+# [Backwards Compatibility](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20526%20--%20Syntax%20for%20Variable%20Annotations.md#id18)
 
 向后兼容
 
@@ -743,7 +743,7 @@ This PEP is fully backwards compatible.
 
 这个PEP是完全向后兼容的。
 
-# [Implementation](https://www.python.org/dev/peps/pep-0526/#id19)
+# [Implementation](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20526%20--%20Syntax%20for%20Variable%20Annotations.md#id19)
 
 实现
 
@@ -751,7 +751,7 @@ An implementation for Python 3.6 is found on GitHub repo at https://github.com/i
 
 在GitHub repo上可以找到Python 3.6的实现：https://github.com/ilevkivskyi/cpython/tree/pep-526
 
-# [Copyright](https://www.python.org/dev/peps/pep-0526/#id20)
+# [Copyright](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20526%20--%20Syntax%20for%20Variable%20Annotations.md#id20)
 
 This document has been placed in the public domain.
 

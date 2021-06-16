@@ -75,16 +75,46 @@ Github：<https://github.com/icexmoon/PEP-CN>
 
 所有已翻译文章列表会展示在这里：
 
+- PEP 0 -- Index of Python Enhancement Proposals，Python增强提案索引
+- PEP 7 -- Style Guide for C Code，C扩展规范
 - [**PEP 8 -- Style Guide for Python Code**](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%208%20--%20Style%20Guide%20for%20Python%20Code.md)，Python编码规范
 - [**PEP 20 -- The Zen of Python**](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%2020%20--%20The%20Zen%20of%20Python.md)，Python之禅
+- PEP 202 -- List Comprehensions，列表生成式
+- PEP 205 -- Weak References，弱引用
+- PEP 234 -- Iterators，迭代器
 - [**PEP 257 -- Docstring Conventions**](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20257%20--%20Docstring%20Conventions.md)，文档字符串约定
+- PEP 274 -- Dict Comprehensions，字典生成式
+- PEP 279 -- The enumerate() built-in function，内建函数enumerate()
+- PEP 282 -- A Logging System，一个日志系统
+- PEP 285 -- Adding a bool type，添加一个 bool 类型
+- PEP 289 -- Generator Expressions，生成器表达式
+- PEP 309 -- Partial Function Application，部分函数应用
+- PEP 318 -- Decorators for Functions and Methods，函数和方法装饰器
+- PEP 333 -- Python Web Server Gateway Interface v1.0，Python Web 服务网关接口 v1.0
+- PEP 342 -- Coroutines via Enhanced Generators，通过增强生成器实现协程
+- PEP 343 -- The "with" Statement，with语句
+- PEP 380 -- Syntax for Delegating to a Subgenerator，委托给子生成器的语法
 - [**PEP 405 -- Python Virtual Environments**](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20405%20--%20Python%20Virtual%20Environments.md)，Python虚拟环境
 - [**PEP 435 -- Adding an Enum type to the Python standard library.md**](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md)，在Python标准库中添加一个枚举类型
+- PEP 443 -- Single-dispatch generic functions，单调度泛函数
+- PEP 471 -- os.scandir() function，遍历目录
 - [**PEP 484 -- Type Hints**](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md)，类型提示
 - [**PEP 492 -- Coroutines with async and await syntax**](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20492%20--%20Coroutines%20with%20async%20and%20await%20syntax.md)，通过async与await语句实现协程
+- PEP 498 -- Literal String Interpolation，字符串字面量插值法
+- PEP 525 -- Asynchronous Generators，异步生成器
 - [**PEP 526 -- Syntax for Variable Annotations**](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20526%20--%20Syntax%20for%20Variable%20Annotations.md)，变量注解语法
 - PEP 563 -- Postponed Evaluation of Annotations，推迟的注释评估
 - PEP 557 -- Data Classes，数据类
 - PEP 572 -- Assignment Expressions，赋值表达式
+- PEP 3101 -- Advanced String Formatting，高级字符串格式化
+- PEP 3105 -- Make print a function，将print变为函数
+- PEP 3115 -- Metaclasses in Python 3000，Python3中的元类
+- PEP 3119 -- Introducing Abstract Base Classes，介绍抽象基类
+- PEP 3120 -- Using UTF-8 as the default source encoding，使用UTF-8作为默认的源编码
+- PEP 3135 -- New Super，新的 super
+- PEP 3148 -- futures - execute computations asynchronously，futures - 异步执行计算
+- PEP 3156 -- Asynchronous IO Support Rebooted: the "asyncio" Module，重新启动的异步IO支持："asyncio "模块
+- PEP 3333 -- Python Web Server Gateway Interface v1.0.1 Python Web 服务网关接口 v1.0.1
+- PEP 8000 -- Python Language Governance Proposal Overview，Python 语言治理提案概述
 
 版权声明：本文由 [**icexmoon**](https://github.com/icexmoon/) 原创，遵循CC 4.0 BY-SA版权协议。

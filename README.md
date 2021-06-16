@@ -83,5 +83,8 @@ Github：<https://github.com/icexmoon/PEP-CN>
 - [**PEP 484 -- Type Hints**](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md)，类型提示
 - [**PEP 492 -- Coroutines with async and await syntax**](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20492%20--%20Coroutines%20with%20async%20and%20await%20syntax.md)，通过async与await语句实现协程
 - [**PEP 526 -- Syntax for Variable Annotations**](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20526%20--%20Syntax%20for%20Variable%20Annotations.md)，变量注解语法
+- PEP 563 -- Postponed Evaluation of Annotations，推迟的注释评估
+- PEP 557 -- Data Classes，数据类
+- PEP 572 -- Assignment Expressions，赋值表达式
 
 版权声明：本文由 [**icexmoon**](https://github.com/icexmoon/) 原创，遵循CC 4.0 BY-SA版权协议。

@@ -4,8 +4,9 @@ PEP 435 -- 在Python标准库中添加一个枚举类型
 
 > 原文地址：<https://www.python.org/dev/peps/pep-0435/>
 
-| PEP:            | 435                                                          |
+|                 |                                                              |
 | :-------------- | ------------------------------------------------------------ |
+| PEP:            | 435                                                          |
 | Title:          | Adding an Enum type to the Python standard library           |
 | Author:         | Barry Warsaw <barry at python.org>, Eli Bendersky <eliben at gmail.com>, Ethan Furman <ethan at stoneleaf.us> |
 | Status:         | Final                                                        |

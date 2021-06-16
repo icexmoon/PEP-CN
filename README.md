@@ -79,6 +79,7 @@ Github：<https://github.com/icexmoon/PEP-CN>
 - [**PEP 20 -- The Zen of Python**](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%2020%20--%20The%20Zen%20of%20Python.md)，Python之禅
 - [**PEP 257 -- Docstring Conventions**](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20257%20--%20Docstring%20Conventions.md)，文档字符串约定
 - [**PEP 405 -- Python Virtual Environments**](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20405%20--%20Python%20Virtual%20Environments.md)，Python虚拟环境
+- [**PEP 435 -- Adding an Enum type to the Python standard library.md**](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md)，在Python标准库中添加一个枚举类型
 - [**PEP 484 -- Type Hints**](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md)，类型提示
 - [**PEP 492 -- Coroutines with async and await syntax**](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20492%20--%20Coroutines%20with%20async%20and%20await%20syntax.md)，通过async与await语句实现协程
 - [**PEP 526 -- Syntax for Variable Annotations**](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20526%20--%20Syntax%20for%20Variable%20Annotations.md)，变量注解语法

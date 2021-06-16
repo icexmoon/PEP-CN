@@ -20,31 +20,31 @@ PEP 435 -- 在Python标准库中添加一个枚举类型
 
 Contents
 
-- [Abstract](https://www.python.org/dev/peps/pep-0435/#abstract)，摘要
-- [Status of discussions](https://www.python.org/dev/peps/pep-0435/#status-of-discussions)，讨论的状态
-- [Motivation](https://www.python.org/dev/peps/pep-0435/#motivation)，动机
-- [Module and type name](https://www.python.org/dev/peps/pep-0435/#module-and-type-name)，模块和类型名称
+- [Abstract](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#abstract)，摘要
+- [Status of discussions](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#status-of-discussions)，讨论的状态
+- [Motivation](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#motivation)，动机
+- [Module and type name](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#module-and-type-name)，模块和类型名称
 - Proposed semantics for the new enumeration type，新枚举类型的拟定的语法
-  - [Creating an Enum](https://www.python.org/dev/peps/pep-0435/#creating-an-enum)，创建一个枚举
-  - [Programmatic access to enumeration members](https://www.python.org/dev/peps/pep-0435/#programmatic-access-to-enumeration-members)，程序化访问枚举成员
-  - [Duplicating enum members and values](https://www.python.org/dev/peps/pep-0435/#duplicating-enum-members-and-values)，重复枚举成员和值
-  - [Comparisons](https://www.python.org/dev/peps/pep-0435/#comparisons)，比较
-  - [Allowed members and attributes of enumerations](https://www.python.org/dev/peps/pep-0435/#allowed-members-and-attributes-of-enumerations)，允许的枚举成员和属性
-  - [Restricted subclassing of enumerations](https://www.python.org/dev/peps/pep-0435/#restricted-subclassing-of-enumerations)，枚举的限制性子类化
-  - [IntEnum](https://www.python.org/dev/peps/pep-0435/#intenum)
-  - [Other derived enumerations](https://www.python.org/dev/peps/pep-0435/#other-derived-enumerations)，其它衍生的枚举类型
-  - [Pickling](https://www.python.org/dev/peps/pep-0435/#pickling)，序列化
-  - [Functional API](https://www.python.org/dev/peps/pep-0435/#functional-api)，功能性API
+  - [Creating an Enum](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#creating-an-enum)，创建一个枚举
+  - [Programmatic access to enumeration members](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#programmatic-access-to-enumeration-members)，程序化访问枚举成员
+  - [Duplicating enum members and values](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#duplicating-enum-members-and-values)，重复枚举成员和值
+  - [Comparisons](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#comparisons)，比较
+  - [Allowed members and attributes of enumerations](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#allowed-members-and-attributes-of-enumerations)，允许的枚举成员和属性
+  - [Restricted subclassing of enumerations](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#restricted-subclassing-of-enumerations)，枚举的限制性子类化
+  - [IntEnum](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#intenum)
+  - [Other derived enumerations](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#other-derived-enumerations)，其它衍生的枚举类型
+  - [Pickling](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#pickling)，序列化
+  - [Functional API](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#functional-api)，功能性API
 - Proposed variations，建议的演变
-  - [flufl.enum](https://www.python.org/dev/peps/pep-0435/#flufl-enum)
-  - [Not having to specify values for enums](https://www.python.org/dev/peps/pep-0435/#not-having-to-specify-values-for-enums)，不必为枚举指定值
-  - [Using special names or forms to auto-assign enum values](https://www.python.org/dev/peps/pep-0435/#using-special-names-or-forms-to-auto-assign-enum-values)，使用特殊名称或形式来自动分配枚举值
-- [Use-cases in the standard library](https://www.python.org/dev/peps/pep-0435/#use-cases-in-the-standard-library)，标准库中的用例
-- [Acknowledgments](https://www.python.org/dev/peps/pep-0435/#acknowledgments)，致谢
-- [References](https://www.python.org/dev/peps/pep-0435/#references)，参考文献
-- [Copyright](https://www.python.org/dev/peps/pep-0435/#copyright)，版权声明
+  - [flufl.enum](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#flufl-enum)
+  - [Not having to specify values for enums](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#not-having-to-specify-values-for-enums)，不必为枚举指定值
+  - [Using special names or forms to auto-assign enum values](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#using-special-names-or-forms-to-auto-assign-enum-values)，使用特殊名称或形式来自动分配枚举值
+- [Use-cases in the standard library](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#use-cases-in-the-standard-library)，标准库中的用例
+- [Acknowledgments](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#acknowledgments)，致谢
+- [References](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#references)，参考文献
+- [Copyright](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#copyright)，版权声明
 
-# [Abstract](https://www.python.org/dev/peps/pep-0435/#id21)
+# [Abstract](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#id21)
 
 摘要
 
@@ -56,11 +56,11 @@ An enumeration is a set of symbolic names bound to unique, constant values. With
 
 枚举是一组与唯一的、常量值绑定的符号名称。在一个枚举中，这些值可以通过身份进行比较，而且枚举本身可以被迭代。
 
-# [Status of discussions](https://www.python.org/dev/peps/pep-0435/#id22)
+# [Status of discussions](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#id22)
 
 讨论的状态
 
-The idea of adding an enum type to Python is not new - [PEP 354](https://www.python.org/dev/peps/pep-0354) [[2\]](https://www.python.org/dev/peps/pep-0435/#id12) is a previous attempt that was rejected in 2005. Recently a new set of discussions was initiated [[3\]](https://www.python.org/dev/peps/pep-0435/#id13) on the `python-ideas` mailing list. Many new ideas were proposed in several threads; after a lengthy discussion Guido proposed adding `flufl.enum` to the standard library [[4\]](https://www.python.org/dev/peps/pep-0435/#id14). During the PyCon 2013 language summit the issue was discussed further. It became clear that many developers want to see an enum that subclasses `int`, which can allow us to replace many integer constants in the standard library by enums with friendly string representations, without ceding backwards compatibility. An additional discussion among several interested core developers led to the proposal of having `IntEnum` as a special case of `Enum`.
+The idea of adding an enum type to Python is not new - [PEP 354](https://www.python.org/dev/peps/pep-0354) [[2\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#id12) is a previous attempt that was rejected in 2005. Recently a new set of discussions was initiated [[3\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#id13) on the `python-ideas` mailing list. Many new ideas were proposed in several threads; after a lengthy discussion Guido proposed adding `flufl.enum` to the standard library [[4\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#id14). During the PyCon 2013 language summit the issue was discussed further. It became clear that many developers want to see an enum that subclasses `int`, which can allow us to replace many integer constants in the standard library by enums with friendly string representations, without ceding backwards compatibility. An additional discussion among several interested core developers led to the proposal of having `IntEnum` as a special case of `Enum`.
 
 为Python添加枚举类型的想法并不新鲜--PEP 354 [2] 是之前的一次尝试，但在2005年被拒绝了。最近，在`python-ideas`邮件列表中发起了一系列新的讨论[3]。在几个线程中提出了许多新的想法；经过长时间的讨论，Guido提议将`flufl.enum`加入到标准库中[4]。在 PyCon 2013 语言峰会上，这个问题被进一步讨论。很明显，许多开发者希望看到一个子类`int`的枚举，这可以让我们在标准库中用友好的字符串表示的枚举来替代许多整数常量，而不放弃向后的兼容性。在几个感兴趣的核心开发者之间的额外讨论导致了将`IntEnum`作为`Enum`的一个特例的提议。
 
@@ -68,15 +68,15 @@ The key dividing issue between `Enum` and `IntEnum` is whether comparing to inte
 
 `Enum`和`IntEnum`之间的关键划分问题是与整数比较是否有语义。对于枚举的大多数用途来说，拒绝与整数比较是一个**特性**；与整数比较的枚举通过反证法会导致不相关类型的枚举之间的比较，这在大多数情况下是不可取的。然而，对于某些用途来说，更多的与整数的互操作性是需要的。例如，用枚举代替现有的标准库常量（如`socket.AF_INET`）就是这种情况。
 
-Further discussion in late April 2013 led to the conclusion that enumeration members should belong to the type of their enum: `type(Color.red) == Color`. Guido has pronounced a decision on this issue [[5\]](https://www.python.org/dev/peps/pep-0435/#id15), as well as related issues of not allowing to subclass enums [[6\]](https://www.python.org/dev/peps/pep-0435/#id16), unless they define no enumeration members [[7\]](https://www.python.org/dev/peps/pep-0435/#id17).
+Further discussion in late April 2013 led to the conclusion that enumeration members should belong to the type of their enum: `type(Color.red) == Color`. Guido has pronounced a decision on this issue [[5\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#id15), as well as related issues of not allowing to subclass enums [[6\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#id16), unless they define no enumeration members [[7\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#id17).
 
 2013年4月底的进一步讨论得出结论，枚举成员应该属于其枚举的类型：`type(Color.red) == Color`。Guido已经宣布了关于这个问题的决定[5]，以及不允许对枚举进行子类化的相关问题[6]，除非它们没有定义枚举成员[7]。
 
-The PEP was accepted by Guido on May 10th, 2013 [[1\]](https://www.python.org/dev/peps/pep-0435/#id11).
+The PEP was accepted by Guido on May 10th, 2013 [[1\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#id11).
 
 该PEP于2013年5月10日被Guido接受[1]。
 
-# [Motivation](https://www.python.org/dev/peps/pep-0435/#id23)
+# [Motivation](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#id23)
 
 动机
 
@@ -92,7 +92,7 @@ It is possible to simply define a sequence of values of some other basic type, s
 
 可以简单地定义一些其他基本类型的值的序列，如`int`或`str`，来表示离散的任意值。然而，一个枚举需要确保这些值与其他所被包含的重要的枚举值不同，而且没有意义的操作（"星期三乘以二"）不会为这些值定义。它还为枚举值提供了一种方便的可打印的表示方法，而不需要在定义它们时进行繁琐的重复（例如，无须`GREEN = 'green'`）。
 
-# [Module and type name](https://www.python.org/dev/peps/pep-0435/#id24)
+# [Module and type name](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#id24)
 
 模块和类型名称
 
@@ -104,15 +104,15 @@ We propose to add a module named `enum` to the standard library. The main type e
 >>> from enum import Enum
 ```
 
-# [Proposed semantics for the new enumeration type](https://www.python.org/dev/peps/pep-0435/#id25)
+# [Proposed semantics for the new enumeration type](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#id25)
 
 新枚举类型的拟定语义
 
-## [Creating an Enum](https://www.python.org/dev/peps/pep-0435/#id26)
+## [Creating an Enum](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#id26)
 
 创建一个枚举
 
-Enumerations are created using the class syntax, which makes them easy to read and write. An alternative creation method is described in [Functional API](https://www.python.org/dev/peps/pep-0435/#functional-api). To define an enumeration, subclass `Enum` as follows:
+Enumerations are created using the class syntax, which makes them easy to read and write. An alternative creation method is described in [Functional API](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#functional-api). To define an enumeration, subclass `Enum` as follows:
 
 枚举是使用类的语法来创建的，这使得它们易于阅读和书写。另一种创建方法在Functional API中描述。要定义一个枚举，请按如下方式子类化`Enum`。
 
@@ -199,7 +199,7 @@ Enumeration members are hashable, so they can be used in dictionaries and sets:
 {<Color.red: 1>: 'red delicious', <Color.green: 2>: 'granny smith'}
 ```
 
-## [Programmatic access to enumeration members](https://www.python.org/dev/peps/pep-0435/#id27)
+## [Programmatic access to enumeration members](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#id27)
 
 对枚举成员的程序性访问
 
@@ -225,7 +225,7 @@ If you want to access enum members by *name*, use item access:
 <Color.green: 2>
 ```
 
-## [Duplicating enum members and values](https://www.python.org/dev/peps/pep-0435/#id28)
+## [Duplicating enum members and values](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#id28)
 
 重复枚举成员和值
 
@@ -294,7 +294,7 @@ The `__members__` attribute can be used for detailed programmatic access to the 
 ['alias_for_square']
 ```
 
-## [Comparisons](https://www.python.org/dev/peps/pep-0435/#id29)
+## [Comparisons](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#id29)
 
 比较
 
@@ -311,7 +311,7 @@ False
 True
 ```
 
-Ordered comparisons between enumeration values are *not* supported. Enums are not integers (but see [IntEnum](https://www.python.org/dev/peps/pep-0435/#intenum) below):
+Ordered comparisons between enumeration values are *not* supported. Enums are not integers (but see [IntEnum](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#intenum) below):
 
 不支持在枚举值之间进行有序的比较。枚举不是整数（下面的IntEnum是一个例外）：
 
@@ -344,13 +344,13 @@ Comparisons against non-enumeration values will always compare not equal (again,
 False
 ```
 
-## [Allowed members and attributes of enumerations](https://www.python.org/dev/peps/pep-0435/#id30)
+## [Allowed members and attributes of enumerations](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#id30)
 
 枚举的允许成员和属性
 
-The examples above use integers for enumeration values. Using integers is short and handy (and provided by default by the [Functional API](https://www.python.org/dev/peps/pep-0435/#functional-api)), but not strictly enforced. In the vast majority of use-cases, one doesn't care what the actual value of an enumeration is. But if the value *is* important, enumerations can have arbitrary values.
+The examples above use integers for enumeration values. Using integers is short and handy (and provided by default by the [Functional API](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#functional-api)), but not strictly enforced. In the vast majority of use-cases, one doesn't care what the actual value of an enumeration is. But if the value *is* important, enumerations can have arbitrary values.
 
-上面的例子使用整数作为枚举值。使用整数是简短而方便的（由[Functional API](https://www.python.org/dev/peps/pep-0435/#functional-api)默认提供），但不是严格执行的。在绝大多数情况下，人们并不关心枚举的实际值是什么。但是如果值*确实*重要，枚举可以有任意的值。
+上面的例子使用整数作为枚举值。使用整数是简短而方便的（由[Functional API](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#functional-api)默认提供），但不是严格执行的。在绝大多数情况下，人们并不关心枚举的实际值是什么。但是如果值*确实*重要，枚举可以有任意的值。
 
 Enumerations are Python classes, and can have methods and special methods as usual. If we have this enumeration:
 
@@ -385,11 +385,11 @@ Then:
 'my custom str! 1'
 ```
 
-The rules for what is allowed are as follows: all attributes defined within an enumeration will become members of this enumeration, with the exception of *__dunder__* names and descriptors [[9\]](https://www.python.org/dev/peps/pep-0435/#id20); methods are descriptors too.
+The rules for what is allowed are as follows: all attributes defined within an enumeration will become members of this enumeration, with the exception of *__dunder__* names and descriptors [[9\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#id20); methods are descriptors too.
 
-允许的规则如下：在一个枚举中定义的所有属性都将成为这个枚举的成员，但*__dounder__*的名称和描述符[[9](https://www.python.org/dev/peps/pep-0435/#id20)]除外；方法也是描述符。
+允许的规则如下：在一个枚举中定义的所有属性都将成为这个枚举的成员，但*__dounder__*的名称和描述符[[9](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#id20)]除外；方法也是描述符。
 
-## [Restricted subclassing of enumerations](https://www.python.org/dev/peps/pep-0435/#id31)
+## [Restricted subclassing of enumerations](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#id31)
 
 枚举的限制性子类化
 
@@ -419,11 +419,11 @@ But this is allowed:
 ...
 ```
 
-The rationale for this decision was given by Guido in [[6\]](https://www.python.org/dev/peps/pep-0435/#id16). Allowing to subclass enums that define members would lead to a violation of some important invariants of types and instances. On the other hand, it makes sense to allow sharing some common behavior between a group of enumerations, and subclassing empty enumerations is also used to implement `IntEnum`.
+The rationale for this decision was given by Guido in [[6\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#id16). Allowing to subclass enums that define members would lead to a violation of some important invariants of types and instances. On the other hand, it makes sense to allow sharing some common behavior between a group of enumerations, and subclassing empty enumerations is also used to implement `IntEnum`.
 
 这个决定的理由是由Guido在[6]中给出的。允许对定义成员的枚举进行子类化会导致对类型和实例的一些重要不变性的违反。另一方面，允许在一组枚举之间共享一些共同的行为是有意义的，而子类化空枚举也被用来实现`IntEnum`。
 
-## [IntEnum](https://www.python.org/dev/peps/pep-0435/#id32)
+## [IntEnum](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#id32)
 
 A variation of `Enum` is proposed which is also a subclass of `int`. Members of an `IntEnum` can be compared to integers; by extension, integer enumerations of different types can also be compared to each other:
 
@@ -481,7 +481,7 @@ For the vast majority of code, `Enum` is strongly recommended, since `IntEnum` b
 
 对于绝大多数代码，强烈建议使用`Enum`，因为`IntEnum`破坏了枚举的一些语义承诺（通过与整数的可比性，以及与其他不相关的枚举的可转换性）。它应该只在没有其他选择的特殊情况下使用；例如，当整数常量被替换成枚举，并且需要向后兼容那些仍然期望使用整数的代码时。
 
-## [Other derived enumerations](https://www.python.org/dev/peps/pep-0435/#id33)
+## [Other derived enumerations](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#id33)
 
 其他衍生枚举
 
@@ -510,7 +510,7 @@ Some rules:
 
    虽然Enum可以有任何类型的成员，但一旦你混入一个额外的类型，所有的成员必须有该类型的值，例如上面的int。这个限制并不适用于只增加方法而不指定另一种数据类型（如`int`或`str`）的混入。
 
-## [Pickling](https://www.python.org/dev/peps/pep-0435/#id34)
+## [Pickling](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#id34)
 
 序列化
 
@@ -531,7 +531,7 @@ The usual restrictions for pickling apply: picklable enums must be defined in th
 
 > 更多关于Python使用pickle模块进行序列化的说明见[**Python pickle模块：实现Python对象的持久化存储**](http://c.biancheng.net/view/5736.html)，译者注。
 
-## [Functional API](https://www.python.org/dev/peps/pep-0435/#id35)
+## [Functional API](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#id35)
 
 功能性API
 
@@ -575,7 +575,7 @@ The reason for defaulting to `1` as the starting number and not `0` is that `0` 
 
 默认使用`1`作为起始数字而不是`0`的原因是`0`在布尔意义上是`False`，但枚举成员都评估为`True`。
 
-# [Proposed variations](https://www.python.org/dev/peps/pep-0435/#id36)
+# [Proposed variations](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#id36)
 
 建议的演变
 
@@ -583,13 +583,13 @@ Some variations were proposed during the discussions in the mailing list. Here's
 
 在邮件列表的讨论中，有人提出了一些变化。下面是一些比较流行的。
 
-## [flufl.enum](https://www.python.org/dev/peps/pep-0435/#id37)
+## [flufl.enum](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#id37)
 
 `flufl.enum` was the reference implementation upon which this PEP was originally based. Eventually, it was decided against the inclusion of `flufl.enum` because its design separated enumeration members from enumerations, so the former are not instances of the latter. Its design also explicitly permits subclassing enumerations for extending them with more members (due to the member/enum separation, the type invariants are not violated in `flufl.enum` with such a scheme).
 
 `flufl.enum` 是本 PEP 最初所依据的参考实现。最终，我们决定不纳入 `flufl.enum`，因为它的设计将枚举成员与枚举分开，所以前者不是后者的实例。它的设计也明确地允许对枚举进行子类化，以便用更多的成员来扩展它们（由于成员/枚举的分离，在 `flufl.enum` 中这样的方案不会违反类型不变性）。
 
-## [Not having to specify values for enums](https://www.python.org/dev/peps/pep-0435/#id38)
+## [Not having to specify values for enums](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#id38)
 
 不必为枚举指定值
 
@@ -614,7 +614,7 @@ Cons: involves much magic in the implementation, which makes even the definition
 
 缺点：在实现中涉及到很多魔法，这使得第一次看到这种枚举的定义时也会感到困惑。此外，显式比隐式好。
 
-## [Using special names or forms to auto-assign enum values](https://www.python.org/dev/peps/pep-0435/#id39)
+## [Using special names or forms to auto-assign enum values](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#id39)
 
 使用特殊名称或形式来自动分配枚举值
 
@@ -661,7 +661,7 @@ Cons: actually longer to type in many simple cases. The argument of explicit vs.
 
 缺点：在许多简单的情况下，实际上需要更长的时间来输入。显式与隐式的争论也适用于此。
 
-# [Use-cases in the standard library](https://www.python.org/dev/peps/pep-0435/#id40)
+# [Use-cases in the standard library](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#id40)
 
 标准库中的用例
 
@@ -690,40 +690,40 @@ In addition, looking at the code of the Twisted library, there are many use case
 
 此外，看一下Twisted库的代码，有很多用枚举代替内部状态常量的用例。很多网络代码也是如此（尤其是协议的实现），在用Tulip库编写的测试协议中也可以看到。
 
-# [Acknowledgments](https://www.python.org/dev/peps/pep-0435/#id41)
+# [Acknowledgments](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#id41)
 
 致谢
 
-This PEP was initially proposing including the `flufl.enum` package [[8\]](https://www.python.org/dev/peps/pep-0435/#id19) by Barry Warsaw into the stdlib, and is inspired in large parts by it. Ben Finney is the author of the earlier enumeration [PEP 354](https://www.python.org/dev/peps/pep-0354).
+This PEP was initially proposing including the `flufl.enum` package [[8\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#id19) by Barry Warsaw into the stdlib, and is inspired in large parts by it. Ben Finney is the author of the earlier enumeration [PEP 354](https://www.python.org/dev/peps/pep-0354).
 
-本PEP最初提议将Barry Warsaw的`flufl.enum`包[[8\]](https://www.python.org/dev/peps/pep-0435/#id19)纳入stdlib，并在很大程度上受到其启发。Ben Finney是早期枚举的作者[PEP 354](https://www.python.org/dev/peps/pep-0354)。
+本PEP最初提议将Barry Warsaw的`flufl.enum`包[[8\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#id19)纳入stdlib，并在很大程度上受到其启发。Ben Finney是早期枚举的作者[PEP 354](https://www.python.org/dev/peps/pep-0354)。
 
-# [References](https://www.python.org/dev/peps/pep-0435/#id42)
+# [References](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#id42)
 
 参考文献
 
-|                                                        |                                                              |
-| ------------------------------------------------------ | ------------------------------------------------------------ |
-| [[1\]](https://www.python.org/dev/peps/pep-0435/#id7)  | https://mail.python.org/pipermail/python-dev/2013-May/126112.html |
-|                                                        |                                                              |
-| [[2\]](https://www.python.org/dev/peps/pep-0435/#id1)  | http://www.python.org/dev/peps/pep-0354/                     |
-|                                                        |                                                              |
-| [[3\]](https://www.python.org/dev/peps/pep-0435/#id2)  | https://mail.python.org/pipermail/python-ideas/2013-January/019003.html |
-|                                                        |                                                              |
-| [[4\]](https://www.python.org/dev/peps/pep-0435/#id3)  | https://mail.python.org/pipermail/python-ideas/2013-February/019373.html |
-|                                                        |                                                              |
-| [[5\]](https://www.python.org/dev/peps/pep-0435/#id4)  | To make enums behave similarly to Python classes like bool, and behave in a more intuitive way. It would be surprising if the type of `Color.red` would not be `Color`. (Discussion in https://mail.python.org/pipermail/python-dev/2013-April/125687.html) |
-|                                                        | 为了使枚举的行为类似于像bool这样的Python类，并以更直观的方式表现。如果`Color.red`的类型不是`Color`，那就很奇怪了。（讨论在https://mail.python.org/pipermail/python-dev/2013-April/125687.html） |
-| [6]                                                    | *([1](https://www.python.org/dev/peps/pep-0435/#id5), [2](https://www.python.org/dev/peps/pep-0435/#id9), [3](https://www.python.org/dev/peps/pep-0435/#id18))* Subclassing enums and adding new members creates an unresolvable situation; on one hand `MoreColor.red` and `Color.red` should not be the same object, and on the other `isinstance` checks become confusing if they are not. The discussion also links to Stack Overflow discussions that make additional arguments. (https://mail.python.org/pipermail/python-dev/2013-April/125716.html) |
-|                                                        | *([1](https://www.python.org/dev/peps/pep-0435/#id5), [2](https://www.python.org/dev/peps/pep-0435/#id9), [3](https://www.python.org/dev/peps/pep-0435/#id18))* 子类化枚举并添加新成员会造成无法解决的情况；一方面`MoreColor.red`和`Color.red`不应该是同一个对象，另一方面如果它们不是，`isinstance`检查会变得很混乱。该讨论还链接到Stack Overflow的讨论，提出了额外的论点。(https://mail.python.org/pipermail/python-dev/2013-April/125716.html) |
-| [[7\]](https://www.python.org/dev/peps/pep-0435/#id6)  | It may be useful to have a class defining some behavior (methods, with no actual enumeration members) mixed into an enum, and this would not create the problem discussed in [[6\]](https://www.python.org/dev/peps/pep-0435/#id16). (Discussion in https://mail.python.org/pipermail/python-dev/2013-May/125859.html) |
-|                                                        | 将定义一些行为的类（方法，没有实际的枚举成员）混入枚举中可能很有用，这不会产生[[6](https://www.python.org/dev/peps/pep-0435/#id16)]中讨论的问题。(讨论在https://mail.python.org/pipermail/python-dev/2013-May/125859.html) |
-| [[8\]](https://www.python.org/dev/peps/pep-0435/#id10) | http://pythonhosted.org/flufl.enum/                          |
-|                                                        |                                                              |
-| [[9\]](https://www.python.org/dev/peps/pep-0435/#id8)  | http://docs.python.org/3/howto/descriptor.html               |
-|                                                        |                                                              |
+|                                                              |                                                              |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [[1\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#id7) | https://mail.python.org/pipermail/python-dev/2013-May/126112.html |
+|                                                              |                                                              |
+| [[2\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#id1) | http://www.python.org/dev/peps/pep-0354/                     |
+|                                                              |                                                              |
+| [[3\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#id2) | https://mail.python.org/pipermail/python-ideas/2013-January/019003.html |
+|                                                              |                                                              |
+| [[4\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#id3) | https://mail.python.org/pipermail/python-ideas/2013-February/019373.html |
+|                                                              |                                                              |
+| [[5\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#id4) | To make enums behave similarly to Python classes like bool, and behave in a more intuitive way. It would be surprising if the type of `Color.red` would not be `Color`. (Discussion in https://mail.python.org/pipermail/python-dev/2013-April/125687.html) |
+|                                                              | 为了使枚举的行为类似于像bool这样的Python类，并以更直观的方式表现。如果`Color.red`的类型不是`Color`，那就很奇怪了。（讨论在https://mail.python.org/pipermail/python-dev/2013-April/125687.html） |
+| [6]                                                          | *([1](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#id5), [2](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#id9), [3](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#id18))* Subclassing enums and adding new members creates an unresolvable situation; on one hand `MoreColor.red` and `Color.red` should not be the same object, and on the other `isinstance` checks become confusing if they are not. The discussion also links to Stack Overflow discussions that make additional arguments. (https://mail.python.org/pipermail/python-dev/2013-April/125716.html) |
+|                                                              | *([1](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#id5), [2](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#id9), [3](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#id18))* 子类化枚举并添加新成员会造成无法解决的情况；一方面`MoreColor.red`和`Color.red`不应该是同一个对象，另一方面如果它们不是，`isinstance`检查会变得很混乱。该讨论还链接到Stack Overflow的讨论，提出了额外的论点。(https://mail.python.org/pipermail/python-dev/2013-April/125716.html) |
+| [[7\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#id6) | It may be useful to have a class defining some behavior (methods, with no actual enumeration members) mixed into an enum, and this would not create the problem discussed in [[6\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#id16). (Discussion in https://mail.python.org/pipermail/python-dev/2013-May/125859.html) |
+|                                                              | 将定义一些行为的类（方法，没有实际的枚举成员）混入枚举中可能很有用，这不会产生[[6](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#id16)]中讨论的问题。(讨论在https://mail.python.org/pipermail/python-dev/2013-May/125859.html) |
+| [[8\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#id10) | http://pythonhosted.org/flufl.enum/                          |
+|                                                              |                                                              |
+| [[9\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#id8) | http://docs.python.org/3/howto/descriptor.html               |
+|                                                              |                                                              |
 
-# [Copyright](https://www.python.org/dev/peps/pep-0435/#id43)
+# [Copyright](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md#id43)
 
 This document has been placed in the public domain.
 

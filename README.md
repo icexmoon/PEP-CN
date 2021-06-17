@@ -47,14 +47,18 @@ Github：<https://github.com/icexmoon/PEP-CN>
 
  5. 译文中如果需要插入图片，必须将图片上传到可靠图床后添加进文本。
 
-    > [**Markdown-img**](https://github.com/icexmoon/markdown-img)是我编写的对此有帮助的小工具。
+	> [**Markdown-img**](https://github.com/icexmoon/markdown-img)是我编写的对此有帮助的小工具。
+
+6. 待翻译列表以未链接的形式在目录中展示，主要由其它网络文章推荐和个人口味形成，如果有其它想加入的P待翻译PEP请在issue页面告知。
+
+7. 可以从带翻译列表认领或者自行确认翻译目标。为了避免重复劳动，选定后请提交一个空的markdown文件到分支合并请求进行占位。
 
 ### 建议遵守
 
 1. 建议在译文中保留原始英文段落，采用中英文对照方式，这样更便于纠错和改进。
 2. 建议进行全文翻译，如果时间精力有限，可以将未翻译部分以原文方式呈现，只翻译核心内容。
 3. 译文使用中文标点，原文中使用md代码块方式包裹的内容也应该依然使用此方式。
-4. 译文之外的译者注释部分应当使用md中的注释语法`>注释`。
+4. 译文之外的译者注释部分应当使用md中的注释语法`>注释`，例如：`>linter指语法检查工具，可以参考[**程序开发中的linter是什么意思？**](https://www.zhihu.com/question/28421865)中的回答，译者注。`
 5. 译文之外添加的链接可以使用`**加粗**`的方式强化显示。
 
 ### 可选事项
@@ -79,11 +83,11 @@ Github：<https://github.com/icexmoon/PEP-CN>
 - [**PEP 7 -- Style Guide for C Code**](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%207%20--%20Style%20Guide%20for%20C%20Code.md)，C扩展规范
 - [**PEP 8 -- Style Guide for Python Code**](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%208%20--%20Style%20Guide%20for%20Python%20Code.md)，Python编码规范
 - [**PEP 20 -- The Zen of Python**](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%2020%20--%20The%20Zen%20of%20Python.md)，Python之禅
-- PEP 202 -- List Comprehensions，列表生成式
+- PEP 202 -- List Comprehensions，列表推导式
 - PEP 205 -- Weak References，弱引用
 - PEP 234 -- Iterators，迭代器
 - [**PEP 257 -- Docstring Conventions**](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20257%20--%20Docstring%20Conventions.md)，文档字符串约定
-- PEP 274 -- Dict Comprehensions，字典生成式
+- PEP 274 -- Dict Comprehensions，字典推导式
 - PEP 279 -- The enumerate() built-in function，内建函数enumerate()
 - PEP 282 -- A Logging System，一个日志系统
 - PEP 285 -- Adding a bool type，添加一个 bool 类型
@@ -103,7 +107,7 @@ Github：<https://github.com/icexmoon/PEP-CN>
 - PEP 498 -- Literal String Interpolation，字符串字面量插值法
 - PEP 525 -- Asynchronous Generators，异步生成器
 - [**PEP 526 -- Syntax for Variable Annotations**](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20526%20--%20Syntax%20for%20Variable%20Annotations.md)，变量注解语法
-- PEP 563 -- Postponed Evaluation of Annotations，推迟的注释评估
+- PEP 563 -- Postponed Evaluation of Annotations，推迟的注解评估
 - PEP 557 -- Data Classes，数据类
 - PEP 572 -- Assignment Expressions，赋值表达式
 - PEP 3101 -- Advanced String Formatting，高级字符串格式化

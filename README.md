@@ -76,7 +76,7 @@ Github：<https://github.com/icexmoon/PEP-CN>
 所有已翻译文章列表会展示在这里：
 
 - PEP 0 -- Index of Python Enhancement Proposals，Python增强提案索引
-- PEP 7 -- Style Guide for C Code，C扩展规范
+- [**PEP 7 -- Style Guide for C Code**](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%207%20--%20Style%20Guide%20for%20C%20Code.md)，C扩展规范
 - [**PEP 8 -- Style Guide for Python Code**](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%208%20--%20Style%20Guide%20for%20Python%20Code.md)，Python编码规范
 - [**PEP 20 -- The Zen of Python**](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%2020%20--%20The%20Zen%20of%20Python.md)，Python之禅
 - PEP 202 -- List Comprehensions，列表生成式

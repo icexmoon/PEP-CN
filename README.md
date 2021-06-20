@@ -111,6 +111,7 @@ Github：<https://github.com/icexmoon/PEP-CN>
 - PEP 563 -- Postponed Evaluation of Annotations，推迟的注解评估
 - PEP 557 -- Data Classes，数据类
 - PEP 572 -- Assignment Expressions，赋值表达式
+- [**PEP 584 -- Add Union Operators To dict**](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md)，给dict添加合并操作符
 - PEP 3101 -- Advanced String Formatting，高级字符串格式化
 - PEP 3105 -- Make print a function，将print变为函数
 - PEP 3115 -- Metaclasses in Python 3000，Python3中的元类

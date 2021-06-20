@@ -71,8 +71,8 @@ Github：<https://github.com/icexmoon/PEP-CN>
 
 如果有其他Python爱好者加入，打算组织实现以下计划：
 
-- 筛选并确定翻译的PEP列表。
-- 编写PEP中的常见专用词汇对照表。
+- <del>筛选并确定翻译的PEP列表。</del>
+- <del>编写PEP中的常见专用词汇对照表。</del>
 - 进行翻译条目的认领和分配。
 - 对已翻译条目进行修订。
 

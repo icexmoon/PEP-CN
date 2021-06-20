@@ -407,7 +407,7 @@ The emphasis here is that there should be an obvious way to do "it". In the case
 
 - *Merge two existing dicts into a third, new dict*: This PEP proposes that the Obvious Way is to use the `|` merge operator.
 
-  *将两个现有的数据合并成第三个新的数据*。本PEP提出，最明显的方法是使用|合并操作符。
+  *将两个现有的数据合并成第三个新的数据*：本PEP提出，最明显的方法是使用`|`合并操作符。
 
 In practice, this preference for "only one way" is frequently violated in Python. For example, every `for` loop could be re-written as a `while` loop; every `if` block could be written as an `if`/ `else` block. List, set and dict comprehensions could all be replaced by generator expressions. Lists offer no fewer than five ways to implement concatenation:
 

@@ -19,71 +19,71 @@ PEP 584 -- 给dict添加合并操作符
 
 Contents
 
-- [Abstract](https://www.python.org/dev/peps/pep-0584/#abstract)，摘要
+- [Abstract](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#abstract)，摘要
 - Motivation，动机
-  - [`dict.update`](https://www.python.org/dev/peps/pep-0584/#dict-update)
-  - [`{**d1, **d2}`](https://www.python.org/dev/peps/pep-0584/#d1-d2)
-  - [`collections.ChainMap`](https://www.python.org/dev/peps/pep-0584/#collections-chainmap)
-  - [`dict(d1, **d2)`](https://www.python.org/dev/peps/pep-0584/#dict-d1-d2)
-- [Rationale](https://www.python.org/dev/peps/pep-0584/#rationale)，理论依据
-- [Specification](https://www.python.org/dev/peps/pep-0584/#specification)，定义
-- [Reference Implementation](https://www.python.org/dev/peps/pep-0584/#reference-implementation)，参考实现
+  - [`dict.update`](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#dict-update)
+  - [`{**d1, **d2}`](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#d1-d2)
+  - [`collections.ChainMap`](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#collections-chainmap)
+  - [`dict(d1, **d2)`](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#dict-d1-d2)
+- [Rationale](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#rationale)，理论依据
+- [Specification](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#specification)，定义
+- [Reference Implementation](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#reference-implementation)，参考实现
 - Major Objections，主要反对意见
   - Dict Union Is Not Commutative，字典合并不符合交换律
-    - [Response](https://www.python.org/dev/peps/pep-0584/#response)
+    - [Response](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#response)
   - Dict Union Will Be Inefficient，字典合并是低效的
-    - [Response](https://www.python.org/dev/peps/pep-0584/#id1)
+    - [Response](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id1)
   - Dict Union Is Lossy，字典合并是有损失的
-    - [Response](https://www.python.org/dev/peps/pep-0584/#id2)
+    - [Response](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id2)
   - Only One Way To Do It，只有一条路可以做到
-    - [Response](https://www.python.org/dev/peps/pep-0584/#id3)
+    - [Response](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id3)
   - More Than One Way To Do It，有超过一条路可以做到
-    - [Response](https://www.python.org/dev/peps/pep-0584/#id4)
+    - [Response](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id4)
   - Dict Union Makes Code Harder To Understand，字典合并使得代码更难理解
-    - [Response](https://www.python.org/dev/peps/pep-0584/#id5)
+    - [Response](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id5)
   - What About The Full `set` API?，为什么不是完整的`set`API？
-    - [Response](https://www.python.org/dev/peps/pep-0584/#id6)
+    - [Response](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id6)
   - What About `Mapping` And `MutableMapping`?，如何处理`Mapping`和`MutableMapping`
-    - [Response](https://www.python.org/dev/peps/pep-0584/#id7)
+    - [Response](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id7)
 - Rejected Ideas，被拒绝的想法
   - Rejected Semantics，被拒绝的语义
-    - [Raise](https://www.python.org/dev/peps/pep-0584/#raise)，作为异常抛出
-    - [Add The Values (As Counter Does, with `+`)](https://www.python.org/dev/peps/pep-0584/#add-the-values-as-counter-does-with)，值相加（像Counter用`+`做的那样）
-    - [Leftmost Value (First-Seen) Wins](https://www.python.org/dev/peps/pep-0584/#leftmost-value-first-seen-wins)，让左边的值胜出
-    - [Concatenate Values In A List](https://www.python.org/dev/peps/pep-0584/#concatenate-values-in-a-list)，连接列表中的值
-  - Rejected Alternatives
-    - [Use The Addition Operator](https://www.python.org/dev/peps/pep-0584/#use-the-addition-operator)
-    - [Use The Left Shift Operator](https://www.python.org/dev/peps/pep-0584/#use-the-left-shift-operator)
-    - [Use A New Left Arrow Operator](https://www.python.org/dev/peps/pep-0584/#use-a-new-left-arrow-operator)
-    - Use A Method
-      - [Advantages](https://www.python.org/dev/peps/pep-0584/#advantages)
-      - [Disadvantages](https://www.python.org/dev/peps/pep-0584/#disadvantages)
-    - Use a Function
-      - [Advantages](https://www.python.org/dev/peps/pep-0584/#id8)
-      - [Disadvantages](https://www.python.org/dev/peps/pep-0584/#id9)
-- Examples
-  - [IPython/zmq/ipkernel.py](https://www.python.org/dev/peps/pep-0584/#ipython-zmq-ipkernel-py)
-  - [IPython/zmq/kernelapp.py](https://www.python.org/dev/peps/pep-0584/#ipython-zmq-kernelapp-py)
-  - [matplotlib/backends/backend_svg.py](https://www.python.org/dev/peps/pep-0584/#matplotlib-backends-backend-svg-py)
-  - [matplotlib/delaunay/triangulate.py](https://www.python.org/dev/peps/pep-0584/#matplotlib-delaunay-triangulate-py)
-  - [matplotlib/legend.py](https://www.python.org/dev/peps/pep-0584/#matplotlib-legend-py)
-  - [numpy/ma/core.py](https://www.python.org/dev/peps/pep-0584/#numpy-ma-core-py)
-  - [praw/internal.py](https://www.python.org/dev/peps/pep-0584/#praw-internal-py)
-  - [pygments/lexer.py](https://www.python.org/dev/peps/pep-0584/#pygments-lexer-py)
-  - [requests/sessions.py](https://www.python.org/dev/peps/pep-0584/#requests-sessions-py)
-  - [sphinx/domains/__init__.py](https://www.python.org/dev/peps/pep-0584/#sphinx-domains-init-py)
-  - [sphinx/ext/doctest.py](https://www.python.org/dev/peps/pep-0584/#sphinx-ext-doctest-py)
-  - [sphinx/ext/inheritance_diagram.py](https://www.python.org/dev/peps/pep-0584/#sphinx-ext-inheritance-diagram-py)
-  - [sphinx/highlighting.py](https://www.python.org/dev/peps/pep-0584/#sphinx-highlighting-py)
-  - [sphinx/quickstart.py](https://www.python.org/dev/peps/pep-0584/#sphinx-quickstart-py)
-  - [sympy/abc.py](https://www.python.org/dev/peps/pep-0584/#sympy-abc-py)
-  - [sympy/parsing/maxima.py](https://www.python.org/dev/peps/pep-0584/#sympy-parsing-maxima-py)
-  - [sympy/printing/ccode.py and sympy/printing/fcode.py](https://www.python.org/dev/peps/pep-0584/#sympy-printing-ccode-py-and-sympy-printing-fcode-py)
-  - [sympy/utilities/runtests.py](https://www.python.org/dev/peps/pep-0584/#sympy-utilities-runtests-py)
-- [Related Discussions](https://www.python.org/dev/peps/pep-0584/#related-discussions)
-- [Copyright](https://www.python.org/dev/peps/pep-0584/#copyright)
+    - [Raise](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#raise)，作为异常抛出
+    - [Add The Values (As Counter Does, with `+`)](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#add-the-values-as-counter-does-with)，值相加（像Counter用`+`做的那样）
+    - [Leftmost Value (First-Seen) Wins](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#leftmost-value-first-seen-wins)，让左边的值胜出
+    - [Concatenate Values In A List](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#concatenate-values-in-a-list)，连接列表中的值
+  - Rejected Alternatives，被拒绝的替代方案
+    - [Use The Addition Operator](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#use-the-addition-operator)，使用加法运算符
+    - [Use The Left Shift Operator](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#use-the-left-shift-operator)，使用左移运算符
+    - [Use A New Left Arrow Operator](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#use-a-new-left-arrow-operator)，使用一个新的左箭头运算符
+    - Use A Method，使用一个方法
+      - [Advantages](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#advantages)，优点
+      - [Disadvantages](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#disadvantages)，缺点
+    - Use a Function，使用一个函数
+      - [Advantages](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id8)，优点
+      - [Disadvantages](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id9)，缺点
+- Examples，示例
+  - [IPython/zmq/ipkernel.py](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#ipython-zmq-ipkernel-py)
+  - [IPython/zmq/kernelapp.py](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#ipython-zmq-kernelapp-py)
+  - [matplotlib/backends/backend_svg.py](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#matplotlib-backends-backend-svg-py)
+  - [matplotlib/delaunay/triangulate.py](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#matplotlib-delaunay-triangulate-py)
+  - [matplotlib/legend.py](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#matplotlib-legend-py)
+  - [numpy/ma/core.py](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#numpy-ma-core-py)
+  - [praw/internal.py](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#praw-internal-py)
+  - [pygments/lexer.py](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#pygments-lexer-py)
+  - [requests/sessions.py](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#requests-sessions-py)
+  - [sphinx/domains/__init__.py](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#sphinx-domains-init-py)
+  - [sphinx/ext/doctest.py](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#sphinx-ext-doctest-py)
+  - [sphinx/ext/inheritance_diagram.py](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#sphinx-ext-inheritance-diagram-py)
+  - [sphinx/highlighting.py](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#sphinx-highlighting-py)
+  - [sphinx/quickstart.py](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#sphinx-quickstart-py)
+  - [sympy/abc.py](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#sympy-abc-py)
+  - [sympy/parsing/maxima.py](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#sympy-parsing-maxima-py)
+  - [sympy/printing/ccode.py and sympy/printing/fcode.py](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#sympy-printing-ccode-py-and-sympy-printing-fcode-py)
+  - [sympy/utilities/runtests.py](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#sympy-utilities-runtests-py)
+- [Related Discussions](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#related-discussions)，相关讨论
+- [Copyright](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#copyright)，版权声明
 
-# [Abstract](https://www.python.org/dev/peps/pep-0584/#id11)
+# [Abstract](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id11)
 
 摘要
 
@@ -99,7 +99,7 @@ After this PEP was accepted, the decision was made to also implement the new ope
 
 在这个PEP被接受之后，我们决定也为其他几个标准库的映射实现新的操作符。
 
-# [Motivation](https://www.python.org/dev/peps/pep-0584/#id12)
+# [Motivation](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id12)
 
 动机
 
@@ -107,13 +107,13 @@ The current ways to merge two dicts have several disadvantages:
 
 目前合并两个字典的方法有几个缺点。
 
-## [`dict.update`](https://www.python.org/dev/peps/pep-0584/#id13)
+## [`dict.update`](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id13)
 
 `d1.update(d2)` modifies `d1` in-place. `e = d1.copy(); e.update(d2)` is not an expression and needs a temporary variable.
 
 `d1.update(d2)`就地修改`d1`。`e = d1.copy(); e.update(d2)`不是一个表达式，需要一个临时变量。
 
-## [`{**d1, **d2}`](https://www.python.org/dev/peps/pep-0584/#id14)
+## [`{**d1, **d2}`](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id14)
 
 Dict unpacking looks ugly and is not easily discoverable. Few people would be able to guess what it means the first time they see it, or think of it as the "obvious way" to merge two dicts.
 
@@ -131,7 +131,7 @@ Dict解包看起来很丑，而且不容易被发现。很少有人能在第一�
 
 `{**d1, **d2}`忽略映射的类型，并且总是返回一个`dict.type(d1)({**d1, **d2})`类型，如果包含的是dict的子类，比如是`defaultdict`这样有不兼容的`__init__`方法的子类，将会失败。
 
-## [`collections.ChainMap`](https://www.python.org/dev/peps/pep-0584/#id15)
+## [`collections.ChainMap`](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id15)
 
 `ChainMap` is unfortunately poorly-known and doesn't qualify as "obvious". It also resolves duplicate keys in the opposite order to that expected ("first seen wins" instead of "last seen wins"). Like dict unpacking, it is tricky to get it to honor the desired subclass. For the same reason, `type(d1)(ChainMap(d2, d1))` fails for some subclasses of dict.
 
@@ -150,7 +150,7 @@ Further, ChainMaps wrap their underlying dicts, so writes to the ChainMap will m
 {'eggs': 999}
 ```
 
-## [`dict(d1, **d2)`](https://www.python.org/dev/peps/pep-0584/#id16)
+## [`dict(d1, **d2)`](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id16)
 
 This "neat trick" is not well-known, and only works when `d2` is entirely string-keyed:
 
@@ -165,7 +165,7 @@ Traceback (most recent call last):
 TypeError: keywords must be strings
 ```
 
-# [Rationale](https://www.python.org/dev/peps/pep-0584/#id17)
+# [Rationale](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id17)
 
 理论依据
 
@@ -195,7 +195,7 @@ Similarly, the *iteration order* of the key-value pairs in the dictionary will f
 
 > 因为Python中字典的实现基于散列，随着字典容量的扩充很可能会触发重建机制，进而改变字典的迭代顺序，所以应该将字典视为一种无序容器，不能依赖于字典的迭代顺序，所以这里不应对字典的迭代顺序纠结。想了解原因和散列结构的，可以阅读[**Python学习笔记20：字典与集合**](https://blog.icexmoon.xyz/archives/93.html)，译者注。
 
-# [Specification](https://www.python.org/dev/peps/pep-0584/#id18)
+# [Specification](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id18)
 
 定义
 
@@ -241,7 +241,7 @@ When new keys are added, their order matches their order within the right-hand m
 
 当新的键被添加时，它们的顺序与它们在右侧映射中的顺序一致，如果它的类型存在的话。
 
-# [Reference Implementation](https://www.python.org/dev/peps/pep-0584/#id19)
+# [Reference Implementation](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id19)
 
 参考实现
 
@@ -273,11 +273,11 @@ def __ior__(self, other):
     return self
 ```
 
-# [Major Objections](https://www.python.org/dev/peps/pep-0584/#id20)
+# [Major Objections](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id20)
 
-[主要反对意见](https://www.python.org/dev/peps/pep-0584/#id20)
+[主要反对意见](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id20)
 
-## [Dict Union Is Not Commutative](https://www.python.org/dev/peps/pep-0584/#id21)
+## [Dict Union Is Not Commutative](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id21)
 
 字典的合并运算不是换元的
 
@@ -285,7 +285,7 @@ Union is commutative, but dict union will not be (`d | e != e | d`).
 
 合并运算是换元的，但字典合并运算不是(`d | e != e | d`)。
 
-### [Response](https://www.python.org/dev/peps/pep-0584/#id22)
+### [Response](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id22)
 
 回复
 
@@ -304,7 +304,7 @@ While the results may be equal, they are distinctly different. In general, `a | 
 
 虽然结果可能是相等的，但它们是明显不同的。一般来说，`a | b`与`b | a`不是同一个操作。
 
-## [Dict Union Will Be Inefficient](https://www.python.org/dev/peps/pep-0584/#id23)
+## [Dict Union Will Be Inefficient](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id23)
 
 字典合并运算将是低效的
 
@@ -312,7 +312,7 @@ Giving a pipe operator to mappings is an invitation to writing code that doesn't
 
 给映射提供一个管道操作符是对写代码的一种诱惑，它不能很好地扩展。重复的dict合并操作是低效的：`d | e | f | g | h`创建并销毁了三个临时映射。
 
-### [Response](https://www.python.org/dev/peps/pep-0584/#id24)
+### [Response](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id24)
 
 回复
 
@@ -338,7 +338,7 @@ for d in many_dicts:
     new |= d
 ```
 
-## [Dict Union Is Lossy](https://www.python.org/dev/peps/pep-0584/#id25)
+## [Dict Union Is Lossy](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id25)
 
 字典合并操作是有损失的
 
@@ -346,7 +346,7 @@ Dict union can lose data (values may disappear); no other form of union is lossy
 
 Dict合并操作可能会丢失数据（值可能会消失）；没有其他形式的结合操作是有损失的。
 
-### [Response](https://www.python.org/dev/peps/pep-0584/#id26)
+### [Response](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id26)
 
 回复
 
@@ -358,7 +358,7 @@ Other types of union are also lossy, in the sense of not being reversible; you c
 
 其他类型的合并操作也是有损失的，也就是不可逆的；你不能只通过合并操作来取回两个操作数。`a | b == 365`... 哪个是 `a` 哪个是 `b`？
 
-## [Only One Way To Do It](https://www.python.org/dev/peps/pep-0584/#id27)
+## [Only One Way To Do It](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id27)
 
 只有一种方法可以做到
 
@@ -366,7 +366,7 @@ Dict union will violate the Only One Way koan from the Zen.
 
 Dict合并操作将违反Python之禅的 "唯一途径 "原则。
 
-### [Response](https://www.python.org/dev/peps/pep-0584/#id28)
+### [Response](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id28)
 
 回复
 
@@ -374,7 +374,7 @@ There is no such koan. "Only One Way" is a calumny about Python originating long
 
 没有这样的原则。"只有一条路 "是对 Python 的诽谤，很久以前来自 Perl 社区。
 
-## [More Than One Way To Do It](https://www.python.org/dev/peps/pep-0584/#id29)
+## [More Than One Way To Do It](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id29)
 
 不止一种方法可以做到这一点
 
@@ -382,7 +382,7 @@ Okay, the Zen doesn't say that there should be Only One Way To Do It. But it doe
 
 好吧，Python之禅并没有说应该有唯一的方法。但它确实禁止允许 "不止一种方法"。
 
-### [Response](https://www.python.org/dev/peps/pep-0584/#id30)
+### [Response](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id30)
 
 回复
 
@@ -421,7 +421,7 @@ We should not be too strict about rejecting useful functionality because it viol
 
 我们不应过于严格地拒绝有用的功能，只是因为它违反了 "只有一种方式"。
 
-## [Dict Union Makes Code Harder To Understand](https://www.python.org/dev/peps/pep-0584/#id31)
+## [Dict Union Makes Code Harder To Understand](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id31)
 
 字典合并操作使得代码更难以理解
 
@@ -429,7 +429,7 @@ Dict union makes it harder to tell what code means. To paraphrase the objection 
 
 Dict合并操作使人们更难分辨代码的含义。解释一下这个反对意见，而不是具体引用谁的话："如果我看到`spam | eggs`，我无法知道它的作用，除非我知道`spam`和`eggs`是什么"。
 
-### [Response](https://www.python.org/dev/peps/pep-0584/#id32)
+### [Response](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id32)
 
 回复
 
@@ -459,15 +459,15 @@ DO_NOT_RUN = WEEKENDS | HOLIDAYS  # Probably set union.
 settings = DEFAULT_SETTINGS | user_settings | workspace_settings  # Probably dict union.
 ```
 
-## [What About The Full `set` API?](https://www.python.org/dev/peps/pep-0584/#id33)
+## [What About The Full `set` API?](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id33)
 
-[关于完整的`set`API？](https://www.python.org/dev/peps/pep-0584/#id33)
+[关于完整的`set`API？](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id33)
 
 dicts are "set like", and should support the full collection of set operators: `|`, `&`, `^`, and `-`.
 
 dicts是 "类似于集合 "的，应该支持合并运算符的全部合并运算：`|`, `&`, `^`, 和 `-`.
 
-### [Response](https://www.python.org/dev/peps/pep-0584/#id34)
+### [Response](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id34)
 
 回应
 
@@ -496,7 +496,7 @@ Set intersection (`&`) is a bit more problematic. While it is easy to determine 
 
 集合相交（`&`）的问题更大一些。虽然很容易确定两个数据集的键的交集，但不清楚该如何处理这些值。鉴于上面的两个数据集，很明显，`d1 & d2`的唯一键必须是 `"eggs"`。然而，"最后看到的胜出者 "具有与其他dict操作（以及提议的合并操作）一致的优势。
 
-## [What About `Mapping` And `MutableMapping`?](https://www.python.org/dev/peps/pep-0584/#id35)
+## [What About `Mapping` And `MutableMapping`?](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id35)
 
 如何处理`Mapping`和`MutableMapping`？
 
@@ -504,7 +504,7 @@ Set intersection (`&`) is a bit more problematic. While it is easy to determine 
 
 `collections.abc.Mapping`和`collections.abc.MutableMapping`应该定义`|`和`|=`，所以子类可以直接继承新的操作符，而不必定义它们。
 
-### [Response](https://www.python.org/dev/peps/pep-0584/#id36)
+### [Response](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id36)
 
 回应
 
@@ -520,11 +520,11 @@ There are two primary reasons why adding the new operators to these classes woul
 
   在`MutableMapping`中添加`|=`（或在`Mapping`中添加`copy`方法）会给虚拟子类带来兼容性问题。
 
-# [Rejected Ideas](https://www.python.org/dev/peps/pep-0584/#id37)
+# [Rejected Ideas](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id37)
 
 被拒绝的想法
 
-## [Rejected Semantics](https://www.python.org/dev/peps/pep-0584/#id38)
+## [Rejected Semantics](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id38)
 
 拒绝的语义
 
@@ -532,7 +532,7 @@ There were at least four other proposed solutions for handling conflicting keys.
 
 至少还有其他四种处理冲突键的建议方案。这些方案留给dict的子类。
 
-### [Raise](https://www.python.org/dev/peps/pep-0584/#id39)
+### [Raise](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id39)
 
 作为异常抛出
 
@@ -540,7 +540,7 @@ It isn't clear that this behavior has many use-cases or will be often useful, bu
 
 目前还不清楚这种行为是否有很多用处，或者是否经常有用，但它可能会很烦人，因为任何对dict合并运算符的使用都必须用`try`/`except`子句来嵌套。
 
-### [Add The Values (As Counter Does, with `+`)](https://www.python.org/dev/peps/pep-0584/#id40)
+### [Add The Values (As Counter Does, with `+`)](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id40)
 
 值相加（如Counter用`+`做的那样）
 
@@ -548,7 +548,7 @@ Too specialised to be used as the default behavior.
 
 太过特殊，不能作为默认行为使用。
 
-### [Leftmost Value (First-Seen) Wins](https://www.python.org/dev/peps/pep-0584/#id41)
+### [Leftmost Value (First-Seen) Wins](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id41)
 
 让左边的值（首先看到的）赢
 
@@ -560,7 +560,7 @@ It isn't clear that this behavior has many use-cases. In fact, one can simply re
 d2 | d1  # d1 merged with d2, keeping existing values in d1
 ```
 
-### [Concatenate Values In A List](https://www.python.org/dev/peps/pep-0584/#id42)
+### [Concatenate Values In A List](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id42)
 
 连接列表中的值
 
@@ -576,19 +576,19 @@ Should this give `{'a': [1, 2, 3, 4]}` or `{'a': [[1, 2], [3, 4]]}`?
 
 结果应该是 `{'a': [1, 2, 3, 4]}` 还是 `{'a': [[1, 2], [3, 4]]}`?
 
-## [Rejected Alternatives](https://www.python.org/dev/peps/pep-0584/#id43)
+## [Rejected Alternatives](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id43)
 
 被拒绝的替代方案
 
-### [Use The Addition Operator](https://www.python.org/dev/peps/pep-0584/#id44)
+### [Use The Addition Operator](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id44)
 
 使用加法运算符
 
-This PEP originally started life as a proposal for dict addition, using the `+` and `+=` operator. That choice proved to be exceedingly controversial, with many people having serious objections to the choice of operator. For details, see [previous versions](https://github.com/python/peps/commits/master/pep-0584.rst) of the PEP and the mailing list [discussions](https://www.python.org/dev/peps/pep-0584/#discussions).
+This PEP originally started life as a proposal for dict addition, using the `+` and `+=` operator. That choice proved to be exceedingly controversial, with many people having serious objections to the choice of operator. For details, see [previous versions](https://github.com/python/peps/commits/master/pep-0584.rst) of the PEP and the mailing list [discussions](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#discussions).
 
-这个PEP最初是作为一个使用 `+`和 `+=`操作符的字典加法的提案。这一选择被证明是非常有争议的，许多人对这个操作符的选择有强烈的反对意见。详情请见PEP的[先前版本](https://github.com/python/peps/commits/master/pep-0584.rst)和邮件列表[讨论](https://www.python.org/dev/peps/pep-0584/#discussions)。
+这个PEP最初是作为一个使用 `+`和 `+=`操作符的字典加法的提案。这一选择被证明是非常有争议的，许多人对这个操作符的选择有强烈的反对意见。详情请见PEP的[先前版本](https://github.com/python/peps/commits/master/pep-0584.rst)和邮件列表[讨论](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#discussions)。
 
-### [Use The Left Shift Operator](https://www.python.org/dev/peps/pep-0584/#id45)
+### [Use The Left Shift Operator](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id45)
 
 使用左移运算符
 
@@ -600,7 +600,7 @@ The `<<` operator didn't seem to get much support on Python-Ideas, but no major 
 >
 > 滥用运算符来表示信息流的 "可爱 "价值在C++做完后不久就过时了。
 
-### [Use A New Left Arrow Operator](https://www.python.org/dev/peps/pep-0584/#id46)
+### [Use A New Left Arrow Operator](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id46)
 
 使用一个新的左箭头运算符
 
@@ -608,7 +608,7 @@ Another suggestion was to create a new operator `<-`. Unfortunately this would b
 
 另一个建议是创建一个新的操作符`<-`。不幸的是，这将会产生歧义，`d <- e`可能意味着`d merge e`或`d less-than minus e`。
 
-### [Use A Method](https://www.python.org/dev/peps/pep-0584/#id47)
+### [Use A Method](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id47)
 
 使用一个方法
 
@@ -640,7 +640,7 @@ def merged(self, *mappings, **kw):
     return new
 ```
 
-#### [Advantages](https://www.python.org/dev/peps/pep-0584/#id48)
+#### [Advantages](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id48)
 
 有点
 
@@ -660,7 +660,7 @@ def merged(self, *mappings, **kw):
 
   作为一个方法，如果你需要其他的行为，如 "first wins"、"unique keys "等，它很容易在子类中被覆盖。
 
-#### [Disadvantages](https://www.python.org/dev/peps/pep-0584/#id49)
+#### [Disadvantages](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id49)
 
 缺点
 
@@ -672,7 +672,7 @@ def merged(self, *mappings, **kw):
 
   它不是一个操作符。Guido讨论了[为什么运算符是有用的](https://mail.python.org/archives/list/python-ideas@python.org/message/52DLME5DKNZYFEETCTRENRNKWJ2B4DD5/)。另一个观点，见Nick Coghlan的博文。
 
-### [Use a Function](https://www.python.org/dev/peps/pep-0584/#id50)
+### [Use a Function](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id50)
 
 使用一个函数
 
@@ -705,7 +705,7 @@ def merged(*mappings, on_collision=lambda k, v1, v2: v2):
     # implementation left as an exercise to the reader
 ```
 
-#### [Advantages](https://www.python.org/dev/peps/pep-0584/#id51)
+#### [Advantages](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id51)
 
 优点：
 
@@ -717,7 +717,7 @@ def merged(*mappings, on_collision=lambda k, v1, v2: v2):
 
   不需要一个子类来实现碰撞时的替代行为，只需要一个函数。
 
-#### [Disadvantages](https://www.python.org/dev/peps/pep-0584/#id52)
+#### [Disadvantages](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id52)
 
 缺点：
 
@@ -729,13 +729,13 @@ def merged(*mappings, on_collision=lambda k, v1, v2: v2):
 
   如果你需要像 "first win"这样的行为，在不失去处理任意关键字参数的能力的情况下，很难重写行为。
 
-# [Examples](https://www.python.org/dev/peps/pep-0584/#id53)
+# [Examples](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id53)
 
 The authors of this PEP did a survey of third party libraries for dictionary merging which might be candidates for dict union.
 
 This is a cursory list based on a subset of whatever arbitrary third-party packages happened to be installed on one of the authors' computers, and may not reflect the current state of any package. Also note that, while further (unrelated) refactoring may be possible, the rewritten version only adds usage of the new operators for an apples-to-apples comparison. It also reduces the result to an expression when it is efficient to do so.
 
-## [IPython/zmq/ipkernel.py](https://www.python.org/dev/peps/pep-0584/#id54)
+## [IPython/zmq/ipkernel.py](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id54)
 
 Before:
 
@@ -750,7 +750,7 @@ After:
 aliases = kernel_aliases | shell_aliases
 ```
 
-## [IPython/zmq/kernelapp.py](https://www.python.org/dev/peps/pep-0584/#id55)
+## [IPython/zmq/kernelapp.py](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id55)
 
 Before:
 
@@ -802,7 +802,7 @@ kernel_flags = base_flags | {
 }
 ```
 
-## [matplotlib/backends/backend_svg.py](https://www.python.org/dev/peps/pep-0584/#id56)
+## [matplotlib/backends/backend_svg.py](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id56)
 
 Before:
 
@@ -818,7 +818,7 @@ After:
 attrib = (attrib | extra).items()
 ```
 
-## [matplotlib/delaunay/triangulate.py](https://www.python.org/dev/peps/pep-0584/#id57)
+## [matplotlib/delaunay/triangulate.py](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id57)
 
 Before:
 
@@ -844,7 +844,7 @@ edges |= zip(self.triangle_nodes[border[:,2]][:,0],
              self.triangle_nodes[border[:,2]][:,1])
 ```
 
-## [matplotlib/legend.py](https://www.python.org/dev/peps/pep-0584/#id58)
+## [matplotlib/legend.py](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id58)
 
 Before:
 
@@ -860,7 +860,7 @@ After:
 return default_handler_map | self._handler_map
 ```
 
-## [numpy/ma/core.py](https://www.python.org/dev/peps/pep-0584/#id59)
+## [numpy/ma/core.py](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id59)
 
 Before:
 
@@ -882,7 +882,7 @@ if not isinstance(obj, MaskedArray):
     _optinfo |= getattr(obj, '__dict__', {})
 ```
 
-## [praw/internal.py](https://www.python.org/dev/peps/pep-0584/#id60)
+## [praw/internal.py](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id60)
 
 Before:
 
@@ -897,7 +897,7 @@ After:
 data = {'name': six.text_type(user), 'type': relationship} | kwargs
 ```
 
-## [pygments/lexer.py](https://www.python.org/dev/peps/pep-0584/#id61)
+## [pygments/lexer.py](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id61)
 
 Before:
 
@@ -912,7 +912,7 @@ After:
 lx = lexer.__class__(**(kwargs | lexer.options))
 ```
 
-## [requests/sessions.py](https://www.python.org/dev/peps/pep-0584/#id62)
+## [requests/sessions.py](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id62)
 
 Before:
 
@@ -927,7 +927,7 @@ After:
 merged_setting = dict_class(to_key_val_list(session_setting)) | to_key_val_list(request_setting)
 ```
 
-## [sphinx/domains/__init__.py](https://www.python.org/dev/peps/pep-0584/#id63)
+## [sphinx/domains/__init__.py](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id63)
 
 Before:
 
@@ -942,7 +942,7 @@ After:
 self.attrs = self.known_attrs | attrs
 ```
 
-## [sphinx/ext/doctest.py](https://www.python.org/dev/peps/pep-0584/#id64)
+## [sphinx/ext/doctest.py](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id64)
 
 Before:
 
@@ -958,7 +958,7 @@ After:
 example.options = code[0].options | example.options
 ```
 
-## [sphinx/ext/inheritance_diagram.py](https://www.python.org/dev/peps/pep-0584/#id65)
+## [sphinx/ext/inheritance_diagram.py](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id65)
 
 Before:
 
@@ -978,7 +978,7 @@ n_attrs = self.default_node_attrs | node_attrs
 e_attrs = self.default_edge_attrs | edge_attrs
 ```
 
-## [sphinx/highlighting.py](https://www.python.org/dev/peps/pep-0584/#id66)
+## [sphinx/highlighting.py](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id66)
 
 Before:
 
@@ -993,7 +993,7 @@ After:
 return self.formatter(**(kwargs | self.formatter_args))
 ```
 
-## [sphinx/quickstart.py](https://www.python.org/dev/peps/pep-0584/#id67)
+## [sphinx/quickstart.py](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id67)
 
 Before:
 
@@ -1010,7 +1010,7 @@ After:
 d = DEFAULT_VALUE | dict(("ext_"+ext, False) for ext in EXTENSIONS) | d
 ```
 
-## [sympy/abc.py](https://www.python.org/dev/peps/pep-0584/#id68)
+## [sympy/abc.py](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id68)
 
 Before:
 
@@ -1027,7 +1027,7 @@ After:
 return clash1, clash2, clash1 | clash2
 ```
 
-## [sympy/parsing/maxima.py](https://www.python.org/dev/peps/pep-0584/#id69)
+## [sympy/parsing/maxima.py](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id69)
 
 Before:
 
@@ -1043,7 +1043,7 @@ After:
 obj = sympify(str, locals=MaximaHelpers.__dict__|name_dict)
 ```
 
-## [sympy/printing/ccode.py and sympy/printing/fcode.py](https://www.python.org/dev/peps/pep-0584/#id70)
+## [sympy/printing/ccode.py and sympy/printing/fcode.py](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id70)
 
 Before:
 
@@ -1059,7 +1059,7 @@ After:
 self.known_functions = known_functions | settings.get('user_functions', {})
 ```
 
-## [sympy/utilities/runtests.py](https://www.python.org/dev/peps/pep-0584/#id71)
+## [sympy/utilities/runtests.py](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id71)
 
 Before:
 
@@ -1077,7 +1077,7 @@ globs = globs | (extraglobs if extraglobs is not None else {})
 
 The above examples show that sometimes the `|` operator leads to a clear increase in readability, reducing the number of lines of code and improving clarity. However other examples using the `|` operator lead to long, complex single expressions, possibly well over the [PEP 8](https://www.python.org/dev/peps/pep-0008) maximum line length of 80 columns. As with any other language feature, the programmer should use their own judgement about whether `|` improves their code.
 
-# [Related Discussions](https://www.python.org/dev/peps/pep-0584/#id72)
+# [Related Discussions](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id72)
 
 相关讨论
 
@@ -1122,7 +1122,7 @@ https://code.tutsplus.com/tutorials/how-to-merge-two-python-dictionaries--cms-26
 
 In direct response to an earlier draft of this PEP, Serhiy Storchaka raised [a ticket in the bug tracker](https://bugs.python.org/issue36431) to replace the `copy(); update()` idiom with dict unpacking.
 
-# [Copyright](https://www.python.org/dev/peps/pep-0584/#id73)
+# [Copyright](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md#id73)
 
 This document is placed in the public domain or under the CC0-1.0-Universal license, whichever is more permissive.
 

@@ -19,25 +19,25 @@
 Contents
 
 - Abstract
-  - [Acknowledgements](https://www.python.org/dev/peps/pep-3119/#acknowledgements)
-- [Rationale](https://www.python.org/dev/peps/pep-3119/#rationale)
+  - [Acknowledgements](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203119%20--%20Introducing%20Abstract%20Base%20Classes.md#acknowledgements)
+- [Rationale](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203119%20--%20Introducing%20Abstract%20Base%20Classes.md#rationale)
 - Specification
-  - [Overloading `isinstance()` and `issubclass()`](https://www.python.org/dev/peps/pep-3119/#overloading-isinstance-and-issubclass)
-  - [The `abc` Module: an ABC Support Framework](https://www.python.org/dev/peps/pep-3119/#the-abc-module-an-abc-support-framework)
+  - [Overloading `isinstance()` and `issubclass()`](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203119%20--%20Introducing%20Abstract%20Base%20Classes.md#overloading-isinstance-and-issubclass)
+  - [The `abc` Module: an ABC Support Framework](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203119%20--%20Introducing%20Abstract%20Base%20Classes.md#the-abc-module-an-abc-support-framework)
   - ABCs for Containers and Iterators
-    - [One Trick Ponies](https://www.python.org/dev/peps/pep-3119/#one-trick-ponies)
-    - [Sets](https://www.python.org/dev/peps/pep-3119/#sets)
-    - [Mappings](https://www.python.org/dev/peps/pep-3119/#mappings)
-    - [Sequences](https://www.python.org/dev/peps/pep-3119/#sequences)
-  - [Strings](https://www.python.org/dev/peps/pep-3119/#strings)
+    - [One Trick Ponies](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203119%20--%20Introducing%20Abstract%20Base%20Classes.md#one-trick-ponies)
+    - [Sets](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203119%20--%20Introducing%20Abstract%20Base%20Classes.md#sets)
+    - [Mappings](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203119%20--%20Introducing%20Abstract%20Base%20Classes.md#mappings)
+    - [Sequences](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203119%20--%20Introducing%20Abstract%20Base%20Classes.md#sequences)
+  - [Strings](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203119%20--%20Introducing%20Abstract%20Base%20Classes.md#strings)
 - ABCs vs. Alternatives
-  - [ABCs vs. Duck Typing](https://www.python.org/dev/peps/pep-3119/#abcs-vs-duck-typing)
-  - [ABCs vs. Generic Functions](https://www.python.org/dev/peps/pep-3119/#abcs-vs-generic-functions)
-  - [ABCs vs. Interfaces](https://www.python.org/dev/peps/pep-3119/#abcs-vs-interfaces)
-- [References](https://www.python.org/dev/peps/pep-3119/#references)
-- [Copyright](https://www.python.org/dev/peps/pep-3119/#copyright)
+  - [ABCs vs. Duck Typing](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203119%20--%20Introducing%20Abstract%20Base%20Classes.md#abcs-vs-duck-typing)
+  - [ABCs vs. Generic Functions](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203119%20--%20Introducing%20Abstract%20Base%20Classes.md#abcs-vs-generic-functions)
+  - [ABCs vs. Interfaces](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203119%20--%20Introducing%20Abstract%20Base%20Classes.md#abcs-vs-interfaces)
+- [References](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203119%20--%20Introducing%20Abstract%20Base%20Classes.md#references)
+- [Copyright](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203119%20--%20Introducing%20Abstract%20Base%20Classes.md#copyright)
 
-# [Abstract](https://www.python.org/dev/peps/pep-3119/#id29)
+# [Abstract](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203119%20--%20Introducing%20Abstract%20Base%20Classes.md#id29)
 
 摘要
 
@@ -65,15 +65,15 @@ There's also a companion [PEP 3141](https://www.python.org/dev/peps/pep-3141), w
 
 还有一个配套的PEP 3141，它为数字类型定义了ABC。
 
-## [Acknowledgements](https://www.python.org/dev/peps/pep-3119/#id30)
+## [Acknowledgements](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203119%20--%20Introducing%20Abstract%20Base%20Classes.md#id30)
 
 致谢
 
-Talin wrote the Rationale below [[1\]](https://www.python.org/dev/peps/pep-3119/#id13) as well as most of the section on ABCs vs. Interfaces. For that alone he deserves co-authorship. The rest of the PEP uses "I" referring to the first author.
+Talin wrote the Rationale below [[1\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203119%20--%20Introducing%20Abstract%20Base%20Classes.md#id13) as well as most of the section on ABCs vs. Interfaces. For that alone he deserves co-authorship. The rest of the PEP uses "I" referring to the first author.
 
 Talin写了下面的理由[1]，以及ABC与界面的大部分章节。仅仅因为这一点，他就值得成为共同作者。PEP的其他部分用 "I "来指代第一作者。
 
-# [Rationale](https://www.python.org/dev/peps/pep-3119/#id31)
+# [Rationale](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203119%20--%20Introducing%20Abstract%20Base%20Classes.md#id31)
 
 理论依据
 
@@ -123,7 +123,7 @@ Like all other things in Python, these promises are in the nature of a gentlemen
 
 像 Python 中的所有其它东西一样，这些承诺的性质是君子协定，在这种情况下，这意味着虽然语言确实强制执行了 ABC 中的一些承诺，但要由具体类的实现者来确保其余的承诺得到遵守。
 
-# [Specification](https://www.python.org/dev/peps/pep-3119/#id32)
+# [Specification](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203119%20--%20Introducing%20Abstract%20Base%20Classes.md#id32)
 
 定义
 
@@ -143,7 +143,7 @@ The specification follows the categories listed in the abstract:
 
   用于容器和迭代器的特定ABC，将被添加到 collections 模块中。
 
-## [Overloading `isinstance()` and `issubclass()`](https://www.python.org/dev/peps/pep-3119/#id33)
+## [Overloading `isinstance()` and `issubclass()`](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203119%20--%20Introducing%20Abstract%20Base%20Classes.md#id33)
 
 重载 `isinstance()` 和 `issubclass()`
 
@@ -151,9 +151,9 @@ During the development of this PEP and of its companion, [PEP 3141](https://www.
 
 在这个PEP及其配套的PEP 3141的开发过程中，我们反复面临这样的选择：是将更多的、细粒度的ABC标准化，还是将更少的、粗粒度的ABC标准化。例如，在一个阶段，PEP 3141引入了以下用于复数的基类堆栈。MonoidUnderPlus、AdditiveGroup、Ring、Field、Complex（每个都是从前一个派生出来的）。而讨论中提到了其他几个被遗漏的代数分类。代数域（Algebraic）、超越域（Transcendental）和积分域（IntegralDomain），以及主要理想域（PrincipalIdealDomain）。在当前PEP的早期版本中，我们考虑了像Set、ComposableSet、MutableSet、HashableSet、MutableComposableSet、HashableComposableSet这样独立类的用例。
 
-The dilemma here is that we'd rather have fewer ABCs, but then what should a user do who needs a less refined ABC? Consider e.g. the plight of a mathematician who wants to define his own kind of Transcendental numbers, but also wants float and int to be considered Transcendental. [PEP 3141](https://www.python.org/dev/peps/pep-3141) originally proposed to patch `float.__bases__` for that purpose, but there are some good reasons to keep the built-in types immutable (for one, they are shared between all Python interpreters running in the same address space, as is used by mod_python [[16\]](https://www.python.org/dev/peps/pep-3119/#id28)).
+The dilemma here is that we'd rather have fewer ABCs, but then what should a user do who needs a less refined ABC? Consider e.g. the plight of a mathematician who wants to define his own kind of Transcendental numbers, but also wants float and int to be considered Transcendental. [PEP 3141](https://www.python.org/dev/peps/pep-3141) originally proposed to patch `float.__bases__` for that purpose, but there are some good reasons to keep the built-in types immutable (for one, they are shared between all Python interpreters running in the same address space, as is used by mod_python [[16\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203119%20--%20Introducing%20Abstract%20Base%20Classes.md#id28)).
 
-这里的困境是，我们宁愿少一些ABC，但如果用户需要一个不那么精细的ABC，应该怎么办？例如，考虑到一个数学家的困境，他想定义他自己的那种超限数，但也希望float和int被认为是超限数。[PEP 3141](https://www.python.org/dev/peps/pep-3141) 最初提议为此目的修补 `float.__bases__`，但是有一些很好的理由来保持内置类型的不可变性 (其一，它们在所有运行在同一地址空间的 Python 解释器之间共享，正如 mod_python [[16\]](https://www.python.org/dev/peps/pep-3119/#id28) 使用的那样)。
+这里的困境是，我们宁愿少一些ABC，但如果用户需要一个不那么精细的ABC，应该怎么办？例如，考虑到一个数学家的困境，他想定义他自己的那种超限数，但也希望float和int被认为是超限数。[PEP 3141](https://www.python.org/dev/peps/pep-3141) 最初提议为此目的修补 `float.__bases__`，但是有一些很好的理由来保持内置类型的不可变性 (其一，它们在所有运行在同一地址空间的 Python 解释器之间共享，正如 mod_python [[16\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203119%20--%20Introducing%20Abstract%20Base%20Classes.md#id28) 使用的那样)。
 
 Another example would be someone who wants to define a generic function ([PEP 3124](https://www.python.org/dev/peps/pep-3124)) for any sequence that has an `append()` method. The `Sequence` ABC (see below) doesn't promise the `append()` method, while `MutableSequence` requires not only `append()` but also various other mutating methods.
 
@@ -181,7 +181,7 @@ Note that the magic names are not `__isinstance__` and `__issubclass__`; this is
 
 注意，这些神奇的名字不是 `__isinstance__` 和 `__issubclass__`；这是因为参数的反转可能会引起混淆，特别是对于 `issubclass()` 的重载。
 
-A prototype implementation of this is given in [[12\]](https://www.python.org/dev/peps/pep-3119/#id24).
+A prototype implementation of this is given in [[12\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203119%20--%20Introducing%20Abstract%20Base%20Classes.md#id24).
 
 在 [12] 中给出了一个原型的实现。
 
@@ -224,11 +224,11 @@ The next section proposes a full-fledged implementation.
 
 下一节提出了一个完整的实施方案。
 
-## [The `abc` Module: an ABC Support Framework](https://www.python.org/dev/peps/pep-3119/#id34)
+## [The `abc` Module: an ABC Support Framework](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203119%20--%20Introducing%20Abstract%20Base%20Classes.md#id34)
 
 `abc`模块：一个ABC支持框架
 
-The new standard library module `abc`, written in pure Python, serves as an ABC support framework. It defines a metaclass `ABCMeta` and decorators `@abstractmethod` and `@abstractproperty`. A sample implementation is given by [[13\]](https://www.python.org/dev/peps/pep-3119/#id25).
+The new standard library module `abc`, written in pure Python, serves as an ABC support framework. It defines a metaclass `ABCMeta` and decorators `@abstractmethod` and `@abstractproperty`. A sample implementation is given by [[13\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203119%20--%20Introducing%20Abstract%20Base%20Classes.md#id25).
 
 新的标准库模块`abc`是用纯Python编写的，作为一个ABC支持框架。它定义了一个元类`ABCMeta`和装饰器`@abstractmethod`和`@abstractproperty`。[13]给出了一个示例实现。
 
@@ -351,11 +351,11 @@ C()  # works
 
 **注意：** `@abstractmethod`装饰器只能在类体内使用，而且只能用于元类是（派生于）`ABCMeta`的类。不支持在类中动态添加抽象方法，或在方法或类创建后试图修改其抽象状态。`@abstractmethod`只影响到使用常规继承衍生的子类；用`register()`方法注册的 "虚拟子类 "不受影响。
 
-**Implementation:** The `@abstractmethod` decorator sets the function attribute `__isabstractmethod__` to the value `True`. The `ABCMeta.__new__` method computes the type attribute `__abstractmethods__` as the set of all method names that have an `__isabstractmethod__` attribute whose value is true. It does this by combining the `__abstractmethods__` attributes of the base classes, adding the names of all methods in the new class dict that have a true `__isabstractmethod__` attribute, and removing the names of all methods in the new class dict that don't have a true `__isabstractmethod__` attribute. If the resulting `__abstractmethods__` set is non-empty, the class is considered abstract, and attempts to instantiate it will raise `TypeError`. (If this were implemented in CPython, an internal flag `Py_TPFLAGS_ABSTRACT` could be used to speed up this check [[6\]](https://www.python.org/dev/peps/pep-3119/#id18).)
+**Implementation:** The `@abstractmethod` decorator sets the function attribute `__isabstractmethod__` to the value `True`. The `ABCMeta.__new__` method computes the type attribute `__abstractmethods__` as the set of all method names that have an `__isabstractmethod__` attribute whose value is true. It does this by combining the `__abstractmethods__` attributes of the base classes, adding the names of all methods in the new class dict that have a true `__isabstractmethod__` attribute, and removing the names of all methods in the new class dict that don't have a true `__isabstractmethod__` attribute. If the resulting `__abstractmethods__` set is non-empty, the class is considered abstract, and attempts to instantiate it will raise `TypeError`. (If this were implemented in CPython, an internal flag `Py_TPFLAGS_ABSTRACT` could be used to speed up this check [[6\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203119%20--%20Introducing%20Abstract%20Base%20Classes.md#id18).)
 
-**实现：** `@abstractmethod`装饰器将函数属性`__isabstractmethod__`设置为`True`值。`ABCMeta.__new__`方法计算类型属性`__abstractmethods__`为所有具有`__isabstractmethod__`属性的方法名的集合，其值为true。它通过合并基类的`__abstractmethods__`属性来实现，在新类的dict中加入所有具有 True 的`__isabstractmethod__`属性的方法名称，并删除新类dict中所有不具有 True 的`__isabstractmethod__`属性的方法名称。如果产生的`__abstractmethods__`集合不是空的，那么这个类就被认为是抽象的，试图实例化它将引发`TypeError`。(如果这在CPython中实现，可以使用一个内部标志`Py_TPFLAGS_ABSTRACT`来加速这个检查[[6](https://www.python.org/dev/peps/pep-3119/#id18)]。)
+**实现：** `@abstractmethod`装饰器将函数属性`__isabstractmethod__`设置为`True`值。`ABCMeta.__new__`方法计算类型属性`__abstractmethods__`为所有具有`__isabstractmethod__`属性的方法名的集合，其值为true。它通过合并基类的`__abstractmethods__`属性来实现，在新类的dict中加入所有具有 True 的`__isabstractmethod__`属性的方法名称，并删除新类dict中所有不具有 True 的`__isabstractmethod__`属性的方法名称。如果产生的`__abstractmethods__`集合不是空的，那么这个类就被认为是抽象的，试图实例化它将引发`TypeError`。(如果这在CPython中实现，可以使用一个内部标志`Py_TPFLAGS_ABSTRACT`来加速这个检查[[6](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203119%20--%20Introducing%20Abstract%20Base%20Classes.md#id18)]。)
 
-**Discussion:** Unlike Java's abstract methods or C++'s pure abstract methods, abstract methods as defined here may have an implementation. This implementation can be called via the `super` mechanism from the class that overrides it. This could be useful as an end-point for a super-call in framework using cooperative multiple-inheritance [[7\]](https://www.python.org/dev/peps/pep-3119/#id19), [[8\]](https://www.python.org/dev/peps/pep-3119/#id20).
+**Discussion:** Unlike Java's abstract methods or C++'s pure abstract methods, abstract methods as defined here may have an implementation. This implementation can be called via the `super` mechanism from the class that overrides it. This could be useful as an end-point for a super-call in framework using cooperative multiple-inheritance [[7\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203119%20--%20Introducing%20Abstract%20Base%20Classes.md#id19), [[8\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203119%20--%20Introducing%20Abstract%20Base%20Classes.md#id20).
 
 讨论：与Java的抽象方法或C++的纯抽象方法不同，这里定义的抽象方法可以有一个实现。这个实现可以通过超机制从覆盖它的类中调用。在使用合作式多重继承的框架中，这可以作为超级调用的一个终端[7], [8]。
 
@@ -398,7 +398,7 @@ Similar to abstract methods, a subclass inheriting an abstract property (declare
 
 > 这里使用《Fluent Python》中文版的翻译，将property翻译为特性，以与attribute进行区分，译者注。
 
-## [ABCs for Containers and Iterators](https://www.python.org/dev/peps/pep-3119/#id35)
+## [ABCs for Containers and Iterators](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203119%20--%20Introducing%20Abstract%20Base%20Classes.md#id35)
 
 容器和迭代器的ABC
 
@@ -418,13 +418,13 @@ No ABCs defined in the PEP override `__init__`, `__new__`, `__str__` or `__repr_
 
 PEP 中定义的 ABC 没有覆盖 `__init__`, `__new__`, `__str__` 或 `__repr__`。定义一个标准的构造函数签名会不必要地限制自定义的容器类型，例如Patricia树或gdbm文件。为一个集合定义一个特定的字符串表示法，同样也是由个人实现来决定的。
 
-**Note:** There are no ABCs for ordering operations (`__lt__`, `__le__`, `__ge__`, `__gt__`). Defining these in a base class (abstract or not) runs into problems with the accepted type for the second operand. For example, if class `Ordering` defined `__lt__`, one would assume that for any `Ordering` instances `x` and `y`, `x < y` would be defined (even if it just defines a partial ordering). But this cannot be the case: If both `list` and `str` derived from `Ordering`, this would imply that `[1, 2] < (1, 2)` should be defined (and presumably return False), while in fact (in Python 3000!) such "mixed-mode comparisons" operations are explicitly forbidden and raise `TypeError`. See [PEP 3100](https://www.python.org/dev/peps/pep-3100) and [[14\]](https://www.python.org/dev/peps/pep-3119/#id26) for more information. (This is a special case of a more general issue with operations that take another argument of the same type).
+**Note:** There are no ABCs for ordering operations (`__lt__`, `__le__`, `__ge__`, `__gt__`). Defining these in a base class (abstract or not) runs into problems with the accepted type for the second operand. For example, if class `Ordering` defined `__lt__`, one would assume that for any `Ordering` instances `x` and `y`, `x < y` would be defined (even if it just defines a partial ordering). But this cannot be the case: If both `list` and `str` derived from `Ordering`, this would imply that `[1, 2] < (1, 2)` should be defined (and presumably return False), while in fact (in Python 3000!) such "mixed-mode comparisons" operations are explicitly forbidden and raise `TypeError`. See [PEP 3100](https://www.python.org/dev/peps/pep-3100) and [[14\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203119%20--%20Introducing%20Abstract%20Base%20Classes.md#id26) for more information. (This is a special case of a more general issue with operations that take another argument of the same type).
 
 **注意：**对于排序操作（`__lt__`, `__le__`, `__ge__`, `__gt__`）没有 ABC。在一个基类中定义这些操作（无论是否抽象）会遇到第二操作数的可接受类型的问题。例如，如果类 `Ordering` 定义了 `__lt__`，我们会认为对于任何 `Ordering` 实例 `x` 和 `y`，`x < y` 将被定义 (即使它只是定义了一个部分排序)。但是情况不可能是这样的。如果 `list` 和 `str` 都来自 `Ordering`，这将意味着 `[1, 2] < (1, 2)` 应该被定义 (并且应该返回 False)，而事实上 (在 Python 3000 中!) 这种 "混合模式比较" 操作是被明确禁止的，并且引发 `TypeError`。参见 PEP 3100 和 [14] 以了解更多信息。(这是一个更普遍的问题的特例，该问题涉及到接受同一类型的另一个参数的操作)。
 
 > 写错了？这里应该是`list`和`tuple`？译者注。
 
-### [One Trick Ponies](https://www.python.org/dev/peps/pep-3119/#id36)
+### [One Trick Ponies](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203119%20--%20Introducing%20Abstract%20Base%20Classes.md#id36)
 
 
 
@@ -487,7 +487,7 @@ This has the advantage of not requiring explicit registration. However, the sema
 
 这样做的好处是不需要明确的注册。然而，考虑到实例属性与类属性的混乱语义，以及一个类是其元类的一个实例，语义很难完全正确；对 `__bases__` 的检查只是对所需语义的一种近似。**稻草人：**让我们来做吧，但是让我们以这样一种方式来安排它，使注册 API 也能工作。
 
-### [Sets](https://www.python.org/dev/peps/pep-3119/#id37)
+### [Sets](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203119%20--%20Introducing%20Abstract%20Base%20Classes.md#id37)
 
 集合
 
@@ -501,7 +501,7 @@ The built-in type `set` derives from `MutableSet`. The built-in type `frozenset`
 
 - `Set`
 
-  This is a sized, iterable container, i.e., a subclass of `Sized`, `Iterable` and `Container`. Not every subclass of those three classes is a set though! Sets have the additional invariant that each element occurs only once (as can be determined by iteration), and in addition sets define concrete operators that implement the inequality operations as subclass/superclass tests. In general, the invariants for finite sets in mathematics hold. [[11\]](https://www.python.org/dev/peps/pep-3119/#id23)Sets with different implementations can be compared safely, (usually) efficiently and correctly using the mathematical definitions of the subclass/superclass operations for finite sets. The ordering operations have concrete implementations; subclasses may override these for speed but should maintain the semantics. Because `Set` derives from `Sized`, `__eq__` may take a shortcut and return `False` immediately if two sets of unequal length are compared. Similarly, `__le__` may return `False` immediately if the first set has more members than the second set. Note that set inclusion implements only a partial ordering; e.g. `{1, 2}` and `{1, 3}` are not ordered (all three of `<`, `==` and `>` return `False` for these arguments). Sets cannot be ordered relative to mappings or sequences, but they can be compared to those for equality (and then they always compare unequal).This class also defines concrete operators to compute union, intersection, symmetric and asymmetric difference, respectively `__or__`, `__and__`, `__xor__` and `__sub__`. These operators should return instances of `Set`. The default implementations call the overridable class method `_from_iterable()` with an iterable argument. This factory method's default implementation returns a `frozenset` instance; it may be overridden to return another appropriate `Set` subclass.Finally, this class defines a concrete method `_hash` which computes the hash value from the elements. Hashable subclasses of `Set` can implement `__hash__` by calling `_hash` or they can reimplement the same algorithm more efficiently; but the algorithm implemented should be the same. Currently the algorithm is fully specified only by the source code [[15\]](https://www.python.org/dev/peps/pep-3119/#id27).**Note:** the `issubset` and `issuperset` methods found on the set type in Python 2 are not supported, as these are mostly just aliases for `__le__` and `__ge__`.
+  This is a sized, iterable container, i.e., a subclass of `Sized`, `Iterable` and `Container`. Not every subclass of those three classes is a set though! Sets have the additional invariant that each element occurs only once (as can be determined by iteration), and in addition sets define concrete operators that implement the inequality operations as subclass/superclass tests. In general, the invariants for finite sets in mathematics hold. [[11\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203119%20--%20Introducing%20Abstract%20Base%20Classes.md#id23)Sets with different implementations can be compared safely, (usually) efficiently and correctly using the mathematical definitions of the subclass/superclass operations for finite sets. The ordering operations have concrete implementations; subclasses may override these for speed but should maintain the semantics. Because `Set` derives from `Sized`, `__eq__` may take a shortcut and return `False` immediately if two sets of unequal length are compared. Similarly, `__le__` may return `False` immediately if the first set has more members than the second set. Note that set inclusion implements only a partial ordering; e.g. `{1, 2}` and `{1, 3}` are not ordered (all three of `<`, `==` and `>` return `False` for these arguments). Sets cannot be ordered relative to mappings or sequences, but they can be compared to those for equality (and then they always compare unequal).This class also defines concrete operators to compute union, intersection, symmetric and asymmetric difference, respectively `__or__`, `__and__`, `__xor__` and `__sub__`. These operators should return instances of `Set`. The default implementations call the overridable class method `_from_iterable()` with an iterable argument. This factory method's default implementation returns a `frozenset` instance; it may be overridden to return another appropriate `Set` subclass.Finally, this class defines a concrete method `_hash` which computes the hash value from the elements. Hashable subclasses of `Set` can implement `__hash__` by calling `_hash` or they can reimplement the same algorithm more efficiently; but the algorithm implemented should be the same. Currently the algorithm is fully specified only by the source code [[15\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203119%20--%20Introducing%20Abstract%20Base%20Classes.md#id27).**Note:** the `issubset` and `issuperset` methods found on the set type in Python 2 are not supported, as these are mostly just aliases for `__le__` and `__ge__`.
 
   这是一个有大小的、可迭代的容器，也就是说，是`Sized`、`Iterable`和`Container`的子类。但并不是这三个类的每个子类都是一个集合! 集合有额外的不变性，即每个元素只出现一次（可以通过迭代来确定），此外，集合还定义了具体的操作符，实现了作为子类/超类测试的不等式操作。一般来说，数学中的有限集的不变量是成立的。[11]使用有限集的子类/超类运算的数学定义，可以安全、（通常）有效和正确地比较具有不同实现方式的集合。排序操作有具体的实现；子类可以覆盖这些操作以提高速度，但应该保持语义。因为 `Set` 派生自 `Sized`，所以 `__eq__` 可以走捷径，在两个长度不相等的集合被比较时立即返回 `False`。类似地，如果第一个集合比第二个集合有更多的成员，`__le__` 可以立即返回 `False`。请注意，集合包含只实现了部分排序；例如，`{1, 2}`和`{1, 3}`是没有顺序的 (对于这些参数，`<`, `==` 和 `>` 三个操作符都返回 `False`)。集合不能相对于映射或序列被排序，但是它们可以与那些相等的序列进行比较(然后它们总是比较不相等)。这个类也定义了具体的操作符来计算联合、相交、对称和不对称的差异，分别是`__or__`, `__and__`, `__xor__` 和 `__sub__`。这些运算符应该返回`Set`的实例。默认的实现是调用可重写的类方法 `_from_iterable()` ，并带有一个可迭代的参数。这个工厂方法的默认实现返回一个 `frozenset` 实例；它可以被重写以返回另一个合适的 `Set` 子类。最后，这个类定义了一个具体的方法 `_hash`，它从元素中计算出哈希值。Set的可散列子类可以通过调用`_hash`来实现`__hash__`，或者它们可以更有效地重新实现相同的算法；但是实现的算法应该是相同的。目前该算法仅由源代码[15]完全指定。注意：Python 2 中在集合类型上发现的 `issubset` 和 `issuperset` 方法不被支持，因为这些大多只是 `__le__` 和 `__ge__` 的别名。
 
@@ -515,7 +515,7 @@ The built-in type `set` derives from `MutableSet`. The built-in type `frozenset`
   
   这是 `Set` 的一个子类，实现了添加和删除元素的额外操作。支持的方法具有Python 2中`set`类型的语义 (除了`discard`，它是以Java为模型的)：抽象方法`.add(x)`返回一个`bool`，如果元素`x`还没有在集合中，它就会添加。如果 `x` 被添加，它应该返回 `True`，如果它已经在那里，则返回 `False`。抽象的实现会抛出`NotImplementedError`。抽象方法`.discard(x)`返回一个`bool`，如果元素`x`存在，就将其删除。如果该元素存在，它应该返回`True`，如果不存在，则返回`False`。抽象的实现会引发`NotImplementedError`。具体方法`.pop()`，删除并返回一个任意的项目。如果这个集合是空的，它会引发`KeyError`。默认实现会删除集合的迭代器返回的第一个项目。具体方法`.toggle(x)`返回一个`bool`，如果`x`不在集合中，则将其添加到集合中，如果它在集合中，则将其删除。如果`x`被添加，它应该返回`True`，如果被移除，它应该返回`False`。具体方法`.clear()`将清空集合。默认的实现是重复调用`self.pop()`，直到捕获`KeyError`。(注意：这可能比简单地创建一个新的集合要慢得多，即使一个实现用更快的方法来覆盖它；但在某些情况下，对象的身份是很重要的。)这也支持就地变异操作`|=`, `&=`, `^=`, `-=`。这些都是具体的方法，其右操作数可以是一个任意的`Iterable`，除了`&=`，其右操作数必须是一个容器。这个ABC不提供内置的具体`set`类型上的命名方法，这些方法执行（几乎）同样的操作。
 
-### [Mappings](https://www.python.org/dev/peps/pep-3119/#id38)
+### [Mappings](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203119%20--%20Introducing%20Abstract%20Base%20Classes.md#id38)
 
 映射
 
@@ -547,7 +547,7 @@ The built-in type `dict` derives from `MutableMapping`.
   
   > 这里的Open issues简直是官方偷懒:smiley:，译者注。
 
-### [Sequences](https://www.python.org/dev/peps/pep-3119/#id39)
+### [Sequences](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203119%20--%20Introducing%20Abstract%20Base%20Classes.md#id39)
 
 序列
 
@@ -575,7 +575,7 @@ The built-in `list` and `bytes` types derive from `MutableSequence`. The built-i
   
   `Sequence`的一个子类，增加了一些标准的变异方法。抽象的变异方法。`__setitem__` (用于整数索引和切片), `__delitem__` (同上), `insert`。具体的变异方法：`append`, `reverse`, `extend`, `pop`, `remove`。具体的变异操作符。`+=`, `*=` (这些都是对对象进行原地变异的)。**注意：**这里没有定义 `sort()` -- 这只需要存在于真正的 `list` 实例上。
 
-## [Strings](https://www.python.org/dev/peps/pep-3119/#id40)
+## [Strings](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203119%20--%20Introducing%20Abstract%20Base%20Classes.md#id40)
 
 字符串
 
@@ -587,13 +587,13 @@ Python 3 可能至少有两种内置的字符串类型：从 `MutableSequence` �
 
 **未解决的问题：**为这些定义基础接口，以便替代的实现和子类知道他们在做什么。这可能是一个新的PEP或PEP的主题（PEP 358应该被用于字节类型的合作）。
 
-# [ABCs vs. Alternatives](https://www.python.org/dev/peps/pep-3119/#id41)
+# [ABCs vs. Alternatives](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203119%20--%20Introducing%20Abstract%20Base%20Classes.md#id41)
 
 In this section I will attempt to compare and contrast ABCs to other approaches that have been proposed.
 
 在本节中，我将尝试将ABC与其他已提出的方法进行比较和对比。
 
-## [ABCs vs. Duck Typing](https://www.python.org/dev/peps/pep-3119/#id42)
+## [ABCs vs. Duck Typing](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203119%20--%20Introducing%20Abstract%20Base%20Classes.md#id42)
 
 ABC vs 鸭子类型
 
@@ -605,11 +605,11 @@ Of course, there will be some carrots to encourage users to derive from the appr
 
 当然，会有一些胡萝卜来鼓励用户从适当的基类中派生出来；这些胡萝卜从某些功能的默认实现到改进区分映射和序列的能力不等。但并没有大棒。如果 `hasattr(x, "__len__")` 对你有用，那很好！你可以使用 ABC。ABC的目的是为了解决在Python 2中完全没有好的解决方案的那些问题，比如区分映射和序列。
 
-## [ABCs vs. Generic Functions](https://www.python.org/dev/peps/pep-3119/#id43)
+## [ABCs vs. Generic Functions](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203119%20--%20Introducing%20Abstract%20Base%20Classes.md#id43)
 
 ABCs vs 泛函数
 
-ABCs are compatible with Generic Functions (GFs). For example, my own Generic Functions implementation [[4\]](https://www.python.org/dev/peps/pep-3119/#id16) uses the classes (types) of the arguments as the dispatch key, allowing derived classes to override base classes. Since (from Python's perspective) ABCs are quite ordinary classes, using an ABC in the default implementation for a GF can be quite appropriate. For example, if I have an overloaded `prettyprint` function, it would make total sense to define pretty-printing of sets like this:
+ABCs are compatible with Generic Functions (GFs). For example, my own Generic Functions implementation [[4\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203119%20--%20Introducing%20Abstract%20Base%20Classes.md#id16) uses the classes (types) of the arguments as the dispatch key, allowing derived classes to override base classes. Since (from Python's perspective) ABCs are quite ordinary classes, using an ABC in the default implementation for a GF can be quite appropriate. For example, if I have an overloaded `prettyprint` function, it would make total sense to define pretty-printing of sets like this:
 
 ABCs与泛函数（GFs）是兼容的。例如，我自己的泛函数实现 [4] 使用参数的类 (类型) 作为调度键，允许派生类覆盖基类。因为 (从 Python 的角度来看) ABC 是非常普通的类，所以在 GF 的默认实现中使用 ABC 可以非常合适。例如，如果我有一个重载的 `prettyprint` 函数，像这样定义集合的 pretty-printing 是完全合理的。
 
@@ -623,15 +623,15 @@ and implementations for specific subclasses of Set could be added easily.
 
 而对于Set的特定子类的实现可以很容易地加入。
 
-I believe ABCs also won't present any problems for RuleDispatch, Phillip Eby's GF implementation in PEAK [[5\]](https://www.python.org/dev/peps/pep-3119/#id17).
+I believe ABCs also won't present any problems for RuleDispatch, Phillip Eby's GF implementation in PEAK [[5\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203119%20--%20Introducing%20Abstract%20Base%20Classes.md#id17).
 
-我相信ABC也不会给RuleDispatch带来任何问题，Phillip Eby在PEAK[[5](https://www.python.org/dev/peps/pep-3119/#id17)]中的GF实现。
+我相信ABC也不会给RuleDispatch带来任何问题，Phillip Eby在PEAK[[5](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203119%20--%20Introducing%20Abstract%20Base%20Classes.md#id17)]中的GF实现。
 
 Of course, GF proponents might claim that GFs (and concrete, or implementation, classes) are all you need. But even they will not deny the usefulness of inheritance; and one can easily consider the ABCs proposed in this PEP as optional implementation base classes; there is no requirement that all user-defined mappings derive from `BasicMapping`.
 
 当然，GF的支持者可能会声称，GF（以及具体的，或者说实现类）就是你所需要的一切。但即使是他们也不会否认继承的有用性；我们可以很容易地将本PEP中提出的ABC视为可选的实现基类；并没有要求所有用户定义的映射都源自于`BasicMapping`。
 
-## [ABCs vs. Interfaces](https://www.python.org/dev/peps/pep-3119/#id44)
+## [ABCs vs. Interfaces](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203119%20--%20Introducing%20Abstract%20Base%20Classes.md#id44)
 
 ABC vs 接口
 
@@ -653,45 +653,45 @@ The drawback to this idea of attaching mutable metadata to a class is that class
 
 > 关于什么是泛函数，可以阅读[**Python 里的「单分派泛函数」到底是什么？**](https://www.cnblogs.com/wongbingming/p/10726698.html)译者注。
 
-# [References](https://www.python.org/dev/peps/pep-3119/#id45)
+# [References](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203119%20--%20Introducing%20Abstract%20Base%20Classes.md#id45)
 
 参考文献
 
-|                                                         |                                                              |
-| ------------------------------------------------------- | ------------------------------------------------------------ |
-| [[1\]](https://www.python.org/dev/peps/pep-3119/#id1)   | An Introduction to ABC's, by Talin (https://mail.python.org/pipermail/python-3000/2007-April/006614.html) |
-|                                                         |                                                              |
-| [2]                                                     | Incomplete implementation prototype, by GvR (http://svn.python.org/view/sandbox/trunk/abc/) |
-|                                                         |                                                              |
-| [3]                                                     | Possible Python 3K Class Tree?, wiki page created by Bill Janssen (http://wiki.python.org/moin/AbstractBaseClasses) |
-|                                                         |                                                              |
-| [[4\]](https://www.python.org/dev/peps/pep-3119/#id11)  | Generic Functions implementation, by GvR (http://svn.python.org/view/sandbox/trunk/overload/) |
-|                                                         |                                                              |
-| [[5\]](https://www.python.org/dev/peps/pep-3119/#id12)  | Charming Python: Scaling a new PEAK, by David Mertz (http://www-128.ibm.com/developerworks/library/l-cppeak2/) |
-|                                                         |                                                              |
-| [[6\]](https://www.python.org/dev/peps/pep-3119/#id5)   | Implementation of @abstractmethod (https://bugs.python.org/issue1706989) |
-|                                                         |                                                              |
-| [[7\]](https://www.python.org/dev/peps/pep-3119/#id6)   | Unifying types and classes in Python 2.2, by GvR (http://www.python.org/download/releases/2.2.3/descrintro/) |
-|                                                         |                                                              |
-| [[8\]](https://www.python.org/dev/peps/pep-3119/#id7)   | Putting Metaclasses to Work: A New Dimension in Object-Oriented Programming, by Ira R. Forman and Scott H. Danforth (http://www.amazon.com/gp/product/0201433052) |
-|                                                         |                                                              |
-| [9]                                                     | Partial order, in Wikipedia (http://en.wikipedia.org/wiki/Partial_order) |
-|                                                         |                                                              |
-| [10]                                                    | Total order, in Wikipedia (http://en.wikipedia.org/wiki/Total_order) |
-|                                                         |                                                              |
-| [[11\]](https://www.python.org/dev/peps/pep-3119/#id9)  | Finite set, in Wikipedia (http://en.wikipedia.org/wiki/Finite_set) |
-|                                                         |                                                              |
-| [[12\]](https://www.python.org/dev/peps/pep-3119/#id3)  | Make isinstance/issubclass overloadable (https://bugs.python.org/issue1708353) |
-|                                                         |                                                              |
-| [[13\]](https://www.python.org/dev/peps/pep-3119/#id4)  | ABCMeta sample implementation (http://svn.python.org/view/sandbox/trunk/abc/xyz.py) |
-|                                                         |                                                              |
-| [[14\]](https://www.python.org/dev/peps/pep-3119/#id8)  | python-dev email ("Comparing heterogeneous types") https://mail.python.org/pipermail/python-dev/2004-June/045111.html |
-|                                                         |                                                              |
-| [[15\]](https://www.python.org/dev/peps/pep-3119/#id10) | Function `frozenset_hash()` in Object/setobject.c (http://svn.python.org/view/python/trunk/Objects/setobject.c) |
-|                                                         |                                                              |
-| [[16\]](https://www.python.org/dev/peps/pep-3119/#id2)  | Multiple interpreters in mod_python (http://www.modpython.org/live/current/doc-html/pyapi-interps.html) |
+|                                                              |                                                              |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [[1\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203119%20--%20Introducing%20Abstract%20Base%20Classes.md#id1) | An Introduction to ABC's, by Talin (https://mail.python.org/pipermail/python-3000/2007-April/006614.html) |
+|                                                              |                                                              |
+| [2]                                                          | Incomplete implementation prototype, by GvR (http://svn.python.org/view/sandbox/trunk/abc/) |
+|                                                              |                                                              |
+| [3]                                                          | Possible Python 3K Class Tree?, wiki page created by Bill Janssen (http://wiki.python.org/moin/AbstractBaseClasses) |
+|                                                              |                                                              |
+| [[4\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203119%20--%20Introducing%20Abstract%20Base%20Classes.md#id11) | Generic Functions implementation, by GvR (http://svn.python.org/view/sandbox/trunk/overload/) |
+|                                                              |                                                              |
+| [[5\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203119%20--%20Introducing%20Abstract%20Base%20Classes.md#id12) | Charming Python: Scaling a new PEAK, by David Mertz (http://www-128.ibm.com/developerworks/library/l-cppeak2/) |
+|                                                              |                                                              |
+| [[6\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203119%20--%20Introducing%20Abstract%20Base%20Classes.md#id5) | Implementation of @abstractmethod (https://bugs.python.org/issue1706989) |
+|                                                              |                                                              |
+| [[7\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203119%20--%20Introducing%20Abstract%20Base%20Classes.md#id6) | Unifying types and classes in Python 2.2, by GvR (http://www.python.org/download/releases/2.2.3/descrintro/) |
+|                                                              |                                                              |
+| [[8\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203119%20--%20Introducing%20Abstract%20Base%20Classes.md#id7) | Putting Metaclasses to Work: A New Dimension in Object-Oriented Programming, by Ira R. Forman and Scott H. Danforth (http://www.amazon.com/gp/product/0201433052) |
+|                                                              |                                                              |
+| [9]                                                          | Partial order, in Wikipedia (http://en.wikipedia.org/wiki/Partial_order) |
+|                                                              |                                                              |
+| [10]                                                         | Total order, in Wikipedia (http://en.wikipedia.org/wiki/Total_order) |
+|                                                              |                                                              |
+| [[11\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203119%20--%20Introducing%20Abstract%20Base%20Classes.md#id9) | Finite set, in Wikipedia (http://en.wikipedia.org/wiki/Finite_set) |
+|                                                              |                                                              |
+| [[12\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203119%20--%20Introducing%20Abstract%20Base%20Classes.md#id3) | Make isinstance/issubclass overloadable (https://bugs.python.org/issue1708353) |
+|                                                              |                                                              |
+| [[13\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203119%20--%20Introducing%20Abstract%20Base%20Classes.md#id4) | ABCMeta sample implementation (http://svn.python.org/view/sandbox/trunk/abc/xyz.py) |
+|                                                              |                                                              |
+| [[14\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203119%20--%20Introducing%20Abstract%20Base%20Classes.md#id8) | python-dev email ("Comparing heterogeneous types") https://mail.python.org/pipermail/python-dev/2004-June/045111.html |
+|                                                              |                                                              |
+| [[15\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203119%20--%20Introducing%20Abstract%20Base%20Classes.md#id10) | Function `frozenset_hash()` in Object/setobject.c (http://svn.python.org/view/python/trunk/Objects/setobject.c) |
+|                                                              |                                                              |
+| [[16\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203119%20--%20Introducing%20Abstract%20Base%20Classes.md#id2) | Multiple interpreters in mod_python (http://www.modpython.org/live/current/doc-html/pyapi-interps.html) |
 
-# [Copyright](https://www.python.org/dev/peps/pep-3119/#id46)
+# [Copyright](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203119%20--%20Introducing%20Abstract%20Base%20Classes.md#id46)
 
 This document has been placed in the public domain.
 

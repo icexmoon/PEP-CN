@@ -489,67 +489,131 @@ This has the advantage of not requiring explicit registration. However, the sema
 
 ### [Sets](https://www.python.org/dev/peps/pep-3119/#id37)
 
+集合
+
 These abstract classes represent read-only sets and mutable sets. The most fundamental set operation is the membership test, written as `x in s` and implemented by `s.__contains__(x)`. This operation is already defined by the `Container` class defined above. Therefore, we define a set as a sized, iterable container for which certain invariants from mathematical set theory hold.
 
+这些抽象类表示只读集合和可变集合。最基本的集合操作是成员测试，写成`x in s`，由`s.__contains__(x)`实现。这个操作已经被上面定义的`Container`类所定义。因此，我们将集合定义为一个有尺寸的、可迭代的容器，对于它来说，数学集合理论中的某些不变性是成立的。
+
 The built-in type `set` derives from `MutableSet`. The built-in type `frozenset` derives from `Set` and `Hashable`.
+
+内置类型`set`派生自`MutableSet`。内置类型`frozenset`派生自`Set`和`Hashable`。
 
 - `Set`
 
   This is a sized, iterable container, i.e., a subclass of `Sized`, `Iterable` and `Container`. Not every subclass of those three classes is a set though! Sets have the additional invariant that each element occurs only once (as can be determined by iteration), and in addition sets define concrete operators that implement the inequality operations as subclass/superclass tests. In general, the invariants for finite sets in mathematics hold. [[11\]](https://www.python.org/dev/peps/pep-3119/#id23)Sets with different implementations can be compared safely, (usually) efficiently and correctly using the mathematical definitions of the subclass/superclass operations for finite sets. The ordering operations have concrete implementations; subclasses may override these for speed but should maintain the semantics. Because `Set` derives from `Sized`, `__eq__` may take a shortcut and return `False` immediately if two sets of unequal length are compared. Similarly, `__le__` may return `False` immediately if the first set has more members than the second set. Note that set inclusion implements only a partial ordering; e.g. `{1, 2}` and `{1, 3}` are not ordered (all three of `<`, `==` and `>` return `False` for these arguments). Sets cannot be ordered relative to mappings or sequences, but they can be compared to those for equality (and then they always compare unequal).This class also defines concrete operators to compute union, intersection, symmetric and asymmetric difference, respectively `__or__`, `__and__`, `__xor__` and `__sub__`. These operators should return instances of `Set`. The default implementations call the overridable class method `_from_iterable()` with an iterable argument. This factory method's default implementation returns a `frozenset` instance; it may be overridden to return another appropriate `Set` subclass.Finally, this class defines a concrete method `_hash` which computes the hash value from the elements. Hashable subclasses of `Set` can implement `__hash__` by calling `_hash` or they can reimplement the same algorithm more efficiently; but the algorithm implemented should be the same. Currently the algorithm is fully specified only by the source code [[15\]](https://www.python.org/dev/peps/pep-3119/#id27).**Note:** the `issubset` and `issuperset` methods found on the set type in Python 2 are not supported, as these are mostly just aliases for `__le__` and `__ge__`.
 
+  这是一个有大小的、可迭代的容器，也就是说，是`Sized`、`Iterable`和`Container`的子类。但并不是这三个类的每个子类都是一个集合! 集合有额外的不变性，即每个元素只出现一次（可以通过迭代来确定），此外，集合还定义了具体的操作符，实现了作为子类/超类测试的不等式操作。一般来说，数学中的有限集的不变量是成立的。[11]使用有限集的子类/超类运算的数学定义，可以安全、（通常）有效和正确地比较具有不同实现方式的集合。排序操作有具体的实现；子类可以覆盖这些操作以提高速度，但应该保持语义。因为 `Set` 派生自 `Sized`，所以 `__eq__` 可以走捷径，在两个长度不相等的集合被比较时立即返回 `False`。类似地，如果第一个集合比第二个集合有更多的成员，`__le__` 可以立即返回 `False`。请注意，集合包含只实现了部分排序；例如，`{1, 2}`和`{1, 3}`是没有顺序的 (对于这些参数，`<`, `==` 和 `>` 三个操作符都返回 `False`)。集合不能相对于映射或序列被排序，但是它们可以与那些相等的序列进行比较(然后它们总是比较不相等)。这个类也定义了具体的操作符来计算联合、相交、对称和不对称的差异，分别是`__or__`, `__and__`, `__xor__` 和 `__sub__`。这些运算符应该返回`Set`的实例。默认的实现是调用可重写的类方法 `_from_iterable()` ，并带有一个可迭代的参数。这个工厂方法的默认实现返回一个 `frozenset` 实例；它可以被重写以返回另一个合适的 `Set` 子类。最后，这个类定义了一个具体的方法 `_hash`，它从元素中计算出哈希值。Set的可散列子类可以通过调用`_hash`来实现`__hash__`，或者它们可以更有效地重新实现相同的算法；但是实现的算法应该是相同的。目前该算法仅由源代码[15]完全指定。注意：Python 2 中在集合类型上发现的 `issubset` 和 `issuperset` 方法不被支持，因为这些大多只是 `__le__` 和 `__ge__` 的别名。
+
+  > 关于集合运算的更多介绍可以阅读[**Python学习笔记20：字典与集合**](https://blog.icexmoon.xyz/archives/93.html)，译者注。
+
 - `MutableSet`
 
+  可变集合
+  
   This is a subclass of `Set` implementing additional operations to add and remove elements. The supported methods have the semantics known from the `set` type in Python 2 (except for `discard`, which is modeled after Java):`.add(x)`Abstract method returning a `bool` that adds the element `x` if it isn't already in the set. It should return `True` if `x` was added, `False` if it was already there. The abstract implementation raises `NotImplementedError`.`.discard(x)`Abstract method returning a `bool` that removes the element `x` if present. It should return `True` if the element was present and `False` if it wasn't. The abstract implementation raises `NotImplementedError`.`.pop()`Concrete method that removes and returns an arbitrary item. If the set is empty, it raises `KeyError`. The default implementation removes the first item returned by the set's iterator.`.toggle(x)`Concrete method returning a `bool` that adds x to the set if it wasn't there, but removes it if it was there. It should return `True` if `x` was added, `False` if it was removed.`.clear()`Concrete method that empties the set. The default implementation repeatedly calls `self.pop()` until `KeyError` is caught. (**Note:** this is likely much slower than simply creating a new set, even if an implementation overrides it with a faster approach; but in some cases object identity is important.)This also supports the in-place mutating operations `|=`, `&=`, `^=`, `-=`. These are concrete methods whose right operand can be an arbitrary `Iterable`, except for `&=`, whose right operand must be a `Container`. This ABC does not provide the named methods present on the built-in concrete `set` type that perform (almost) the same operations.
+  
+  这是 `Set` 的一个子类，实现了添加和删除元素的额外操作。支持的方法具有Python 2中`set`类型的语义 (除了`discard`，它是以Java为模型的)：抽象方法`.add(x)`返回一个`bool`，如果元素`x`还没有在集合中，它就会添加。如果 `x` 被添加，它应该返回 `True`，如果它已经在那里，则返回 `False`。抽象的实现会抛出`NotImplementedError`。抽象方法`.discard(x)`返回一个`bool`，如果元素`x`存在，就将其删除。如果该元素存在，它应该返回`True`，如果不存在，则返回`False`。抽象的实现会引发`NotImplementedError`。具体方法`.pop()`，删除并返回一个任意的项目。如果这个集合是空的，它会引发`KeyError`。默认实现会删除集合的迭代器返回的第一个项目。具体方法`.toggle(x)`返回一个`bool`，如果`x`不在集合中，则将其添加到集合中，如果它在集合中，则将其删除。如果`x`被添加，它应该返回`True`，如果被移除，它应该返回`False`。具体方法`.clear()`将清空集合。默认的实现是重复调用`self.pop()`，直到捕获`KeyError`。(注意：这可能比简单地创建一个新的集合要慢得多，即使一个实现用更快的方法来覆盖它；但在某些情况下，对象的身份是很重要的。)这也支持就地变异操作`|=`, `&=`, `^=`, `-=`。这些都是具体的方法，其右操作数可以是一个任意的`Iterable`，除了`&=`，其右操作数必须是一个容器。这个ABC不提供内置的具体`set`类型上的命名方法，这些方法执行（几乎）同样的操作。
 
 ### [Mappings](https://www.python.org/dev/peps/pep-3119/#id38)
 
+映射
+
 These abstract classes represent read-only mappings and mutable mappings. The `Mapping` class represents the most common read-only mapping API.
+
+这些抽象类代表了只读映射和可变映射。`Mapping`类代表了最常见的只读映射API。
 
 The built-in type `dict` derives from `MutableMapping`.
 
+内置类型`dict`派生自`MutableMapping`。
+
 - `Mapping`
+
+  映射
 
   A subclass of `Container`, `Iterable` and `Sized`. The keys of a mapping naturally form a set. The (key, value) pairs (which must be tuples) are also referred to as items. The items also form a set. Methods:`.__getitem__(key)`Abstract method that returns the value corresponding to `key`, or raises `KeyError`. The implementation always raises `KeyError`.`.get(key, default=None)`Concrete method returning `self[key]` if this does not raise `KeyError`, and the `default` value if it does.`.__contains__(key)`Concrete method returning `True` if `self[key]` does not raise `KeyError`, and `False` if it does.`.__len__()`Abstract method returning the number of distinct keys (i.e., the length of the key set).`.__iter__()`Abstract method returning each key in the key set exactly once.`.keys()`Concrete method returning the key set as a `Set`. The default concrete implementation returns a "view" on the key set (meaning if the underlying mapping is modified, the view's value changes correspondingly); subclasses are not required to return a view but they should return a `Set`.`.items()`Concrete method returning the items as a `Set`. The default concrete implementation returns a "view" on the item set; subclasses are not required to return a view but they should return a `Set`.`.values()`Concrete method returning the values as a sized, iterable container (not a set!). The default concrete implementation returns a "view" on the values of the mapping; subclasses are not required to return a view but they should return a sized, iterable container.The following invariants should hold for any mapping `m`:`len(m.values()) == len(m.keys()) == len(m.items()) == len(m) [value for value in m.values()] == [m[key] for key in m.keys()] [item for item in m.items()] == [(key, m[key]) for key in m.keys()] `i.e. iterating over the items, keys and values should return results in the same order.
 
+  `Container`、`Iterable`和`Sized`的一个子类。一个映射的键自然形成一个集合。`(key, value)` 对（必须是图元）也被称为项。这些项目也构成一个集合。方法：抽象方法`.__getitem__(key)`返回key对应的值，或者引发`KeyError`。抽象类的实现总是引发 `KeyError`。具体方法`.get(key, default=None)`，如果不引发 `KeyError`，返回 `self[key]`，如果引发 `KeyError`，返回默认值。抽象方法`.__iter__()`，会将键组中的每个键精确地返回一次。具体方法`.keys()`，返回的键组为一个 `Set`。默认的具体实现是在键的集合上返回一个 "视图"（意味着如果底层映射被修改，视图的值也会相应地改变）；子类不需要返回一个视图，但它们（至少）应该返回一个集合。具体方法`.items()`将项作为一个集合返回。默认的具体实现是在项目集上返回一个 "视图"；子类不需要返回一个视图，但它们应该返回一个`Set`。具体方法`.values()`，将值作为一个有大小的、可迭代的 container（不是一个集合！）返回。默认的具体实现会返回一个关于映射值的 "视图"；子类不需要返回一个视图，但它们应该返回一个有大小的可迭代的 container。对于任何映射`m`来说，以下不变性应该是成立的：`len(m.values()) == len(m.key()) == len(m.items()) == len(m) [value for value in m.values() ] == [m[key] for key in m.key() ] [item for item in m.items()] == [(key, m[key]) for key in m.key()]`也就是说，在item、key和value上迭代应该以相同的顺序返回结果。
+
+  > 最后的一句话应该是指虽然我们不能依赖于映射的迭代顺序，但是对于给定义的一个已有映射，在某一个时刻其对`key\value\(key,value)`的分别迭代顺序应该是一致的，不应该存在歧义，译者注。
+
 - `MutableMapping`
 
+  可变映射
+  
   A subclass of `Mapping` that also implements some standard mutating methods. Abstract methods include `__setitem__`, `__delitem__`. Concrete methods include `pop`, `popitem`, `clear`, `update`. **Note:** `setdefault` is *not* included. **Open issues:** Write out the specs for the methods.
+  
+  `Mapping`的一个子类，也实现了一些标准的变异方法。抽象方法包括`__setitem__`, `__delitem__`。具体的方法包括 `pop`, `popitem`, `clear`, `update`. **注意：** `setdefault`并不包括在内。**未解决的问题：**写出方法的规格。
+  
+  > 这里的Open issues简直是官方偷懒:smiley:，译者注。
 
 ### [Sequences](https://www.python.org/dev/peps/pep-3119/#id39)
 
+序列
+
 These abstract classes represent read-only sequences and mutable sequences.
+
+这些抽象类表示只读序列和可变序列。
 
 The built-in `list` and `bytes` types derive from `MutableSequence`. The built-in `tuple` and `str` types derive from `Sequence` and `Hashable`.
 
+内置的`list`和`byte`类型衍生自`MutableSequence`。内置的`tuple`和`str`类型派生自`Sequence`和`Hashable`。
+
 - `Sequence`
+
+  序列
 
   A subclass of `Iterable`, `Sized`, `Container`. It defines a new abstract method `__getitem__` that has a somewhat complicated signature: when called with an integer, it returns an element of the sequence or raises `IndexError`; when called with a `slice` object, it returns another `Sequence`. The concrete `__iter__` method iterates over the elements using `__getitem__` with integer arguments 0, 1, and so on, until `IndexError` is raised. The length should be equal to the number of values returned by the iterator.**Open issues:** Other candidate methods, which can all have default concrete implementations that only depend on `__len__` and `__getitem__` with an integer argument: `__reversed__`, `index`, `count`, `__add__`, `__mul__`.
 
+  `Iterable`, `Sized`, `Container`的一个子类。它定义了一个新的抽象方法 `__getitem__`，它有一个有点复杂的签名：当用一个整数调用时，它返回序列的一个元素或引发 `IndexError`；当用一个切片对象调用时，它返回另一个 `Sequence`。具体的 `__iter__` 方法使用 `__getitem__` 对元素进行迭代，整数参数为 0、1，以此类推，直到引发 `IndexError`。长度应该等于迭代器返回的值的数量。打开问题：其他候选方法，它们都可以有默认的具体实现，只依赖于 `__len__` 和 `__getitem__` 的整数参数。`__reversed__`, `index`, `count`, `__add__`, `__mul__`。
+
 - `MutableSequence`
 
+  可变序列
+  
   A subclass of `Sequence` adding some standard mutating methods. Abstract mutating methods: `__setitem__` (for integer indices as well as slices), `__delitem__` (ditto), `insert`. Concrete mutating methods: `append`, `reverse`, `extend`, `pop`, `remove`. Concrete mutating operators: `+=`, `*=` (these mutate the object in place). **Note:** this does not define `sort()` -- that is only required to exist on genuine `list` instances.
+  
+  `Sequence`的一个子类，增加了一些标准的变异方法。抽象的变异方法。`__setitem__` (用于整数索引和切片), `__delitem__` (同上), `insert`。具体的变异方法：`append`, `reverse`, `extend`, `pop`, `remove`。具体的变异操作符。`+=`, `*=` (这些都是对对象进行原地变异的)。**注意：**这里没有定义 `sort()` -- 这只需要存在于真正的 `list` 实例上。
 
 ## [Strings](https://www.python.org/dev/peps/pep-3119/#id40)
 
+字符串
+
 Python 3000 will likely have at least two built-in string types: byte strings (`bytes`), deriving from `MutableSequence`, and (Unicode) character strings (`str`), deriving from `Sequence` and `Hashable`.
 
+Python 3 可能至少有两种内置的字符串类型：从 `MutableSequence` 派生的字节字符串 (`bytes`)，以及从 `Sequence` 和 `Hashable` 派生的 (Unicode) 字符串 (`str`)。
+
 **Open issues:** define the base interfaces for these so alternative implementations and subclasses know what they are in for. This may be the subject of a new PEP or PEPs ([PEP 358](https://www.python.org/dev/peps/pep-0358) should be co-opted for the `bytes` type).
+
+**未解决的问题：**为这些定义基础接口，以便替代的实现和子类知道他们在做什么。这可能是一个新的PEP或PEP的主题（PEP 358应该被用于字节类型的合作）。
 
 # [ABCs vs. Alternatives](https://www.python.org/dev/peps/pep-3119/#id41)
 
 In this section I will attempt to compare and contrast ABCs to other approaches that have been proposed.
 
+在本节中，我将尝试将ABC与其他已提出的方法进行比较和对比。
+
 ## [ABCs vs. Duck Typing](https://www.python.org/dev/peps/pep-3119/#id42)
+
+ABC vs 鸭子类型
 
 Does the introduction of ABCs mean the end of Duck Typing? I don't think so. Python will not require that a class derives from `BasicMapping` or `Sequence` when it defines a `__getitem__` method, nor will the `x[y]` syntax require that `x` is an instance of either ABC. You will still be able to assign any "file-like" object to `sys.stdout`, as long as it has a `write` method.
 
+ABCs的引入是否意味着鸭子类型的结束？我不这么认为。当一个类定义 `__getitem__` 方法时，Python 将不要求它派生自 `BasicMapping` 或 `Sequence`，`x[y]` 语法也不要求 `x` 是 ABC 的一个实例。你仍然能够将任何 "类文件 "对象分配给 `sys.stdout`，只要它有一个写入方法。
+
 Of course, there will be some carrots to encourage users to derive from the appropriate base classes; these vary from default implementations for certain functionality to an improved ability to distinguish between mappings and sequences. But there are no sticks. If `hasattr(x, "__len__")` works for you, great! ABCs are intended to solve problems that don't have a good solution at all in Python 2, such as distinguishing between mappings and sequences.
+
+当然，会有一些胡萝卜来鼓励用户从适当的基类中派生出来；这些胡萝卜从某些功能的默认实现到改进区分映射和序列的能力不等。但并没有大棒。如果 `hasattr(x, "__len__")` 对你有用，那很好！你可以使用 ABC。ABC的目的是为了解决在Python 2中完全没有好的解决方案的那些问题，比如区分映射和序列。
 
 ## [ABCs vs. Generic Functions](https://www.python.org/dev/peps/pep-3119/#id43)
 
+ABCs vs 泛函数
+
 ABCs are compatible with Generic Functions (GFs). For example, my own Generic Functions implementation [[4\]](https://www.python.org/dev/peps/pep-3119/#id16) uses the classes (types) of the arguments as the dispatch key, allowing derived classes to override base classes. Since (from Python's perspective) ABCs are quite ordinary classes, using an ABC in the default implementation for a GF can be quite appropriate. For example, if I have an overloaded `prettyprint` function, it would make total sense to define pretty-printing of sets like this:
 
-```
+ABCs与泛函数（GFs）是兼容的。例如，我自己的泛函数实现 [4] 使用参数的类 (类型) 作为调度键，允许派生类覆盖基类。因为 (从 Python 的角度来看) ABC 是非常普通的类，所以在 GF 的默认实现中使用 ABC 可以非常合适。例如，如果我有一个重载的 `prettyprint` 函数，像这样定义集合的 pretty-printing 是完全合理的。
+
+```python
 @prettyprint.register(Set)
 def pp_set(s):
     return "{" + ... + "}"  # Details left as an exercise
@@ -557,21 +621,41 @@ def pp_set(s):
 
 and implementations for specific subclasses of Set could be added easily.
 
+而对于Set的特定子类的实现可以很容易地加入。
+
 I believe ABCs also won't present any problems for RuleDispatch, Phillip Eby's GF implementation in PEAK [[5\]](https://www.python.org/dev/peps/pep-3119/#id17).
+
+我相信ABC也不会给RuleDispatch带来任何问题，Phillip Eby在PEAK[[5](https://www.python.org/dev/peps/pep-3119/#id17)]中的GF实现。
 
 Of course, GF proponents might claim that GFs (and concrete, or implementation, classes) are all you need. But even they will not deny the usefulness of inheritance; and one can easily consider the ABCs proposed in this PEP as optional implementation base classes; there is no requirement that all user-defined mappings derive from `BasicMapping`.
 
+当然，GF的支持者可能会声称，GF（以及具体的，或者说实现类）就是你所需要的一切。但即使是他们也不会否认继承的有用性；我们可以很容易地将本PEP中提出的ABC视为可选的实现基类；并没有要求所有用户定义的映射都源自于`BasicMapping`。
+
 ## [ABCs vs. Interfaces](https://www.python.org/dev/peps/pep-3119/#id44)
+
+ABC vs 接口
 
 ABCs are not intrinsically incompatible with Interfaces, but there is considerable overlap. For now, I'll leave it to proponents of Interfaces to explain why Interfaces are better. I expect that much of the work that went into e.g. defining the various shades of "mapping-ness" and the nomenclature could easily be adapted for a proposal to use Interfaces instead of ABCs.
 
+ABCs与接口在本质上并不冲突，但有相当多的重叠之处。现在，我让接口的支持者们来解释为什么接口更好。我期望许多用于定义不同程度的 "映射性 "和术语的工作可以很容易地被改编为使用接口而不是ABC的建议。
+
 "Interfaces" in this context refers to a set of proposals for additional metadata elements attached to a class which are not part of the regular class hierarchy, but do allow for certain types of inheritance testing.
+
+这里的 "接口 "指的是一组附加在类上的元数据元素的建议，这些元数据元素不是常规类层次结构的一部分，但允许某些类型的继承测试。
 
 Such metadata would be designed, at least in some proposals, so as to be easily mutable by an application, allowing application writers to override the normal classification of an object.
 
+至少在一些建议中，这样的元数据将被设计成容易被应用程序改变，允许应用程序编写者覆盖对象的正常分类。
+
 The drawback to this idea of attaching mutable metadata to a class is that classes are shared state, and mutating them may lead to conflicts of intent. Additionally, the need to override the classification of an object can be done more cleanly using generic functions: In the simplest case, one can define a "category membership" generic function that simply returns False in the base implementation, and then provide overrides that return True for any classes of interest.
 
+这种将可变元数据附加到类上的想法的缺点是，类是共享状态，对其进行变异可能会导致意图的冲突。此外，需要覆盖一个对象的分类，可以使用泛函数更干净地完成。在最简单的情况下，我们可以定义一个 "类别成员 "泛函数，在基本实现中简单地返回False，然后为任何感兴趣的类提供返回True的重写。
+
+> 关于什么是泛函数，可以阅读[**Python 里的「单分派泛函数」到底是什么？**](https://www.cnblogs.com/wongbingming/p/10726698.html)译者注。
+
 # [References](https://www.python.org/dev/peps/pep-3119/#id45)
+
+参考文献
 
 |                                                         |                                                              |
 | ------------------------------------------------------- | ------------------------------------------------------------ |

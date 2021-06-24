@@ -20,26 +20,26 @@ PEP 585 -- 标准集合中的类型提示泛型
 
 Contents
 
-- [Abstract](https://www.python.org/dev/peps/pep-0585/#abstract)
-- [Rationale and Goals](https://www.python.org/dev/peps/pep-0585/#rationale-and-goals)
-- [Terminology](https://www.python.org/dev/peps/pep-0585/#terminology)
-- [Backwards compatibility](https://www.python.org/dev/peps/pep-0585/#backwards-compatibility)
-- Implementation
-  - [Parameters to generics are available at runtime](https://www.python.org/dev/peps/pep-0585/#parameters-to-generics-are-available-at-runtime)
-  - [Forward compatibility](https://www.python.org/dev/peps/pep-0585/#forward-compatibility)
-- [Reference implementation](https://www.python.org/dev/peps/pep-0585/#reference-implementation)
-- Rejected alternatives
-  - [Do nothing](https://www.python.org/dev/peps/pep-0585/#do-nothing)
-  - [Generics erasure](https://www.python.org/dev/peps/pep-0585/#generics-erasure)
-  - [Disallowing instantiation of parameterized types](https://www.python.org/dev/peps/pep-0585/#disallowing-instantiation-of-parameterized-types)
-  - [Making `isinstance(obj, list[str\])` perform a check ignoring generics](https://www.python.org/dev/peps/pep-0585/#making-isinstance-obj-list-str-perform-a-check-ignoring-generics)
-  - [Making `isinstance(obj, list[str\])` perform a runtime type check](https://www.python.org/dev/peps/pep-0585/#making-isinstance-obj-list-str-perform-a-runtime-type-check)
-  - [Naming the type `GenericType` instead of `GenericAlias`](https://www.python.org/dev/peps/pep-0585/#naming-the-type-generictype-instead-of-genericalias)
-- [Note on the initial draft](https://www.python.org/dev/peps/pep-0585/#note-on-the-initial-draft)
-- [Acknowledgments](https://www.python.org/dev/peps/pep-0585/#acknowledgments)
-- [Copyright](https://www.python.org/dev/peps/pep-0585/#copyright)
+- [Abstract](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20585%20--%20Type%20Hinting%20Generics%20In%20Standard%20Collections.md#abstract)，摘要
+- [Rationale and Goals](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20585%20--%20Type%20Hinting%20Generics%20In%20Standard%20Collections.md#rationale-and-goals)，理由和目的
+- [Terminology](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20585%20--%20Type%20Hinting%20Generics%20In%20Standard%20Collections.md#terminology)，术语
+- [Backwards compatibility](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20585%20--%20Type%20Hinting%20Generics%20In%20Standard%20Collections.md#backwards-compatibility)，向后兼容
+- Implementation，实现
+  - [Parameters to generics are available at runtime](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20585%20--%20Type%20Hinting%20Generics%20In%20Standard%20Collections.md#parameters-to-generics-are-available-at-runtime)，泛型的参数在运行时是可用的
+  - [Forward compatibility](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20585%20--%20Type%20Hinting%20Generics%20In%20Standard%20Collections.md#forward-compatibility)，向前兼容
+- [Reference implementation](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20585%20--%20Type%20Hinting%20Generics%20In%20Standard%20Collections.md#reference-implementation)，参考实现
+- Rejected alternatives，被拒绝的替代方案
+  - [Do nothing](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20585%20--%20Type%20Hinting%20Generics%20In%20Standard%20Collections.md#do-nothing)，什么都不做
+  - [Generics erasure](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20585%20--%20Type%20Hinting%20Generics%20In%20Standard%20Collections.md#generics-erasure)，泛型擦除
+  - [Disallowing instantiation of parameterized types](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20585%20--%20Type%20Hinting%20Generics%20In%20Standard%20Collections.md#disallowing-instantiation-of-parameterized-types)，不允许参数化类型实例化
+  - [Making `isinstance(obj, list[str])` perform a check ignoring generics](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20585%20--%20Type%20Hinting%20Generics%20In%20Standard%20Collections.md#making-isinstance-obj-list-str-perform-a-check-ignoring-generics)，让 `isinstance(obj, list[str])` 执行无视泛型的检查
+  - [Making `isinstance(obj, list[str])` perform a runtime type check](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20585%20--%20Type%20Hinting%20Generics%20In%20Standard%20Collections.md#making-isinstance-obj-list-str-perform-a-runtime-type-check)，使`isinstance(obj, list[str])`执行运行时的类型检查
+  - [Naming the type `GenericType` instead of `GenericAlias`](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20585%20--%20Type%20Hinting%20Generics%20In%20Standard%20Collections.md#naming-the-type-generictype-instead-of-genericalias)，将类型命名为`GenericType`而不是`GenericAlias`
+- [Note on the initial draft](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20585%20--%20Type%20Hinting%20Generics%20In%20Standard%20Collections.md#note-on-the-initial-draft)，关于初稿的说明
+- [Acknowledgments](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20585%20--%20Type%20Hinting%20Generics%20In%20Standard%20Collections.md#acknowledgments)，致谢
+- [Copyright](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20585%20--%20Type%20Hinting%20Generics%20In%20Standard%20Collections.md#copyright)，版权声明
 
-# [Abstract](https://www.python.org/dev/peps/pep-0585/#id2)
+# [Abstract](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20585%20--%20Type%20Hinting%20Generics%20In%20Standard%20Collections.md#id2)
 
 摘要
 
@@ -51,7 +51,7 @@ This PEP proposes to enable support for the generics syntax in all standard coll
 
 本PEP提议在当前`typing`模块中的所有标准集合中启用对泛型语法的支持。
 
-# [Rationale and Goals](https://www.python.org/dev/peps/pep-0585/#id3)
+# [Rationale and Goals](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20585%20--%20Type%20Hinting%20Generics%20In%20Standard%20Collections.md#id3)
 
 理由和目的
 
@@ -59,7 +59,7 @@ This change removes the necessity for a parallel type hierarchy in the `typing` 
 
 这一变化消除了在 `typing` 模块中建立平行类型层次的必要性，使用户更容易注解他们的程序，也使教师更容易教授Python。
 
-# [Terminology](https://www.python.org/dev/peps/pep-0585/#id4)
+# [Terminology](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20585%20--%20Type%20Hinting%20Generics%20In%20Standard%20Collections.md#id4)
 
 术语
 
@@ -71,7 +71,7 @@ parameterized generic -- a specific instance of a generic with the expected type
 
 参数化泛型 -- 一个泛型的具体实例，提供容器元素的预期类型。也被称为*已参数化类型*。例如：`dict[str, int]`。
 
-# [Backwards compatibility](https://www.python.org/dev/peps/pep-0585/#id5)
+# [Backwards compatibility](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20585%20--%20Type%20Hinting%20Generics%20In%20Standard%20Collections.md#id5)
 
 向后兼容
 
@@ -83,7 +83,7 @@ On the source level, the newly described functionality requires Python 3.9. For 
 
 在源代码层面，新描述的功能需要Python 3.9。对于仅限于类型注释的用例，带有 "annotations" future-import 的 Python 文件 (从 Python 3.7 开始可用) 可以对标准集合进行参数化，包括内置的。重申一下，这是否有效取决于外部工具的理解。
 
-# [Implementation](https://www.python.org/dev/peps/pep-0585/#id6)
+# [Implementation](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20585%20--%20Type%20Hinting%20Generics%20In%20Standard%20Collections.md#id6)
 
 实现
 
@@ -149,7 +149,7 @@ The deprecated functionality will be removed from the `typing` module in the fir
 
 在Python 3.9.0发布5年后的第一个Python版本中，废弃的功能将从`typing`模块中删除。
 
-## [Parameters to generics are available at runtime](https://www.python.org/dev/peps/pep-0585/#id7)
+## [Parameters to generics are available at runtime](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20585%20--%20Type%20Hinting%20Generics%20In%20Standard%20Collections.md#id7)
 
 泛型的参数在运行时是可用的
 
@@ -243,7 +243,7 @@ Pickling or (shallow- or deep-) copying a `GenericAlias` instance will preserve 
 
 序列化或（浅层或深层）拷贝一个`GenericAlias`实例将保留其类型、来源、属性和参数。
 
-## [Forward compatibility](https://www.python.org/dev/peps/pep-0585/#id8)
+## [Forward compatibility](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20585%20--%20Type%20Hinting%20Generics%20In%20Standard%20Collections.md#id8)
 
 向前兼容
 
@@ -251,7 +251,7 @@ Future standard collections must implement the same behavior.
 
 未来的标准集合必须实现相同的行为。
 
-# [Reference implementation](https://www.python.org/dev/peps/pep-0585/#id9)
+# [Reference implementation](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20585%20--%20Type%20Hinting%20Generics%20In%20Standard%20Collections.md#id9)
 
 参考实现
 
@@ -259,11 +259,11 @@ A proof-of-concept or prototype [implementation](https://bugs.python.org/issue39
 
 已经存在一个概念验证或原型[**实现**](https://bugs.python.org/issue39481)。
 
-# [Rejected alternatives](https://www.python.org/dev/peps/pep-0585/#id10)
+# [Rejected alternatives](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20585%20--%20Type%20Hinting%20Generics%20In%20Standard%20Collections.md#id10)
 
 被拒绝的替代方案
 
-## [Do nothing](https://www.python.org/dev/peps/pep-0585/#id11)
+## [Do nothing](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20585%20--%20Type%20Hinting%20Generics%20In%20Standard%20Collections.md#id11)
 
 什么都不做
 
@@ -275,7 +275,7 @@ The above problems also don't exist in user-built generic classes which share ru
 
 上述问题也不存在于用户自建的泛型类中，这些泛型类共享运行时功能和使用它们作为泛型注解的能力。使得标准集合在用户类的类型提示中更难使用，阻碍了类型的采用和可用性。
 
-## [Generics erasure](https://www.python.org/dev/peps/pep-0585/#id12)
+## [Generics erasure](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20585%20--%20Type%20Hinting%20Generics%20In%20Standard%20Collections.md#id12)
 
 泛型擦除
 
@@ -340,7 +340,7 @@ The indexing being successful here would likely end up raising an exception at a
 
 > 这里是在说明如果擦除了泛型类型，可能会导致不能及时识别这种情况下的下标滥用错误，译者注。
 
-## [Disallowing instantiation of parameterized types](https://www.python.org/dev/peps/pep-0585/#id13)
+## [Disallowing instantiation of parameterized types](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20585%20--%20Type%20Hinting%20Generics%20In%20Standard%20Collections.md#id13)
 
 不允许参数化类型的实例化
 
@@ -360,7 +360,7 @@ This rationale is not strong enough to allow the exceptional treatment of builti
 
 这个理由不足以允许对内置集合进行特殊处理。所有其它的参数化类型都可以被实例化，包括标准库中集合的平行部分。此外，Python 允许使用 `list()` 对列表进行实例化，而一些内置集合并不提供特殊的实例化语法。
 
-## [Making `isinstance(obj, list[str])` perform a check ignoring generics](https://www.python.org/dev/peps/pep-0585/#id14)
+## [Making `isinstance(obj, list[str])` perform a check ignoring generics](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20585%20--%20Type%20Hinting%20Generics%20In%20Standard%20Collections.md#id14)
 
 让 `isinstance(obj, list[str])` 执行无视泛型的检查
 
@@ -385,7 +385,7 @@ If a library is faced with a parameterized generic and would like to perform an 
 
 如果一个库面临着一个参数化泛型，并希望使用基本类型进行`isinstance()`检查，可以使用参数化泛型上的`__origin__`属性来检索该类型。
 
-## [Making `isinstance(obj, list[str])` perform a runtime type check](https://www.python.org/dev/peps/pep-0585/#id15)
+## [Making `isinstance(obj, list[str])` perform a runtime type check](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20585%20--%20Type%20Hinting%20Generics%20In%20Standard%20Collections.md#id15)
 
 使`isinstance(obj, list[str])`执行运行时的类型检查
 
@@ -393,7 +393,7 @@ This functionality requires iterating over the collection which is a destructive
 
 这个功能需要在集合上进行迭代，这在某些集合中是一个破坏性的操作。这个功能本来是很有用的，但是在 Python 中实现类型检查器，处理复杂类型、嵌套类型检查、类型变量、字符串正向引用等等，已经超出了本 PEP 的范围。
 
-## [Naming the type `GenericType` instead of `GenericAlias`](https://www.python.org/dev/peps/pep-0585/#id16)
+## [Naming the type `GenericType` instead of `GenericAlias`](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20585%20--%20Type%20Hinting%20Generics%20In%20Standard%20Collections.md#id16)
 
 将类型命名为`GenericType`而不是`GenericAlias`
 
@@ -401,7 +401,7 @@ We considered a different name for this type, but decided `GenericAlias` is bett
 
 我们考虑过这个类型的不同名称，但决定`GenericAlias`更好 -- 这些不是真正的类型，它们是相应容器类型的别名，附加了一些额外的元数据。
 
-# [Note on the initial draft](https://www.python.org/dev/peps/pep-0585/#id17)
+# [Note on the initial draft](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20585%20--%20Type%20Hinting%20Generics%20In%20Standard%20Collections.md#id17)
 
 关于初稿的说明
 
@@ -409,7 +409,7 @@ An early version of this PEP discussed matters beyond generics in standard colle
 
 本PEP的早期版本讨论了标准集合中泛型以外的问题。为了清晰起见，这些不相关的主题被删除了。
 
-# [Acknowledgments](https://www.python.org/dev/peps/pep-0585/#id18)
+# [Acknowledgments](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20585%20--%20Type%20Hinting%20Generics%20In%20Standard%20Collections.md#id18)
 
 致谢
 
@@ -417,7 +417,7 @@ Thank you to Guido van Rossum for his work on Python, and the implementation of 
 
 感谢Guido van Rossum在Python上所做的工作，以及对这个PEP的具体实现。
 
-# [Copyright](https://www.python.org/dev/peps/pep-0585/#id19)
+# [Copyright](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20585%20--%20Type%20Hinting%20Generics%20In%20Standard%20Collections.md#id19)
 
 This document is placed in the public domain or under the CC0-1.0-Universal license, whichever is more permissive.
 

@@ -56,11 +56,22 @@ Github：<https://github.com/icexmoon/PEP-CN>
 ### 建议遵守
 
 1. 建议在译文中保留原始英文段落，采用中英文对照方式，这样更便于纠错和改进。
+
 2. 建议进行全文翻译，如果时间精力有限，可以将未翻译部分以原文方式呈现，只翻译核心内容。
+
 3. 译文使用中文标点，原文中使用md代码块方式包裹的内容也应该依然使用此方式。
+
 4. 译文之外的译者注释部分应当使用md中的注释语法`>注释`，例如：`>linter指语法检查工具，可以参考[**程序开发中的linter是什么意思？**](https://www.zhihu.com/question/28421865)中的回答，译者注。`
+
 5. 译文之外添加的链接可以使用`**加粗**`的方式强化显示。
+
 6. 为了尽可能提高翻译内容的一致性，添加了[**词汇对照表**](https://github.com/icexmoon/PEP-CN/blob/main/%E8%AF%8D%E6%B1%87%E5%AF%B9%E7%85%A7%E8%A1%A8.md)作为专有名词的翻译依据，如果表中没有，可以选择合适的翻译后维护该表。
+
+7. 鼓励在翻译中对必要的相关已翻译或未翻译PEP进行引用，比如：
+
+   > 注意: `Dict`, `DefaultDict`, `List`, `Set` 和 `FrozenSet` 主要用于注释返回值。对于参数，最好使用下面定义的抽象集合类型，例如：`Mapping`, `Sequence`或`AbstractSet`。
+   >
+   > > 这是解耦思想的体现，即“向上编程”，此外，Python 3.9 通过[**PEP 585 -- 标准集合中的类型提示泛型**](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20585%20--%20Type%20Hinting%20Generics%20In%20Standard%20Collections.md)废弃了`typing.Dict`等，已经使用`dict`等类型泛型进行了统一，译者注。
 
 ### 可选事项
 

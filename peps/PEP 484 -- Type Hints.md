@@ -2115,7 +2115,7 @@ Note: `Dict`, `DefaultDict`, `List`, `Set` and `FrozenSet` are mainly useful for
 
 注意: `Dict`, `DefaultDict`, `List`, `Set` 和 `FrozenSet` 主要用于注释返回值。对于参数，最好使用下面定义的抽象集合类型，例如：`Mapping`, `Sequence`或`AbstractSet`。
 
-> 这是解耦思想的体现，即“向上编程”，译者注。
+> 这是解耦思想的体现，即“向上编程”，此外，Python 3.9 通过[**PEP 585 -- 标准集合中的类型提示泛型**](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20585%20--%20Type%20Hinting%20Generics%20In%20Standard%20Collections.md)废弃了`typing.Dict`等，已经使用`dict`等类型泛型进行了统一，译者注。
 
 Generic variants of container ABCs (and a few non-containers):
 

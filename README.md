@@ -124,6 +124,7 @@ Github：<https://github.com/icexmoon/PEP-CN>
 - PEP 572 -- Assignment Expressions，赋值表达式
 - [**PEP 584 -- Add Union Operators To dict**](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md)，给dict添加合并操作符
 - [**PEP 585 -- Type Hinting Generics In Standard Collections**](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20585%20--%20Type%20Hinting%20Generics%20In%20Standard%20Collections.md)，标准集合中的类型提示泛型
+- [**PEP 614 -- Relaxing Grammar Restrictions On Decorators**](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20614%20--%20Relaxing%20Grammar%20Restrictions%20On%20Decorators.md)，放宽对装饰器的语法限制
 - PEP 3101 -- Advanced String Formatting，高级字符串格式化
 - PEP 3105 -- Make print a function，将print变为函数
 - PEP 3115 -- Metaclasses in Python 3000，Python3中的元类

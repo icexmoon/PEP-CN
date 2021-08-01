@@ -18,20 +18,20 @@ PEP 614 -- 放宽对装饰器的语法限制
 
 Contents
 
-- [Abstract](https://www.python.org/dev/peps/pep-0614/#abstract)
-- [Motivation](https://www.python.org/dev/peps/pep-0614/#motivation)
-- Rationale
-  - [Allowing Any Expression](https://www.python.org/dev/peps/pep-0614/#allowing-any-expression)
-  - What Counts As An "Expression"
-    - [Tuple Displays *Must* Be Parenthesized](https://www.python.org/dev/peps/pep-0614/#tuple-displays-must-be-parenthesized)
-    - [Named Expressions *Need Not* Be Parenthesized](https://www.python.org/dev/peps/pep-0614/#named-expressions-need-not-be-parenthesized)
-- [Specification](https://www.python.org/dev/peps/pep-0614/#specification)
-- [Backwards Compatibility](https://www.python.org/dev/peps/pep-0614/#backwards-compatibility)
-- [How To Teach This](https://www.python.org/dev/peps/pep-0614/#how-to-teach-this)
-- [Reference Implementation](https://www.python.org/dev/peps/pep-0614/#reference-implementation)
-- [Copyright](https://www.python.org/dev/peps/pep-0614/#copyright)
+- [Abstract](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20614%20--%20Relaxing%20Grammar%20Restrictions%20On%20Decorators.md#abstract)，概述
+- [Motivation](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20614%20--%20Relaxing%20Grammar%20Restrictions%20On%20Decorators.md#motivation)，动机
+- Rationale，理论依据
+  - [Allowing Any Expression](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20614%20--%20Relaxing%20Grammar%20Restrictions%20On%20Decorators.md#allowing-any-expression)，允许任意的表达式
+  - What Counts As An "Expression"，什么算作一个 "表达式"
+    - [Tuple Displays *Must* Be Parenthesized](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20614%20--%20Relaxing%20Grammar%20Restrictions%20On%20Decorators.md#tuple-displays-must-be-parenthesized)，元组显示必须用括号表示
+    - [Named Expressions *Need Not* Be Parenthesized](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20614%20--%20Relaxing%20Grammar%20Restrictions%20On%20Decorators.md#named-expressions-need-not-be-parenthesized)，命名的表达式不需要加括号
+- [Specification](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20614%20--%20Relaxing%20Grammar%20Restrictions%20On%20Decorators.md#specification)，定义
+- [Backwards Compatibility](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20614%20--%20Relaxing%20Grammar%20Restrictions%20On%20Decorators.md#backwards-compatibility)，相后兼容
+- [How To Teach This](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20614%20--%20Relaxing%20Grammar%20Restrictions%20On%20Decorators.md#how-to-teach-this)，如何教学
+- [Reference Implementation](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20614%20--%20Relaxing%20Grammar%20Restrictions%20On%20Decorators.md#reference-implementation)，参考实现
+- [Copyright](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20614%20--%20Relaxing%20Grammar%20Restrictions%20On%20Decorators.md#copyright)，版权声明
 
-# [Abstract](https://www.python.org/dev/peps/pep-0614/#id2)
+# [Abstract](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20614%20--%20Relaxing%20Grammar%20Restrictions%20On%20Decorators.md#id2)
 
 概述
 
@@ -39,7 +39,7 @@ Python currently requires that all decorators consist of a dotted name, optional
 
 目前，Python 要求所有的装饰器都由一个带点的名字组成，后面可以有一个单独的调用。本PEP建议取消这些限制，允许装饰器是任何有效的表达式。
 
-# [Motivation](https://www.python.org/dev/peps/pep-0614/#id3)
+# [Motivation](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20614%20--%20Relaxing%20Grammar%20Restrictions%20On%20Decorators.md#id3)
 
 动机
 
@@ -112,11 +112,11 @@ def eggs():
 
 > 原来还可以这么曲线救国......真是眼界大开，语言的缺陷居然可以把开发者逼成这样，译者注。
 
-# [Rationale](https://www.python.org/dev/peps/pep-0614/#id4)
+# [Rationale](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20614%20--%20Relaxing%20Grammar%20Restrictions%20On%20Decorators.md#id4)
 
 理论依据
 
-## [Allowing Any Expression](https://www.python.org/dev/peps/pep-0614/#id5)
+## [Allowing Any Expression](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20614%20--%20Relaxing%20Grammar%20Restrictions%20On%20Decorators.md#id5)
 
 允许任何表达式
 
@@ -136,7 +136,7 @@ In short: if we're removing somewhat arbitrary restrictions, we should remove *a
 
 简而言之：如果我们要删除一些任意的限制，我们应该把它们全部删除。
 
-## [What Counts As An "Expression"](https://www.python.org/dev/peps/pep-0614/#id6)
+## [What Counts As An "Expression"](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20614%20--%20Relaxing%20Grammar%20Restrictions%20On%20Decorators.md#id6)
 
 什么算作一个 "表达式
 
@@ -148,7 +148,7 @@ This definition of "expression" is convenient in that it fits our needs well, an
 
 这个 "表达式 "的定义很方便，因为它很符合我们的需要，并且重用了现有语言结构的允许语法。它与其他定义有两个微妙的区别：
 
-### [Tuple Displays *Must* Be Parenthesized](https://www.python.org/dev/peps/pep-0614/#id7)
+### [Tuple Displays *Must* Be Parenthesized](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20614%20--%20Relaxing%20Grammar%20Restrictions%20On%20Decorators.md#id7)
 
 元组显示必须用括号表示
 
@@ -173,7 +173,7 @@ Indeed, it may even lead inexperienced readers to conclude that several decorato
 
 事实上，它甚至可能导致没有经验的读者得出结论，认为几个装饰器正在被应用，就像它们被堆叠起来一样。在这里要求使用圆括号可以清楚地表明（公认是无意义的）意图，而不需要施加进一步的限制和语法上的复杂化。
 
-### [Named Expressions *Need Not* Be Parenthesized](https://www.python.org/dev/peps/pep-0614/#id8)
+### [Named Expressions *Need Not* Be Parenthesized](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20614%20--%20Relaxing%20Grammar%20Restrictions%20On%20Decorators.md#id8)
 
 命名的表达式不需要加括号
 
@@ -189,7 +189,7 @@ Since an assignment statement is not valid here, assignment expressions should n
 
 由于赋值语句在这里是无效的，所以赋值表达式不应该有不必要的括号负担。
 
-# [Specification](https://www.python.org/dev/peps/pep-0614/#id9)
+# [Specification](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20614%20--%20Relaxing%20Grammar%20Restrictions%20On%20Decorators.md#id9)
 
 定义
 
@@ -209,7 +209,7 @@ This PEP proposes that it be simplified to:
 decorator: '@' namedexpr_test NEWLINE
 ```
 
-# [Backwards Compatibility](https://www.python.org/dev/peps/pep-0614/#id10)
+# [Backwards Compatibility](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20614%20--%20Relaxing%20Grammar%20Restrictions%20On%20Decorators.md#id10)
 
 向后兼容
 
@@ -217,7 +217,7 @@ This new grammar is fully backward-compatible with the existing grammar.
 
 这个新的语法与现有的语法完全向后兼容。
 
-# [How To Teach This](https://www.python.org/dev/peps/pep-0614/#id11)
+# [How To Teach This](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20614%20--%20Relaxing%20Grammar%20Restrictions%20On%20Decorators.md#id11)
 
 如何教学
 
@@ -225,7 +225,7 @@ Decorators can continue to be taught as they always have; the average Python pro
 
 装饰器可以继续像以前一样被教授；一般的Python程序员可能不知道目前的限制存在。
 
-# [Reference Implementation](https://www.python.org/dev/peps/pep-0614/#id12)
+# [Reference Implementation](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20614%20--%20Relaxing%20Grammar%20Restrictions%20On%20Decorators.md#id12)
 
 参考实现
 
@@ -233,7 +233,7 @@ The author has written a [CPython implementation](https://github.com/python/cpyt
 
 作者写了一个CPython的实现。
 
-# [Copyright](https://www.python.org/dev/peps/pep-0614/#id13)
+# [Copyright](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20614%20--%20Relaxing%20Grammar%20Restrictions%20On%20Decorators.md#id13)
 
 版权声明
 
@@ -242,3 +242,5 @@ This document is placed in the public domain or under the CC0-1.0-Universal lice
 本文件被置于公共领域或CC0-1.0-Universal许可之下，以更多许可为准。
 
 Source: https://github.com/python/peps/blob/master/pep-0614.rst
+
+版权声明：本文由 [**icexmoon**](https://github.com/icexmoon/) 翻译，遵循CC 4.0 BY-SA版权协议。

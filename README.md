@@ -111,7 +111,7 @@ Github：<https://github.com/icexmoon/PEP-CN>
 - PEP 343 -- The "with" Statement，with语句
 - PEP 380 -- Syntax for Delegating to a Subgenerator，委托给子生成器的语法
 - [**PEP 405 -- Python Virtual Environments**](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20405%20--%20Python%20Virtual%20Environments.md)，Python虚拟环境
-- [**PEP 435 -- Adding an Enum type to the Python standard library.md**](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md)，在Python标准库中添加一个枚举类型
+- [**PEP 435 -- Adding an Enum type to the Python standard library**](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20435%20--%20Adding%20an%20Enum%20type%20to%20the%20Python%20standard%20library.md)，在Python标准库中添加一个枚举类型
 - PEP 443 -- Single-dispatch generic functions，单分派泛函数
 - PEP 471 -- os.scandir() function，遍历目录
 - [**PEP 484 -- Type Hints**](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20484%20--%20Type%20Hints.md)，类型提示
@@ -125,6 +125,7 @@ Github：<https://github.com/icexmoon/PEP-CN>
 - [**PEP 584 -- Add Union Operators To dict**](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20584%20--%20Add%20Union%20Operators%20To%20dict.md)，给dict添加合并操作符
 - [**PEP 585 -- Type Hinting Generics In Standard Collections**](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20585%20--%20Type%20Hinting%20Generics%20In%20Standard%20Collections.md)，标准集合中的类型提示泛型
 - [**PEP 614 -- Relaxing Grammar Restrictions On Decorators**](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20614%20--%20Relaxing%20Grammar%20Restrictions%20On%20Decorators.md)，放宽对装饰器的语法限制
+- [**PEP 616 -- String methods to remove prefixes and suffixes**](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md)，移除前缀和后缀的字符串方法
 - PEP 3101 -- Advanced String Formatting，高级字符串格式化
 - PEP 3105 -- Make print a function，将print变为函数
 - PEP 3115 -- Metaclasses in Python 3000，Python3中的元类
@@ -137,3 +138,4 @@ Github：<https://github.com/icexmoon/PEP-CN>
 - PEP 8000 -- Python Language Governance Proposal Overview，Python 语言治理提案概述
 
 版权声明：本文由 [**icexmoon**](https://github.com/icexmoon/) 原创，遵循CC 4.0 BY-SA版权协议。
+

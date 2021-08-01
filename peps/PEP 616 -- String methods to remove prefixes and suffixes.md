@@ -14,31 +14,33 @@
 | Python-Version: | 3.9                                             |
 | Post-History:   | 20-Mar-2020                                     |
 
+
+
 ------
 
 Contents
 
-- [Abstract](https://www.python.org/dev/peps/pep-0616/#abstract)
-- [Rationale](https://www.python.org/dev/peps/pep-0616/#rationale)
-- [Specification](https://www.python.org/dev/peps/pep-0616/#specification)
-- Motivating examples from the Python standard library
-  - [find_recursionlimit.py](https://www.python.org/dev/peps/pep-0616/#find-recursionlimit-py)
-  - [deccheck.py](https://www.python.org/dev/peps/pep-0616/#deccheck-py)
-  - [cookiejar.py](https://www.python.org/dev/peps/pep-0616/#cookiejar-py)
-  - [test_i18n.py](https://www.python.org/dev/peps/pep-0616/#test-i18n-py)
-- Rejected Ideas
-  - [Expand the lstrip and rstrip APIs](https://www.python.org/dev/peps/pep-0616/#expand-the-lstrip-and-rstrip-apis)
-  - [Remove multiple copies of a prefix](https://www.python.org/dev/peps/pep-0616/#remove-multiple-copies-of-a-prefix)
-  - [Raising an exception when not found](https://www.python.org/dev/peps/pep-0616/#raising-an-exception-when-not-found)
-  - [Accepting a tuple of affixes](https://www.python.org/dev/peps/pep-0616/#accepting-a-tuple-of-affixes)
-  - [Alternative Method Names](https://www.python.org/dev/peps/pep-0616/#alternative-method-names)
-- [How to Teach This](https://www.python.org/dev/peps/pep-0616/#how-to-teach-this)
-- [Reference Implementation](https://www.python.org/dev/peps/pep-0616/#reference-implementation)
-- [History of Major revisions](https://www.python.org/dev/peps/pep-0616/#history-of-major-revisions)
-- [References](https://www.python.org/dev/peps/pep-0616/#references)
-- [Copyright](https://www.python.org/dev/peps/pep-0616/#copyright)
+- [Abstract](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md#abstract)，概述
+- [Rationale](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md#rationale)，动机
+- [Specification](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md#specification)，定义
+- Motivating examples from the Python standard library，来自Python标准库的优化示例
+  - [find_recursionlimit.py](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md#find-recursionlimit-py)
+  - [deccheck.py](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md#deccheck-py)
+  - [cookiejar.py](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md#cookiejar-py)
+  - [test_i18n.py](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md#test-i18n-py)
+- Rejected Ideas，被拒绝的想法
+  - [Expand the lstrip and rstrip APIs](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md#expand-the-lstrip-and-rstrip-apis)，扩展lstrip和rstrip的API
+  - [Remove multiple copies of a prefix](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md#remove-multiple-copies-of-a-prefix)，删除一个前缀的多个副本
+  - [Raising an exception when not found](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md#raising-an-exception-when-not-found)，未找到时引发异常
+  - [Accepting a tuple of affixes](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md#accepting-a-tuple-of-affixes)，接受一个词缀的元组
+  - [Alternative Method Names](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md#alternative-method-names)，替代性方法名
+- [How to Teach This](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md#how-to-teach-this)，如何教学
+- [Reference Implementation](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md#reference-implementation)
+- [History of Major revisions](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md#history-of-major-revisions)
+- [References](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md#references)
+- [Copyright](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md#copyright)
 
-# [Abstract](https://www.python.org/dev/peps/pep-0616/#id15)
+# [Abstract](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md#id15)
 
 概述
 
@@ -46,23 +48,23 @@ This is a proposal to add two new methods, `removeprefix()` and `removesuffix()`
 
 这是一个建议，在Python的各种字符串对象的API中增加两个新方法，`removeprefix()`和`removesuffix()`。这些方法将从一个字符串中移除前缀或后缀(如果存在的话)，并将被添加到Unicode `str`对象，二进制的`bytes`和`bytearray`对象，以及`collections.UserString`。
 
-# [Rationale](https://www.python.org/dev/peps/pep-0616/#id16)
+# [Rationale](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md#id16)
 
 动机
 
-There have been repeated issues on Python-Ideas [[2\]](https://www.python.org/dev/peps/pep-0616/#pyid) [[3\]](https://www.python.org/dev/peps/pep-0616/#id10), Python-Dev [[4\]](https://www.python.org/dev/peps/pep-0616/#id11) [[5\]](https://www.python.org/dev/peps/pep-0616/#id12) [[6\]](https://www.python.org/dev/peps/pep-0616/#id13) [[7\]](https://www.python.org/dev/peps/pep-0616/#id14), the Bug Tracker, and StackOverflow [[8\]](https://www.python.org/dev/peps/pep-0616/#confusion), related to user confusion about the existing `str.lstrip` and `str.rstrip` methods. These users are typically expecting the behavior of `removeprefix` and `removesuffix`, but they are surprised that the parameter for `lstrip` is interpreted as a set of characters, not a substring. This repeated issue is evidence that these methods are useful. The new methods allow a cleaner redirection of users to the desired behavior.
+There have been repeated issues on Python-Ideas [[2\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md#pyid) [[3\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md#id10), Python-Dev [[4\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md#id11) [[5\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md#id12) [[6\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md#id13) [[7\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md#id14), the Bug Tracker, and StackOverflow [[8\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md#confusion), related to user confusion about the existing `str.lstrip` and `str.rstrip` methods. These users are typically expecting the behavior of `removeprefix` and `removesuffix`, but they are surprised that the parameter for `lstrip` is interpreted as a set of characters, not a substring. This repeated issue is evidence that these methods are useful. The new methods allow a cleaner redirection of users to the desired behavior.
 
-在Python-Ideas[[2\]](https://www.python.org/dev/peps/pep-0616/#pyid) [[3\]](https://www.python.org/dev/peps/pep-0616/#id10)、Python-Dev [[4\]](https://www.python.org/dev/peps/pep-0616/#id11) [[5\]](https://www.python.org/dev/peps/pep-0616/#id12) [[6\]](https://www.python.org/dev/peps/pep-0616/#id13) [[7\]](https://www.python.org/dev/peps/pep-0616/#id14)、Bug Tracker和StackOverflow[8]上反复出现的问题，与用户对现有`str.lstrip`和`str.rstrip`方法的困惑有关。这些用户通常期待着`removeprefix`和`removesuffix`的行为，但他们惊讶于`lstrip`的参数被解释为一组字符，而不是一个子串。这个重复的问题证明了这些方法是有用的。新的方法可以更干净地将用户重定向到所需的行为。
+在Python-Ideas[[2\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md#pyid) [[3\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md#id10)、Python-Dev [[4\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md#id11) [[5\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md#id12) [[6\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md#id13) [[7\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md#id14)、Bug Tracker和StackOverflow[8]上反复出现的问题，与用户对现有`str.lstrip`和`str.rstrip`方法的困惑有关。这些用户通常期待着`removeprefix`和`removesuffix`的行为，但他们惊讶于`lstrip`的参数被解释为一组字符，而不是一个子串。这个重复的问题证明了这些方法是有用的。新的方法可以更干净地将用户重定向到所需的行为。
 
-As another testimonial for the usefulness of these methods, several users on Python-Ideas [[2\]](https://www.python.org/dev/peps/pep-0616/#pyid) reported frequently including similar functions in their code for productivity. The implementation often contained subtle mistakes regarding the handling of the empty string, so a well-tested built-in method would be useful.
+As another testimonial for the usefulness of these methods, several users on Python-Ideas [[2\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md#pyid) reported frequently including similar functions in their code for productivity. The implementation often contained subtle mistakes regarding the handling of the empty string, so a well-tested built-in method would be useful.
 
-作为这些方法有用的另一个证明，Python-Ideas[[2]](https://www.python.org/dev/peps/pep-0616/#pyid)上的几个用户报告说，为了提高生产力，他们的代码中经常包括类似的函数。在处理空字符串方面，其实现经常包含一些微妙的错误，所以一个经过良好测试的内置方法将是非常有用的。
+作为这些方法有用的另一个证明，Python-Ideas[[2]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md#pyid)上的几个用户报告说，为了提高生产力，他们的代码中经常包括类似的函数。在处理空字符串方面，其实现经常包含一些微妙的错误，所以一个经过良好测试的内置方法将是非常有用的。
 
-The existing solutions for creating the desired behavior are to either implement the methods as in the [Specification](https://www.python.org/dev/peps/pep-0616/#specification) below, or to use regular expressions as in the expression `re.sub('^' + re.escape(prefix), '', s)`, which is less discoverable, requires a module import, and results in less readable code.
+The existing solutions for creating the desired behavior are to either implement the methods as in the [Specification](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md#specification) below, or to use regular expressions as in the expression `re.sub('^' + re.escape(prefix), '', s)`, which is less discoverable, requires a module import, and results in less readable code.
 
 创建所需行为的现有解决方案是，要么像下面的规范那样实现这些方法，要么使用正则表达式，如表达式re.sub('^' + re.escape(prefix), '', s），这种方法不容易被发现，需要导入模块，而且代码的可读性较差。
 
-# [Specification](https://www.python.org/dev/peps/pep-0616/#id17)
+# [Specification](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md#id17)
 
 定义
 
@@ -93,7 +95,7 @@ Methods with the corresponding semantics will be added to the builtin `bytes` an
 
 具有相应语义的方法将被添加到内置的 `bytes` 和 `bytearray` 对象中。如果`b`是`bytes`或`bytearray`对象，那么`b.removeprefix()`和`b.removesuffix()`将接受任何byte类对象作为参数。这两个方法也将被添加到`collections.UserString`中，其行为类似。
 
-# [Motivating examples from the Python standard library](https://www.python.org/dev/peps/pep-0616/#id18)
+# [Motivating examples from the Python standard library](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md#id18)
 
 来自Python标准库的优化示例
 
@@ -125,7 +127,7 @@ The examples below demonstrate how the proposed methods can make code one or mor
 
    相对于传统的字符串切片方法，这些方法给出了一个更高层次的API，以保证代码的可读性。
 
-## [find_recursionlimit.py](https://www.python.org/dev/peps/pep-0616/#id19)
+## [find_recursionlimit.py](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md#id19)
 
 - Current:
 
@@ -146,7 +148,7 @@ The examples below demonstrate how the proposed methods can make code one or mor
   print(test_func_name.removeprefix("test_"))
   ```
 
-## [deccheck.py](https://www.python.org/dev/peps/pep-0616/#id20)
+## [deccheck.py](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md#id20)
 
 This is an interesting case because the author chose to use the `str.replace` method in a situation where only a prefix was intended to be removed.
 
@@ -187,7 +189,7 @@ This is an interesting case because the author chose to use the `str.replace` me
   self.funcname = funcname.removeprefix("context.")
   ```
 
-## [cookiejar.py](https://www.python.org/dev/peps/pep-0616/#id21)
+## [cookiejar.py](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md#id21)
 
 - Current:
 
@@ -211,7 +213,7 @@ This is an interesting case because the author chose to use the `str.replace` me
       return text.removeprefix('"').removesuffix('"')
   ```
 
-## [test_i18n.py](https://www.python.org/dev/peps/pep-0616/#id22)
+## [test_i18n.py](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md#id22)
 
 - Current:
 
@@ -237,11 +239,11 @@ There were many other such examples in the stdlib.
 
 在标准库中还有许多类似的例子。
 
-# [Rejected Ideas](https://www.python.org/dev/peps/pep-0616/#id23)
+# [Rejected Ideas](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md#id23)
 
 被拒绝的想法
 
-## [Expand the lstrip and rstrip APIs](https://www.python.org/dev/peps/pep-0616/#id24)
+## [Expand the lstrip and rstrip APIs](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md#id24)
 
 扩展lstrip和rstrip的API
 
@@ -251,7 +253,7 @@ Because `lstrip` takes a string as its argument, it could be viewed as taking an
 
 > 这里的意思是将`lstrip`方法扩展为可以接受一个字符串组成的序列的参数，译者注。
 
-## [Remove multiple copies of a prefix](https://www.python.org/dev/peps/pep-0616/#id25)
+## [Remove multiple copies of a prefix](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md#id25)
 
 删除一个前缀的多个副本
 
@@ -267,7 +269,7 @@ This is the behavior that would be consistent with the aforementioned expansion 
 'Bar'
 ```
 
-## [Raising an exception when not found](https://www.python.org/dev/peps/pep-0616/#id26)
+## [Raising an exception when not found](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md#id26)
 
 未找到时引发异常
 
@@ -275,7 +277,7 @@ There was a suggestion that `s.removeprefix(pre)` should raise an exception if `
 
 有人建议`s.removeprefix(pre)`如果`not s.startswith(pre)`，应该引发一个异常。然而，这与其他字符串方法的行为和感觉不一致。可以添加required=False关键字，但这违反了KISS原则。
 
-## [Accepting a tuple of affixes](https://www.python.org/dev/peps/pep-0616/#id27)
+## [Accepting a tuple of affixes](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md#id27)
 
 接受一个词缀的元组
 
@@ -295,7 +297,7 @@ It could be convenient to write the `test_concurrent_futures.py` example above a
 
   在未来，这样的功能可能会有一个令人信服的使用案例，但在基本功能看到现实世界的使用之前，泛化会很容易出现永久性的错误。
 
-## [Alternative Method Names](https://www.python.org/dev/peps/pep-0616/#id28)
+## [Alternative Method Names](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md#id28)
 
 替代性方法名
 
@@ -339,7 +341,7 @@ Several alternatives method names have been proposed. Some are listed below, alo
   
   用户可能会受益于记住 "strip "意味着处理字符集，而其他方法是处理子串，所以应该避免在这里重复使用 "strip"。
 
-# [How to Teach This](https://www.python.org/dev/peps/pep-0616/#id29)
+# [How to Teach This](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md#id29)
 
 如何教学
 
@@ -371,38 +373,38 @@ The main opportunity for user confusion will be the conflation of `lstrip`/`rstr
   
     最多只删除一个前缀/后缀的副本。
 
-# [Reference Implementation](https://www.python.org/dev/peps/pep-0616/#id30)
+# [Reference Implementation](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md#id30)
 
-See the pull request on GitHub [[1\]](https://www.python.org/dev/peps/pep-0616/#pr).
+See the pull request on GitHub [[1\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md#pr).
 
-# [History of Major revisions](https://www.python.org/dev/peps/pep-0616/#id31)
+# [History of Major revisions](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md#id31)
 
 - Version 3: Remove tuple behavior.
 - Version 2: Changed name to `removeprefix`/`removesuffix`; added support for tuples as arguments
 - Version 1: Initial draft with `cutprefix`/`cutsuffix`
 
-# [References](https://www.python.org/dev/peps/pep-0616/#id32)
+# [References](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md#id32)
 
-|                                                       |                                                              |
-| ----------------------------------------------------- | ------------------------------------------------------------ |
-| [[1\]](https://www.python.org/dev/peps/pep-0616/#id9) | GitHub pull request with implementation (https://github.com/python/cpython/pull/18939) |
-|                                                       |                                                              |
-| [2]                                                   | *([1](https://www.python.org/dev/peps/pep-0616/#id1), [2](https://www.python.org/dev/peps/pep-0616/#id8))* [Python-Ideas] "New explicit methods to trim strings" (https://mail.python.org/archives/list/python-ideas@python.org/thread/RJARZSUKCXRJIP42Z2YBBAEN5XA7KEC3/) |
-|                                                       |                                                              |
-| [[3\]](https://www.python.org/dev/peps/pep-0616/#id2) | "Re: [Python-ideas] adding a trim convenience function" (https://mail.python.org/archives/list/python-ideas@python.org/thread/SJ7CKPZSKB5RWT7H3YNXOJUQ7QLD2R3X/#C2W5T7RCFSHU5XI72HG53A6R3J3SN4MV) |
-|                                                       |                                                              |
-| [[4\]](https://www.python.org/dev/peps/pep-0616/#id3) | "Re: [Python-Dev] strip behavior provides inconsistent results with certain strings" (https://mail.python.org/archives/list/python-ideas@python.org/thread/XYFQMFPUV6FR2N5BGYWPBVMZ5BE5PJ6C/#XYFQMFPUV6FR2N5BGYWPBVMZ5BE5PJ6C) |
-|                                                       |                                                              |
-| [[5\]](https://www.python.org/dev/peps/pep-0616/#id4) | [Python-Dev] "correction of a bug" (https://mail.python.org/archives/list/python-dev@python.org/thread/AOZ7RFQTQLCZCTVNKESZI67PB3PSS72X/#AOZ7RFQTQLCZCTVNKESZI67PB3PSS72X) |
-|                                                       |                                                              |
-| [[6\]](https://www.python.org/dev/peps/pep-0616/#id5) | [Python-Dev] "str.lstrip bug?" (https://mail.python.org/archives/list/python-dev@python.org/thread/OJDKRIESKGTQFNLX6KZSGKU57UXNZYAN/#CYZUFFJ2Q5ZZKMJIQBZVZR4NSLK5ZPIH) |
-|                                                       |                                                              |
-| [[7\]](https://www.python.org/dev/peps/pep-0616/#id6) | [Python-Dev] "strip behavior provides inconsistent results with certain strings" (https://mail.python.org/archives/list/python-dev@python.org/thread/ZWRGCGANHGVDPP44VQKRIYOYX7LNVDVG/#ZWRGCGANHGVDPP44VQKRIYOYX7LNVDVG) |
-|                                                       |                                                              |
-| [[8\]](https://www.python.org/dev/peps/pep-0616/#id7) | Comment listing Bug Tracker and StackOverflow issues (https://mail.python.org/archives/list/python-ideas@python.org/message/GRGAFIII3AX22K3N3KT7RB4DPBY3LPVG/) |
-|                                                       |                                                              |
+|                                                              |                                                              |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [[1\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md#id9) | GitHub pull request with implementation (https://github.com/python/cpython/pull/18939) |
+|                                                              |                                                              |
+| [2]                                                          | *([1](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md#id1), [2](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md#id8))* [Python-Ideas] "New explicit methods to trim strings" (https://mail.python.org/archives/list/python-ideas@python.org/thread/RJARZSUKCXRJIP42Z2YBBAEN5XA7KEC3/) |
+|                                                              |                                                              |
+| [[3\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md#id2) | "Re: [Python-ideas] adding a trim convenience function" (https://mail.python.org/archives/list/python-ideas@python.org/thread/SJ7CKPZSKB5RWT7H3YNXOJUQ7QLD2R3X/#C2W5T7RCFSHU5XI72HG53A6R3J3SN4MV) |
+|                                                              |                                                              |
+| [[4\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md#id3) | "Re: [Python-Dev] strip behavior provides inconsistent results with certain strings" (https://mail.python.org/archives/list/python-ideas@python.org/thread/XYFQMFPUV6FR2N5BGYWPBVMZ5BE5PJ6C/#XYFQMFPUV6FR2N5BGYWPBVMZ5BE5PJ6C) |
+|                                                              |                                                              |
+| [[5\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md#id4) | [Python-Dev] "correction of a bug" (https://mail.python.org/archives/list/python-dev@python.org/thread/AOZ7RFQTQLCZCTVNKESZI67PB3PSS72X/#AOZ7RFQTQLCZCTVNKESZI67PB3PSS72X) |
+|                                                              |                                                              |
+| [[6\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md#id5) | [Python-Dev] "str.lstrip bug?" (https://mail.python.org/archives/list/python-dev@python.org/thread/OJDKRIESKGTQFNLX6KZSGKU57UXNZYAN/#CYZUFFJ2Q5ZZKMJIQBZVZR4NSLK5ZPIH) |
+|                                                              |                                                              |
+| [[7\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md#id6) | [Python-Dev] "strip behavior provides inconsistent results with certain strings" (https://mail.python.org/archives/list/python-dev@python.org/thread/ZWRGCGANHGVDPP44VQKRIYOYX7LNVDVG/#ZWRGCGANHGVDPP44VQKRIYOYX7LNVDVG) |
+|                                                              |                                                              |
+| [[8\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md#id7) | Comment listing Bug Tracker and StackOverflow issues (https://mail.python.org/archives/list/python-ideas@python.org/message/GRGAFIII3AX22K3N3KT7RB4DPBY3LPVG/) |
+|                                                              |                                                              |
 
-# [Copyright](https://www.python.org/dev/peps/pep-0616/#id33)
+# [Copyright](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md#id33)
 
 This document is placed in the public domain or under the CC0-1.0-Universal license, whichever is more permissive.
 

@@ -18,48 +18,48 @@ PEP 572 -- 赋值表达式
 
 Contents
 
-- [Abstract](https://www.python.org/dev/peps/pep-0572/#abstract)
-- Rationale
-  - [The importance of real code](https://www.python.org/dev/peps/pep-0572/#the-importance-of-real-code)
-- Syntax and semantics
-  - [Exceptional cases](https://www.python.org/dev/peps/pep-0572/#exceptional-cases)
-  - [Scope of the target](https://www.python.org/dev/peps/pep-0572/#scope-of-the-target)
-  - [Relative precedence of `:=`](https://www.python.org/dev/peps/pep-0572/#relative-precedence-of)
-  - [Change to evaluation order](https://www.python.org/dev/peps/pep-0572/#change-to-evaluation-order)
-  - [Differences between assignment expressions and assignment statements](https://www.python.org/dev/peps/pep-0572/#differences-between-assignment-expressions-and-assignment-statements)
-- [Specification changes during implementation](https://www.python.org/dev/peps/pep-0572/#specification-changes-during-implementation)
-- Examples
-  - Examples from the Python standard library
-    - [site.py](https://www.python.org/dev/peps/pep-0572/#site-py)
-    - [_pydecimal.py](https://www.python.org/dev/peps/pep-0572/#pydecimal-py)
-    - [copy.py](https://www.python.org/dev/peps/pep-0572/#copy-py)
-    - [datetime.py](https://www.python.org/dev/peps/pep-0572/#datetime-py)
-    - [sysconfig.py](https://www.python.org/dev/peps/pep-0572/#sysconfig-py)
-  - [Simplifying list comprehensions](https://www.python.org/dev/peps/pep-0572/#simplifying-list-comprehensions)
-  - [Capturing condition values](https://www.python.org/dev/peps/pep-0572/#capturing-condition-values)
-  - [Fork](https://www.python.org/dev/peps/pep-0572/#fork)
-- Rejected alternative proposals
-  - [Changing the scope rules for comprehensions](https://www.python.org/dev/peps/pep-0572/#changing-the-scope-rules-for-comprehensions)
-  - [Alternative spellings](https://www.python.org/dev/peps/pep-0572/#alternative-spellings)
-  - [Special-casing conditional statements](https://www.python.org/dev/peps/pep-0572/#special-casing-conditional-statements)
-  - [Special-casing comprehensions](https://www.python.org/dev/peps/pep-0572/#special-casing-comprehensions)
-  - [Lowering operator precedence](https://www.python.org/dev/peps/pep-0572/#lowering-operator-precedence)
-  - [Allowing commas to the right](https://www.python.org/dev/peps/pep-0572/#allowing-commas-to-the-right)
-  - [Always requiring parentheses](https://www.python.org/dev/peps/pep-0572/#always-requiring-parentheses)
-- Frequently Raised Objections
-  - [Why not just turn existing assignment into an expression?](https://www.python.org/dev/peps/pep-0572/#why-not-just-turn-existing-assignment-into-an-expression)
-  - [With assignment expressions, why bother with assignment statements?](https://www.python.org/dev/peps/pep-0572/#with-assignment-expressions-why-bother-with-assignment-statements)
-  - [Why not use a sublocal scope and prevent namespace pollution?](https://www.python.org/dev/peps/pep-0572/#why-not-use-a-sublocal-scope-and-prevent-namespace-pollution)
-- [Style guide recommendations](https://www.python.org/dev/peps/pep-0572/#style-guide-recommendations)
-- [Acknowledgements](https://www.python.org/dev/peps/pep-0572/#acknowledgements)
-- Appendix A: Tim Peters's findings
-  - [A numeric example](https://www.python.org/dev/peps/pep-0572/#a-numeric-example)
-- [Appendix B: Rough code translations for comprehensions](https://www.python.org/dev/peps/pep-0572/#appendix-b-rough-code-translations-for-comprehensions)
-- [Appendix C: No Changes to Scope Semantics](https://www.python.org/dev/peps/pep-0572/#appendix-c-no-changes-to-scope-semantics)
-- [References](https://www.python.org/dev/peps/pep-0572/#references)
-- [Copyright](https://www.python.org/dev/peps/pep-0572/#copyright)
+- [Abstract](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#abstract)，概述
+- Rationale，目的
+  - [The importance of real code](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#the-importance-of-real-code)，真实代码的重要性
+- Syntax and semantics，语法和语义
+  - [Exceptional cases](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#exceptional-cases)，例外的情况
+  - [Scope of the target](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#scope-of-the-target)，目标的范围
+  - [Relative precedence of `:=`](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#relative-precedence-of)，`:=`的相对优先性
+  - [Change to evaluation order](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#change-to-evaluation-order)，改变评价顺序
+  - [Differences between assignment expressions and assignment statements](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#differences-between-assignment-expressions-and-assignment-statements)，赋值表达式和赋值语句之间的区别
+- [Specification changes during implementation](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#specification-changes-during-implementation)，实施过程中的范围变化
+- Examples，实例
+  - Examples from the Python standard library，Python标准库中的例子
+    - [site.py](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#site-py)
+    - [_pydecimal.py](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#pydecimal-py)
+    - [copy.py](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#copy-py)
+    - [datetime.py](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#datetime-py)
+    - [sysconfig.py](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#sysconfig-py)
+  - [Simplifying list comprehensions](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#simplifying-list-comprehensions)，简化列表表达式
+  - [Capturing condition values](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#capturing-condition-values)，捕获条件值
+  - [Fork](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#fork)
+- Rejected alternative proposals，被拒绝的替代性建议
+  - [Changing the scope rules for comprehensions](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#changing-the-scope-rules-for-comprehensions)，改推导式的作用域规则
+  - [Alternative spellings](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#alternative-spellings)，替代拼写
+  - [Special-casing conditional statements](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#special-casing-conditional-statements)，特殊大小写的条件语句
+  - [Special-casing comprehensions](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#special-casing-comprehensions)，特殊编码的推导式
+  - [Lowering operator precedence](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#lowering-operator-precedence)，降低运算符的优先级
+  - [Allowing commas to the right](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#allowing-commas-to-the-right)，允许逗号在右边
+  - [Always requiring parentheses](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#always-requiring-parentheses)，总是要求使用小括号
+- Frequently Raised Objections，常见的反对意见
+  - [Why not just turn existing assignment into an expression?](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#why-not-just-turn-existing-assignment-into-an-expression)，为什么不把现有的赋值变成一个表达式？
+  - [With assignment expressions, why bother with assignment statements?](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#with-assignment-expressions-why-bother-with-assignment-statements)，有了赋值表达式，还用得着赋值语句吗？
+  - [Why not use a sublocal scope and prevent namespace pollution?](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#why-not-use-a-sublocal-scope-and-prevent-namespace-pollution)，为什么不使用子局域范围并防止命名空间污染？
+- [Style guide recommendations](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#style-guide-recommendations)，风格指南建议
+- [Acknowledgements](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#acknowledgements)，鸣谢
+- Appendix A: Tim Peters's findings，附录A：Tim Peters的发现
+  - [A numeric example](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#a-numeric-example)，一个数字的例子
+- [Appendix B: Rough code translations for comprehensions](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#appendix-b-rough-code-translations-for-comprehensions)，附录B：推导式的粗略代码翻译
+- [Appendix C: No Changes to Scope Semantics](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#appendix-c-no-changes-to-scope-semantics)，附录 C：对范围语义没有改变
+- [References](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#references)，参考文献
+- [Copyright](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#copyright)，版权声明
 
-# [Abstract](https://www.python.org/dev/peps/pep-0572/#id6)
+# [Abstract](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#id6)
 
 概述
 
@@ -75,7 +75,7 @@ During discussion of this PEP, the operator became informally known as "the walr
 
 在本PEP的讨论中，该操作符被非正式地称为 "海象操作符"。该结构的正式名称是 "赋值表达式"（正如本PEP的标题），但它们也可以被称为 "命名表达式"（例如，CPython参考实现内部使用该名称）。
 
-# [Rationale](https://www.python.org/dev/peps/pep-0572/#id7)
+# [Rationale](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#id7)
 
 目的
 
@@ -89,7 +89,7 @@ Additionally, naming sub-parts of a large expression can assist an interactive d
 
 > 这里的意思是在debug代码的时候很可能需要因为探查一些中间变量的需要而对现有代码的重构，进而因为一些错误的修改而导致新的bug，译者注。
 
-## [The importance of real code](https://www.python.org/dev/peps/pep-0572/#id8)
+## [The importance of real code](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#id8)
 
 真实代码的重要性
 
@@ -169,7 +169,7 @@ else:
 
 > 这种代码我有时候也会写，有时候整洁的代码有一定意义，译者注。
 
-# [Syntax and semantics](https://www.python.org/dev/peps/pep-0572/#id9)
+# [Syntax and semantics](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#id9)
 
 语法和语义
 
@@ -203,7 +203,7 @@ while chunk := file.read(8192):
 filtered_data = [y for x in data if (y := f(x)) is not None]
 ```
 
-## [Exceptional cases](https://www.python.org/dev/peps/pep-0572/#id10)
+## [Exceptional cases](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#id10)
 
 例外的情况
 
@@ -317,7 +317,7 @@ There are a few places where assignment expressions are not allowed, in order to
 
   > 这里的讨论充分说明了格式化字符串中使用赋值表达式的危害，最好不要这么使用，译者注。
 
-## [Scope of the target](https://www.python.org/dev/peps/pep-0572/#id11)
+## [Scope of the target](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#id11)
 
 目标的范围
 
@@ -422,7 +422,7 @@ See Appendix B for some examples of how the rules for targets in comprehensions 
 
 关于理解中的目标规则如何转化为等价代码的一些例子，见附录B。
 
-## [Relative precedence of `:=`](https://www.python.org/dev/peps/pep-0572/#id12)
+## [Relative precedence of `:=`](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#id12)
 
 `:=`的相对优先性
 
@@ -480,7 +480,7 @@ This PEP recommends always putting spaces around `:=`, similar to [PEP 8](https:
 
 本PEP建议在`:=`周围加上空格，类似于[PEP 8](https://www.python.org/dev/peps/pep-0008)对用于赋值的`=`的建议，而后者不允许在用于关键字参数的`=`周围加上空格。)
 
-## [Change to evaluation order](https://www.python.org/dev/peps/pep-0572/#id13)
+## [Change to evaluation order](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#id13)
 
 改变评价顺序
 
@@ -492,7 +492,7 @@ In order to have precisely defined semantics, the proposal requires evaluation o
 
   在一个dict推导式`{X: Y for ...}`中，`Y`目前是在`X`之前被评估的。我们建议改变这一点，使`X`在`Y`之前被评估。(在像`{X: Y}`这样的dict显示中已经是这样了，在`dict((X, Y) for ...)`中也是如此，这显然应该等同于dict理解。)
 
-## [Differences between assignment expressions and assignment statements](https://www.python.org/dev/peps/pep-0572/#id14)
+## [Differences between assignment expressions and assignment statements](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#id14)
 
 赋值表达式和赋值语句之间的区别
 
@@ -563,7 +563,7 @@ Conversely, assignment expressions don't support the advanced features found in 
   total += tax  # Equivalent: (total := total + tax)
   ```
 
-# [Specification changes during implementation](https://www.python.org/dev/peps/pep-0572/#id15)
+# [Specification changes during implementation](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#id15)
 
 实施过程中的规范变化
 
@@ -571,23 +571,23 @@ The following changes have been made based on implementation experience and addi
 
 在PEP首次被接受后和Python 3.8发布前，根据实施经验和额外的审查，做了以下修改：
 
-- for consistency with other similar exceptions, and to avoid locking in an exception name that is not necessarily going to improve clarity for end users, the originally proposed `TargetScopeError` subclass of `SyntaxError` was dropped in favour of just raising `SyntaxError` directly. [[3\]](https://www.python.org/dev/peps/pep-0572/#id5)
+- for consistency with other similar exceptions, and to avoid locking in an exception name that is not necessarily going to improve clarity for end users, the originally proposed `TargetScopeError` subclass of `SyntaxError` was dropped in favour of just raising `SyntaxError` directly. [[3\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#id5)
 
-  为了与其他类似的异常保持一致，并避免锁定一个不一定能提高最终用户清晰度的异常名称，最初提议的`SyntaxError`子类`TargetScopeError`被放弃，而直接引发`SyntaxError`。[[3]](https://www.python.org/dev/peps/pep-0572/#id5)
+  为了与其他类似的异常保持一致，并避免锁定一个不一定能提高最终用户清晰度的异常名称，最初提议的`SyntaxError`子类`TargetScopeError`被放弃，而直接引发`SyntaxError`。[[3]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#id5)
 
 - due to a limitation in CPython's symbol table analysis process, the reference implementation raises `SyntaxError` for all uses of named expressions inside comprehension iterable expressions, rather than only raising them when the named expression target conflicts with one of the iteration variables in the comprehension. This could be revisited given sufficiently compelling examples, but the extra complexity needed to implement the more selective restriction doesn't seem worthwhile for purely hypothetical use cases.
 
   由于CPython的符号表分析过程的限制，参考实现对所有在推导式的可迭代表达式中使用的命名表达式提出了`SyntaxError`，而不是只在命名表达式的目标与推导式中的一个迭代变量冲突时提出。这一点可以在有足够说服力的例子的情况下重新考虑，但对于纯粹的假设性使用情况来说，实现更有选择性的限制所需的额外复杂性似乎并不值得。
 
-# [Examples](https://www.python.org/dev/peps/pep-0572/#id16)
+# [Examples](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#id16)
 
 实例
 
-## [Examples from the Python standard library](https://www.python.org/dev/peps/pep-0572/#id17)
+## [Examples from the Python standard library](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#id17)
 
 Python标准库中的例子
 
-### [site.py](https://www.python.org/dev/peps/pep-0572/#id18)
+### [site.py](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#id18)
 
 *env_base* is only used on these lines, putting its assignment on the if moves it as the "header" of the block.
 
@@ -608,7 +608,7 @@ Python标准库中的例子
       return env_base
   ```
 
-### [_pydecimal.py](https://www.python.org/dev/peps/pep-0572/#id19)
+### [_pydecimal.py](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#id19)
 
 Avoid nested `if` and remove one indentation level.
 
@@ -630,7 +630,7 @@ Avoid nested `if` and remove one indentation level.
       return ans
   ```
 
-### [copy.py](https://www.python.org/dev/peps/pep-0572/#id20)
+### [copy.py](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#id20)
 
 Code looks more regular and avoid multiple nested if. (See Appendix A for the origin of this example.)
 
@@ -668,7 +668,7 @@ Code looks more regular and avoid multiple nested if. (See Appendix A for the or
       raise Error("un(deep)copyable object of type %s" % cls)
   ```
 
-### [datetime.py](https://www.python.org/dev/peps/pep-0572/#id21)
+### [datetime.py](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#id21)
 
 *tz* is only used for `s += tz`, moving its assignment inside the if helps to show its scope.
 
@@ -697,7 +697,7 @@ Code looks more regular and avoid multiple nested if. (See Appendix A for the or
   return s
   ```
 
-### [sysconfig.py](https://www.python.org/dev/peps/pep-0572/#id22)
+### [sysconfig.py](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#id22)
 
 Calling `fp.readline()` in the `while` condition and calling `.match()` on the if lines make the code more compact without making it harder to understand.
 
@@ -739,7 +739,7 @@ Calling `fp.readline()` in the `while` condition and calling `.match()` on the i
           vars[m.group(1)] = 0
   ```
 
-## [Simplifying list comprehensions](https://www.python.org/dev/peps/pep-0572/#id23)
+## [Simplifying list comprehensions](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#id23)
 
 简化列表表达式
 
@@ -763,7 +763,7 @@ Note that in both cases the variable `y` is bound in the containing scope (i.e. 
 
 注意，在这两种情况下，变量y都被绑定在包含的作用域中（即与`results`或`stuff`处于同一层次）。
 
-## [Capturing condition values](https://www.python.org/dev/peps/pep-0572/#id24)
+## [Capturing condition values](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#id24)
 
 捕获条件值
 
@@ -797,7 +797,7 @@ Particularly with the `while` loop, this can remove the need to have an infinite
 
 特别是对于`while`循环，这可以消除对无限循环、赋值和条件的需要。它还在一个简单地使用函数调用作为条件的循环和一个使用函数调用作为条件但也使用实际值的循环之间建立了平稳的平行关系。
 
-## [Fork](https://www.python.org/dev/peps/pep-0572/#id25)
+## [Fork](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#id25)
 
 An example from the low-level UNIX world:
 
@@ -810,7 +810,7 @@ else:
     # Child code
 ```
 
-# [Rejected alternative proposals](https://www.python.org/dev/peps/pep-0572/#id26)
+# [Rejected alternative proposals](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#id26)
 
 被拒绝的替代性建议
 
@@ -818,7 +818,7 @@ Proposals broadly similar to this one have come up frequently on python-ideas. B
 
 在python-ideas上经常出现与此大致相似的建议。下面是一些替代性的语法，其中一些是专门针对编译器的，它们已经被拒绝了，只支持上面给出的那一种。
 
-## [Changing the scope rules for comprehensions](https://www.python.org/dev/peps/pep-0572/#id27)
+## [Changing the scope rules for comprehensions](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#id27)
 
 改推导式的作用域规则
 
@@ -826,7 +826,7 @@ A previous version of this PEP proposed subtle changes to the scope rules for co
 
 本PEP的前一个版本提议对推导式的作用域规则进行细微的修改，以使它们在类的作用域中更易于使用，并统一 "最外层迭代 "的作用域和推导式的其他部分。然而，这部分建议会导致向后的不兼容，因此已经被撤回，以便本PEP能够专注于赋值表达式。
 
-## [Alternative spellings](https://www.python.org/dev/peps/pep-0572/#id28)
+## [Alternative spellings](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#id28)
 
 替代拼写
 
@@ -923,7 +923,7 @@ Broadly the same semantics as the current proposal, but spelled differently.
 
    这种语法比`as`的冲突更少（只与`Exc`符号中的`raise Exc`冲突），但在其他方面与它相当。而不是并列的`with expr as target:`。(这可能是有用的，但也可能是混乱的)，这没有相似之处，但却令人回味。
 
-## [Special-casing conditional statements](https://www.python.org/dev/peps/pep-0572/#id29)
+## [Special-casing conditional statements](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#id29)
 
 特殊大小写的条件语句
 
@@ -944,7 +944,7 @@ Advantages: No syntactic ambiguities. Disadvantages: Answers only a fraction of 
 
 优点：没有语法上的歧义。缺点：只能回答一小部分可能的用例，即使在`if`/`while`语句中也是如此。
 
-## [Special-casing comprehensions](https://www.python.org/dev/peps/pep-0572/#id30)
+## [Special-casing comprehensions](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#id30)
 
 特殊编码的推导式
 
@@ -988,7 +988,7 @@ Regardless of the spelling chosen, this introduces a stark difference between co
 
 无论选择哪种拼写方式，这都会在理解性和循环的等效解卷长手形式之间引入一个明显的区别。在不重做任何名称绑定的情况下，不再可能将循环解包成语句形式。唯一可以重新使用的关键字是`with`，因此在理解中的语义与在语句中的语义偷偷地不同；或者，需要一个新的关键字，以及其中的所有费用。
 
-## [Lowering operator precedence](https://www.python.org/dev/peps/pep-0572/#id31)
+## [Lowering operator precedence](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#id31)
 
 降低运算符的优先级
 
@@ -1012,7 +1012,7 @@ While this behaviour would be convenient in many situations, it is also harder t
 
 > 这里很清楚的解释了，海象操作符`:=`的优先级与`=`相似，唯一的例外是其优先级高于`,`，译者注。
 
-## [Allowing commas to the right](https://www.python.org/dev/peps/pep-0572/#id32)
+## [Allowing commas to the right](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#id32)
 
 允许逗号在右边
 
@@ -1042,7 +1042,7 @@ The less confusing option is to make `:=` bind more tightly than comma.
 
 不太混乱的选择是让`:=`比逗号更紧密地结合在一起。
 
-## [Always requiring parentheses](https://www.python.org/dev/peps/pep-0572/#id33)
+## [Always requiring parentheses](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#id33)
 
 总是要求使用小括号
 
@@ -1059,11 +1059,11 @@ if match := pattern.match(line):
 len(lines := f.readlines())
 ```
 
-# [Frequently Raised Objections](https://www.python.org/dev/peps/pep-0572/#id34)
+# [Frequently Raised Objections](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#id34)
 
 经常提出的反对意见
 
-## [Why not just turn existing assignment into an expression?](https://www.python.org/dev/peps/pep-0572/#id35)
+## [Why not just turn existing assignment into an expression?](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#id35)
 
 为什么不把现有的赋值变成一个表达式？
 
@@ -1073,7 +1073,7 @@ C语言及其衍生语言将`=`运算符定义为一个表达式，而不是像P
 
 > 这里解释了我的疑问，但是我并不赞同，只要稍微深入学习编程，都不会将一个逻辑表达式`x==y`与赋值表达式`x=y`混为一谈，译者注。
 
-## [With assignment expressions, why bother with assignment statements?](https://www.python.org/dev/peps/pep-0572/#id36)
+## [With assignment expressions, why bother with assignment statements?](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#id36)
 
 有了赋值表达式，还用得着赋值语句吗？
 
@@ -1081,7 +1081,7 @@ The two forms have different flexibilities. The `:=` operator can be used inside
 
 这两种形式有不同的灵活性。`:=`操作符可以在一个更大的表达式内使用；`=`语句可以增强到`+=`和它的朋友，可以连锁，并且可以赋值给属性和子标号。
 
-## [Why not use a sublocal scope and prevent namespace pollution?](https://www.python.org/dev/peps/pep-0572/#id37)
+## [Why not use a sublocal scope and prevent namespace pollution?](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#id37)
 
 为什么不使用子局域范围并防止命名空间污染？
 
@@ -1089,13 +1089,13 @@ Previous revisions of this proposal involved sublocal scope (restricted to a sin
 
 这个建议以前的修订涉及到子局部范围（限制在单个语句中），防止名称泄漏和名称空间污染。虽然在一些情况下有一定的优势，但在其他许多情况下，这增加了复杂性，而且成本与收益不相称。为了简化语言，这里创建的名字绑定与任何其他名字绑定完全等同，包括在类或模块范围内的使用将创建外部可见的名字。这与`for`循环或其他结构没有区别，可以用同样的方法解决：一旦不再需要这个名字，就`del`它，或者在它前面加上下划线。
 
-(The author wishes to thank Guido van Rossum and Christoph Groth for their suggestions to move the proposal in this direction. [[2\]](https://www.python.org/dev/peps/pep-0572/#id4))
+(The author wishes to thank Guido van Rossum and Christoph Groth for their suggestions to move the proposal in this direction. [[2\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#id4))
 
 (作者希望感谢Guido van Rossum和Christoph Groth的建议，使提案朝这个方向发展。[2])
 
 > 这里解释了赋值表达式的作用域绑定方式与Python中的循环语句等其它结构相同，与C++或者Java中的局部作用域大为不同，译者注。
 
-# [Style guide recommendations](https://www.python.org/dev/peps/pep-0572/#id38)
+# [Style guide recommendations](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#id38)
 
 风格指南建议
 
@@ -1111,7 +1111,7 @@ As expression assignments can sometimes be used equivalently to statement assign
 
    如果使用赋值表达式会导致执行顺序的不明确，则应将其重组为使用语句。
 
-# [Acknowledgements](https://www.python.org/dev/peps/pep-0572/#id39)
+# [Acknowledgements](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#id39)
 
 鸣谢
 
@@ -1119,9 +1119,9 @@ The authors wish to thank Nick Coghlan and Steven D'Aprano for their considerabl
 
 作者要感谢Nick Coghlan和Steven D'Aprano对本建议的巨大贡献，以及核心导师邮件列表中的成员对实施的帮助。
 
-# [Appendix A: Tim Peters's findings](https://www.python.org/dev/peps/pep-0572/#id40)
+# [Appendix A: Tim Peters's findings](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#id40)
 
-[附录A：Tim Peters的发现](https://www.python.org/dev/peps/pep-0572/#id40)
+[附录A：Tim Peters的发现](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#id40)
 
 Here's a brief essay Tim Peters wrote on the topic.
 
@@ -1284,7 +1284,7 @@ So, in all, in most lines binding a name, I wouldn't use assignment expressions,
 
 所以，总的来说，在大多数绑定名字的行中，我不会使用赋值表达式，但由于这种结构非常频繁，这就使得很多地方我都会使用。在后者中，我发现由于它出现的频率很高，所以我发现了一个小的胜利，而在其余的地方，我发现了一个中度到高度的胜利。我当然会比三元`if`更经常地使用它，但明显比增强赋值的频率低。
 
-## [A numeric example](https://www.python.org/dev/peps/pep-0572/#id41)
+## [A numeric example](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#id41)
 
 一个数字的例子
 
@@ -1323,7 +1323,7 @@ while True:
 return a
 ```
 
-# [Appendix B: Rough code translations for comprehensions](https://www.python.org/dev/peps/pep-0572/#id42)
+# [Appendix B: Rough code translations for comprehensions](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#id42)
 
 附录B：推导式的粗略代码翻译
 
@@ -1491,9 +1491,9 @@ Finally, let's nest two comprehensions.
       print(TARGET)
   ```
 
-# [Appendix C: No Changes to Scope Semantics](https://www.python.org/dev/peps/pep-0572/#id43)
+# [Appendix C: No Changes to Scope Semantics](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#id43)
 
-[附录 C：对范围语义没有改变](https://www.python.org/dev/peps/pep-0572/#id43)
+[附录 C：对范围语义没有改变](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#id43)
 
 Because it has been a point of confusion, note that nothing about Python's scoping semantics is changed. Function-local scopes continue to be resolved at compile time, and to have indefinite temporal extent at run time ("full closures"). Example:
 
@@ -1532,20 +1532,20 @@ done
 42
 ```
 
-# [References](https://www.python.org/dev/peps/pep-0572/#id44)
+# [References](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#id44)
 
 参考文献
 
-|                                                       |                                                              |
-| ----------------------------------------------------- | ------------------------------------------------------------ |
-| [1]                                                   | Proof of concept implementation (https://github.com/Rosuav/cpython/tree/assignment-expressions) |
-|                                                       |                                                              |
-| [[2\]](https://www.python.org/dev/peps/pep-0572/#id2) | Pivotal post regarding inline assignment semantics (https://mail.python.org/pipermail/python-ideas/2018-March/049409.html) |
-|                                                       |                                                              |
-| [[3\]](https://www.python.org/dev/peps/pep-0572/#id1) | Discussion of [PEP 572](https://www.python.org/dev/peps/pep-0572) TargetScopeError (https://mail.python.org/archives/list/python-dev@python.org/thread/FXVSYCTQOTT7JCFACKPGPXKULBCGEPQY/) |
-|                                                       |                                                              |
+|                                                              |                                                              |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [1]                                                          | Proof of concept implementation (https://github.com/Rosuav/cpython/tree/assignment-expressions) |
+|                                                              |                                                              |
+| [[2\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#id2) | Pivotal post regarding inline assignment semantics (https://mail.python.org/pipermail/python-ideas/2018-March/049409.html) |
+|                                                              |                                                              |
+| [[3\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#id1) | Discussion of [PEP 572](https://www.python.org/dev/peps/pep-0572) TargetScopeError (https://mail.python.org/archives/list/python-dev@python.org/thread/FXVSYCTQOTT7JCFACKPGPXKULBCGEPQY/) |
+|                                                              |                                                              |
 
-# [Copyright](https://www.python.org/dev/peps/pep-0572/#id45)
+# [Copyright](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20572%20--%20Assignment%20Expressions.md#id45)
 
 版权声明
 

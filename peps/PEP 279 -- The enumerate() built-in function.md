@@ -17,12 +17,12 @@ PEP 279 -- 内建函数 enumerate()
 
 Contents
 
-- [Abstract](https://www.python.org/dev/peps/pep-0279/#abstract)
-- [Rationale](https://www.python.org/dev/peps/pep-0279/#rationale)
-- [BDFL Pronouncements](https://www.python.org/dev/peps/pep-0279/#bdfl-pronouncements)
-- [Specification for a new built-in](https://www.python.org/dev/peps/pep-0279/#specification-for-a-new-built-in)
-- [References](https://www.python.org/dev/peps/pep-0279/#references)
-- [Copyright](https://www.python.org/dev/peps/pep-0279/#copyright)
+- [Abstract](https://www.python.org/dev/peps/pep-0279/#abstract)，概述
+- [Rationale](https://www.python.org/dev/peps/pep-0279/#rationale)，理论依据
+- [BDFL Pronouncements](https://www.python.org/dev/peps/pep-0279/#bdfl-pronouncements)，BDFL 公告
+- [Specification for a new built-in](https://www.python.org/dev/peps/pep-0279/#specification-for-a-new-built-in)，新的内建函数的定义
+- [References](https://www.python.org/dev/peps/pep-0279/#references)，参考文献
+- [Copyright](https://www.python.org/dev/peps/pep-0279/#copyright)，版权声明
 
 # [Abstract](https://www.python.org/dev/peps/pep-0279/#id8)
 

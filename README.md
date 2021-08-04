@@ -104,6 +104,7 @@ Github：<https://github.com/icexmoon/PEP-CN>
 - PEP 282 -- A Logging System，一个日志系统
 - PEP 285 -- Adding a bool type，添加一个 bool 类型
 - PEP 289 -- Generator Expressions，生成器表达式
+- [**PEP 308 -- Conditional Expressions**](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20308%20--%20Conditional%20Expressions.md)，条件表达式
 - PEP 309 -- Partial Function Application，部分函数应用
 - PEP 318 -- Decorators for Functions and Methods，函数和方法装饰器
 - PEP 333 -- Python Web Server Gateway Interface v1.0，Python Web 服务网关接口 v1.0

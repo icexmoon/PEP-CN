@@ -16,37 +16,37 @@ PEP 308 -- 条件表达式
 
 Contents
 
-- [Adding a conditional expression](https://www.python.org/dev/peps/pep-0308/#adding-a-conditional-expression)
-- [References](https://www.python.org/dev/peps/pep-0308/#references)
-- [Introduction to earlier draft of the PEP (kept for historical purposes)](https://www.python.org/dev/peps/pep-0308/#introduction-to-earlier-draft-of-the-pep-kept-for-historical-purposes)
-- [Proposal](https://www.python.org/dev/peps/pep-0308/#proposal)
-- [Alternatives](https://www.python.org/dev/peps/pep-0308/#alternatives)
-- [Summary of the Current State of the Discussion](https://www.python.org/dev/peps/pep-0308/#summary-of-the-current-state-of-the-discussion)
-- [Short-Circuit Behavior](https://www.python.org/dev/peps/pep-0308/#short-circuit-behavior)
-- Detailed Results of Voting
-  - [CHOICE KEY](https://www.python.org/dev/peps/pep-0308/#choice-key)
-  - [Detail for write-in votes and their ranking](https://www.python.org/dev/peps/pep-0308/#detail-for-write-in-votes-and-their-ranking)
-- [Copyright](https://www.python.org/dev/peps/pep-0308/#copyright)
+- [Adding a conditional expression](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20308%20--%20Conditional%20Expressions.md#adding-a-conditional-expression)，添加一个条件表达式
+- [References](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20308%20--%20Conditional%20Expressions.md#references)，参考文献
+- [Introduction to earlier draft of the PEP (kept for historical purposes)](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20308%20--%20Conditional%20Expressions.md#introduction-to-earlier-draft-of-the-pep-kept-for-historical-purposes)，介绍早期的PEP（为理事目的的保留）
+- [Proposal](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20308%20--%20Conditional%20Expressions.md#proposal)，建议
+- [Alternatives](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20308%20--%20Conditional%20Expressions.md#alternatives)，替代方案
+- [Summary of the Current State of the Discussion](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20308%20--%20Conditional%20Expressions.md#summary-of-the-current-state-of-the-discussion)，对目前讨论状态的总结
+- [Short-Circuit Behavior](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20308%20--%20Conditional%20Expressions.md#short-circuit-behavior)，短路行为
+- Detailed Results of Voting，投票结果详情
+  - [CHOICE KEY](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20308%20--%20Conditional%20Expressions.md#choice-key)
+  - [Detail for write-in votes and their ranking](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20308%20--%20Conditional%20Expressions.md#detail-for-write-in-votes-and-their-ranking)，写入票的细节及其排名
+- [Copyright](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20308%20--%20Conditional%20Expressions.md#copyright)，版权声明
 
-# [Adding a conditional expression](https://www.python.org/dev/peps/pep-0308/#id7)
+# [Adding a conditional expression](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20308%20--%20Conditional%20Expressions.md#id7)
 
 添加一个条件表达式
 
-On 9/29/2005, Guido decided to add conditional expressions in the form of "X if C else Y". [[1\]](https://www.python.org/dev/peps/pep-0308/#id4)
+On 9/29/2005, Guido decided to add conditional expressions in the form of "X if C else Y". [[1\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20308%20--%20Conditional%20Expressions.md#id4)
 
-2005年9月29日，Guido决定以 "X if C else Y "的形式添加条件表达式。[[1]](https://www.python.org/dev/peps/pep-0308/#id4)
+2005年9月29日，Guido决定以 "X if C else Y "的形式添加条件表达式。[[1]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20308%20--%20Conditional%20Expressions.md#id4)
 
-The motivating use case was the prevalence of error-prone attempts to achieve the same effect using "and" and "or". [[2\]](https://www.python.org/dev/peps/pep-0308/#id5)
+The motivating use case was the prevalence of error-prone attempts to achieve the same effect using "and" and "or". [[2\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20308%20--%20Conditional%20Expressions.md#id5)
 
-促成这个使用案例的原因是，使用 "and "和 "or "来实现相同效果的错误尝试非常普遍。[[2]](https://www.python.org/dev/peps/pep-0308/#id5)
+促成这个使用案例的原因是，使用 "and "和 "or "来实现相同效果的错误尝试非常普遍。[[2]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20308%20--%20Conditional%20Expressions.md#id5)
 
 Previous community efforts to add a conditional expression were stymied by a lack of consensus on the best syntax. That issue was resolved by simply deferring to a BDFL best judgment call.
 
 以前社区为增加条件表达式所做的努力，由于在最佳语法上缺乏共识而受阻。这个问题通过简单地遵从BDFL的最佳判断来解决。
 
-The decision was validated by reviewing how the syntax fared when applied throughout the standard library (this review approximates a sampling of real-world use cases, across a variety of applications, written by a number of programmers with diverse backgrounds). [[3\]](https://www.python.org/dev/peps/pep-0308/#id6)
+The decision was validated by reviewing how the syntax fared when applied throughout the standard library (this review approximates a sampling of real-world use cases, across a variety of applications, written by a number of programmers with diverse backgrounds). [[3\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20308%20--%20Conditional%20Expressions.md#id6)
 
-该决定通过审查该语法在整个标准库中的应用情况得到了验证（该审查接近于真实世界的使用案例的抽样，涉及各种应用，由不同背景的程序员编写）。[[3]](https://www.python.org/dev/peps/pep-0308/#id6)
+该决定通过审查该语法在整个标准库中的应用情况得到了验证（该审查接近于真实世界的使用案例的抽样，涉及各种应用，由不同背景的程序员编写）。[[3]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20308%20--%20Conditional%20Expressions.md#id6)
 
 The following change will be made to the grammar. (The or_test symbols is new, the others are modified.)
 
@@ -98,18 +98,18 @@ However, in Python 2.5, a slightly different grammar is used that is more backwa
 [f for f in 1, lambda x: x if x >= 0 else -1]      # INVALID
 ```
 
-# [References](https://www.python.org/dev/peps/pep-0308/#id8)
+# [References](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20308%20--%20Conditional%20Expressions.md#id8)
 
-|                                                       |                                                              |
-| ----------------------------------------------------- | ------------------------------------------------------------ |
-| [[1\]](https://www.python.org/dev/peps/pep-0308/#id1) | Pronouncement https://mail.python.org/pipermail/python-dev/2005-September/056846.html |
-|                                                       |                                                              |
-| [[2\]](https://www.python.org/dev/peps/pep-0308/#id2) | Motivating use case: https://mail.python.org/pipermail/python-dev/2005-September/056546.html https://mail.python.org/pipermail/python-dev/2005-September/056510.html |
-|                                                       |                                                              |
-| [[3\]](https://www.python.org/dev/peps/pep-0308/#id3) | Review in the context of real-world code fragments: https://mail.python.org/pipermail/python-dev/2005-September/056803.html |
-|                                                       |                                                              |
+|                                                              |                                                              |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [[1\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20308%20--%20Conditional%20Expressions.md#id1) | Pronouncement https://mail.python.org/pipermail/python-dev/2005-September/056846.html |
+|                                                              |                                                              |
+| [[2\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20308%20--%20Conditional%20Expressions.md#id2) | Motivating use case: https://mail.python.org/pipermail/python-dev/2005-September/056546.html https://mail.python.org/pipermail/python-dev/2005-September/056510.html |
+|                                                              |                                                              |
+| [[3\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20308%20--%20Conditional%20Expressions.md#id3) | Review in the context of real-world code fragments: https://mail.python.org/pipermail/python-dev/2005-September/056803.html |
+|                                                              |                                                              |
 
-# [Introduction to earlier draft of the PEP (kept for historical purposes)](https://www.python.org/dev/peps/pep-0308/#id9)
+# [Introduction to earlier draft of the PEP (kept for historical purposes)](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20308%20--%20Conditional%20Expressions.md#id9)
 
 对PEP早期草案的介绍（为历史目的保留）
 
@@ -125,7 +125,7 @@ Following the discussion, a vote was held. While there was an overall interest i
 
 讨论结束后，进行了投票。虽然大家对拥有某种形式的if-then-else表达式有总体兴趣，但没有一种格式能够得到大多数人的支持。因此，由于缺乏压倒性的多数支持，PEP被否决。另外，Python的一个设计原则是，当对采取哪种方式有疑问时，倾向于维持现状。
 
-# [Proposal](https://www.python.org/dev/peps/pep-0308/#id10)
+# [Proposal](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20308%20--%20Conditional%20Expressions.md#id10)
 
 建议
 
@@ -201,7 +201,7 @@ However, this doesn't work the same way: it returns <expression2> when <expressi
 
 然而，这不是同样的工作方式：当<expression1>为false时，它返回<expression2>! 请参阅FAQ4.16，了解能起作用的替代方法 -- 然而，它们非常难看，需要付出更多努力才能理解。
 
-# [Alternatives](https://www.python.org/dev/peps/pep-0308/#id11)
+# [Alternatives](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20308%20--%20Conditional%20Expressions.md#id11)
 
 替代方案
 
@@ -257,6 +257,8 @@ The out-of-order arrangement was found to be too uncomfortable for many of parti
 
 在讨论中，许多参与者发现不按顺序排列的做法太不舒服了；特别是当<expression1>很长时，在略读时很容易错过条件。
 
+> 我也同意这种观点，目前这种`exp1 if condition else exp2`的顺序实在是太反人类了，译者注。
+
 \---
 
 Some have suggested adding a new builtin instead of extending the syntax of the language. For example:
@@ -271,7 +273,7 @@ This won't work the way a syntax extension will because both expression1 and exp
 
 这不会像语法扩展那样工作，因为表达式1和表达式2都必须在函数被调用之前被评估。没有办法绕开表达式的评估。如果把'cond'（或其他名称）作为一个关键字，它就能起作用，但这有增加一个新关键字的所有缺点，还有混乱的语法：它看起来像一个函数调用，所以不经意的读者可能会认为<expression1>和<expression2>都要被评估。
 
-# [Summary of the Current State of the Discussion](https://www.python.org/dev/peps/pep-0308/#id12)
+# [Summary of the Current State of the Discussion](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20308%20--%20Conditional%20Expressions.md#id12)
 
 讨论现状总结
 
@@ -324,7 +326,7 @@ The arguments against doing nothing are that the other choices allow greater eco
 
 反对什么都不做的理由是，其他选择允许更经济的表达方式，而且目前的做法显示了错误使用 "和"、"或 "的倾向，或者它们更复杂、更不美观的变通方法。
 
-# [Short-Circuit Behavior](https://www.python.org/dev/peps/pep-0308/#id13)
+# [Short-Circuit Behavior](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20308%20--%20Conditional%20Expressions.md#id13)
 
 短路行为
 
@@ -382,7 +384,7 @@ The BDFL's position is that short-circuit behavior is essential for an if-then-e
 
 BDFL的立场是，短路行为对于在语言中加入if-then-else结构是至关重要的。
 
-# [Detailed Results of Voting](https://www.python.org/dev/peps/pep-0308/#id14)
+# [Detailed Results of Voting](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20308%20--%20Conditional%20Expressions.md#id14)
 
 投票结果详情
 
@@ -422,7 +424,7 @@ RejectAll                       82      82      82      246
 Total   363     286     202     155     231     312     1549
 ```
 
-## [CHOICE KEY](https://www.python.org/dev/peps/pep-0308/#id15)
+## [CHOICE KEY](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20308%20--%20Conditional%20Expressions.md#id15)
 
 ```
 A.  x if C else y
@@ -444,7 +446,7 @@ P.  C and x else y
 Q.  any write-in vote
 ```
 
-## [Detail for write-in votes and their ranking](https://www.python.org/dev/peps/pep-0308/#id16)
+## [Detail for write-in votes and their ranking](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20308%20--%20Conditional%20Expressions.md#id16)
 
 写入票的细节及其排名
 
@@ -513,7 +515,7 @@ Q.  any write-in vote
 3:  Q reject C?(x, y)
 ```
 
-# [Copyright](https://www.python.org/dev/peps/pep-0308/#id17)
+# [Copyright](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20308%20--%20Conditional%20Expressions.md#id17)
 
 This document has been placed in the public domain.
 

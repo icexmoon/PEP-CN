@@ -17,14 +17,14 @@ PEP 279 -- 内建函数 enumerate()
 
 Contents
 
-- [Abstract](https://www.python.org/dev/peps/pep-0279/#abstract)，概述
-- [Rationale](https://www.python.org/dev/peps/pep-0279/#rationale)，理论依据
-- [BDFL Pronouncements](https://www.python.org/dev/peps/pep-0279/#bdfl-pronouncements)，BDFL 公告
-- [Specification for a new built-in](https://www.python.org/dev/peps/pep-0279/#specification-for-a-new-built-in)，新的内建函数的定义
-- [References](https://www.python.org/dev/peps/pep-0279/#references)，参考文献
-- [Copyright](https://www.python.org/dev/peps/pep-0279/#copyright)，版权声明
+- [Abstract](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20279%20--%20The%20enumerate()%20built-in%20function.md#abstract)，概述
+- [Rationale](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20279%20--%20The%20enumerate()%20built-in%20function.md#rationale)，理论依据
+- [BDFL Pronouncements](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20279%20--%20The%20enumerate()%20built-in%20function.md#bdfl-pronouncements)，BDFL 公告
+- [Specification for a new built-in](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20279%20--%20The%20enumerate()%20built-in%20function.md#specification-for-a-new-built-in)，新的内建函数的定义
+- [References](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20279%20--%20The%20enumerate()%20built-in%20function.md#references)，参考文献
+- [Copyright](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20279%20--%20The%20enumerate()%20built-in%20function.md#copyright)，版权声明
 
-# [Abstract](https://www.python.org/dev/peps/pep-0279/#id8)
+# [Abstract](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20279%20--%20The%20enumerate()%20built-in%20function.md#id8)
 
 概述
 
@@ -32,15 +32,15 @@ This PEP introduces a new built-in function, `enumerate()` to simplify a commonl
 
 这个PEP引入了一个新的内置函数，`enumerate()`来简化一个常用的循环习惯。它为所有可迭代的集合提供了与`iteritems()`为字典提供的相同的优势--一个紧凑、可读、可靠的索引符号。
 
-# [Rationale](https://www.python.org/dev/peps/pep-0279/#id9)
+# [Rationale](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20279%20--%20The%20enumerate()%20built-in%20function.md#id9)
 
 理论依据
 
-Python 2.2 introduced the concept of an iterable interface as proposed in [PEP 234](https://www.python.org/dev/peps/pep-0234) [[3\]](https://www.python.org/dev/peps/pep-0279/#id7). The `iter()` factory function was provided as common calling convention and deep changes were made to use iterators as a unifying theme throughout Python. The unification came in the form of establishing a common iterable interface for mappings, sequences, and file objects.
+Python 2.2 introduced the concept of an iterable interface as proposed in [PEP 234](https://www.python.org/dev/peps/pep-0234) [[3\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20279%20--%20The%20enumerate()%20built-in%20function.md#id7). The `iter()` factory function was provided as common calling convention and deep changes were made to use iterators as a unifying theme throughout Python. The unification came in the form of establishing a common iterable interface for mappings, sequences, and file objects.
 
 Python 2.2 引入了 PEP 234 [3] 中提出的可迭代接口的概念。`iter()` 工厂函数被提供作为通用的调用约定，并进行了深入的修改，以使迭代器成为整个 Python 的统一主题。统一的形式是为映射、序列和文件对象建立一个通用的可迭代接口。
 
-Generators, as proposed in [PEP 255](https://www.python.org/dev/peps/pep-0255) [[1\]](https://www.python.org/dev/peps/pep-0279/#id5), were introduced as a means for making it easier to create iterators, especially ones with complex internal execution or variable states. The availability of generators makes it possible to improve on the loop counter ideas in [PEP 212](https://www.python.org/dev/peps/pep-0212) [[2\]](https://www.python.org/dev/peps/pep-0279/#id6). Those ideas provided a clean syntax for iteration with indices and values, but did not apply to all iterable objects. Also, that approach did not have the memory friendly benefit provided by generators which do not evaluate the entire sequence all at once.
+Generators, as proposed in [PEP 255](https://www.python.org/dev/peps/pep-0255) [[1\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20279%20--%20The%20enumerate()%20built-in%20function.md#id5), were introduced as a means for making it easier to create iterators, especially ones with complex internal execution or variable states. The availability of generators makes it possible to improve on the loop counter ideas in [PEP 212](https://www.python.org/dev/peps/pep-0212) [[2\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20279%20--%20The%20enumerate()%20built-in%20function.md#id6). Those ideas provided a clean syntax for iteration with indices and values, but did not apply to all iterable objects. Also, that approach did not have the memory friendly benefit provided by generators which do not evaluate the entire sequence all at once.
 
 在 PEP 255 [1] 中提出的生成器被引入，作为创建迭代器的一种手段，特别是具有复杂内部执行或变量状态的迭代器。生成器的出现使我们有可能改进PEP 212 [2]中的循环计数器思想。这些想法为带有索引和值的迭代提供了一种简洁的语法，但并不适用于所有的可迭代对象。而且，这种方法没有生成器所提供的内存友好的好处，生成器不会一次性地评估整个序列。
 
@@ -52,7 +52,7 @@ This suggestion is designed to take advantage of the existing implementation and
 
 这个建议的目的是利用现有的实现，不需要额外的努力来加入。它是向后兼容的，不需要新的关键字。当生成器成为最终版本并且不再从 `__future__` 中导入时，该建议将进入 Python 2.3。
 
-# [BDFL Pronouncements](https://www.python.org/dev/peps/pep-0279/#id10)
+# [BDFL Pronouncements](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20279%20--%20The%20enumerate()%20built-in%20function.md#id10)
 
 BDFL公告
 
@@ -60,7 +60,7 @@ The new built-in function is ACCEPTED.
 
 新的内置函数被接受了。
 
-# [Specification for a new built-in](https://www.python.org/dev/peps/pep-0279/#id11)
+# [Specification for a new built-in](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20279%20--%20The%20enumerate()%20built-in%20function.md#id11)
 
 新的内建函数的定义
 
@@ -74,7 +74,7 @@ def enumerate(collection):
       i += 1
 ```
 
-Note A: [PEP 212](https://www.python.org/dev/peps/pep-0212) Loop Counter Iteration [[2\]](https://www.python.org/dev/peps/pep-0279/#id6) discussed several proposals for achieving indexing. Some of the proposals only work for lists unlike the above function which works for any generator, xrange, sequence, or iterable object. Also, those proposals were presented and evaluated in the world prior to Python 2.2 which did not include generators. As a result, the non-generator version in [PEP 212](https://www.python.org/dev/peps/pep-0212) had the disadvantage of consuming memory with a giant list of tuples. The generator version presented here is fast and light, works with all iterables, and allows users to abandon the sequence in mid-stream with no loss of computation effort.
+Note A: [PEP 212](https://www.python.org/dev/peps/pep-0212) Loop Counter Iteration [[2\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20279%20--%20The%20enumerate()%20built-in%20function.md#id6) discussed several proposals for achieving indexing. Some of the proposals only work for lists unlike the above function which works for any generator, xrange, sequence, or iterable object. Also, those proposals were presented and evaluated in the world prior to Python 2.2 which did not include generators. As a result, the non-generator version in [PEP 212](https://www.python.org/dev/peps/pep-0212) had the disadvantage of consuming memory with a giant list of tuples. The generator version presented here is fast and light, works with all iterables, and allows users to abandon the sequence in mid-stream with no loss of computation effort.
 
 注释A: PEP 212 循环计数器迭代 [2] 讨论了几个实现索引的建议。其中一些建议只对列表有效，而不像上面的函数对任何生成器、xrange、序列或可迭代对象有效。而且，这些建议是在 Python 2.2 之前的世界中提出和评估的，Python 2.2 不包括生成器。因此，PEP 212 中的非生成器版本有一个缺点，即用一个巨大的图元列表消耗内存。这里介绍的生成器版本是快速和轻便的，适用于所有的迭代变量，并且允许用户在中途放弃序列而不损失任何计算工作。
 
@@ -172,21 +172,21 @@ for linenum, line in enumerate(source,1):  print linenum, line
 
   > 这个内置函数这么有用吗？我居然一直不知道？译者注。
 
-# [References](https://www.python.org/dev/peps/pep-0279/#id12)
+# [References](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20279%20--%20The%20enumerate()%20built-in%20function.md#id12)
 
-| [[1\]](https://www.python.org/dev/peps/pep-0279/#id2) | [PEP 255](https://www.python.org/dev/peps/pep-0255) Simple Generators http://www.python.org/dev/peps/pep-0255/ |
-| ----------------------------------------------------- | ------------------------------------------------------------ |
-|                                                       |                                                              |
+| [[1\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20279%20--%20The%20enumerate()%20built-in%20function.md#id2) | [PEP 255](https://www.python.org/dev/peps/pep-0255) Simple Generators http://www.python.org/dev/peps/pep-0255/ |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+|                                                              |                                                              |
 
-| [2]  | *([1](https://www.python.org/dev/peps/pep-0279/#id3), [2](https://www.python.org/dev/peps/pep-0279/#id4))* [PEP 212](https://www.python.org/dev/peps/pep-0212) Loop Counter Iteration http://www.python.org/dev/peps/pep-0212/ |
+| [2]  | *([1](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20279%20--%20The%20enumerate()%20built-in%20function.md#id3), [2](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20279%20--%20The%20enumerate()%20built-in%20function.md#id4))* [PEP 212](https://www.python.org/dev/peps/pep-0212) Loop Counter Iteration http://www.python.org/dev/peps/pep-0212/ |
 | ---- | ------------------------------------------------------------ |
 |      |                                                              |
 
-| [[3\]](https://www.python.org/dev/peps/pep-0279/#id1) | [PEP 234](https://www.python.org/dev/peps/pep-0234) Iterators http://www.python.org/dev/peps/pep-0234/ |
-| ----------------------------------------------------- | ------------------------------------------------------------ |
-|                                                       |                                                              |
+| [[3\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20279%20--%20The%20enumerate()%20built-in%20function.md#id1) | [PEP 234](https://www.python.org/dev/peps/pep-0234) Iterators http://www.python.org/dev/peps/pep-0234/ |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+|                                                              |                                                              |
 
-# [Copyright](https://www.python.org/dev/peps/pep-0279/#id13)
+# [Copyright](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20279%20--%20The%20enumerate()%20built-in%20function.md#id13)
 
 This document has been placed in the public domain.
 

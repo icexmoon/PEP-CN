@@ -17,24 +17,24 @@ PEP 282 -- 一个日志系统
 
 Contents
 
-- [Abstract](https://www.python.org/dev/peps/pep-0282/#abstract)
-- [Motivation](https://www.python.org/dev/peps/pep-0282/#motivation)
-- [Influences](https://www.python.org/dev/peps/pep-0282/#influences)
-- [Simple Example](https://www.python.org/dev/peps/pep-0282/#simple-example)
-- [Control Flow](https://www.python.org/dev/peps/pep-0282/#control-flow)
-- [Levels](https://www.python.org/dev/peps/pep-0282/#levels)
-- [Loggers](https://www.python.org/dev/peps/pep-0282/#loggers)
-- [Handlers](https://www.python.org/dev/peps/pep-0282/#handlers)
-- [LogRecords](https://www.python.org/dev/peps/pep-0282/#logrecords)
-- [Formatters](https://www.python.org/dev/peps/pep-0282/#formatters)
-- [Filters](https://www.python.org/dev/peps/pep-0282/#filters)
-- [Configuration](https://www.python.org/dev/peps/pep-0282/#configuration)
-- [Thread Safety](https://www.python.org/dev/peps/pep-0282/#thread-safety)
-- [Module-Level Functions](https://www.python.org/dev/peps/pep-0282/#module-level-functions)
-- [Implementation](https://www.python.org/dev/peps/pep-0282/#implementation)
-- [Packaging](https://www.python.org/dev/peps/pep-0282/#packaging)
-- [References](https://www.python.org/dev/peps/pep-0282/#references)
-- [Copyright](https://www.python.org/dev/peps/pep-0282/#copyright)
+- [Abstract](https://www.python.org/dev/peps/pep-0282/#abstract)，概述
+- [Motivation](https://www.python.org/dev/peps/pep-0282/#motivation)，动机
+- [Influences](https://www.python.org/dev/peps/pep-0282/#influences)，影响因素
+- [Simple Example](https://www.python.org/dev/peps/pep-0282/#simple-example)，简单的例子
+- [Control Flow](https://www.python.org/dev/peps/pep-0282/#control-flow)，控制流
+- [Levels](https://www.python.org/dev/peps/pep-0282/#levels)，级别
+- [Loggers](https://www.python.org/dev/peps/pep-0282/#loggers)，记录器
+- [Handlers](https://www.python.org/dev/peps/pep-0282/#handlers)，处理程序
+- [LogRecords](https://www.python.org/dev/peps/pep-0282/#logrecords)，LogRecords
+- [Formatters](https://www.python.org/dev/peps/pep-0282/#formatters)，格式化器
+- [Filters](https://www.python.org/dev/peps/pep-0282/#filters)，过滤器
+- [Configuration](https://www.python.org/dev/peps/pep-0282/#configuration)，配置
+- [Thread Safety](https://www.python.org/dev/peps/pep-0282/#thread-safety)，线程安全
+- [Module-Level Functions](https://www.python.org/dev/peps/pep-0282/#module-level-functions)，模块级函数
+- [Implementation](https://www.python.org/dev/peps/pep-0282/#implementation)，实现
+- [Packaging](https://www.python.org/dev/peps/pep-0282/#packaging)，打包
+- [References](https://www.python.org/dev/peps/pep-0282/#references)，参考文献
+- [Copyright](https://www.python.org/dev/peps/pep-0282/#copyright)，版权声明
 
 # [Abstract](https://www.python.org/dev/peps/pep-0282/#id17)
 

@@ -101,7 +101,7 @@ Github：<https://github.com/icexmoon/PEP-CN>
 - [**PEP 257 -- Docstring Conventions**](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20257%20--%20Docstring%20Conventions.md)，文档字符串约定
 - PEP 274 -- Dict Comprehensions，字典推导式
 - [**PEP 279 -- The enumerate() built-in function**](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20279%20--%20The%20enumerate()%20built-in%20function.md)，内建函数enumerate()
-- PEP 282 -- A Logging System，一个日志系统
+- [**PEP 282 -- A Logging System**](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20282%20--%20A%20Logging%20System.md)，一个日志系统
 - PEP 285 -- Adding a bool type，添加一个 bool 类型
 - PEP 289 -- Generator Expressions，生成器表达式
 - [**PEP 308 -- Conditional Expressions**](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20308%20--%20Conditional%20Expressions.md)，条件表达式

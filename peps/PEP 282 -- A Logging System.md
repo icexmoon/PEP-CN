@@ -2,6 +2,8 @@
 
 PEP 282 -- 一个日志系统
 
+> 原文地址 https://www.python.org/dev/peps/pep-0282/
+
 |                 |                                                              |
 | :-------------- | ------------------------------------------------------------ |
 | PEP:            | 282                                                          |
@@ -17,26 +19,26 @@ PEP 282 -- 一个日志系统
 
 Contents
 
-- [Abstract](https://www.python.org/dev/peps/pep-0282/#abstract)，概述
-- [Motivation](https://www.python.org/dev/peps/pep-0282/#motivation)，动机
-- [Influences](https://www.python.org/dev/peps/pep-0282/#influences)，影响因素
-- [Simple Example](https://www.python.org/dev/peps/pep-0282/#simple-example)，简单的例子
-- [Control Flow](https://www.python.org/dev/peps/pep-0282/#control-flow)，控制流
-- [Levels](https://www.python.org/dev/peps/pep-0282/#levels)，级别
-- [Loggers](https://www.python.org/dev/peps/pep-0282/#loggers)，记录器
-- [Handlers](https://www.python.org/dev/peps/pep-0282/#handlers)，处理程序
-- [LogRecords](https://www.python.org/dev/peps/pep-0282/#logrecords)，LogRecords
-- [Formatters](https://www.python.org/dev/peps/pep-0282/#formatters)，格式化器
-- [Filters](https://www.python.org/dev/peps/pep-0282/#filters)，过滤器
-- [Configuration](https://www.python.org/dev/peps/pep-0282/#configuration)，配置
-- [Thread Safety](https://www.python.org/dev/peps/pep-0282/#thread-safety)，线程安全
-- [Module-Level Functions](https://www.python.org/dev/peps/pep-0282/#module-level-functions)，模块级函数
-- [Implementation](https://www.python.org/dev/peps/pep-0282/#implementation)，实现
-- [Packaging](https://www.python.org/dev/peps/pep-0282/#packaging)，打包
-- [References](https://www.python.org/dev/peps/pep-0282/#references)，参考文献
-- [Copyright](https://www.python.org/dev/peps/pep-0282/#copyright)，版权声明
+- [Abstract](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20282%20--%20A%20Logging%20System.md#abstract)，概述
+- [Motivation](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20282%20--%20A%20Logging%20System.md#motivation)，动机
+- [Influences](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20282%20--%20A%20Logging%20System.md#influences)，影响因素
+- [Simple Example](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20282%20--%20A%20Logging%20System.md#simple-example)，简单的例子
+- [Control Flow](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20282%20--%20A%20Logging%20System.md#control-flow)，控制流
+- [Levels](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20282%20--%20A%20Logging%20System.md#levels)，级别
+- [Loggers](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20282%20--%20A%20Logging%20System.md#loggers)，记录器
+- [Handlers](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20282%20--%20A%20Logging%20System.md#handlers)，处理程序
+- [LogRecords](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20282%20--%20A%20Logging%20System.md#logrecords)，LogRecords
+- [Formatters](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20282%20--%20A%20Logging%20System.md#formatters)，格式化器
+- [Filters](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20282%20--%20A%20Logging%20System.md#filters)，过滤器
+- [Configuration](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20282%20--%20A%20Logging%20System.md#configuration)，配置
+- [Thread Safety](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20282%20--%20A%20Logging%20System.md#thread-safety)，线程安全
+- [Module-Level Functions](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20282%20--%20A%20Logging%20System.md#module-level-functions)，模块级函数
+- [Implementation](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20282%20--%20A%20Logging%20System.md#implementation)，实现
+- [Packaging](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20282%20--%20A%20Logging%20System.md#packaging)，打包
+- [References](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20282%20--%20A%20Logging%20System.md#references)，参考文献
+- [Copyright](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20282%20--%20A%20Logging%20System.md#copyright)，版权声明
 
-# [Abstract](https://www.python.org/dev/peps/pep-0282/#id17)
+# [Abstract](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20282%20--%20A%20Logging%20System.md#id17)
 
 概述
 
@@ -64,7 +66,7 @@ The system is configurable at runtime. This configuration mechanism allows one t
 
 该系统在运行时是可配置的。这种配置机制允许人们在不触及应用程序本身的情况下调整日志的级别和类型。
 
-# [Motivation](https://www.python.org/dev/peps/pep-0282/#id18)
+# [Motivation](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20282%20--%20A%20Logging%20System.md#id18)
 
 动机
 
@@ -72,7 +74,7 @@ If a single logging mechanism is enshrined in the standard library, 1) logging i
 
 如果一个单一的日志机制被载入标准库中，1）日志更有可能被做得很好，2）多个库将能够被集成到更大的应用程序中，从而可以合理地进行日志记录。
 
-# [Influences](https://www.python.org/dev/peps/pep-0282/#id19)
+# [Influences](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20282%20--%20A%20Logging%20System.md#id19)
 
 影响因素
 
@@ -80,12 +82,12 @@ This proposal was put together after having studied the following logging packag
 
 这个建议是在研究了以下日志包之后提出来的：
 
-- java.util.logging in JDK 1.4 (a.k.a. JSR047) [[1\]](https://www.python.org/dev/peps/pep-0282/#id11)
-- log4j [[2\]](https://www.python.org/dev/peps/pep-0282/#id12)
-- the Syslog package from the Protomatter project [[3\]](https://www.python.org/dev/peps/pep-0282/#id13)
-- MAL's mx.Log package [[4\]](https://www.python.org/dev/peps/pep-0282/#id14)
+- java.util.logging in JDK 1.4 (a.k.a. JSR047) [[1\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20282%20--%20A%20Logging%20System.md#id11)
+- log4j [[2\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20282%20--%20A%20Logging%20System.md#id12)
+- the Syslog package from the Protomatter project [[3\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20282%20--%20A%20Logging%20System.md#id13)
+- MAL's mx.Log package [[4\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20282%20--%20A%20Logging%20System.md#id14)
 
-# [Simple Example](https://www.python.org/dev/peps/pep-0282/#id20)
+# [Simple Example](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20282%20--%20A%20Logging%20System.md#id20)
 
 简单例子
 
@@ -146,7 +148,7 @@ or just
 Doin' stuff...
 ```
 
-# [Control Flow](https://www.python.org/dev/peps/pep-0282/#id21)
+# [Control Flow](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20282%20--%20A%20Logging%20System.md#id21)
 
 控制流程
 
@@ -189,7 +191,7 @@ def disable(lvl):
     ...
 ```
 
-# [Levels](https://www.python.org/dev/peps/pep-0282/#id22)
+# [Levels](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20282%20--%20A%20Logging%20System.md#id22)
 
 级别
 
@@ -234,7 +236,7 @@ def addLevelName(lvl, lvlName):
         ...
 ```
 
-# [Loggers](https://www.python.org/dev/peps/pep-0282/#id23)
+# [Loggers](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20282%20--%20A%20Logging%20System.md#id23)
 
 记录器
 
@@ -383,7 +385,7 @@ The passed class should be a subclass of Logger, and its `__init__` method shoul
 
 > 这点很让我意外，日志包居然还支持从Logger类扩展，这点值得第三方包开发者借鉴，译者注。
 
-# [Handlers](https://www.python.org/dev/peps/pep-0282/#id24)
+# [Handlers](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20282%20--%20A%20Logging%20System.md#id24)
 
 处理程序
 
@@ -403,11 +405,11 @@ Handlers are responsible for doing something useful with a given `LogRecord`. Th
 
   `SocketHandler`：一个用于向远程TCP端口写入的处理程序。
 
-- `DatagramHandler`: A handler for writing to UDP sockets, for low-cost logging. Jeff Bauer already had such a system [[5\]](https://www.python.org/dev/peps/pep-0282/#id15).
+- `DatagramHandler`: A handler for writing to UDP sockets, for low-cost logging. Jeff Bauer already had such a system [[5\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20282%20--%20A%20Logging%20System.md#id15).
 
   `DatagramHandler`：一个写入UDP套接字的处理程序，用于低成本的日志记录。Jeff Bauer已经有这样一个系统[5]。
 
-- `MemoryHandler`: A handler that buffers log records in memory until the buffer is full or a particular condition occurs [[1\]](https://www.python.org/dev/peps/pep-0282/#id11).
+- `MemoryHandler`: A handler that buffers log records in memory until the buffer is full or a particular condition occurs [[1\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20282%20--%20A%20Logging%20System.md#id11).
 
   `MemoryHandler`：一个处理程序，在内存中缓冲日志记录，直到缓冲区满了或出现特定条件[1]。
 
@@ -447,17 +449,17 @@ If maxBytes is specified as zero, no rollover ever occurs and the log file grows
 
 如果maxBytes被指定为零，则永远不会发生翻转，并且日志文件会无限地增长。如果指定了一个非零的大小，当该大小即将被超过时，就会发生翻转。滚动方法确保基本文件名总是最新的，.1是次新的，.2是之后次新的，以此类推。
 
-There are many additional handlers implemented in the test/example scripts provided with [[6\]](https://www.python.org/dev/peps/pep-0282/#id16) - for example, XMLHandler and SOAPHandler.
+There are many additional handlers implemented in the test/example scripts provided with [[6\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20282%20--%20A%20Logging%20System.md#id16) - for example, XMLHandler and SOAPHandler.
 
 在[6]提供的测试/示例脚本中实现了许多额外的处理程序--例如，XMLHandler和SOAPHandler。
 
-# [LogRecords](https://www.python.org/dev/peps/pep-0282/#id25)
+# [LogRecords](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20282%20--%20A%20Logging%20System.md#id25)
 
 A LogRecord acts as a receptacle for information about a logging event. It is little more than a dictionary, though it does define a `getMessage` method which merges a message with optional runarguments.
 
 LogRecord作为一个关于日志事件信息的容器。它只不过是一个字典，尽管它确实定义了一个`getMessage`方法，将一个消息与可选的运行参数合并。
 
-# [Formatters](https://www.python.org/dev/peps/pep-0282/#id26)
+# [Formatters](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20282%20--%20A%20Logging%20System.md#id26)
 
 格式化器
 
@@ -522,7 +524,7 @@ The formatter uses a class attribute, "converter", to indicate how to convert a 
 
 格式化器使用一个类属性 "转换器"，以表明如何将时间从秒转换为元组。默认情况下，"转换器 "的值是 "time.localtime"。如果需要，可以在单个格式化器实例上设置一个不同的转换器（例如 "time.gmtime"），或者改变类属性以影响所有格式化器实例。
 
-# [Filters](https://www.python.org/dev/peps/pep-0282/#id27)
+# [Filters](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20282%20--%20A%20Logging%20System.md#id27)
 
 过滤器
 
@@ -546,11 +548,11 @@ The default behaviour allows a Filter to be initialized with a Logger name. This
 
 默认行为允许用一个记录仪的名字初始化过滤器。这将只允许通过使用命名的记录仪或其任何子记录仪产生的事件。例如，初始化为 "A.B "的过滤器将允许记录仪 "A.B"、"A.B.C"、"A.B.C.D"、"A.B.D "等记录的事件，但不允许 "A.BB"、"B.A.B "等。如果初始化为空字符串，所有的事件都被过滤器传递。当需要将注意力集中在应用程序的一个特定区域时，这种过滤器行为非常有用；可以通过改变连接到根记录器的过滤器来改变注意力。
 
-There are many examples of Filters provided in [[6\]](https://www.python.org/dev/peps/pep-0282/#id16).
+There are many examples of Filters provided in [[6\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20282%20--%20A%20Logging%20System.md#id16).
 
 [6]中提供了许多过滤器的例子。
 
-# [Configuration](https://www.python.org/dev/peps/pep-0282/#id28)
+# [Configuration](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20282%20--%20A%20Logging%20System.md#id28)
 
 配置
 
@@ -606,11 +608,11 @@ For more sophisticated configurations, this PEP makes no specific proposals, for
 
   不同类型的应用有可能需要不同的配置方法，所以没有 "一刀切"。
 
-The reference implementation [[6\]](https://www.python.org/dev/peps/pep-0282/#id16) has a working configuration file format, implemented for the purpose of proving the concept and suggesting one possible alternative. It may be that separate extension modules, not part of the core Python distribution, are created for logging configuration and log viewing, supplemental handlers and other features which are not of interest to the bulk of the community.
+The reference implementation [[6\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20282%20--%20A%20Logging%20System.md#id16) has a working configuration file format, implemented for the purpose of proving the concept and suggesting one possible alternative. It may be that separate extension modules, not part of the core Python distribution, are created for logging configuration and log viewing, supplemental handlers and other features which are not of interest to the bulk of the community.
 
 参考实现 [6] 有一个工作的配置文件格式，实现的目的是为了证明这个概念并提出一个可能的替代方案。可能会有单独的扩展模块，而不是Python核心版本的一部分，用于日志配置和日志查看、补充处理程序和其他对大部分社区不感兴趣的功能。
 
-# [Thread Safety](https://www.python.org/dev/peps/pep-0282/#id29)
+# [Thread Safety](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20282%20--%20A%20Logging%20System.md#id29)
 
 线程安全
 
@@ -618,7 +620,7 @@ The logging system should support thread-safe operation without any special acti
 
 日志系统应该支持线程安全的操作，而不需要用户采取任何特殊的行动。
 
-# [Module-Level Functions](https://www.python.org/dev/peps/pep-0282/#id30)
+# [Module-Level Functions](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20282%20--%20A%20Logging%20System.md#id30)
 
 模块级函数
 
@@ -638,15 +640,15 @@ This will flush and close all handlers.
 
 这将刷新并关闭所有处理程序。
 
-# [Implementation](https://www.python.org/dev/peps/pep-0282/#id31)
+# [Implementation](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20282%20--%20A%20Logging%20System.md#id31)
 
 实现
 
-The reference implementation is Vinay Sajip's logging module [[6\]](https://www.python.org/dev/peps/pep-0282/#id16).
+The reference implementation is Vinay Sajip's logging module [[6\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20282%20--%20A%20Logging%20System.md#id16).
 
-参考实现是Vinay Sajip的日志模块[[6\]](https://www.python.org/dev/peps/pep-0282/#id16)。
+参考实现是Vinay Sajip的日志模块[[6\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20282%20--%20A%20Logging%20System.md#id16)。
 
-# [Packaging](https://www.python.org/dev/peps/pep-0282/#id32)
+# [Packaging](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20282%20--%20A%20Logging%20System.md#id32)
 
 打包
 
@@ -654,27 +656,28 @@ The reference implementation is implemented as a single module. This offers the 
 
 参考实现是作为一个单一的模块实现的。这提供了最简单的接口--用户所要做的就是 "import logging"，他们就可以使用所有可用的功能。
 
-# [References](https://www.python.org/dev/peps/pep-0282/#id33)
+# [References](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20282%20--%20A%20Logging%20System.md#id33)
 
-|                                                       |                                                              |
-| ----------------------------------------------------- | ------------------------------------------------------------ |
-| [1]                                                   | *([1](https://www.python.org/dev/peps/pep-0282/#id1), [2](https://www.python.org/dev/peps/pep-0282/#id6))* java.util.logging http://java.sun.com/j2se/1.4/docs/guide/util/logging/ |
-|                                                       |                                                              |
-| [[2\]](https://www.python.org/dev/peps/pep-0282/#id2) | log4j: a Java logging package http://jakarta.apache.org/log4j/docs/index.html |
-|                                                       |                                                              |
-| [[3\]](https://www.python.org/dev/peps/pep-0282/#id3) | Protomatter's Syslog http://protomatter.sourceforge.net/1.1.6/index.html http://protomatter.sourceforge.net/1.1.6/javadoc/com/protomatter/syslog/syslog-whitepaper.html |
-|                                                       |                                                              |
-| [[4\]](https://www.python.org/dev/peps/pep-0282/#id4) | MAL mentions his mx.Log logging module: https://mail.python.org/pipermail/python-dev/2002-February/019767.html |
-|                                                       |                                                              |
-| [[5\]](https://www.python.org/dev/peps/pep-0282/#id5) | Jeff Bauer's Mr. Creosote http://starship.python.net/crew/jbauer/creosote/ |
-|                                                       |                                                              |
-| [6]                                                   | *([1](https://www.python.org/dev/peps/pep-0282/#id7), [2](https://www.python.org/dev/peps/pep-0282/#id8), [3](https://www.python.org/dev/peps/pep-0282/#id9), [4](https://www.python.org/dev/peps/pep-0282/#id10))* Vinay Sajip's logging module. http://www.red-dove.com/python_logging.html |
-|                                                       |                                                              |
+|                                                              |                                                              |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [1]                                                          | *([1](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20282%20--%20A%20Logging%20System.md#id1), [2](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20282%20--%20A%20Logging%20System.md#id6))* java.util.logging http://java.sun.com/j2se/1.4/docs/guide/util/logging/ |
+|                                                              |                                                              |
+| [[2\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20282%20--%20A%20Logging%20System.md#id2) | log4j: a Java logging package http://jakarta.apache.org/log4j/docs/index.html |
+|                                                              |                                                              |
+| [[3\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20282%20--%20A%20Logging%20System.md#id3) | Protomatter's Syslog http://protomatter.sourceforge.net/1.1.6/index.html http://protomatter.sourceforge.net/1.1.6/javadoc/com/protomatter/syslog/syslog-whitepaper.html |
+|                                                              |                                                              |
+| [[4\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20282%20--%20A%20Logging%20System.md#id4) | MAL mentions his mx.Log logging module: https://mail.python.org/pipermail/python-dev/2002-February/019767.html |
+|                                                              |                                                              |
+| [[5\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20282%20--%20A%20Logging%20System.md#id5) | Jeff Bauer's Mr. Creosote http://starship.python.net/crew/jbauer/creosote/ |
+|                                                              |                                                              |
+| [6]                                                          | *([1](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20282%20--%20A%20Logging%20System.md#id7), [2](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20282%20--%20A%20Logging%20System.md#id8), [3](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20282%20--%20A%20Logging%20System.md#id9), [4](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20282%20--%20A%20Logging%20System.md#id10))* Vinay Sajip's logging module. http://www.red-dove.com/python_logging.html |
+|                                                              |                                                              |
 
-# [Copyright](https://www.python.org/dev/peps/pep-0282/#id34)
+# [Copyright](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20282%20--%20A%20Logging%20System.md#id34)
 
 This document has been placed in the public domain.
 
 Source: https://github.com/python/peps/blob/master/pep-0282.txt
 
 版权声明：本文由 [**icexmoon**](https://github.com/icexmoon/) 翻译，遵循CC 4.0 BY-SA版权协议。
+

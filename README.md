@@ -6,7 +6,7 @@
 
 Github：<https://github.com/icexmoon/PEP-CN>
 
-个人博客：<https://blog.icexmoon.xyz/archives/171.html>
+Gitee：https://gitee.com/icexmoon/PEP-CN
 
 ## 目的
 
@@ -90,6 +90,8 @@ Github：<https://github.com/icexmoon/PEP-CN>
 ## 目录
 
 所有已翻译文章列表会展示在这里：
+
+> 所有连接均为Github链接，如果无法正常访问请前往本项目的[**Gitee镜像**](https://gitee.com/icexmoon/PEP-CN)，然后直接访问pep目录下的md文档，或者下载或克隆。
 
 - PEP 0 -- Index of Python Enhancement Proposals，Python增强提案索引
 - [**PEP 7 -- Style Guide for C Code**](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%207%20--%20Style%20Guide%20for%20C%20Code.md)，C扩展规范

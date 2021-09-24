@@ -130,7 +130,7 @@ Gitee：https://gitee.com/icexmoon/PEP-CN
 - [**PEP 614 -- Relaxing Grammar Restrictions On Decorators**](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20614%20--%20Relaxing%20Grammar%20Restrictions%20On%20Decorators.md)，放宽对装饰器的语法限制
 - [**PEP 616 -- String methods to remove prefixes and suffixes**](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md)，移除前缀和后缀的字符串方法
 - PEP 3101 -- Advanced String Formatting，高级字符串格式化
-- PEP 3105 -- Make print a function，将print变为函数
+- [**PEP 3105 -- Make print a function**](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203105%20--%20Make%20print%20a%20function.md)，将print变为函数
 - PEP 3115 -- Metaclasses in Python 3000，Python3中的元类
 - [**PEP 3119 -- Introducing Abstract Base Classes**](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203119%20--%20Introducing%20Abstract%20Base%20Classes.md)，介绍抽象基类
 - PEP 3120 -- Using UTF-8 as the default source encoding，使用UTF-8作为默认的源编码

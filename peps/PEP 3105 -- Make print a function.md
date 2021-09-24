@@ -18,15 +18,15 @@ PEP 3105 -- 将print设置为一个函数
 
 Contents
 
-- [Abstract](https://www.python.org/dev/peps/pep-3105/#abstract)
-- [Rationale](https://www.python.org/dev/peps/pep-3105/#rationale)
-- [Specification](https://www.python.org/dev/peps/pep-3105/#specification)
-- [Backwards Compatibility](https://www.python.org/dev/peps/pep-3105/#backwards-compatibility)
-- [Implementation](https://www.python.org/dev/peps/pep-3105/#implementation)
-- [References](https://www.python.org/dev/peps/pep-3105/#references)
-- [Copyright](https://www.python.org/dev/peps/pep-3105/#copyright)
+- [Abstract](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203105%20--%20Make%20print%20a%20function.md/#abstract)，概述
+- [Rationale](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203105%20--%20Make%20print%20a%20function.md/#rationale)，目的
+- [Specification](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203105%20--%20Make%20print%20a%20function.md/#specification)，定义
+- [Backwards Compatibility](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203105%20--%20Make%20print%20a%20function.md/#backwards-compatibility)，向后兼容
+- [Implementation](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203105%20--%20Make%20print%20a%20function.md/#implementation)，实现
+- [References](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203105%20--%20Make%20print%20a%20function.md/#references)，参考资料
+- [Copyright](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203105%20--%20Make%20print%20a%20function.md/#copyright)，版权声明
 
-# [Abstract](https://www.python.org/dev/peps/pep-3105/#id7)
+# [Abstract](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203105%20--%20Make%20print%20a%20function.md/#id7)
 
 概述
 
@@ -34,17 +34,17 @@ The title says it all -- this PEP proposes a new `print()` builtin that replaces
 
 就像标题说的那样 -- 本PEP提出了一个新的`print()`内置函数，以取代`print`语句，并为新函数提出了具体的签名。
 
-# [Rationale](https://www.python.org/dev/peps/pep-3105/#id8)
+# [Rationale](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203105%20--%20Make%20print%20a%20function.md/#id8)
 
 目的
 
-The `print` statement has long appeared on lists of dubious language features that are to be removed in Python 3000, such as Guido's "Python Regrets" presentation [[1\]](https://www.python.org/dev/peps/pep-3105/#id4). As such, the objective of this PEP is not new, though it might become much disputed among Python developers.
+The `print` statement has long appeared on lists of dubious language features that are to be removed in Python 3000, such as Guido's "Python Regrets" presentation [[1\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203105%20--%20Make%20print%20a%20function.md/#id4). As such, the objective of this PEP is not new, though it might become much disputed among Python developers.
 
 `print`语句早已出现在Python 3000中要删除的可疑的语言特性列表中，例如Guido的 "Python的遗憾 "报告 [1]。因此，这个PEP的目标并不新鲜，尽管它在Python开发者中可能会有很多争议。
 
-The following arguments for a `print()` function are distilled from a python-3000 message by Guido himself [[2\]](https://www.python.org/dev/peps/pep-3105/#id5):
+The following arguments for a `print()` function are distilled from a python-3000 message by Guido himself [[2\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203105%20--%20Make%20print%20a%20function.md/#id5):
 
-以下关于`print()`函数的论点是由Guido本人从python-3000消息中提炼出来的[[2\]](https://www.python.org/dev/peps/pep-3105/#id5)：
+以下关于`print()`函数的论点是由Guido本人从python-3000消息中提炼出来的[[2\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203105%20--%20Make%20print%20a%20function.md/#id5)：
 
 - `print` is the only application-level functionality that has a statement dedicated to it. Within Python's world, syntax is generally used as a last resort, when something *can't* be done without help from the compiler. Print doesn't qualify for such an exception.
 
@@ -66,11 +66,11 @@ The following arguments for a `print()` function are distilled from a python-300
 
   如果`print()`是一个函数，那么在一个模块内（只需`def print(*args):...`）或甚至在整个程序中（例如在`__builtin__.print`中放入一个不同的函数）替换它就容易多了。现在，人们可以通过编写一个带有`write()`方法的类，并将其分配给`sys.stdout`来实现这一目的 -- 这还不错，但绝对是一个更大的概念飞跃，而且它的工作层次与print不同。
 
-# [Specification](https://www.python.org/dev/peps/pep-3105/#id9)
+# [Specification](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203105%20--%20Make%20print%20a%20function.md/#id9)
 
 定义
 
-The signature for `print()`, taken from various mailings and recently posted on the python-3000 list [[3\]](https://www.python.org/dev/peps/pep-3105/#id6) is:
+The signature for `print()`, taken from various mailings and recently posted on the python-3000 list [[3\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203105%20--%20Make%20print%20a%20function.md/#id6) is:
 
 `print()`的签名，取自各种邮件，最近发布在python-3000列表[3]上的签名是：
 
@@ -115,7 +115,7 @@ which will not print a space between the `"a"` and the newline.
 
 这样就不会在 "a "和新行之间打印空格。
 
-# [Backwards Compatibility](https://www.python.org/dev/peps/pep-3105/#id10)
+# [Backwards Compatibility](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203105%20--%20Make%20print%20a%20function.md/#id10)
 
 向后兼容
 
@@ -145,7 +145,7 @@ Luckily, as it is a statement in Python 2, `print` can be detected and replaced 
 
 幸运的是，由于它是Python 2中的一个语句，`print`可以被一个自动工具可靠而不含糊地检测和替换，所以应该不会有大的移植问题(只要有人写出上述工具)。
 
-# [Implementation](https://www.python.org/dev/peps/pep-3105/#id11)
+# [Implementation](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203105%20--%20Make%20print%20a%20function.md/#id11)
 
 实现
 
@@ -153,19 +153,19 @@ The proposed changes were implemented in the Python 3000 branch in the Subversio
 
 建议的修改已经在Subversion的53685到53704版本的Python 3000分支中实现。库中的大部分遗留代码也已被转换，但要抓住可能留在发行版中的每一条打印语句，还需要不断努力。
 
-# [References](https://www.python.org/dev/peps/pep-3105/#id12)
+# [References](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203105%20--%20Make%20print%20a%20function.md/#id12)
 
 参考资料
 
-| [[1\]](https://www.python.org/dev/peps/pep-3105/#id1) | http://legacy.python.org/doc/essays/ppt/regrets/PythonRegrets.pdf |
-| ----------------------------------------------------- | ------------------------------------------------------------ |
-|                                                       |                                                              |
-| [[2\]](https://www.python.org/dev/peps/pep-3105/#id2) | Replacement for print in Python 3.0 (Guido van Rossum) https://mail.python.org/pipermail/python-dev/2005-September/056154.html |
-|                                                       |                                                              |
-| [[3\]](https://www.python.org/dev/peps/pep-3105/#id3) | print() parameters in py3k (Guido van Rossum) https://mail.python.org/pipermail/python-3000/2006-November/004485.html |
-|                                                       |                                                              |
+| [[1\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203105%20--%20Make%20print%20a%20function.md/#id1) | http://legacy.python.org/doc/essays/ppt/regrets/PythonRegrets.pdf |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+|                                                              |                                                              |
+| [[2\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203105%20--%20Make%20print%20a%20function.md/#id2) | Replacement for print in Python 3.0 (Guido van Rossum) https://mail.python.org/pipermail/python-dev/2005-September/056154.html |
+|                                                              |                                                              |
+| [[3\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203105%20--%20Make%20print%20a%20function.md/#id3) | print() parameters in py3k (Guido van Rossum) https://mail.python.org/pipermail/python-3000/2006-November/004485.html |
+|                                                              |                                                              |
 
-# [Copyright](https://www.python.org/dev/peps/pep-3105/#id13)
+# [Copyright](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%203105%20--%20Make%20print%20a%20function.md/#id13)
 
 版权声明
 

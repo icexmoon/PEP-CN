@@ -18,23 +18,23 @@ PEP 205 -- 弱引用
 Contents
 
 - Motivation，动机
-  - [Caches (weak dictionaries)](https://www.python.org/dev/peps/pep-0205/#caches-weak-dictionaries)，缓存（弱字典）
-  - [Circular references](https://www.python.org/dev/peps/pep-0205/#circular-references)，循环引用
+  - [Caches (weak dictionaries)](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20205%20--%20Weak%20References.md#caches-weak-dictionaries)，缓存（弱字典）
+  - [Circular references](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20205%20--%20Weak%20References.md#circular-references)，循环引用
 - Aspects of the Solution Space，解空间的各方面
-  - [Invalidation](https://www.python.org/dev/peps/pep-0205/#invalidation)，无效化
-  - [Presentation](https://www.python.org/dev/peps/pep-0205/#presentation)，呈现
-- [Proposed Solution](https://www.python.org/dev/peps/pep-0205/#proposed-solution)，建议的解决方案
-- [Implementation Strategy](https://www.python.org/dev/peps/pep-0205/#implementation-strategy)，实施策略
-- [Possible Applications](https://www.python.org/dev/peps/pep-0205/#possible-applications)，可能的应用
-- [Previous Weak Reference Work in Python](https://www.python.org/dev/peps/pep-0205/#previous-weak-reference-work-in-python)，Python中以前的弱引用工作
-- [Weak References in Java](https://www.python.org/dev/peps/pep-0205/#weak-references-in-java)，Java中的弱引用
+  - [Invalidation](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20205%20--%20Weak%20References.md#invalidation)，无效化
+  - [Presentation](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20205%20--%20Weak%20References.md#presentation)，呈现
+- [Proposed Solution](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20205%20--%20Weak%20References.md#proposed-solution)，建议的解决方案
+- [Implementation Strategy](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20205%20--%20Weak%20References.md#implementation-strategy)，实施策略
+- [Possible Applications](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20205%20--%20Weak%20References.md#possible-applications)，可能的应用
+- [Previous Weak Reference Work in Python](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20205%20--%20Weak%20References.md#previous-weak-reference-work-in-python)，Python中以前的弱引用工作
+- [Weak References in Java](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20205%20--%20Weak%20References.md#weak-references-in-java)，Java中的弱引用
 - Appendix -- Dianne Hackborn's vref proposal (1995)，附录--Dianne Hackborn的vref建议（1995）
-  - [Proposal: Virtual References](https://www.python.org/dev/peps/pep-0205/#proposal-virtual-references)
-  - [Pointer semantics](https://www.python.org/dev/peps/pep-0205/#pointer-semantics)
-  - [Proxy semantics](https://www.python.org/dev/peps/pep-0205/#proxy-semantics)
-- [Copyright](https://www.python.org/dev/peps/pep-0205/#copyright)，版权声明
+  - [Proposal: Virtual References](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20205%20--%20Weak%20References.md#proposal-virtual-references)
+  - [Pointer semantics](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20205%20--%20Weak%20References.md#pointer-semantics)
+  - [Proxy semantics](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20205%20--%20Weak%20References.md#proxy-semantics)
+- [Copyright](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20205%20--%20Weak%20References.md#copyright)，版权声明
 
-# [Motivation](https://www.python.org/dev/peps/pep-0205/#id1)
+# [Motivation](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20205%20--%20Weak%20References.md#id1)
 
 动机
 
@@ -42,7 +42,7 @@ There are two basic applications for weak references which have been noted by Py
 
 Python程序员已经注意到弱引用的两个基本应用：对象缓存和减少循环引用的痛苦。
 
-## [Caches (weak dictionaries)](https://www.python.org/dev/peps/pep-0205/#id2)
+## [Caches (weak dictionaries)](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20205%20--%20Weak%20References.md#id2)
 
 缓存（弱字典）
 
@@ -62,7 +62,7 @@ The difficulty in this approach is that one of two things must be tolerated: eit
 
   创建对象的成本很高，但可能被多个内部消费者所需要。与第一种情况类似，但不一定与外部资源绑定，而且对于共享状态来说可能不是一个问题。在这种情况下，弱引用只有在存在某种 "软 "引用的情况下才有用，或者个别对象的用户很有可能在寿命上有重叠。
 
-## [Circular references](https://www.python.org/dev/peps/pep-0205/#id3)
+## [Circular references](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20205%20--%20Weak%20References.md#id3)
 
 循环引用
 
@@ -98,7 +98,7 @@ The full text of one early proposal is included as an appendix since it does not
 
 一个早期提案的全文被列为附录，因为网上似乎没有这个提案。
 
-# [Aspects of the Solution Space](https://www.python.org/dev/peps/pep-0205/#id4)
+# [Aspects of the Solution Space](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20205%20--%20Weak%20References.md#id4)
 
 解空间的各个方面
 
@@ -114,7 +114,7 @@ There are two distinct aspects to the weak references problem:
 
   对Python代码的弱引用的展示
 
-## [Invalidation](https://www.python.org/dev/peps/pep-0205/#id5)
+## [Invalidation](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20205%20--%20Weak%20References.md#id5)
 
 无效化
 
@@ -130,7 +130,7 @@ An alternate approach to invalidation is that the de-allocation code to be aware
 
 另一种无效化的方法是，去分配代码要意识到弱引用的可能性，并对弱引用管理代码进行特定的调用，以便在对象被去分配时进行全部无效化。这需要改变tp_dealloc处理程序中的弱引用对象；对于支持弱引用的对象，需要在处理程序的 "顶部 "进行额外的调用，同时还需要一种有效的方法来将对象映射到该对象的弱引用链。
 
-## [Presentation](https://www.python.org/dev/peps/pep-0205/#id6)
+## [Presentation](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20205%20--%20Weak%20References.md#id6)
 
 呈现
 
@@ -148,7 +148,7 @@ However, a number of users favor the proxy approach simply because the weak refe
 
 然而，一些用户喜欢代理的方法，仅仅是因为弱引用看起来很像原始对象。
 
-# [Proposed Solution](https://www.python.org/dev/peps/pep-0205/#id7)
+# [Proposed Solution](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20205%20--%20Weak%20References.md#id7)
 
 建议的解决方案
 
@@ -178,7 +178,7 @@ The callbacks registered with weak references must accept a single parameter, wh
 
 用弱引用注册的回调必须接受一个参数，这将是弱引用或代理对象本身。该对象不能在回调中被访问或复活。
 
-# [Implementation Strategy](https://www.python.org/dev/peps/pep-0205/#id8)
+# [Implementation Strategy](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20205%20--%20Weak%20References.md#id8)
 
 实施策略
 
@@ -198,7 +198,7 @@ Standard types which support weak references include instances, functions, and b
 
 支持弱引用的标准类型包括实例、函数、绑定和非绑定方法。在 Python 2.2 中增加了类类型 ("新式类")，类型对弱引用的支持增加了。如果类类型的实例有一个可弱引用的基类型，该类没有指定 `__slots__`，或者一个槽被命名为 `__weakref__`，那么它就是可弱引用的。生成器也支持弱引用。
 
-# [Possible Applications](https://www.python.org/dev/peps/pep-0205/#id9)
+# [Possible Applications](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20205%20--%20Weak%20References.md#id9)
 
 可能的应用
 
@@ -214,7 +214,7 @@ DOM trees.
 
 DOM树。
 
-# [Previous Weak Reference Work in Python](https://www.python.org/dev/peps/pep-0205/#id10)
+# [Previous Weak Reference Work in Python](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20205%20--%20Weak%20References.md#id10)
 
 Python中以前的弱引用工作
 
@@ -242,7 +242,7 @@ Eric Tiedemann has a weak dictionary implementation:
 
 > http://www.hyperreal.org/~est/python/weak/
 
-# [Weak References in Java](https://www.python.org/dev/peps/pep-0205/#id11)
+# [Weak References in Java](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20205%20--%20Weak%20References.md#id11)
 
 Java中的弱引用
 
@@ -272,7 +272,7 @@ Unlike the other two reference types, "phantom" references must be associated wi
 
 与其他两种引用类型不同，"幻影 "引用必须与一个无效队列相关联。
 
-# [Appendix -- Dianne Hackborn's vref proposal (1995)](https://www.python.org/dev/peps/pep-0205/#id12)
+# [Appendix -- Dianne Hackborn's vref proposal (1995)](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20205%20--%20Weak%20References.md#id12)
 
 附录--Dianne Hackborn的vref建议（1995）
 
@@ -282,7 +282,7 @@ Unlike the other two reference types, "phantom" references must be associated wi
 
 > 这部分我就不翻译了，译者注。
 
-## [Proposal: Virtual References](https://www.python.org/dev/peps/pep-0205/#id13)
+## [Proposal: Virtual References](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20205%20--%20Weak%20References.md#id13)
 
 In an attempt to partly address the recurring discussion concerning reference counting vs. garbage collection, I would like to propose an extension to Python which should help in the creation of "well structured" cyclic graphs. In particular, it should allow at least trees with parent back-pointers and doubly-linked lists to be created without worry about cycles.
 
@@ -297,7 +297,7 @@ This implementation should hopefully have a minimal impact on the current Python
 
 Back at the Python language level, I have considered two possible semantics for the vref object --
 
-## [Pointer semantics](https://www.python.org/dev/peps/pep-0205/#id14)
+## [Pointer semantics](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20205%20--%20Weak%20References.md#id14)
 
 In this model, a vref behaves essentially like a Python-level pointer; the Python program must explicitly dereference the vref to manipulate the actual object it references.
 
@@ -320,7 +320,7 @@ We can then define:
 
 Rule #4 is subtle, but comes about because we have made a vref to (a vref with no real references). Thus the outer vref is cleared to Nothing when the inner one inevitably disappears.
 
-## [Proxy semantics](https://www.python.org/dev/peps/pep-0205/#id15)
+## [Proxy semantics](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20205%20--%20Weak%20References.md#id15)
 
 In this model, the Python programmer manipulates vref objects just as if she were manipulating the object it is a reference of. This is accomplished by implementing the vref so that all operations on it are redirected to its referenced object. With this model, the dereference operator (*) no longer makes sense; instead, we have only the reference operator (&), and define:
 
@@ -341,7 +341,7 @@ Finally, there are some other additional capabilities that this system could pro
 
 -- Dianne
 
-# [Copyright](https://www.python.org/dev/peps/pep-0205/#id16)
+# [Copyright](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20205%20--%20Weak%20References.md#id16)
 
 This document has been placed in the public domain.
 

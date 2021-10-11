@@ -17,22 +17,22 @@ PEP 205 -- 弱引用
 
 Contents
 
-- Motivation
-  - [Caches (weak dictionaries)](https://www.python.org/dev/peps/pep-0205/#caches-weak-dictionaries)
-  - [Circular references](https://www.python.org/dev/peps/pep-0205/#circular-references)
-- Aspects of the Solution Space
-  - [Invalidation](https://www.python.org/dev/peps/pep-0205/#invalidation)
-  - [Presentation](https://www.python.org/dev/peps/pep-0205/#presentation)
-- [Proposed Solution](https://www.python.org/dev/peps/pep-0205/#proposed-solution)
-- [Implementation Strategy](https://www.python.org/dev/peps/pep-0205/#implementation-strategy)
-- [Possible Applications](https://www.python.org/dev/peps/pep-0205/#possible-applications)
-- [Previous Weak Reference Work in Python](https://www.python.org/dev/peps/pep-0205/#previous-weak-reference-work-in-python)
-- [Weak References in Java](https://www.python.org/dev/peps/pep-0205/#weak-references-in-java)
-- Appendix -- Dianne Hackborn's vref proposal (1995)
+- Motivation，动机
+  - [Caches (weak dictionaries)](https://www.python.org/dev/peps/pep-0205/#caches-weak-dictionaries)，缓存（弱字典）
+  - [Circular references](https://www.python.org/dev/peps/pep-0205/#circular-references)，循环引用
+- Aspects of the Solution Space，解空间的各方面
+  - [Invalidation](https://www.python.org/dev/peps/pep-0205/#invalidation)，无效化
+  - [Presentation](https://www.python.org/dev/peps/pep-0205/#presentation)，呈现
+- [Proposed Solution](https://www.python.org/dev/peps/pep-0205/#proposed-solution)，建议的解决方案
+- [Implementation Strategy](https://www.python.org/dev/peps/pep-0205/#implementation-strategy)，实施策略
+- [Possible Applications](https://www.python.org/dev/peps/pep-0205/#possible-applications)，可能的应用
+- [Previous Weak Reference Work in Python](https://www.python.org/dev/peps/pep-0205/#previous-weak-reference-work-in-python)，Python中以前的弱引用工作
+- [Weak References in Java](https://www.python.org/dev/peps/pep-0205/#weak-references-in-java)，Java中的弱引用
+- Appendix -- Dianne Hackborn's vref proposal (1995)，附录--Dianne Hackborn的vref建议（1995）
   - [Proposal: Virtual References](https://www.python.org/dev/peps/pep-0205/#proposal-virtual-references)
   - [Pointer semantics](https://www.python.org/dev/peps/pep-0205/#pointer-semantics)
   - [Proxy semantics](https://www.python.org/dev/peps/pep-0205/#proxy-semantics)
-- [Copyright](https://www.python.org/dev/peps/pep-0205/#copyright)
+- [Copyright](https://www.python.org/dev/peps/pep-0205/#copyright)，版权声明
 
 # [Motivation](https://www.python.org/dev/peps/pep-0205/#id1)
 

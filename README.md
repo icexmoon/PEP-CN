@@ -98,7 +98,7 @@ Gitee：https://gitee.com/icexmoon/PEP-CN
 - [**PEP 8 -- Style Guide for Python Code**](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%208%20--%20Style%20Guide%20for%20Python%20Code.md)，Python编码规范
 - [**PEP 20 -- The Zen of Python**](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%2020%20--%20The%20Zen%20of%20Python.md)，Python之禅
 - PEP 202 -- List Comprehensions，列表推导式
-- PEP 205 -- Weak References，弱引用
+- [**PEP 205 -- Weak References**](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20205%20--%20Weak%20References.md)，弱引用
 - PEP 234 -- Iterators，迭代器
 - [**PEP 257 -- Docstring Conventions**](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20257%20--%20Docstring%20Conventions.md)，文档字符串约定
 - PEP 274 -- Dict Comprehensions，字典推导式

@@ -1,6 +1,6 @@
 # PEP 634 -- Structural Pattern Matching: Specification
 
-PEP 634 -- 结构模式匹配：规范
+PEP 634 -- 结构化模式匹配：规范
 
 | PEP:            | 634                                                          |
 | :-------------- | ------------------------------------------------------------ |
@@ -20,28 +20,28 @@ PEP 634 -- 结构模式匹配：规范
 
 Contents
 
-- [Abstract](https://www.python.org/dev/peps/pep-0634/#abstract)
-- Syntax and Semantics
-  - [Overview and Terminology](https://www.python.org/dev/peps/pep-0634/#overview-and-terminology)
-  - The Match Statement
-    - [Match Semantics](https://www.python.org/dev/peps/pep-0634/#match-semantics)
-    - [Guards](https://www.python.org/dev/peps/pep-0634/#id1)
-    - [Irrefutable case blocks](https://www.python.org/dev/peps/pep-0634/#irrefutable-case-blocks)
-  - Patterns
-    - [AS Patterns](https://www.python.org/dev/peps/pep-0634/#as-patterns)
-    - [OR Patterns](https://www.python.org/dev/peps/pep-0634/#or-patterns)
-    - [Literal Patterns](https://www.python.org/dev/peps/pep-0634/#literal-patterns)
-    - [Capture Patterns](https://www.python.org/dev/peps/pep-0634/#capture-patterns)
-    - [Wildcard Pattern](https://www.python.org/dev/peps/pep-0634/#id3)
-    - [Value Patterns](https://www.python.org/dev/peps/pep-0634/#value-patterns)
-    - [Group Patterns](https://www.python.org/dev/peps/pep-0634/#group-patterns)
-    - [Sequence Patterns](https://www.python.org/dev/peps/pep-0634/#sequence-patterns)
-    - [Mapping Patterns](https://www.python.org/dev/peps/pep-0634/#mapping-patterns)
-    - [Class Patterns](https://www.python.org/dev/peps/pep-0634/#class-patterns)
-- [Side Effects and Undefined Behavior](https://www.python.org/dev/peps/pep-0634/#side-effects-and-undefined-behavior)
-- [The Standard Library](https://www.python.org/dev/peps/pep-0634/#the-standard-library)
-- [Appendix A -- Full Grammar](https://www.python.org/dev/peps/pep-0634/#appendix-a-full-grammar)
-- [Copyright](https://www.python.org/dev/peps/pep-0634/#copyright)
+- [Abstract](https://www.python.org/dev/peps/pep-0634/#abstract)，概述
+- Syntax and Semantics，语法和语义
+  - [Overview and Terminology](https://www.python.org/dev/peps/pep-0634/#overview-and-terminology)，概述和术语
+  - The Match Statement，匹配语句
+    - [Match Semantics](https://www.python.org/dev/peps/pep-0634/#match-semantics)，匹配语义
+    - [Guards](https://www.python.org/dev/peps/pep-0634/#id1)，守卫
+    - [Irrefutable case blocks](https://www.python.org/dev/peps/pep-0634/#irrefutable-case-blocks)，不可辩驳的case块
+  - Patterns，模式
+    - [AS Patterns](https://www.python.org/dev/peps/pep-0634/#as-patterns)，AS 模式
+    - [OR Patterns](https://www.python.org/dev/peps/pep-0634/#or-patterns)，OR 模式
+    - [Literal Patterns](https://www.python.org/dev/peps/pep-0634/#literal-patterns)，字面模式
+    - [Capture Patterns](https://www.python.org/dev/peps/pep-0634/#capture-patterns)，捕获模式
+    - [Wildcard Pattern](https://www.python.org/dev/peps/pep-0634/#id3)，通配符模式
+    - [Value Patterns](https://www.python.org/dev/peps/pep-0634/#value-patterns)，值模式
+    - [Group Patterns](https://www.python.org/dev/peps/pep-0634/#group-patterns)，群组模式
+    - [Sequence Patterns](https://www.python.org/dev/peps/pep-0634/#sequence-patterns)，序列模式
+    - [Mapping Patterns](https://www.python.org/dev/peps/pep-0634/#mapping-patterns)，映射模式
+    - [Class Patterns](https://www.python.org/dev/peps/pep-0634/#class-patterns)，类模式
+- [Side Effects and Undefined Behavior](https://www.python.org/dev/peps/pep-0634/#side-effects-and-undefined-behavior)，副作用和未定义行为
+- [The Standard Library](https://www.python.org/dev/peps/pep-0634/#the-standard-library)，标准库
+- [Appendix A -- Full Grammar](https://www.python.org/dev/peps/pep-0634/#appendix-a-full-grammar)，附录 A -- 完整语法
+- [Copyright](https://www.python.org/dev/peps/pep-0634/#copyright)，版权声明
 
 # [Abstract](https://www.python.org/dev/peps/pep-0634/#id5)
 

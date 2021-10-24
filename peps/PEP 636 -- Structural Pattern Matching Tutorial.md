@@ -20,26 +20,26 @@ PEP 636 -- 结构化模式匹配：教程
 
 Contents
 
-- [Abstract](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20636%20--%20Structural%20Pattern%20Matching%20Tutorial.md#abstract)
-- Tutorial
-  - [Matching sequences](https://www.python.org/dev/peps/pep-0636/#matching-sequences)
-  - [Matching multiple patterns](https://www.python.org/dev/peps/pep-0636/#matching-multiple-patterns)
-  - [Matching specific values](https://www.python.org/dev/peps/pep-0636/#matching-specific-values)
-  - [Matching multiple values](https://www.python.org/dev/peps/pep-0636/#matching-multiple-values)
-  - [Adding a wildcard](https://www.python.org/dev/peps/pep-0636/#adding-a-wildcard)
-  - [Composing patterns](https://www.python.org/dev/peps/pep-0636/#composing-patterns)
-  - [Or patterns](https://www.python.org/dev/peps/pep-0636/#or-patterns)
-  - [Capturing matched sub-patterns](https://www.python.org/dev/peps/pep-0636/#capturing-matched-sub-patterns)
-  - [Adding conditions to patterns](https://www.python.org/dev/peps/pep-0636/#adding-conditions-to-patterns)
-  - [Adding a UI: Matching objects](https://www.python.org/dev/peps/pep-0636/#adding-a-ui-matching-objects)
-  - [Matching positional attributes](https://www.python.org/dev/peps/pep-0636/#matching-positional-attributes)
-  - [Matching against constants and enums](https://www.python.org/dev/peps/pep-0636/#matching-against-constants-and-enums)
-  - [Going to the cloud: Mappings](https://www.python.org/dev/peps/pep-0636/#going-to-the-cloud-mappings)
-  - [Matching builtin classes](https://www.python.org/dev/peps/pep-0636/#matching-builtin-classes)
-- [Appendix A -- Quick Intro](https://www.python.org/dev/peps/pep-0636/#appendix-a-quick-intro)
-- [Copyright](https://www.python.org/dev/peps/pep-0636/#copyright)
+- [Abstract](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20636%20--%20Structural%20Pattern%20Matching%20Tutorial.md#abstract)，摘要
+- Tutorial，教程
+  - [Matching sequences](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20636%20--%20Structural%20Pattern%20Matching%20Tutorial.md#matching-sequences)，匹配序列
+  - [Matching multiple patterns](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20636%20--%20Structural%20Pattern%20Matching%20Tutorial.md#matching-multiple-patterns)，匹配多个模式
+  - [Matching specific values](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20636%20--%20Structural%20Pattern%20Matching%20Tutorial.md#matching-specific-values)，匹配特定的值
+  - [Matching multiple values](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20636%20--%20Structural%20Pattern%20Matching%20Tutorial.md#matching-multiple-values)，匹配多个值
+  - [Adding a wildcard](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20636%20--%20Structural%20Pattern%20Matching%20Tutorial.md#adding-a-wildcard)，添加一个通配符
+  - [Composing patterns](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20636%20--%20Structural%20Pattern%20Matching%20Tutorial.md#composing-patterns)，构成模式
+  - [Or patterns](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20636%20--%20Structural%20Pattern%20Matching%20Tutorial.md#or-patterns)，或模式
+  - [Capturing matched sub-patterns](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20636%20--%20Structural%20Pattern%20Matching%20Tutorial.md#capturing-matched-sub-patterns)，捕获匹配的子模式
+  - [Adding conditions to patterns](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20636%20--%20Structural%20Pattern%20Matching%20Tutorial.md#adding-conditions-to-patterns)，为模式添加条件
+  - [Adding a UI: Matching objects](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20636%20--%20Structural%20Pattern%20Matching%20Tutorial.md#adding-a-ui-matching-objects)，添加一个用户界面：匹配对象
+  - [Matching positional attributes](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20636%20--%20Structural%20Pattern%20Matching%20Tutorial.md#matching-positional-attributes)，匹配位置属性
+  - [Matching against constants and enums](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20636%20--%20Structural%20Pattern%20Matching%20Tutorial.md#matching-against-constants-and-enums)，与常量和枚举相匹配
+  - [Going to the cloud: Mappings](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20636%20--%20Structural%20Pattern%20Matching%20Tutorial.md#going-to-the-cloud-mappings)，走向云端：映射
+  - [Matching builtin classes](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20636%20--%20Structural%20Pattern%20Matching%20Tutorial.md#matching-builtin-classes)，匹配内建类
+- [Appendix A -- Quick Intro](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20636%20--%20Structural%20Pattern%20Matching%20Tutorial.md#appendix-a-quick-intro)，附录 A -- 快速介绍
+- [Copyright](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20636%20--%20Structural%20Pattern%20Matching%20Tutorial.md#copyright)，版权声明
 
-# [Abstract](https://www.python.org/dev/peps/pep-0636/#id2)
+# [Abstract](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20636%20--%20Structural%20Pattern%20Matching%20Tutorial.md#id2)
 
 摘要
 
@@ -57,11 +57,11 @@ This is considered supporting material for [PEP 634](https://www.python.org/dev/
 
 > 已完成对[PEP 634](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20634%20--%20Structural%20Pattern%20Matching%20Specification.md)的翻译工作，建议在阅读完本文后前往阅读，译者注。
 
-For readers who are looking more for a quick review than for a tutorial, see [Appendix A](https://www.python.org/dev/peps/pep-0636/#appendix-a).
+For readers who are looking more for a quick review than for a tutorial, see [Appendix A](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20636%20--%20Structural%20Pattern%20Matching%20Tutorial.md#appendix-a).
 
-对于那些想快速回顾而不是寻找教程的读者来说，请参见[附录A](https://www.python.org/dev/peps/pep-0636/#appendix-a)。
+对于那些想快速回顾而不是寻找教程的读者来说，请参见[附录A](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20636%20--%20Structural%20Pattern%20Matching%20Tutorial.md#appendix-a)。
 
-# [Tutorial](https://www.python.org/dev/peps/pep-0636/#id3)
+# [Tutorial](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20636%20--%20Structural%20Pattern%20Matching%20Tutorial.md#id3)
 
 教程
 
@@ -69,7 +69,7 @@ As an example to motivate this tutorial, you will be writing a text adventure. T
 
 作为激励本教程的一个例子，你将写一个文本冒险。这是一种交互式小说的形式，用户输入文本命令与一个虚构的世界进行交互，并收到关于所发生情况的文本描述。命令将是自然语言的简化形式，如拿剑、攻击龙、去北方、进入商店或购买奶酪。
 
-## [Matching sequences](https://www.python.org/dev/peps/pep-0636/#id4)
+## [Matching sequences](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20636%20--%20Structural%20Pattern%20Matching%20Tutorial.md#id4)
 
 匹配序列
 
@@ -125,7 +125,7 @@ Note that, in a similar way to unpacking assignments, you can use either parenth
 
 注意，与解包赋值类似，你可以使用小括号、大括号，或者仅仅是逗号分隔作为同义词。所以你可以写`case action, obj`或者`case (action, obj)`，意思都一样。所有的形式都可以匹配任何序列（例如，列表或元组）。
 
-## [Matching multiple patterns](https://www.python.org/dev/peps/pep-0636/#id5)
+## [Matching multiple patterns](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20636%20--%20Structural%20Pattern%20Matching%20Tutorial.md#id5)
 
 匹配多个模式
 
@@ -145,7 +145,7 @@ The match statement will check patterns from top to bottom. If the pattern doesn
 
 匹配语句将从上到下检查模式。如果模式与主题不匹配，将尝试下一个模式。然而，一旦找到第一个匹配的模式，该案例的主体将被执行，所有下面的案例将被忽略。这类似于`if/elif/elif/...`语句的工作方式。
 
-## [Matching specific values](https://www.python.org/dev/peps/pep-0636/#id6)
+## [Matching specific values](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20636%20--%20Structural%20Pattern%20Matching%20Tutorial.md#id6)
 
 匹配特定的值
 
@@ -179,7 +179,7 @@ Literal values are compared with the `==` operator except for the constants `Tru
 
 除了常量`True`、`False`和`None`是用`is`操作符进行比较外，其他的文字值都是用`==`操作符进行比较。
 
-## [Matching multiple values](https://www.python.org/dev/peps/pep-0636/#id7)
+## [Matching multiple values](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20636%20--%20Structural%20Pattern%20Matching%20Tutorial.md#id7)
 
 匹配多个值
 
@@ -205,7 +205,7 @@ This syntax has similar restrictions as sequence unpacking: you can not have mor
 
 这个语法与序列解包有类似的限制：你不能在一个模式中拥有一个以上的星号（变量）名称。
 
-## [Adding a wildcard](https://www.python.org/dev/peps/pep-0636/#id8)
+## [Adding a wildcard](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20636%20--%20Structural%20Pattern%20Matching%20Tutorial.md#id8)
 
 添加一个通配符
 
@@ -233,7 +233,7 @@ Note that this will match any object, not just sequences. As such, it only makes
 
 > `case _`相当于其他语言中`switch...case`语句中的`default`，不同的是这里延续了解包的风格，巧妙的使用`_`而避免了引入一个额外的`default`关键字，但我个人认为缺点会是其不像`default`那样明显，可能会导致误用，比如说没有放在末尾，译者注。
 
-## [Composing patterns](https://www.python.org/dev/peps/pep-0636/#id9)
+## [Composing patterns](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20636%20--%20Structural%20Pattern%20Matching%20Tutorial.md#id9)
 
 构成模式
 
@@ -261,7 +261,7 @@ Until now, the only non-simple pattern we have experimented with is the sequence
 
 到目前为止，我们唯一试验过的非简单模式是序列模式。序列模式中的每个元素事实上可以是任何其他模式。这意味着你可以写一个像`["first"，(left，right)，_，*rest]`的模式。这将匹配至少有三个元素的序列的主题，其中第一个元素等于 `"first"`，第二个元素又是两个元素的序列。它还将绑定`left=subject[1][0]`, `right=subject[1][1]`, 和 `rest = subject[3:]`
 
-## [Or patterns](https://www.python.org/dev/peps/pep-0636/#id10)
+## [Or patterns](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20636%20--%20Structural%20Pattern%20Matching%20Tutorial.md#id10)
 
 或模式
 
@@ -288,7 +288,7 @@ This is called an **or pattern** and will produce the expected result. Patterns 
 
 > 在翻译PEP 634时我曾经疑惑过为什么有或模式但没有且模式，现在我明白了，模式匹配本质上其核心目的在于匹配，而非是bool表达式那样以逻辑运算为核心目的，而匹配从逻辑上讲，对于一个给定的主题，只能是匹配成A或者B，而不会存在匹配成A而且B这种逻辑，译者注。
 
-## [Capturing matched sub-patterns](https://www.python.org/dev/peps/pep-0636/#id11)
+## [Capturing matched sub-patterns](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20636%20--%20Structural%20Pattern%20Matching%20Tutorial.md#id11)
 
 捕获匹配的子模式
 
@@ -323,7 +323,7 @@ as模式匹配其左侧的任何模式，此外还会将值绑定到一个名称
 
 > as模式中`as`的用法实质上与上下文语句`with`中的`as`是一致的，译者注。
 
-## [Adding conditions to patterns](https://www.python.org/dev/peps/pep-0636/#id12)
+## [Adding conditions to patterns](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20636%20--%20Structural%20Pattern%20Matching%20Tutorial.md#id12)
 
 为模式添加条件
 
@@ -343,7 +343,7 @@ The guard is not part of the pattern, it's part of the case. It's only checked i
 
 守卫不是模式的一部分，它是case的一部分。只有在模式匹配的情况下，并且在所有的模式变量都被绑定之后，才会被检查（这就是为什么在上面的例子中，条件可以使用`direction`变量）。如果模式匹配并且条件是真实的，那么case的主体将正常执行。如果模式匹配，但条件是假的，那么匹配语句就会继续检查下一个案例，就像模式没有匹配一样（可能的副作用是已经绑定了一些变量）。
 
-## [Adding a UI: Matching objects](https://www.python.org/dev/peps/pep-0636/#id13)
+## [Adding a UI: Matching objects](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20636%20--%20Structural%20Pattern%20Matching%20Tutorial.md#id13)
 
 添加一个用户界面：匹配对象
 
@@ -390,7 +390,7 @@ A pattern like `KeyPress()`, with no arguments will match any object which is an
 
 像`KeyPress()`这样没有参数的模式将匹配任何属于`KeyPress`类的实例的对象。只有你在模式中指定的属性被匹配，任何其他属性都被忽略。
 
-## [Matching positional attributes](https://www.python.org/dev/peps/pep-0636/#id14)
+## [Matching positional attributes](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20636%20--%20Structural%20Pattern%20Matching%20Tutorial.md#id14)
 
 匹配位置属性
 
@@ -442,7 +442,7 @@ The `__match_args__` special attribute defines an explicit order for your attrib
 
 > 这里引入了一个新的特殊属性`__match_args__`，而非`__slots__`，或许是考虑在不改变原有类的行为的情况下使得位置模式成为可能，这的确是个兼容旧代码的好设计，译者注。
 
-## [Matching against constants and enums](https://www.python.org/dev/peps/pep-0636/#id15)
+## [Matching against constants and enums](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20636%20--%20Structural%20Pattern%20Matching%20Tutorial.md#id15)
 
 与常量和枚举相匹配
 
@@ -462,7 +462,7 @@ This will work with any dotted name (like `math.pi`). However an unqualified nam
 
 这将与任何带点的名称（如`math.pi`）一起工作。然而，一个不合格的名字（即一个没有点的纯（变量）名）将总是被解释为一个捕获模式，所以通过在模式中总是使用合格的常数来避免这种模糊性。
 
-## [Going to the cloud: Mappings](https://www.python.org/dev/peps/pep-0636/#id16)
+## [Going to the cloud: Mappings](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20636%20--%20Structural%20Pattern%20Matching%20Tutorial.md#id16)
 
 走向云端：映射
 
@@ -512,9 +512,9 @@ You can use `**rest` within a mapping pattern to capture additional keys in the 
 
 > 在处理序列和映射时，似乎模式匹配的行为并不一致，对于序列，如果长度不相同就不会被匹配，而映射只要满足模式中给定的键名即会被匹配，剩余键名会被忽略，译者注。
 
-## [Matching builtin classes](https://www.python.org/dev/peps/pep-0636/#id17)
+## [Matching builtin classes](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20636%20--%20Structural%20Pattern%20Matching%20Tutorial.md#id17)
 
-匹配的内建类
+匹配内建类
 
 The code above could use some validation. Given that messages came from an external source, the types of the field could be wrong, leading to bugs or security issues.
 
@@ -538,7 +538,7 @@ for action in actions:
             warning("Unsupported audio format")
 ```
 
-# [Appendix A -- Quick Intro](https://www.python.org/dev/peps/pep-0636/#id18)
+# [Appendix A -- Quick Intro](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20636%20--%20Structural%20Pattern%20Matching%20Tutorial.md#id18)
 
 附录A -- 快速介绍
 
@@ -716,7 +716,7 @@ Several other key features:
           print("I'm feeling the blues :(")
   ```
 
-# [Copyright](https://www.python.org/dev/peps/pep-0636/#id19)
+# [Copyright](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20636%20--%20Structural%20Pattern%20Matching%20Tutorial.md#id19)
 
 版权声明
 

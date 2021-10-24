@@ -20,30 +20,30 @@ PEP 634 -- 结构化模式匹配：规范
 
 Contents
 
-- [Abstract](https://www.python.org/dev/peps/pep-0634/#abstract)，概述
+- [Abstract](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20634%20--%20Structural%20Pattern%20Matching%20Specification.md#abstract)，概述
 - Syntax and Semantics，语法和语义
-  - [Overview and Terminology](https://www.python.org/dev/peps/pep-0634/#overview-and-terminology)，概述和术语
+  - [Overview and Terminology](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20634%20--%20Structural%20Pattern%20Matching%20Specification.md#overview-and-terminology)，概述和术语
   - The Match Statement，匹配语句
-    - [Match Semantics](https://www.python.org/dev/peps/pep-0634/#match-semantics)，匹配语义
-    - [Guards](https://www.python.org/dev/peps/pep-0634/#id1)，守卫
-    - [Irrefutable case blocks](https://www.python.org/dev/peps/pep-0634/#irrefutable-case-blocks)，不可辩驳的case块
+    - [Match Semantics](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20634%20--%20Structural%20Pattern%20Matching%20Specification.md#match-semantics)，匹配语义
+    - [Guards](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20634%20--%20Structural%20Pattern%20Matching%20Specification.md#id1)，守卫
+    - [Irrefutable case blocks](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20634%20--%20Structural%20Pattern%20Matching%20Specification.md#irrefutable-case-blocks)，不可辩驳的case块
   - Patterns，模式
-    - [AS Patterns](https://www.python.org/dev/peps/pep-0634/#as-patterns)，AS 模式
-    - [OR Patterns](https://www.python.org/dev/peps/pep-0634/#or-patterns)，OR 模式
-    - [Literal Patterns](https://www.python.org/dev/peps/pep-0634/#literal-patterns)，字面模式
-    - [Capture Patterns](https://www.python.org/dev/peps/pep-0634/#capture-patterns)，捕获模式
-    - [Wildcard Pattern](https://www.python.org/dev/peps/pep-0634/#id3)，通配符模式
-    - [Value Patterns](https://www.python.org/dev/peps/pep-0634/#value-patterns)，值模式
-    - [Group Patterns](https://www.python.org/dev/peps/pep-0634/#group-patterns)，群组模式
-    - [Sequence Patterns](https://www.python.org/dev/peps/pep-0634/#sequence-patterns)，序列模式
-    - [Mapping Patterns](https://www.python.org/dev/peps/pep-0634/#mapping-patterns)，映射模式
-    - [Class Patterns](https://www.python.org/dev/peps/pep-0634/#class-patterns)，类模式
-- [Side Effects and Undefined Behavior](https://www.python.org/dev/peps/pep-0634/#side-effects-and-undefined-behavior)，副作用和未定义行为
-- [The Standard Library](https://www.python.org/dev/peps/pep-0634/#the-standard-library)，标准库
-- [Appendix A -- Full Grammar](https://www.python.org/dev/peps/pep-0634/#appendix-a-full-grammar)，附录 A -- 完整语法
-- [Copyright](https://www.python.org/dev/peps/pep-0634/#copyright)，版权声明
+    - [AS Patterns](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20634%20--%20Structural%20Pattern%20Matching%20Specification.md#as-patterns)，AS 模式
+    - [OR Patterns](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20634%20--%20Structural%20Pattern%20Matching%20Specification.md#or-patterns)，OR 模式
+    - [Literal Patterns](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20634%20--%20Structural%20Pattern%20Matching%20Specification.md#literal-patterns)，字面模式
+    - [Capture Patterns](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20634%20--%20Structural%20Pattern%20Matching%20Specification.md#capture-patterns)，捕获模式
+    - [Wildcard Pattern](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20634%20--%20Structural%20Pattern%20Matching%20Specification.md#id3)，通配符模式
+    - [Value Patterns](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20634%20--%20Structural%20Pattern%20Matching%20Specification.md#value-patterns)，值模式
+    - [Group Patterns](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20634%20--%20Structural%20Pattern%20Matching%20Specification.md#group-patterns)，群组模式
+    - [Sequence Patterns](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20634%20--%20Structural%20Pattern%20Matching%20Specification.md#sequence-patterns)，序列模式
+    - [Mapping Patterns](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20634%20--%20Structural%20Pattern%20Matching%20Specification.md#mapping-patterns)，映射模式
+    - [Class Patterns](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20634%20--%20Structural%20Pattern%20Matching%20Specification.md#class-patterns)，类模式
+- [Side Effects and Undefined Behavior](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20634%20--%20Structural%20Pattern%20Matching%20Specification.md#side-effects-and-undefined-behavior)，副作用和未定义行为
+- [The Standard Library](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20634%20--%20Structural%20Pattern%20Matching%20Specification.md#the-standard-library)，标准库
+- [Appendix A -- Full Grammar](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20634%20--%20Structural%20Pattern%20Matching%20Specification.md#appendix-a-full-grammar)，附录 A -- 完整语法
+- [Copyright](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20634%20--%20Structural%20Pattern%20Matching%20Specification.md#copyright)，版权声明
 
-# [Abstract](https://www.python.org/dev/peps/pep-0634/#id5)
+# [Abstract](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20634%20--%20Structural%20Pattern%20Matching%20Specification.md#id5)
 
 概述
 
@@ -67,15 +67,15 @@ This PEP is intentionally devoid of commentary; the motivation and all explanati
 
 本PEP有意不做评论；动机和对我们设计选择的所有解释都在[PEP 635](https://www.python.org/dev/peps/pep-0635)中。我们鼓励第一次阅读的读者从[PEP 636](https://www.python.org/dev/peps/pep-0636)开始，它对模式的概念、语法和语义提供了一个比较温和的介绍。
 
-# [Syntax and Semantics](https://www.python.org/dev/peps/pep-0634/#id6)
+# [Syntax and Semantics](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20634%20--%20Structural%20Pattern%20Matching%20Specification.md#id6)
 
 语法和语义
 
-See [Appendix A](https://www.python.org/dev/peps/pep-0634/#appendix-a) for the complete grammar.
+See [Appendix A](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20634%20--%20Structural%20Pattern%20Matching%20Specification.md#appendix-a) for the complete grammar.
 
 完整的语法见附录A。
 
-## [Overview and Terminology](https://www.python.org/dev/peps/pep-0634/#id7)
+## [Overview and Terminology](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20634%20--%20Structural%20Pattern%20Matching%20Specification.md#id7)
 
 概述和术语
 
@@ -99,7 +99,7 @@ A secondary outcome of pattern matching may be one or more name bindings. We may
 
 模式匹配的次要结果可能是一个或多个名称的绑定。我们可以说 "该模式将一个值与一个名字绑定"。当子模式尝试到第一个成功时，只有由于成功的子模式而产生的绑定是有效的；当尝试到第一个失败时，绑定是合并的。还有几条规则，解释如下，适用于这些情况。
 
-## [The Match Statement](https://www.python.org/dev/peps/pep-0634/#id8)
+## [The Match Statement](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20634%20--%20Structural%20Pattern%20Matching%20Specification.md#id8)
 
 匹配语句
 
@@ -141,7 +141,7 @@ The `match` and `case` keywords are soft keywords, i.e. they are not reserved wo
 
 > “软关键字”倒是个很别致的语言特性，至少我没有在其它主流语言中见过，但考虑到极其特殊的情况下可能带来的bug，最好还是尽量避免使用`match`或`case`作为变量名，译者注。
 
-### [Match Semantics](https://www.python.org/dev/peps/pep-0634/#id9)
+### [Match Semantics](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20634%20--%20Structural%20Pattern%20Matching%20Specification.md#id9)
 
 匹配语义
 
@@ -169,7 +169,7 @@ The precise pattern binding rules vary per pattern type and are specified below.
 
 精确的模式绑定规则因模式类型而异，具体规定如下。
 
-### [Guards](https://www.python.org/dev/peps/pep-0634/#id10)
+### [Guards](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20634%20--%20Structural%20Pattern%20Matching%20Specification.md#id10)
 
 守卫
 
@@ -183,7 +183,7 @@ Since guards are expressions they are allowed to have side effects. Guard evalua
 
 > 这里的意思是守卫表达式中的运算会随着case块匹配依次执行，直到某个case块被匹配，译者注。
 
-### [Irrefutable case blocks](https://www.python.org/dev/peps/pep-0634/#id11)
+### [Irrefutable case blocks](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20634%20--%20Structural%20Pattern%20Matching%20Specification.md#id11)
 
 不可辩驳的case块
 
@@ -199,7 +199,7 @@ A match statement may have at most one irrefutable case block, and it must be la
 
 一个匹配语句最多可以有一个不可反驳的case块，而且必须是最后一个。
 
-## [Patterns](https://www.python.org/dev/peps/pep-0634/#id12)
+## [Patterns](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20634%20--%20Structural%20Pattern%20Matching%20Specification.md#id12)
 
 模式
 
@@ -223,7 +223,7 @@ closed_pattern:
     | class_pattern
 ```
 
-### [AS Patterns](https://www.python.org/dev/peps/pep-0634/#id13)
+### [AS Patterns](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20634%20--%20Structural%20Pattern%20Matching%20Specification.md#id13)
 
 AS 模式
 
@@ -243,7 +243,7 @@ An AS pattern matches the OR pattern on the left of the `as` keyword against the
 
 AS模式与`as`关键字左边的OR模式匹配，与主题匹配。如果失败，则AS模式失败。否则，AS模式将主题与`as`关键字右边的名字绑定，并成功。
 
-### [OR Patterns](https://www.python.org/dev/peps/pep-0634/#id14)
+### [OR Patterns](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20634%20--%20Structural%20Pattern%20Matching%20Specification.md#id14)
 
 OR 模式
 
@@ -275,7 +275,7 @@ An OR pattern matches each of its subpatterns in turn to the subject, until one 
 
 > 需要注意的是，这里的OR模式和bool表达式中的`or`是两码事，这里是用于连接多个子模式用的，而非用于连接多个bool表达式，当然作用是类似的，并非使用`or`而使用`|`或许是以示区分，译者注。
 
-### [Literal Patterns](https://www.python.org/dev/peps/pep-0634/#id15)
+### [Literal Patterns](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20634%20--%20Structural%20Pattern%20Matching%20Specification.md#id15)
 
 字面模式
 
@@ -321,7 +321,7 @@ A literal pattern succeeds if the subject value compares equal to the value expr
 
 > 主流语言支持的`switch...case`语句就相当于这里的字面模式匹配，译者注。
 
-### [Capture Patterns](https://www.python.org/dev/peps/pep-0634/#id16)
+### [Capture Patterns](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20634%20--%20Structural%20Pattern%20Matching%20Specification.md#id16)
 
 捕获模式
 
@@ -333,9 +333,9 @@ Syntax:
 capture_pattern: !"_" NAME
 ```
 
-The single underscore (`_`) is not a capture pattern (this is what `!"_"` expresses). It is treated as a [wildcard pattern](https://www.python.org/dev/peps/pep-0634/#id3).
+The single underscore (`_`) is not a capture pattern (this is what `!"_"` expresses). It is treated as a [wildcard pattern](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20634%20--%20Structural%20Pattern%20Matching%20Specification.md#id3).
 
-单一的下划线（_）不是一个捕获模式（这就是`!"_"`所表达的意思）。它被看作是一个[通配符模式](https://www.python.org/dev/peps/pep-0634/#id3)。
+单一的下划线（_）不是一个捕获模式（这就是`!"_"`所表达的意思）。它被看作是一个[通配符模式](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20634%20--%20Structural%20Pattern%20Matching%20Specification.md#id3)。
 
 A capture pattern always succeeds. It binds the subject value to the name using the scoping rules for name binding established for the walrus operator in [PEP 572](https://www.python.org/dev/peps/pep-0572). (Summary: the name becomes a local variable in the closest containing function scope unless there's an applicable `nonlocal` or `global` statement.)
 
@@ -345,7 +345,7 @@ In a given pattern, a given name may be bound only once. This disallows for exam
 
 在一个给定的模式中，一个给定的名字只能被绑定一次。这就不允许例如case x, x: ...，但允许case [x] | x: ....
 
-### [Wildcard Pattern](https://www.python.org/dev/peps/pep-0634/#id17)
+### [Wildcard Pattern](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20634%20--%20Structural%20Pattern%20Matching%20Specification.md#id17)
 
 通配符模式
 
@@ -361,7 +361,7 @@ A wildcard pattern always succeeds. It binds no name.
 
 通配符模式总是会匹配成功，它不会绑定任何名称。
 
-### [Value Patterns](https://www.python.org/dev/peps/pep-0634/#id18)
+### [Value Patterns](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20634%20--%20Structural%20Pattern%20Matching%20Specification.md#id18)
 
 值模式
 
@@ -383,7 +383,7 @@ The pattern succeeds if the value found thus compares equal to the subject value
 
 如果找到的值与主题值比较相等（使用`==`运算符），则该模式成功。
 
-### [Group Patterns](https://www.python.org/dev/peps/pep-0634/#id19)
+### [Group Patterns](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20634%20--%20Structural%20Pattern%20Matching%20Specification.md#id19)
 
 群组模式
 
@@ -405,7 +405,7 @@ A parenthesized pattern has no additional syntax. It allows users to add parenth
 
 > 在我的理解中，可以简单将分组模式看做是对复杂的组合模式使用`()`进行显示地优先级划分，译者注。
 
-### [Sequence Patterns](https://www.python.org/dev/peps/pep-0634/#id20)
+### [Sequence Patterns](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20634%20--%20Structural%20Pattern%20Matching%20Specification.md#id20)
 
 序列模式
 
@@ -508,7 +508,7 @@ A variable-length sequence pattern first matches the leading non-star subpattern
 
 一个可变长度的序列模式首先将领头的非星号子模式与主题序列的相应项目相匹配，就像固定长度的序列一样。如果这样做成功了，星号子模式就会与剩余的主题项目组成的列表相匹配，从最后删除的项目与星号子模式后面的非星号子序列相对应。然后，剩余的非星号子模式与相应的主题项目相匹配，如同固定长度的序列。
 
-### [Mapping Patterns](https://www.python.org/dev/peps/pep-0634/#id21)
+### [Mapping Patterns](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20634%20--%20Structural%20Pattern%20Matching%20Specification.md#id21)
 
 映射模式
 
@@ -573,7 +573,7 @@ Key-value pairs are matched using the two-argument form of the subject's `get()`
 
 键值对使用主题的`get()`方法的双参数形式进行匹配。因此，匹配的键值对必须已经存在于映射中，而不是由 `__missing__` 或 `__getitem__` 即时创建。例如，`collections.defaultdict`实例将只与输入匹配语句时已经存在的键值模式匹配。
 
-### [Class Patterns](https://www.python.org/dev/peps/pep-0634/#id22)
+### [Class Patterns](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20634%20--%20Structural%20Pattern%20Matching%20Specification.md#id22)
 
 类模式
 
@@ -688,7 +688,7 @@ class C:
         return self
 ```
 
-# [Side Effects and Undefined Behavior](https://www.python.org/dev/peps/pep-0634/#id23)
+# [Side Effects and Undefined Behavior](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20634%20--%20Structural%20Pattern%20Matching%20Specification.md#id23)
 
 副作用和未定义行为
 
@@ -700,7 +700,7 @@ Another undefined behavior is the binding of variables by capture patterns that 
 
 另一个未定义的行为是通过捕获模式来绑定变量，而在捕获模式之后（在同一个case块中），另一个模式也会失败。这些可能会提前或延后发生，这取决于实现策略，唯一的约束是捕获变量必须在明确使用它们的守卫被评估之前被设置。如果一个守卫由and子句组成，只要保持从左到右的评估顺序，操作数的评估甚至可以与模式匹配穿插进行。
 
-# [The Standard Library](https://www.python.org/dev/peps/pep-0634/#id24)
+# [The Standard Library](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20634%20--%20Structural%20Pattern%20Matching%20Specification.md#id24)
 
 标准库
 
@@ -720,7 +720,7 @@ In addition, a systematic effort will be put into going through existing standar
 
 此外，我们将系统性地检查现有的标准库类，并在它看起来有益的地方添加`__match_args__`。
 
-# [Appendix A -- Full Grammar](https://www.python.org/dev/peps/pep-0634/#id25)
+# [Appendix A -- Full Grammar](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20634%20--%20Structural%20Pattern%20Matching%20Specification.md#id25)
 
 附录A -- 完整语法
 
@@ -807,7 +807,7 @@ keyword_patterns: ','.keyword_pattern+
 keyword_pattern: NAME '=' pattern
 ```
 
-# [Copyright](https://www.python.org/dev/peps/pep-0634/#id26)
+# [Copyright](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20634%20--%20Structural%20Pattern%20Matching%20Specification.md#id26)
 
 版权声明
 

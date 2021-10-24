@@ -5,10 +5,12 @@
 - Annotations，注解，与注释类似，但特指用于类型标注以方便静态类型检查用途的特殊注释。
 - Assignment Expressions，赋值表达式 ，又称作海象操作符或者命名表达式。
 - augmented assignment，增强赋值。
+- abstract，概述或摘要，通常指PEP中开始的摘要部分。
 
 ## B
 
 - bare types，基础类型，指原生的基础类型，比如`list`等。
+- builtin classes，内建类，指Python官方预定义的类。
 
 ## C
 
@@ -20,6 +22,8 @@
 - Decorator，装饰器，指函数装饰器或类装饰器。
 
 ## E
+
+- evaluate，评估，一般特指用于条件语句或模式匹配语句中的条件或主题部分的表达式的执行并获取结果的过程，详见[PEP 634 -- 结构化模式匹配：规范](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20634%20--%20Structural%20Pattern%20Matching%20Specification.md)。
 
 ## F
 
@@ -33,6 +37,7 @@
 - Generic，泛化，一般指泛型。
 - Generic Type，泛型。
 - Generic Function，泛函数。
+- Guard，守卫，在模式匹配语句`match...case`中特指case块附加的额外条件语句，详见[PEP 634 -- 结构化模式匹配：规范](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20634%20--%20Structural%20Pattern%20Matching%20Specification.md)。
 
 ## H
 
@@ -63,6 +68,7 @@
 
 - Python Enhancement Proposals，Python增强提案，PEP的全称。
 - Proposal，提案，一般指当前PEP。
+- pattern，模式，在`match...case`语句中特指`case`后的部分。
 
 ## Q
 
@@ -71,6 +77,7 @@
 ## S
 
 - Structural Pattern Matching，结构化模式匹配，指 Python 3.10 加入的`match...case`语句，详见[PEP 636 -- 结构化模式匹配：教程](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20636%20--%20Structural%20Pattern%20Matching%20Tutorial.md#abstract)。
+- subject，主题，在`match..case`语句中特指`match`后边的部分。
 
 ## T
 

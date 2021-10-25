@@ -690,14 +690,14 @@ An [interactive playground](https://mybinder.org/v2/gh/gvanrossum/patma/master?u
 
 # [References](https://www.python.org/dev/peps/pep-0635/#id33)
 
-|                                                       |                                                              |
-| ----------------------------------------------------- | ------------------------------------------------------------ |
-| [[1\]](https://www.python.org/dev/peps/pep-0635/#id1) | Kohn et al., Dynamic Pattern Matching with Python https://gvanrossum.github.io/docs/PyPatternMatching.pdf |
-|                                                       |                                                              |
-| [[2\]](https://www.python.org/dev/peps/pep-0635/#id4) | Binder [https://mybinder.org](https://mybinder.org/)         |
-|                                                       |                                                              |
-| [[3\]](https://www.python.org/dev/peps/pep-0635/#id5) | Jupyter [https://jupyter.org](https://jupyter.org/)          |
-|                                                       |                                                              |
+|                                                              |                                                              |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [[1\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20635%20--%20Structural%20Pattern%20Matching%20Motivation%20and%20Rationale.md#id1) | Kohn et al., Dynamic Pattern Matching with Python https://gvanrossum.github.io/docs/PyPatternMatching.pdf |
+|                                                              |                                                              |
+| [[2\]](https://www.python.org/dev/peps/pep-0635/#id4)        | Binder [https://mybinder.org](https://mybinder.org/)         |
+|                                                              |                                                              |
+| [[3\]](https://www.python.org/dev/peps/pep-0635/#id5)        | Jupyter [https://jupyter.org](https://jupyter.org/)          |
+|                                                              |                                                              |
 
 # [Copyright](https://www.python.org/dev/peps/pep-0635/#id34)
 

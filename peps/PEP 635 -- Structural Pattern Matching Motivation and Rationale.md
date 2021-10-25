@@ -21,34 +21,34 @@ PEP 635 -- 结构化模式匹配：动机和原理
 
 Contents
 
-- [Abstract](https://www.python.org/dev/peps/pep-0635/#abstract)
-- Motivation
-  - [Pattern Matching and OO](https://www.python.org/dev/peps/pep-0635/#pattern-matching-and-oo)
-  - [Patterns and Functional Style](https://www.python.org/dev/peps/pep-0635/#patterns-and-functional-style)
-- Rationale
-  - [Overview and Terminology](https://www.python.org/dev/peps/pep-0635/#overview-and-terminology)
-  - The Match Statement
-    - [Match Semantics](https://www.python.org/dev/peps/pep-0635/#match-semantics)
-    - [Guards](https://www.python.org/dev/peps/pep-0635/#guards)
-  - Patterns
-    - [AS Patterns](https://www.python.org/dev/peps/pep-0635/#as-patterns)
-    - [OR Patterns](https://www.python.org/dev/peps/pep-0635/#or-patterns)
-    - [Literal Patterns](https://www.python.org/dev/peps/pep-0635/#literal-patterns)
-    - [Capture Patterns](https://www.python.org/dev/peps/pep-0635/#capture-patterns)
-    - [Wildcard Pattern](https://www.python.org/dev/peps/pep-0635/#id3)
-    - [Value Patterns](https://www.python.org/dev/peps/pep-0635/#value-patterns)
-    - [Group Patterns](https://www.python.org/dev/peps/pep-0635/#group-patterns)
-    - [Sequence Patterns](https://www.python.org/dev/peps/pep-0635/#sequence-patterns)
-    - [Mapping Patterns](https://www.python.org/dev/peps/pep-0635/#mapping-patterns)
-    - [Class Patterns](https://www.python.org/dev/peps/pep-0635/#class-patterns)
-- [History and Context](https://www.python.org/dev/peps/pep-0635/#history-and-context)
-- [Backwards Compatibility](https://www.python.org/dev/peps/pep-0635/#backwards-compatibility)
-- [Security Implications](https://www.python.org/dev/peps/pep-0635/#security-implications)
-- [Reference Implementation](https://www.python.org/dev/peps/pep-0635/#reference-implementation)
-- [References](https://www.python.org/dev/peps/pep-0635/#references)
-- [Copyright](https://www.python.org/dev/peps/pep-0635/#copyright)
+- [Abstract](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20635%20--%20Structural%20Pattern%20Matching%20Motivation%20and%20Rationale.md#abstract)，概述
+- Motivation，动机
+  - [Pattern Matching and OO](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20635%20--%20Structural%20Pattern%20Matching%20Motivation%20and%20Rationale.md#pattern-matching-and-oo)，模式匹配和OO
+  - [Patterns and Functional Style](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20635%20--%20Structural%20Pattern%20Matching%20Motivation%20and%20Rationale.md#patterns-and-functional-style)，模式和函数式风格
+- Rationale，理论依据
+  - [Overview and Terminology](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20635%20--%20Structural%20Pattern%20Matching%20Motivation%20and%20Rationale.md#overview-and-terminology)，概述和术语
+  - The Match Statement，匹配语句
+    - [Match Semantics](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20635%20--%20Structural%20Pattern%20Matching%20Motivation%20and%20Rationale.md#match-semantics)，匹配语句
+    - [Guards](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20635%20--%20Structural%20Pattern%20Matching%20Motivation%20and%20Rationale.md#guards)，守卫
+  - Patterns，模式
+    - [AS Patterns](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20635%20--%20Structural%20Pattern%20Matching%20Motivation%20and%20Rationale.md#as-patterns)，AS模式
+    - [OR Patterns](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20635%20--%20Structural%20Pattern%20Matching%20Motivation%20and%20Rationale.md#or-patterns)，OR模式
+    - [Literal Patterns](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20635%20--%20Structural%20Pattern%20Matching%20Motivation%20and%20Rationale.md#literal-patterns)，字面模式
+    - [Capture Patterns](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20635%20--%20Structural%20Pattern%20Matching%20Motivation%20and%20Rationale.md#capture-patterns)，捕获模式
+    - [Wildcard Pattern](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20635%20--%20Structural%20Pattern%20Matching%20Motivation%20and%20Rationale.md#id3)，通配符模式
+    - [Value Patterns](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20635%20--%20Structural%20Pattern%20Matching%20Motivation%20and%20Rationale.md#value-patterns)，值模式
+    - [Group Patterns](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20635%20--%20Structural%20Pattern%20Matching%20Motivation%20and%20Rationale.md#group-patterns)，群组模式
+    - [Sequence Patterns](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20635%20--%20Structural%20Pattern%20Matching%20Motivation%20and%20Rationale.md#sequence-patterns)，序列模式
+    - [Mapping Patterns](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20635%20--%20Structural%20Pattern%20Matching%20Motivation%20and%20Rationale.md#mapping-patterns)，映射模式
+    - [Class Patterns](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20635%20--%20Structural%20Pattern%20Matching%20Motivation%20and%20Rationale.md#class-patterns)，类模式
+- [History and Context](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20635%20--%20Structural%20Pattern%20Matching%20Motivation%20and%20Rationale.md#history-and-context)，历史和背景
+- [Backwards Compatibility](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20635%20--%20Structural%20Pattern%20Matching%20Motivation%20and%20Rationale.md#backwards-compatibility)，向后兼容
+- [Security Implications](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20635%20--%20Structural%20Pattern%20Matching%20Motivation%20and%20Rationale.md#security-implications)，安全方面的影响
+- [Reference Implementation](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20635%20--%20Structural%20Pattern%20Matching%20Motivation%20and%20Rationale.md#reference-implementation)，参考实现
+- [References](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20635%20--%20Structural%20Pattern%20Matching%20Motivation%20and%20Rationale.md#references)，参考文献
+- [Copyright](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20635%20--%20Structural%20Pattern%20Matching%20Motivation%20and%20Rationale.md#copyright)，版权声明
 
-# [Abstract](https://www.python.org/dev/peps/pep-0635/#id9)
+# [Abstract](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20635%20--%20Structural%20Pattern%20Matching%20Motivation%20and%20Rationale.md#id9)
 
 概述
 
@@ -58,7 +58,7 @@ This PEP provides the motivation and rationale for [PEP 634](https://www.python.
 
 > PEP 634和PEP 636的翻译工作已完成，使用上边的链接访问即可，译者注。
 
-# [Motivation](https://www.python.org/dev/peps/pep-0635/#id10)
+# [Motivation](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20635%20--%20Structural%20Pattern%20Matching%20Motivation%20and%20Rationale.md#id10)
 
 动机
 
@@ -125,11 +125,11 @@ We believe that adding pattern matching to Python will enable Python users to wr
 
 我们相信在 Python 中加入模式匹配将使 Python 用户能够为上面的例子和其他许多例子编写更干净、更可读的代码。
 
-For a more academic discussion to this proposal, see [[1\]](https://www.python.org/dev/peps/pep-0635/#id6).
+For a more academic discussion to this proposal, see [[1\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20635%20--%20Structural%20Pattern%20Matching%20Motivation%20and%20Rationale.md#id6).
 
 关于这个提议的更多学术讨论，请看 [1]。
 
-## [Pattern Matching and OO](https://www.python.org/dev/peps/pep-0635/#id11)
+## [Pattern Matching and OO](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20635%20--%20Structural%20Pattern%20Matching%20Motivation%20and%20Rationale.md#id11)
 
 模式匹配和OO
 
@@ -155,7 +155,7 @@ Object oriented programming is geared towards single-dispatch: it is a single in
 
 > 这里讨论了OO中的二元操作符问题，即A+B和B+A可能因为A和B是不同的类导致不同的运算结果，在Python中这是由开发者决定的，`+`运算符的重载也区分了左结合和右结合，而如果在模式匹配的情形下，这种定义将更清晰，即执行那种运算取决于A和B的类型及出现顺序，将不会有歧义，译者注。
 
-## [Patterns and Functional Style](https://www.python.org/dev/peps/pep-0635/#id12)
+## [Patterns and Functional Style](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20635%20--%20Structural%20Pattern%20Matching%20Motivation%20and%20Rationale.md#id12)
 
 模式和函数式（编程）风格
 
@@ -181,7 +181,7 @@ Functional programming generally prefers a declarative style with a focus on rel
 
 函数式编程一般倾向于声明式的风格，重点关注数据中的关系。只要有可能，就会避免副作用。因此，模式匹配自然适合并高度支持函数式编程风格。
 
-# [Rationale](https://www.python.org/dev/peps/pep-0635/#id13)
+# [Rationale](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20635%20--%20Structural%20Pattern%20Matching%20Motivation%20and%20Rationale.md#id13)
 
 理论依据
 
@@ -189,7 +189,7 @@ This section provides the rationale for individual design decisions. It takes th
 
 这一部分提供了个别设计决定的理由。它取代了标准PEP格式中的 "被拒绝的想法"。它被组织在与规范（[PEP 634](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20634%20--%20Structural%20Pattern%20Matching%20Specification.md)）相对应的章节中。
 
-## [Overview and Terminology](https://www.python.org/dev/peps/pep-0635/#id14)
+## [Overview and Terminology](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20635%20--%20Structural%20Pattern%20Matching%20Motivation%20and%20Rationale.md#id14)
 
 概述和术语
 
@@ -201,7 +201,7 @@ Also note that patterns bind names to values rather than performing an assignmen
 
 还要注意的是，模式将名字与值绑定，而不是进行赋值。这反映了一个事实，即模式的目的是不产生副作用，这也意味着捕获或AS模式不能给属性或下标分配一个值。因此，我们一贯使用术语 "绑定 "而不是 "赋值 "来强调传统赋值和模式中的名称绑定之间的这种微妙差别。
 
-## [The Match Statement](https://www.python.org/dev/peps/pep-0635/#id15)
+## [The Match Statement](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20635%20--%20Structural%20Pattern%20Matching%20Motivation%20and%20Rationale.md#id15)
 
 匹配语句
 
@@ -296,7 +296,7 @@ Since Python is a statement-oriented language in the tradition of Algol, and as 
 
 由于 Python 是一种继承了 Algol 传统的面向语句的语言，并且每个复合语句都以一个可识别的关键字开始，`case` 似乎最符合 Python 的风格和传统。
 
-### [Match Semantics](https://www.python.org/dev/peps/pep-0635/#id16)
+### [Match Semantics](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20635%20--%20Structural%20Pattern%20Matching%20Motivation%20and%20Rationale.md#id16)
 
 匹配语义
 
@@ -322,7 +322,7 @@ A direct consequence of this is that any variable bindings outlive the respectiv
 
 这样做的一个直接后果是，任何变量的绑定都会超过各自的case或匹配语句。即使是只与主题部分匹配的模式也可能会绑定本地变量（事实上，这对于守卫的正常运作是必要的）。然而，这些变量绑定的语义与现有的 Python 结构一致，比如 for 循环和 with 语句。
 
-### [Guards](https://www.python.org/dev/peps/pep-0635/#id17)
+### [Guards](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20635%20--%20Structural%20Pattern%20Matching%20Motivation%20and%20Rationale.md#id17)
 
 守卫
 
@@ -363,7 +363,7 @@ def sort(seq):
             return a + [p] + b
 ```
 
-## [Patterns](https://www.python.org/dev/peps/pep-0635/#id18)
+## [Patterns](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20635%20--%20Structural%20Pattern%20Matching%20Motivation%20and%20Rationale.md#id18)
 
 模式
 
@@ -391,7 +391,7 @@ Although patterns might superficially look like expressions, it is important to 
 
 尽管模式从表面上看可能像表达式，但重要的是要记住这两者之间有明显的区别。事实上，没有任何模式是表达式、或者包含表达式。把模式看作是类似于函数定义中的形式参数的声明性元素，会更有成效。
 
-### [AS Patterns](https://www.python.org/dev/peps/pep-0635/#id19)
+### [AS Patterns](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20635%20--%20Structural%20Pattern%20Matching%20Motivation%20and%20Rationale.md#id19)
 
 AS 模式
 
@@ -440,7 +440,7 @@ def simplify_expr(tokens):
             return Num(value)
 ```
 
-### [OR Patterns](https://www.python.org/dev/peps/pep-0635/#id20)
+### [OR Patterns](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20635%20--%20Structural%20Pattern%20Matching%20Motivation%20and%20Rationale.md#id20)
 
 OR模式
 
@@ -544,7 +544,7 @@ def simplify(expr):
     return expr
 ```
 
-### [Literal Patterns](https://www.python.org/dev/peps/pep-0635/#id21)
+### [Literal Patterns](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20635%20--%20Structural%20Pattern%20Matching%20Motivation%20and%20Rationale.md#id21)
 
 字面模式
 
@@ -624,7 +624,7 @@ def simplify(expr):
     return expr
 ```
 
-### [Capture Patterns](https://www.python.org/dev/peps/pep-0635/#id22)
+### [Capture Patterns](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20635%20--%20Structural%20Pattern%20Matching%20Motivation%20and%20Rationale.md#id22)
 
 捕获模式
 
@@ -663,7 +663,7 @@ def average(*args):
             return sum(a) / len(a)
 ```
 
-### [Wildcard Pattern](https://www.python.org/dev/peps/pep-0635/#id23)
+### [Wildcard Pattern](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20635%20--%20Structural%20Pattern%20Matching%20Motivation%20and%20Rationale.md#id23)
 
 通配符模式
 
@@ -727,7 +727,7 @@ def is_closed(sequence):
             return False
 ```
 
-### [Value Patterns](https://www.python.org/dev/peps/pep-0635/#id24)
+### [Value Patterns](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20635%20--%20Structural%20Pattern%20Matching%20Motivation%20and%20Rationale.md#id24)
 
 值模式
 
@@ -771,7 +771,7 @@ def handle_reply(reply):
             raise ResourceNotFound()
 ```
 
-### [Group Patterns](https://www.python.org/dev/peps/pep-0635/#id25)
+### [Group Patterns](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20635%20--%20Structural%20Pattern%20Matching%20Motivation%20and%20Rationale.md#id25)
 
 群组模式
 
@@ -779,7 +779,7 @@ Allowing users to explicitly specify the grouping is particularly helpful in cas
 
 允许用户明确指定分组在OR模式的情况下特别有帮助。
 
-### [Sequence Patterns](https://www.python.org/dev/peps/pep-0635/#id26)
+### [Sequence Patterns](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20635%20--%20Structural%20Pattern%20Matching%20Motivation%20and%20Rationale.md#id26)
 
 序列模式
 
@@ -813,7 +813,7 @@ String and bytes objects have a dual nature: they are both 'atomic' objects in t
 
 字符串和字节对象具有双重性质：它们本身既是 "原子 "对象，也是序列（具有强递归性质，因为字符串是字符串的序列）。字符串和字节的典型行为和用例与元组和列表的典型行为和用例有很大的不同，因此有必要进行明确的区分。事实上，字符串被当作序列往往是不直观的和非故意的，这一点从经常性的问题和投诉中可以看出。因此，字符串和字节不能被序列模式匹配，将序列模式限制在对 "序列 "的一个非常具体的理解上。内置的`bytearray`类型，作为字节的可变版本，也值得例外；但我们并不打算列举所有可能用来表示字节的其他类型（例如，一些，但不是所有，`memoryview`和`array.array`的实例）。
 
-### [Mapping Patterns](https://www.python.org/dev/peps/pep-0635/#id27)
+### [Mapping Patterns](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20635%20--%20Structural%20Pattern%20Matching%20Motivation%20and%20Rationale.md#id27)
 
 映射模式
 
@@ -851,7 +851,7 @@ def change_red_to_blue(json_obj):
                 change_red_to_blue(child)
 ```
 
-### [Class Patterns](https://www.python.org/dev/peps/pep-0635/#id28)
+### [Class Patterns](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20635%20--%20Structural%20Pattern%20Matching%20Motivation%20and%20Rationale.md#id28)
 
 类模式
 
@@ -954,7 +954,7 @@ This idea has a lot of problems. For one, the colon can only be used inside of b
 
 > 其实我还是挺喜欢注解这种风格的，只能表示遗憾了，译者注。
 
-# [History and Context](https://www.python.org/dev/peps/pep-0635/#id29)
+# [History and Context](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20635%20--%20Structural%20Pattern%20Matching%20Motivation%20and%20Rationale.md#id29)
 
 历史和背景
 
@@ -1009,7 +1009,7 @@ In Python, we simply use `isinstance()` together with the `__match_args__` field
 
 Paying tribute to Python's dynamic nature with 'duck typing', however, we also added a more direct way to specify the presence of, or constraints on specific attributes. Instead of `Node(x, y)` you could also write `object(left=x, right=y)`, effectively eliminating the `isinstance()` check and thus supporting any object with `left` and `right` attributes. Or you would combine these ideas to write `Node(right=y)` so as to require an instance of `Node` but only extract the value of the `right` attribute.
 
-# [Backwards Compatibility](https://www.python.org/dev/peps/pep-0635/#id30)
+# [Backwards Compatibility](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20635%20--%20Structural%20Pattern%20Matching%20Motivation%20and%20Rationale.md#id30)
 
 向后兼容
 
@@ -1017,7 +1017,7 @@ Through its use of "soft keywords" and the new PEG parser ([PEP 617](https://www
 
 通过使用 "软关键字 "和新的 PEG 解析器 (PEP 617)，该提案仍然完全向后兼容。然而，使用LL(1)解析器来解析Python源代码的第三方工具可能会被迫转换解析器技术，以便能够支持这些相同的特性。
 
-# [Security Implications](https://www.python.org/dev/peps/pep-0635/#id31)
+# [Security Implications](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20635%20--%20Structural%20Pattern%20Matching%20Motivation%20and%20Rationale.md#id31)
 
 安全方面的影响
 
@@ -1025,7 +1025,7 @@ We do not expect any security implications from this language feature.
 
 我们不期望这个语言特性会产生任何安全影响。
 
-# [Reference Implementation](https://www.python.org/dev/peps/pep-0635/#id32)
+# [Reference Implementation](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20635%20--%20Structural%20Pattern%20Matching%20Motivation%20and%20Rationale.md#id32)
 
 参考实现
 
@@ -1033,11 +1033,11 @@ A [feature-complete CPython implementation](https://github.com/brandtbucher/cpyt
 
 GitHub上有一个功能完整的CPython实现。
 
-An [interactive playground](https://mybinder.org/v2/gh/gvanrossum/patma/master?urlpath=lab/tree/playground-622.ipynb) based on the above implementation was created using Binder [[2\]](https://www.python.org/dev/peps/pep-0635/#id7) and Jupyter [[3\]](https://www.python.org/dev/peps/pep-0635/#id8).
+An [interactive playground](https://mybinder.org/v2/gh/gvanrossum/patma/master?urlpath=lab/tree/playground-622.ipynb) based on the above implementation was created using Binder [[2\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20635%20--%20Structural%20Pattern%20Matching%20Motivation%20and%20Rationale.md#id7) and Jupyter [[3\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20635%20--%20Structural%20Pattern%20Matching%20Motivation%20and%20Rationale.md#id8).
 
 使用Binder[2]和Jupyter[3]创建了一个基于上述实现的交互式游乐场。
 
-# [References](https://www.python.org/dev/peps/pep-0635/#id33)
+# [References](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20635%20--%20Structural%20Pattern%20Matching%20Motivation%20and%20Rationale.md#id33)
 
 参考文献
 
@@ -1045,12 +1045,12 @@ An [interactive playground](https://mybinder.org/v2/gh/gvanrossum/patma/master?u
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [[1\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20635%20--%20Structural%20Pattern%20Matching%20Motivation%20and%20Rationale.md#id1) | Kohn et al., Dynamic Pattern Matching with Python https://gvanrossum.github.io/docs/PyPatternMatching.pdf |
 |                                                              |                                                              |
-| [[2\]](https://www.python.org/dev/peps/pep-0635/#id4)        | Binder [https://mybinder.org](https://mybinder.org/)         |
+| [[2\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20635%20--%20Structural%20Pattern%20Matching%20Motivation%20and%20Rationale.md#id4) | Binder [https://mybinder.org](https://mybinder.org/)         |
 |                                                              |                                                              |
-| [[3\]](https://www.python.org/dev/peps/pep-0635/#id5)        | Jupyter [https://jupyter.org](https://jupyter.org/)          |
+| [[3\]](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20635%20--%20Structural%20Pattern%20Matching%20Motivation%20and%20Rationale.md#id5) | Jupyter [https://jupyter.org](https://jupyter.org/)          |
 |                                                              |                                                              |
 
-# [Copyright](https://www.python.org/dev/peps/pep-0635/#id34)
+# [Copyright](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20635%20--%20Structural%20Pattern%20Matching%20Motivation%20and%20Rationale.md#id34)
 
 版权声明
 

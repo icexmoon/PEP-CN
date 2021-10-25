@@ -6,6 +6,7 @@
 - Assignment Expressions，赋值表达式 ，又称作海象操作符或者命名表达式。
 - augmented assignment，增强赋值。
 - abstract，概述或摘要，通常指PEP中开始的摘要部分。
+- actual arguments，实际参数或实参，指函数调用时传入的真实参数。
 
 ## B
 
@@ -30,6 +31,7 @@
 - Future，Future，异步模块`futures`和`asyncio`的核心类，可以用于`await`表达式，找不到合适的翻译，直接使用英文单词。
 - Function，函数。
 - f-string，格式化字符串，比如`f'{x:0.2f}'`
+- formal parameters，形式参数或形参，特指函数定义中的参数列表中的参数，与实参相对应。
 
 ## G
 
@@ -85,6 +87,8 @@
 ## U
 
 ## V
+
+- Visitor pattern，访问器模式，指定类似于getter和setter之类的东西。
 
 ## W
 

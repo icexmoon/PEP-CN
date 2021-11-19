@@ -75,7 +75,7 @@ Gitee：https://gitee.com/icexmoon/PEP-CN
 
 ### 可选事项
 
-1. [**Typora**](https://typora.io/)是个优秀的多平台开源免费markdown编辑器，唯一缺点是如果内容较多，反应会变慢（至少我的落伍小破笔记本如此）。
+1. [**Typora**](https://typora.io/)是个优秀的多平台免费markdown编辑器，唯一缺点是如果内容较多，反应会变慢（至少我的落伍小破笔记本如此）。
 2. [**DeepL**](https://www.deepl.com/translator)是最近出现的德国产优秀翻译器，据说使用了深度学习，实际使用也的确比Google优秀一些，至少在翻译计算机专业内容时候是这样。推荐下载桌面版进行使用，效率更高。
 
 ### 未来计划

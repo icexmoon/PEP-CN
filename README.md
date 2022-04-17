@@ -6,14 +6,15 @@
 
 Github：<https://github.com/icexmoon/PEP-CN>
 
-Gitee：https://gitee.com/icexmoon/PEP-CN
+Gitee：<https://gitee.com/icexmoon/PEP-CN>
 
 ## 目的
 
-最近学习Python，翻译了几篇PEP，遂突发奇想有没有PEP的系统中文翻译项目，翻了一下Github，有一个现成的项目[**PEP中文翻译计划**](https://github.com/chinesehuazhou/peps-cn)，但一来这个项目已经长时间没更新了，二来这个项目有以下缺陷：
+最近学习Python，翻译了几篇PEP，遂突发奇想有没有PEP的系统中文翻译项目，翻了一下Github，有一个现成的项目[**PEP中文翻译计划**](https://github.com/chinesehuazhou/peps-cn)，但该项目存在以下缺陷：
 
-1. 没有版权声明，比如某个PEP链接的文章是微信公众号文章，而且明确说了不许转载。
-2. 翻译内容是各种外部链接，已经有部分链接失效。
+1. 已有较长时间未更新。
+2. 缺失版权声明。比如某个PEP链接的文章是明确声明不允许转载的微信公众号文章。
+3. 翻译内容包含多种外部链接，已经部分链接已失效。
 
 所以我在Github创建了这个项目，目的是进行系统性翻译中文版PEP，为Python学习者做出一些贡献。
 
@@ -29,9 +30,9 @@ Gitee：https://gitee.com/icexmoon/PEP-CN
 
 ### 必须遵守
 
-1. 翻译文章必须使用markdown文本作为载体。
+1. 翻译文章必须使用Markdown文本作为载体。
 
-   > 如果不会使用markdown，可以阅读[**从今天开始markdown**](https://www.cnblogs.com/Moon-Face/p/14449146.html)，相信我，和学习一门编程语言相比，这完全是轻而易举。
+   > 如果不会使用Markdown，可以阅读[**从今天开始Markdown**](https://www.cnblogs.com/Moon-Face/p/14449146.html)，相信我，和学习一门编程语言相比，这完全是轻而易举。
 
 2. 在文章开头必须注明PEP原文地址。
 
@@ -43,30 +44,24 @@ Gitee：https://gitee.com/icexmoon/PEP-CN
 
    > 建议使用 CC 4.0 版权声明，CC 4.0 BY-SA 的意思是可以转载和改编，但必须注明原作者和来源，关于更多 CC 协议的说明可以阅读[**“知识共享”（CC协议）简单介绍**](https://zhuanlan.zhihu.com/p/20641764)。
 
- 4. 所有翻译成果使用本项目的Github仓库进行托管，在目录中直接进行引用，不使用第三方外链。
+4. 所有翻译成果使用本项目的Github仓库进行托管，在目录中直接进行引用，不使用第三方外链。
 
- 5. 译文中如果需要插入图片，必须将图片上传到可靠图床后添加进文本。
+5. 译文中如果需要插入图片，必须将图片上传到可靠图床后添加进文本。
 
 	> [**Markdown-img**](https://github.com/icexmoon/markdown-img)是我编写的对此有帮助的小工具。
 
-6. 待翻译列表以未链接的形式在目录中展示，主要由其它网络文章推荐和个人口味形成，如果有其它想加入的P待翻译PEP请在issue页面告知。
+6. 待翻译列表以未链接的形式在目录中展示，主要由其它网络文章推荐和个人口味形成，如果有其它想添加的待翻译PEP，请在issue页面告知。
 
-7. 可以从带翻译列表认领或者自行确认翻译目标。为了避免重复劳动，选定后请提交一个空的markdown文件到分支合并请求进行占位。
+7. 可以从待翻译列表认领或者自行确认翻译目标。为了避免重复劳动，选定后请提交一个空的Markdown文件到分支合并请求进行占位。
 
 ### 建议遵守
 
 1. 建议在译文中保留原始英文段落，采用中英文对照方式，这样更便于纠错和改进。
-
 2. 建议进行全文翻译，如果时间精力有限，可以将未翻译部分以原文方式呈现，只翻译核心内容。
-
 3. 译文使用中文标点，原文中使用md代码块方式包裹的内容也应该依然使用此方式。
-
 4. 译文之外的译者注释部分应当使用md中的注释语法`>注释`，例如：`>linter指语法检查工具，可以参考[**程序开发中的linter是什么意思？**](https://www.zhihu.com/question/28421865)中的回答，译者注。`
-
 5. 译文之外添加的链接可以使用`**加粗**`的方式强化显示。
-
 6. 为了尽可能提高翻译内容的一致性，添加了[**词汇对照表**](https://github.com/icexmoon/PEP-CN/blob/main/%E8%AF%8D%E6%B1%87%E5%AF%B9%E7%85%A7%E8%A1%A8.md)作为专有名词的翻译依据，如果表中没有，可以选择合适的翻译后维护该表。
-
 7. 鼓励在翻译中对必要的相关已翻译或未翻译PEP进行引用，比如：
 
    > 注意: `Dict`, `DefaultDict`, `List`, `Set` 和 `FrozenSet` 主要用于注释返回值。对于参数，最好使用下面定义的抽象集合类型，例如：`Mapping`, `Sequence`或`AbstractSet`。
@@ -75,23 +70,23 @@ Gitee：https://gitee.com/icexmoon/PEP-CN
 
 ### 可选事项
 
-1. [**Typora**](https://typora.io/)是个优秀的多平台免费markdown编辑器，唯一缺点是如果内容较多，反应会变慢（至少我的落伍小破笔记本如此）。
+1. [**Typora**](https://typora.io/)是个优秀的多平台免费Markdown编辑器，唯一缺点是如果内容较多，反应会变慢（至少我的落伍小破笔记本如此）。
 2. [**DeepL**](https://www.deepl.com/translator)是最近出现的德国产优秀翻译器，据说使用了深度学习，实际使用也的确比Google优秀一些，至少在翻译计算机专业内容时候是这样。推荐下载桌面版进行使用，效率更高。
 
 ### 未来计划
 
 如果有其他Python爱好者加入，打算组织实现以下计划：
 
-- <del>筛选并确定翻译的PEP列表。</del>
-- <del>编写PEP中的常见专用词汇对照表。</del>
-- 进行翻译条目的认领和分配。
-- 对已翻译条目进行修订。
+- [x] 筛选并确定翻译的PEP列表。
+- [x] 编写PEP中的常见专用词汇对照表。
+- [ ] 进行翻译条目的认领和分配。
+- [ ] 对已翻译条目进行修订。
 
 ## 目录
 
 所有已翻译文章列表会展示在这里：
 
-> 所有连接均为Github链接，如果无法正常访问请前往本项目的[**Gitee镜像**](https://gitee.com/icexmoon/PEP-CN)，然后直接访问pep目录下的md文档，或者下载或克隆。
+> 所有链接均为Github链接，如果无法正常访问请前往本项目的[**Gitee镜像**](https://gitee.com/icexmoon/PEP-CN)，然后直接访问pep目录下的md文档阅读，亦可下载或克隆整个仓库。
 
 - PEP 0 -- Index of Python Enhancement Proposals，Python增强提案索引
 - [**PEP 7 -- Style Guide for C Code**](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%207%20--%20Style%20Guide%20for%20C%20Code.md)，C扩展规范
@@ -144,4 +139,3 @@ Gitee：https://gitee.com/icexmoon/PEP-CN
 - PEP 8000 -- Python Language Governance Proposal Overview，Python 语言治理提案概述
 
 版权声明：本文由 [**icexmoon**](https://github.com/icexmoon/) 原创，遵循CC 4.0 BY-SA版权协议。
-

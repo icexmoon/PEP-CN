@@ -136,6 +136,6 @@ Gitee：<https://gitee.com/icexmoon/PEP-CN>
 - PEP 3148 -- futures - execute computations asynchronously，futures - 异步执行计算
 - PEP 3156 -- Asynchronous IO Support Rebooted: the "asyncio" Module，重新启动的异步IO支持："asyncio "模块
 - PEP 3333 -- Python Web Server Gateway Interface v1.0.1 Python Web 服务网关接口 v1.0.1
-- PEP 8000 -- Python Language Governance Proposal Overview，Python 语言治理提案概述
+- [**PEP 8000 -- Python Language Governance Proposal Overview**](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%208000%20%E2%80%93%20Python%20Language%20Governance%20Proposal%20Overview%20.md)，Python 语言治理提案概述
 
 版权声明：本文由 [**icexmoon**](https://github.com/icexmoon/) 原创，遵循CC 4.0 BY-SA版权协议。

@@ -124,6 +124,7 @@ Gitee：<https://gitee.com/icexmoon/PEP-CN>
 - [**PEP 585 -- Type Hinting Generics In Standard Collections**](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20585%20--%20Type%20Hinting%20Generics%20In%20Standard%20Collections.md)，标准集合中的类型提示泛型
 - [**PEP 614 -- Relaxing Grammar Restrictions On Decorators**](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20614%20--%20Relaxing%20Grammar%20Restrictions%20On%20Decorators.md)，放宽对装饰器的语法限制
 - [**PEP 616 -- String methods to remove prefixes and suffixes**](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20616%20--%20String%20methods%20to%20remove%20prefixes%20and%20suffixes.md)，移除前缀和后缀的字符串方法
+- [**PEP 621 – Storing project metadata in pyproject.toml**](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20621%20%E2%80%93%20Storing%20project%20metadata%20in%20pyproject.toml.md)，在 pyproject.toml 中存储项目元数据
 - [**PEP 634 -- Structural Pattern Matching: Specification**](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20634%20--%20Structural%20Pattern%20Matching%20Specification.md)，结构化模式匹配：规范
 - [**PEP 635 -- Structural Pattern Matching: Motivation and Rationale**](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20635%20--%20Structural%20Pattern%20Matching%20Motivation%20and%20Rationale.md)，结构化模式匹配：动机和原理
 - [**PEP 636 -- Structural Pattern Matching: Tutorial**](https://github.com/icexmoon/PEP-CN/blob/main/peps/PEP%20636%20--%20Structural%20Pattern%20Matching%20Tutorial.md)，结构化模式匹配：教程
